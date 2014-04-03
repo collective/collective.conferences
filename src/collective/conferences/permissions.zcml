@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="collective.conferences">
+
+    <permission
+        id="collective.conferences.AddTalk"
+        title="collective.conferences: Add talk"
+        />
+
+    <permission
+        id="collective.conferences.ModifyTrack"
+        title="collective.conferences: Modify track"
+        />
+        
+    <permission
+        id="collective.conferences.AddAttendee"
+        title="collective.conferences: Add attendee"
+        />
+    
+    <permission
+        id="collective.conferences.ModifyTalktime"
+        title="collective.conferences: Modify talktime"
+        />
+
+</configure>

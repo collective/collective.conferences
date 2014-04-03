@@ -1,0 +1,14 @@
+<object name="portal_types">
+ <object name="collective.conferences.callforpaper" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.speakerfolder" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.speaker" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.program" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.track" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.talk" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.workshop" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.roomfolder" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.room" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.attendeefolder" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.attendee" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.conferencesbreak" meta_type="Dexterity FTI" />
+</object>

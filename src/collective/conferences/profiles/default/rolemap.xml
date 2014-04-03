@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <permission name="collective.conferences: Add talk" acquire="True">
+      <role name="Owner"/>
+      <role name="Manager"/>
+      <role name="Member"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="collective.conferences: Modify track" acquire="True">
+      <role name="Manager"/>
+      <role name="Reviewer"/>
+    </permission>
+    <permission name="collective.conferences: Add attendee" acquire="True">
+      <role name="Owner"/>
+      <role name="Manager"/>
+      <role name="Member"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="collective.conferences: Modify talktime" acquire="True">
+      <role name="Manager" />
+    </permission>
+  </permissions>
+  </rolemap>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_catalog">
+    <index name="talkspeaker" meta_type="KeywordIndex">
+        <indexed_attr value="speaker"/>
+    </index>
+    <column value="speaker"/>
+</object>

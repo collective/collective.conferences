@@ -19,7 +19,7 @@
         name="default"
         title="collective.conferences"
         directory="profiles/default"
-        description="Installs the Collective Conferences Management package"
+        description="Installs the Collective Conference Management package"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
     <!-- -*- extra stuff goes here -*- -->

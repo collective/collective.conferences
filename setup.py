@@ -54,7 +54,6 @@ setup(name='collective.conferences',
               'plone.app.referenceablebehavior',
               'plone.formwidget.contenttree>1.0',
               'plone.app.dexterity [grok, relations]',
-'
               ],
           'plone3': ['collective.autopermission'],
           },

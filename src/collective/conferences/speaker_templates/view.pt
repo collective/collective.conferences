@@ -42,7 +42,7 @@
 
         <p>The Speaker has submittet the following talks: <span tal:content="view/talks_of_speaker" /></p>
 
-        <p>The Speaker has submittet the following talks 2: <span tal:content="view/talks_of_speaker2" /></p>
+
         
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

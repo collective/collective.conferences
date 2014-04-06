@@ -24,4 +24,8 @@
         />
     <!-- -*- extra stuff goes here -*- -->
 
+    <browser:resourceDirectory
+       name="collective.conferences"
+       directory="static" />
+
 </configure>

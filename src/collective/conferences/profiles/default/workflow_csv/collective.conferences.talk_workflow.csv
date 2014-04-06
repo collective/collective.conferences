@@ -1,5 +1,5 @@
 "[Workflow]"
-"Id:","collective.conference.talk_workflow"
+"Id:","collective.conferences.talk_workflow"
 "Title:","Conference talk workflow"
 "Description:","Allows members to submit talk proposals for review"
 "Initial state:","draft"

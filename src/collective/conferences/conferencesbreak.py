@@ -33,7 +33,7 @@ from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 # from collective.conferences.track import setdates
 
 
-class IConferencesbreak(form.Schema):
+class IConferencebreak(form.Schema):
 
     """A conferences break. Breaks (e.g. for lunch) are managed inside tracks of the Program.
     """

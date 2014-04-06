@@ -44,6 +44,10 @@ setup(name='collective.conferences',
           'plone.formwidget.namedfile',
           'collective.wtf',
           'collective.dexteritytextindexer',
+          'plone.app.referenceablebehavior',
+          'plone.formwidget.contenttree>1.0',
+          'plone.app.dexterity [grok, relations]',
+          'plone.app.relationfield',
       ],
       extras_require={
           'test':  ['plone.app.testing', 'plone.mocktestcase'],
@@ -51,10 +55,7 @@ setup(name='collective.conferences',
           # not yet have releases with the changes we need.
           'datagrid': [
               'collective.z3cform.datagridfield>0.5',
-              'plone.app.referenceablebehavior',
-              'plone.formwidget.contenttree>1.0',
-              'plone.app.dexterity [grok, relations]',
-              'plone.app.relationfield',
+
               ],
           'plone3': ['collective.autopermission'],
           },

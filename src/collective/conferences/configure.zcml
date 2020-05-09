@@ -1,31 +1,51 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
-    xmlns:grok="http://namespaces.zope.org/grok"
-    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="collective.conferences">
+    
+    
+    <i18n:registerTranslations directory="locales" />
 
     <!-- Include configuration for dependencies listed in setup.py -->
     <includeDependencies package="." />
-
-
+    <include package=".browser" />
     <include file="permissions.zcml" />
+    <include file="upgrades.zcml" />
     
-    <!-- Grok the package to initialise schema interfaces and content classes -->
-    <grok:grok package="." />
     
-
     <genericsetup:registerProfile
         name="default"
         title="collective.conferences"
         directory="profiles/default"
-        description="Installs the Collective Conference Management package"
+        description="Installs the collective.conferences add-on."
         provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.post_install"
         />
-    <!-- -*- extra stuff goes here -*- -->
 
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="collective.conferences (uninstall)"
+        directory="profiles/uninstall"
+        description="Uninstalls the collective.conferences add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler=".setuphandlers.uninstall"
+        />
+      
+  
+    <utility
+        factory=".setuphandlers.HiddenProfiles"
+        name="collective.conferences-hiddenprofiles"
+        />
+    
+
+    <!-- -*- extra stuff goes here -*- -->
+    
+    
     <browser:resourceDirectory
-       name="collective.conferences"
-       directory="static" />
+        name="collective.conferences"
+        directory="resources" />
 
 </configure>

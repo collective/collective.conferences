@@ -3,14 +3,12 @@
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Speaker of  the Conference</property>
+ <property name="title" i18n:translate="">Conference Speakers</property>
  <property name="description" i18n:translate="">The speaker of the conference</property>
- <property name="content_icon">++resource++collective.conferences/group.gif</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-     <element value="collective.conferences.speaker" />
  </property>
  
  <!-- schema interface -->
@@ -27,7 +25,6 @@
  <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <!-- IReferenceable might not be available, but it will not break. -->
-     <element value="plone.app.referenceablebehavior.referenceable.IReferenceable" />
  </property>
 
  <!-- View information -->

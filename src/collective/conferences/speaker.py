@@ -1,16 +1,17 @@
-import re
+# -*- coding: utf-8 -*-
+from collective.conferences import _
 from zope.interface import Invalid
+from plone.app.textfield import RichText
+from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
 
-from plone.app.textfield import RichText
-from plone.namedfile.field import NamedBlobImage
+import re
 
-from zope.app.container.interfaces import IObjectAddedEvent
 from Products.CMFCore.utils import getToolByName
 
-from collective.conferences import _
+
 
 
 checkEmail = re.compile(
@@ -99,7 +100,6 @@ class ISpeaker(model.Schema):
             required=False,
         )
 
-@grok.subscribe(ISpeaker, IObjectAddedEvent)
 def notifyUser(speaker, event):
     acl_users = getToolByName(speaker, 'acl_users')
     mail_host = getToolByName(speaker, 'MailHost')
@@ -120,9 +120,7 @@ def notifyUser(speaker, event):
         if email is not None:
             mail_host.secureSend(message, email, sender, subject)
 
-class SpiekerView(BrowserView):
-    grok.context(ISpeaker)
-    grok.require('zope2.View')
+class SpeakerView(BrowserView):
 
     def talks_of_speaker(self):
         from collective.conferences.talk import ITalk

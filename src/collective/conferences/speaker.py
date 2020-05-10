@@ -1,10 +1,8 @@
 import re
 from zope.interface import Invalid
-
-from five import grok
+from plone.supermodel import model
+from Products.Five import BrowserView
 from zope import schema
-
-from plone.directives import form, dexterity
 
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
@@ -23,7 +21,7 @@ def validateEmail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
-class ISpeaker(form.Schema):
+class ISpeaker(model.Schema):
     """A conference speaker or leader of a workshop. Speaker can be added anywhere.
     """
     
@@ -122,7 +120,7 @@ def notifyUser(speaker, event):
         if email is not None:
             mail_host.secureSend(message, email, sender, subject)
 
-class View(grok.View):
+class SpiekerView(BrowserView):
     grok.context(ISpeaker)
     grok.require('zope2.View')
 

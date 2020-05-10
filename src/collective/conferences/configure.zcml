@@ -48,4 +48,13 @@
         name="collective.conferences"
         directory="resources" />
 
+
+    <browser:page
+        name="view"
+        for="collective.conferences.speakerfolder.ISpeakerfolder"
+        class="collective.conferences.speakerfolder.SpeakerfolderView"
+        template="speakerfolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
 </configure>

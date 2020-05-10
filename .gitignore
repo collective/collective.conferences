@@ -15,10 +15,13 @@
 /.Python
 /include
 /lib
+/lib64
 /.project
 /.pydevproject
 /.mr.developer.cfg
 /src/plone*
+/.idea
+.directory
 *.mo
 docs/Makefile
 docs/make.bat

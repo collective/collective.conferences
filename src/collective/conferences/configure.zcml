@@ -73,6 +73,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.room.IRoom"
+        class="collective.conferences.room.RoomView"
+        template="room_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

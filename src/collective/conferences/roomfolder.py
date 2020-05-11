@@ -1,31 +1,14 @@
-from five import grok
-from zope import schema
-
-from zope.component import createObject
-from zope.event import notify
-from zope.lifecycleevent import ObjectCreatedEvent
-from zope.filerepresentation.interfaces import IFileFactory
-
-from DateTime import DateTime
-from plone.indexer import indexer
-
-from plone.directives import form
-from plone.app.textfield import RichText
-
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-from z3c.form.browser.textlines import TextLinesFieldWidget
-
+# -*- coding: utf-8 -*-
 from collective.conferences import _
-
-from Acquisition import aq_inner
-from Products.CMFCore.utils import getToolByName
-
-from plone.directives import form, dexterity
+from plone.supermodel import model
+from Products.Five import BrowserView
+from plone.app.textfield import RichText
+from plone.supermodel.directives import primary
+from zope import schema
 from zope.security import checkPermission
 
-from collective.conferences.room import IRoom
 
-class IRoomfolder(form.Schema):
+class IRoomfolder(model.Schema):
     """A folder for the rooms of a conference.
     """
 
@@ -39,16 +22,14 @@ class IRoomfolder(form.Schema):
         )
     
     
-    form.primary('details')
+    primary('details')
     details = RichText(
             title=_(u"Information about the Conference Rooms"),
             required=False
         )
 
     
-class View(dexterity.DisplayForm):
-    grok.context(IRoomfolder)
-    grok.require('zope2.View')
+class RoomfolderView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)   

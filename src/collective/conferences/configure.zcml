@@ -57,4 +57,36 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.speaker.ISpeaker"
+        class="collective.conferences.speaker.SpeakerView"
+        template="speaker_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.roomfolder.IRoomfolder"
+        class="collective.conferences.roomfolder.RoomfolderView"
+        template="roomfolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.room.IRoom"
+        class="collective.conferences.room.RoomView"
+        template="room_templates/view.pt"
+        permission="zope2.View"
+        />
+
+
+    <subscriber
+        for="collective.conferences.speaker.ISpeaker
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler="collective.conferences.speaker.notifyUser"
+        />
+
+
 </configure>

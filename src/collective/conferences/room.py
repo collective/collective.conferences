@@ -1,18 +1,15 @@
-from five import grok
+# -*- coding: utf-8 -*-
+from collective.conferences import _
+from plone.supermodel import model
+from Products.Five import BrowserView
 from zope import schema
-
-from plone.directives import form, dexterity
-
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
-
-from zope.app.container.interfaces import IObjectAddedEvent
-from Products.CMFCore.utils import getToolByName
-
-from collective.conferences import _
+from plone.supermodel.directives import primary
 
 
-class IRoom(form.Schema):
+
+class IRoom(model.Schema):
     """A conference room.
     """
     
@@ -32,7 +29,7 @@ class IRoom(form.Schema):
             required=False,
         )
     
-    form.primary ('details')
+    primary ('details')
     details = RichText(
              title=_(u"A full description of the room, it's location and the way to get there"),
              required=True,                          
@@ -44,9 +41,6 @@ class IRoom(form.Schema):
              required=False,
         )
 
-@grok.subscribe(IRoom, IObjectAddedEvent)
 
-
-class View(grok.View):
-    grok.context(IRoom)
-    grok.require('zope2.View')
+class RoomView(BrowserView):
+    pass

@@ -65,6 +65,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.roomfolder.IRoomfolder"
+        class="collective.conferences.roomfolder.RoomfolderView"
+        template="roomfolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

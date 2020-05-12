@@ -81,11 +81,33 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.track.ITrack"
+        class="collective.conferences.track.TrackView"
+        template="track_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.attendeefolder.IAttendeefolder"
+        class="collective.conferences.attendeefolder.AttendeefolderView"
+        template="attendeefolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
         handler="collective.conferences.speaker.notifyUser"
+        />
+
+    <subscriber
+        for="collective.conferences.track.ITrack
+              zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler="collective.conferences.track.trackmodified"
         />
 
 

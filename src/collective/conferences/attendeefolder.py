@@ -1,31 +1,16 @@
-from five import grok
+# -*- coding: utf-8 -*-
+from collective.conferences import _
+from plone.supermodel import model
+from Products.Five import BrowserView
+from plone.supermodel.directives import primary
 from zope import schema
 
-from zope.component import createObject
-from zope.event import notify
-from zope.lifecycleevent import ObjectCreatedEvent
-from zope.filerepresentation.interfaces import IFileFactory
-
-from DateTime import DateTime
-from plone.indexer import indexer
-
-from plone.directives import form
 from plone.app.textfield import RichText
-
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-from z3c.form.browser.textlines import TextLinesFieldWidget
-
-from collective.conferences import _
-
-from Acquisition import aq_inner
-from Products.CMFCore.utils import getToolByName
-
-from plone.directives import form, dexterity
 from zope.security import checkPermission
 
-from collective.conferences.attendee import IAttendee
+# from collective.conferences.attendee import IAttendee
 
-class IAttendeefolder(form.Schema):
+class IAttendeefolder(model.Schema):
     """A attendee folder. The attendee of the conference are created in the folder.
     """
 
@@ -39,18 +24,16 @@ class IAttendeefolder(form.Schema):
         )
     
 
-    form.primary('moreinformation')
+    primary('moreinformation')
     moreinformation = RichText(
             title=_(u"Information about registration process"),
             required=False
         )
         
-    
+
         
     
-class View(dexterity.DisplayForm):
-    grok.context(IAttendeefolder)
-    grok.require('zope2.View')
+class AttendeefolderView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)   

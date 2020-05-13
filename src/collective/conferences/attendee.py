@@ -1,20 +1,13 @@
-from five import grok
-from zope import schema
-
-from plone.directives import form, dexterity
-
-from plone.app.textfield import RichText
-from zope.schema.interfaces import Bool
-
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from z3c.form.browser.radio import RadioFieldWidget
-
-from zope.app.container.interfaces import IObjectAddedEvent
-from Products.CMFCore.utils import getToolByName
-
+# -*- coding: utf-8 -*-
 from collective.conferences import _
+from zope import schema
+from plone.supermodel import model
+from Products.Five import BrowserView
+from collective.conferences.common import yesnochoice
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-class IAttendee(form.Schema):
+
+class IAttendee(model.Schema):
     """A conference attendee. Attendees can be added anywhere.
     """
     
@@ -64,11 +57,12 @@ class IAttendee(form.Schema):
             title=_(u"Organisation"),
             required=False,
         )
-    
-    form.widget(registrationpayed=RadioFieldWidget)
-    registrationpayed = schema.Bool(
-            title=_(u"Payment of the Registration Fee"),
-            description=_(u"Have you already paid the registration fee?"),
+
+    registrationpayed = schema.Choice(
+        title=_(u"Payment of the Registration Fee"),
+        description=_(u"Have you already paid the registration fee?"),
+        vocabulary=yesnochoice,
+        required=True,
         )
 
     paymentway = schema.Choice(
@@ -85,9 +79,5 @@ class IAttendee(form.Schema):
         )
             
 
-@grok.subscribe(IAttendee, IObjectAddedEvent)
-
-
-class View(grok.View):
-    grok.context(IAttendee)
-    grok.require('zope2.View')
+class AttendeeView(BrowserView):
+    pass

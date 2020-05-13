@@ -97,6 +97,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.attendee.IAttendee"
+        class="collective.conferences.attendee.AttendeeView"
+        template="attendee_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

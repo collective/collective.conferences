@@ -28,9 +28,11 @@
         
         
         <div tal:replace="structure provider:plone.abovecontentbody" />
+        <div tal:condition="context/details">
         <h4>Information about the Conference Rooms</h4>
 
         <div tal:content="structure view/w/details/render" />
+        </div>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
   

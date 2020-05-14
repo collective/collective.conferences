@@ -105,6 +105,22 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.program.IProgram"
+        class="collective.conferences.program.ProgramView"
+        template="program_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="programfullview"
+        for="collective.conferences.program.IProgram"
+        class="collective.conferences.program.FullprogramView"
+        template="program_templates/programfullview.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

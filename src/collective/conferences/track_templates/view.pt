@@ -35,8 +35,10 @@
 
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
+        <div tal:condition="context/details">
 
         <div tal:content="structure view/w/details/render" />
+        </div>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
         <table border="0" width="100%">

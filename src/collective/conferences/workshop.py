@@ -7,7 +7,8 @@ from plone.supermodel.directives import primary
 from Acquisition import aq_inner, aq_parent
 from plone.autoform.directives import write_permission, read_permission
 from plone.app.textfield import RichText
-
+from zope.schema.interfaces import IContextSourceBinder
+from zope.interface import directlyProvides
 from zope.security import checkPermission
 import datetime
 
@@ -31,7 +32,6 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from collective.conferences.callforpaper import ICallforpaper
 
 
-# @grok.provider(schema.interfaces.IContextSourceBinder)
 def vocabCfPTracks(context):
     # For add forms
 
@@ -50,6 +50,8 @@ def vocabCfPTracks(context):
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
+
+directlyProvides(vocabCfPTracks, IContextSourceBinder)
 
 
 # class StartBeforeEnd(Invalid):

@@ -67,12 +67,7 @@
           <td><h4><a tal:attributes="href item/getId"
        tal:content="item/Title" /></h4></td>
        <td tal:content="item/Description">Description</td>
-       
-        <td> <span tal:condition="item/room">
-            <span tal:content="item/room/to_object/Title | nothing" />
-            </span>
-        </td>
-        
+
           
       <td><tal:block condition="item/start">
            <span tal:content="python:item.start.strftime('%d. %b %Y %H:%M')" />

@@ -5,6 +5,7 @@ from plone.supermodel import model
 from plone.app.textfield import RichText
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
+from plone import api
 
 from zope.component import createObject
 from zope.event import notify
@@ -60,7 +61,7 @@ class CallforpaperView(BrowserView):
         """
 
         context = aq_inner(self.context)
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool(name='portal_catalog')
 
         return catalog(object_provides=ITalk.__identifier__,
                        path='/'.join(context.getPhysicalPath()),

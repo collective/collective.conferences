@@ -1,44 +1,22 @@
-import datetime
-
-from zope.interface import invariant, Invalid
-
-
-from five import grok
-from zope import schema
-
-from Acquisition import aq_inner, aq_parent
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary
-
-from zope.security import checkPermission
-
-from plone.directives import form, dexterity
-from plone.app.textfield import RichText
-
-from z3c.relationfield.schema import RelationChoice
-from plone.formwidget.contenttree import ObjPathSourceBinder
-
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-
+# -*- coding: utf-8 -*-
 from collective.conferences import _
-
+from zope import schema
+from plone.supermodel import model
+from Products.Five import BrowserView
+from plone.supermodel.directives import primary
+from Acquisition import aq_inner, aq_parent
+from plone.autoform.directives import write_permission, read_permission
+from plone.app.textfield import RichText
+from zope.schema.interfaces import IContextSourceBinder
+from zope.interface import directlyProvides
+from zope.security import checkPermission
+from plone.app.textfield import RichText
 from collective.conferences.speaker import ISpeaker
 from collective.conferences.track import ITrack
-
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.schema.interfaces import Bool
-from Products.CMFCore.utils import getToolByName
-from zope.app.container.interfaces import IObjectAddedEvent
-from zope.lifecycleevent.interfaces import IObjectModifiedEvent
-
-
-from collective import dexteritytextindexer
-
 from Acquisition import aq_inner, aq_parent, aq_get
-from zope.lifecycleevent.interfaces import IObjectMovedEvent
 from collective.conferences.callforpaper import ICallforpaper
-from plone.indexer import indexer
 
 #from collective.conferences.track import setdates
 
@@ -47,7 +25,6 @@ from plone.indexer import indexer
 #   __doc__ = _(u"The start or end date is invalid")
 
 
-@grok.provider(schema.interfaces.IContextSourceBinder)
 def vocabCfPTracks(context):
     # For add forms
 
@@ -67,8 +44,10 @@ def vocabCfPTracks(context):
 
     return SimpleVocabulary(terms)
 
+directlyProvides(vocabCfPTracks, IContextSourceBinder)
 
-class ITalk(form.Schema):
+
+class ITalk(model.Schema):
     """A conference talk. Talks are managed inside tracks of the Program.
     """
     
@@ -90,52 +69,52 @@ class ITalk(form.Schema):
         )
 
 
-    form.primary('details')
+    primary('details')
     details = RichText(
             title=_(u"Talk details"),
             required=True
         )
 
     # use an autocomplete selection widget instead of the default content tree
-    form.widget(speaker=AutocompleteFieldWidget)
-    speaker = RelationChoice(
-            title=_(u"Presenter"),
-            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-            required=False,
-        )
-    form.widget(speaker=AutocompleteFieldWidget)
-    speaker2 = RelationChoice(
-            title=_(u"Co-Presenter"),
-            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-            required=False,
-        )
+#    form.widget(speaker=AutocompleteFieldWidget)
+#    speaker = RelationChoice(
+#            title=_(u"Presenter"),
+#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
+#            required=False,
+#        )
+#    form.widget(speaker=AutocompleteFieldWidget)
+#    speaker2 = RelationChoice(
+#            title=_(u"Co-Presenter"),
+#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
+#            required=False,
+#        )
  
-    form.widget(speaker=AutocompleteFieldWidget)
-    speaker3 = RelationChoice(
-            title=_(u"Co-Presenter"),
-            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-            required=False,
-        )
+#    form.widget(speaker=AutocompleteFieldWidget)
+#    speaker3 = RelationChoice(
+#            title=_(u"Co-Presenter"),
+#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
+#            required=False,
+#        )
  
 
-    dexteritytextindexer.searchable('call_for_paper_tracks')
-    call_for_paper_tracks = schema.List(
-        title=_(u"Choose the track for your talk"),
-        value_type=schema.Choice(source=vocabCfPTracks),
-        required=True,
-    )
+#    dexteritytextindexer.searchable('call_for_paper_tracks')
+#    call_for_paper_tracks = schema.List(
+#        title=_(u"Choose the track for your talk"),
+#        value_type=schema.Choice(source=vocabCfPTracks),
+#        required=True,
+#    )
 
  
  
-    form.widget(track=AutocompleteFieldWidget)
-    track = RelationChoice(
-            title=_(u"Track"),
-            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
-            required=False,
-        )
+#    form.widget(track=AutocompleteFieldWidget)
+#    track = RelationChoice(
+#            title=_(u"Track"),
+#            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
+#            required=False,
+#        )
 
 
-    dexterity.write_permission(startitem='collective.conferences.ModifyTalktime')
+    write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
             title=_(u"Startdate"),
             description =_(u"Start date"),
@@ -143,7 +122,7 @@ class ITalk(form.Schema):
         )
     
 
-    dexterity.write_permission(enditem='collective.conferences.ModifyTalktime')
+    write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
             title=_(u"Enddate"),
             description =_(u"End date"),
@@ -156,7 +135,7 @@ class ITalk(form.Schema):
             vocabulary=length,
             required=True,
         )
-    dexterity.write_permission(order='collective.conferences.ModifyTrack')
+    write_permission(order='collective.conferences.ModifyTrack')
     order=schema.Int(
            title=_(u"Orderintrack"),               
            description=_(u"Order in the track: write in an Integer from 1 to 12"),
@@ -214,25 +193,25 @@ class ITalk(form.Schema):
             required=False,                     
         )
     
-    dexterity.read_permission(reviewNotes='cmf.ReviewPortalContent')
-    dexterity.write_permission(reviewNotes='cmf.ReviewPortalContent')
+    read_permission(reviewNotes='cmf.ReviewPortalContent')
+    write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
             title=u"Review notes",
             required=False,
         )
 
-@indexer(ITalk)
-def speakerIndexer(obj):
-    if obj.speaker is None:
-        return None
-    return obj.speaker
-grok.global_adapter(speakerIndexer, name="Subject")
+# @indexer(ITalk)
+# def speakerIndexer(obj):
+#     if obj.speaker is None:
+#        return None
+#    return obj.speaker
+# grok.global_adapter(speakerIndexer, name="Subject")
 
 
-@grok.subscribe(ITalk, IObjectMovedEvent)
-def removeCFP_reference(talk, event):
-    if not ICallforpaper.providedBy(event.newParent):
-        talk.call_for_paper_tracks = None
+# @grok.subscribe(ITalk, IObjectMovedEvent)
+# def removeCFP_reference(talk, event):
+#    if not ICallforpaper.providedBy(event.newParent):
+#        talk.call_for_paper_tracks = None
 
     
 #@grok.subscribe(ITalk, IObjectAddedEvent)
@@ -251,9 +230,7 @@ def removeCFP_reference(talk, event):
 #                raise StartBeforeEnd(_(
 #                    u"The start date must be before the end date."))
 
-class View(dexterity.DisplayForm):
-    grok.context(ITalk)
-    grok.require('zope2.View')
+class TalkView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)

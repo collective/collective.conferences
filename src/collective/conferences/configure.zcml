@@ -145,6 +145,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.talk.ITalk"
+        class="collective.conferences.talk.TalkView"
+        template="talk_templates/view.pt"
+        permission="zope2.View"
+        />
+
     <subscriber
         for="collective.conferences.speaker.ISpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

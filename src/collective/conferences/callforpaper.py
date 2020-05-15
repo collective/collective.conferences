@@ -1,28 +1,25 @@
-from five import grok
+# -*- coding: utf-8 -*-
+from collective.conferences import _
 from zope import schema
+from plone.supermodel import model
+from plone.app.textfield import RichText
+from plone.supermodel.directives import primary
+from Products.Five import BrowserView
 
 from zope.component import createObject
 from zope.event import notify
 from zope.lifecycleevent import ObjectCreatedEvent
 from zope.filerepresentation.interfaces import IFileFactory
 
-from DateTime import DateTime
-from plone.indexer import indexer
 
-from plone.directives import form
-from plone.app.textfield import RichText
 
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-from z3c.form.browser.textlines import TextLinesFieldWidget
-
-from collective.conferences import _
 
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 
 
 
-class ICallforpaper(form.Schema):
+class ICallforpaper(model.Schema):
     """A call for paper for a conferences.
     A call for paper can contain incomming talks.
     """
@@ -37,7 +34,7 @@ class ICallforpaper(form.Schema):
         )
     
     
-    form.primary('details')
+    primary('details')
     details = RichText(
             title=_(u"Details"),
             description=_(u"Details about the program"),
@@ -56,9 +53,7 @@ class ICallforpaper(form.Schema):
 
 # Views
 
-class View(grok.View):
-    grok.context(ICallforpaper)
-    grok.require('zope2.View')
+class CallforpaperView(BrowserView):
 
     def talks(self):
         """Return a catalog search result of talks to show
@@ -74,14 +69,14 @@ class View(grok.View):
 
 # File representation
 
-class CallforpaperFileFactory(grok.Adapter):
-    """Custom file factory for programs, which always creates a Track.
-    """
+# class CallforpaperFileFactory(grok.Adapter):
+#    """Custom file factory for programs, which always creates a Track.
+#    """
 
-    grok.implements(IFileFactory)
-    grok.context(ICallforpaper)
+#    grok.implements(IFileFactory)
+#    grok.context(ICallforpaper)
 
-    def __call__(self, name, contentType, data):
-        talk = createObject('collective.conferences.talk')
-        notify(ObjectCreatedEvent(talk))
-        return talk
+#    def __call__(self, name, contentType, data):
+#        talk = createObject('collective.conferences.talk')
+#        notify(ObjectCreatedEvent(talk))
+#        return talk

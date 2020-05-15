@@ -121,6 +121,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.callforpaper.ICallforpaper"
+        class="collective.conferences.callforpaper.CallforpaperView"
+        template="callforpaper_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

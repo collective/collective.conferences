@@ -4,7 +4,7 @@ from zope import schema
 from plone.supermodel import model
 from Products.Five import BrowserView
 from plone.supermodel.directives import primary
-
+from plone import api
 import datetime
 
 from zope.interface import invariant, Invalid
@@ -131,7 +131,7 @@ class TrackView(BrowserView):
         return checkPermission('cmf.RequestReview', self.context)
 
     def talks(self):
-        catalog = getToolByName(self.context, "portal_catalog")
+        catalog = api.portal.get_tool(name='portal_catalog')
         talks = catalog.searchResults(
             path=dict(query='/'.join(self.context.getPhysicalPath()),
             depth=1),

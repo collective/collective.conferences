@@ -129,6 +129,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.conferencesbreak.IConferencebreak"
+        class="collective.conferences.conferencesbreak.ConferencebreakView"
+        template="conferencesbreak_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

@@ -1,45 +1,22 @@
-import datetime
-
-from zope.interface import invariant, Invalid
-
-
-from five import grok
-from zope import schema
-
-from Acquisition import aq_inner, aq_parent
-from zope.schema.interfaces import IContextSourceBinder
-
-from zope.security import checkPermission
-
-from plone.directives import form, dexterity
-from plone.app.textfield import RichText
-
-from z3c.relationfield.schema import RelationChoice
-from plone.formwidget.contenttree import ObjPathSourceBinder
-
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-
+# -*- coding: utf-8 -*-
 from collective.conferences import _
-
-
+from plone.supermodel import model
+from zope import schema
+from plone.app.textfield import RichText
+from plone.supermodel.directives import primary
+from plone.autoform.directives import write_permission
+from Products.Five import BrowserView
+from zope.security import checkPermission
 from collective.conferences.track import ITrack
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 
-from Products.CMFCore.utils import getToolByName
-from zope.app.container.interfaces import IObjectAddedEvent
-from zope.lifecycleevent.interfaces import IObjectModifiedEvent
 
-# from collective.conferences.track import setdates
-
-
-class IConferencebreak(form.Schema):
+class IConferencebreak(model.Schema):
 
     """A conferences break. Breaks (e.g. for lunch) are managed inside tracks of the Program.
     """
-    
-    
-        
+
     length = SimpleVocabulary(
        [SimpleTerm(value=u'15', title=_(u'15 minutes')),
         SimpleTerm(value=u'30', title=_(u'30 minutes')),
@@ -58,7 +35,7 @@ class IConferencebreak(form.Schema):
             required=False
         )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
             title=_(u"Conference break details"),
             required=False
@@ -73,7 +50,7 @@ class IConferencebreak(form.Schema):
 #        )
 
 
-    dexterity.write_permission(startitem='collective.conferences.ModifyTalktime')
+    write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
             title=_(u"Startdate"),
             description =_(u"Start date"),
@@ -81,7 +58,7 @@ class IConferencebreak(form.Schema):
         )
     
 
-    dexterity.write_permission(enditem='collective.conferences.ModifyTalktime')
+    write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
             title=_(u"Enddate"),
             description =_(u"End date"),
@@ -107,9 +84,7 @@ class IConferencebreak(form.Schema):
     
 
 
-class View(dexterity.DisplayForm):
-    grok.context(IConferencebreak)
-    grok.require('zope2.View')
+class ConferencebreakView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)

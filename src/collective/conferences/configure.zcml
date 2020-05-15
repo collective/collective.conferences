@@ -137,6 +137,13 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.workshop.IWorkshop"
+        class="collective.conferences.workshop.WorkshopView"
+        template="workshop_templates/view.pt"
+        permission="zope2.View"
+        />
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

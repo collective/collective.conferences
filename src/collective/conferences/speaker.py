@@ -6,6 +6,7 @@ from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
+from plone import api
 
 import re
 
@@ -125,7 +126,7 @@ class SpeakerView(BrowserView):
     def talks_of_speaker(self):
         from collective.conferences.talk import ITalk
         context = self.context
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool(name='portal_catalog')
 
         # execute a search
         results = catalog(speakertalk='Talk 1')
@@ -141,10 +142,11 @@ class SpeakerView(BrowserView):
     def talks_of_speaker2(self):
         from collective.conferences.talk import ITalk
         context = self.context
-        catalog = getToolByName(context, 'portal_catalog')
+        catalog = api.portal.get_tool(name='portal_catalog')
 
         # execute a search
-        results = catalog(portal_type="collective.conferences.talk", review_state="published")
+        results = catalog(portal_type="collective.conferences.talk",
+                          review_state="published")
         # examine the results
         for brain in results:
             start = brain.start

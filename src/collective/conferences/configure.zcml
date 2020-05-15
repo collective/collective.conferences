@@ -81,11 +81,73 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.track.ITrack"
+        class="collective.conferences.track.TrackView"
+        template="track_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.attendeefolder.IAttendeefolder"
+        class="collective.conferences.attendeefolder.AttendeefolderView"
+        template="attendeefolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.attendee.IAttendee"
+        class="collective.conferences.attendee.AttendeeView"
+        template="attendee_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.program.IProgram"
+        class="collective.conferences.program.ProgramView"
+        template="program_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="programfullview"
+        for="collective.conferences.program.IProgram"
+        class="collective.conferences.program.FullprogramView"
+        template="program_templates/programfullview.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.callforpaper.ICallforpaper"
+        class="collective.conferences.callforpaper.CallforpaperView"
+        template="callforpaper_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.conferencesbreak.IConferencebreak"
+        class="collective.conferences.conferencesbreak.ConferencebreakView"
+        template="conferencesbreak_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
         handler="collective.conferences.speaker.notifyUser"
+        />
+
+    <subscriber
+        for="collective.conferences.track.ITrack
+              zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler="collective.conferences.track.trackmodified"
         />
 
 

@@ -1,39 +1,29 @@
+# -*- coding: utf-8 -*-
+from collective.conferences import _
+from zope import schema
+from plone.supermodel import model
+from Products.Five import BrowserView
+from plone.supermodel.directives import primary
+from plone import api
 import datetime
-
-from zope.interface import invariant, Invalid
 
 from zope.interface import invariant, Invalid
 from DateTime import DateTime
 from plone.indexer import indexer
-from zope.component import createObject
 
-from five import grok
-from zope import schema
 
-from Acquisition import aq_inner, aq_parent, aq_get
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary
 
 from zope.security import checkPermission
 
-from plone.directives import form, dexterity
 from plone.app.textfield import RichText
 
 from z3c.relationfield.schema import RelationChoice
-from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
-
-from collective.conferences import _
 
 from Products.CMFCore.utils import getToolByName
 
 from collective.conferences.room import IRoom
 
-from zope.intid.interfaces import IIntIds
-from zc.relation.interfaces import ICatalog
-from zope import component
-from zope.app.container.interfaces import IContainerModifiedEvent
 
 
 
@@ -47,7 +37,7 @@ class StartBeforeEnd(Invalid):
 #    __doc__ = _(u"The start of the track could not before the conference program.")
 
 
-class ITrack(form.Schema):
+class ITrack(model.Schema):
     """A conference track. Tracks are managed inside Programs.
     """
 
@@ -60,7 +50,7 @@ class ITrack(form.Schema):
             title=_(u"Track summary"),
         )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
             title=_(u"Track details"),
             required=False
@@ -79,12 +69,12 @@ class ITrack(form.Schema):
             required=False,
         )
     # use an autocomplete selection widget instead of the default content tree
-    form.widget(room=AutocompleteFieldWidget)
-    room = RelationChoice(
-            title=_(u"Room"),
-            source=ObjPathSourceBinder(object_provides=IRoom.__identifier__),
-            required=False,
-        )
+#    form.widget(room=AutocompleteFieldWidget)
+#    room = RelationChoice(
+#            title=_(u"Room"),
+#            source=ObjPathSourceBinder(object_provides=IRoom.__identifier__),
+#            required=False,
+#        )
 
 
 
@@ -112,10 +102,10 @@ class ITrack(form.Schema):
 #                raise StartBeforeConferenceProgram(_(
 #                    u"The start date could not before the begin of the conference program."))
 
-@indexer(ITrack)
-def roomsIndexer(obj):
-    return obj.rooms
-grok.global_adapter(roomsIndexer, name="Subject")
+# @indexer(ITrack)
+# def roomsInde xer(obj):
+#    return obj.rooms
+#grok.global_adapter(roomsIndexer, name="Subject")
 
 #def setdates(item):
 #    if not item.track:
@@ -131,20 +121,17 @@ grok.global_adapter(roomsIndexer, name="Subject")
 #        t.enditem=t.startitem + datetime.timedelta(minutes=int(t.length))
 #        start = t.enditem
 
-        
-@grok.subscribe(ITrack, IContainerModifiedEvent)
-def trackmodified(track, event):
-    print ("track modified")
 
-class View(dexterity.DisplayForm):
-    grok.context(ITrack)
-    grok.require('zope2.View')
+def trackmodified(track, event):
+   print ("track modified")
+
+class TrackView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
 
     def talks(self):
-        catalog = getToolByName(self.context, "portal_catalog")
+        catalog = api.portal.get_tool(name='portal_catalog')
         talks = catalog.searchResults(
             path=dict(query='/'.join(self.context.getPhysicalPath()),
             depth=1),

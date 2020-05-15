@@ -9,6 +9,7 @@ from plone.autoform.directives import write_permission, read_permission
 from plone.app.textfield import RichText
 from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
+from collective import dexteritytextindexer
 from zope.security import checkPermission
 import datetime
 
@@ -102,12 +103,12 @@ class IWorkshop(model.Schema):
 #            )
 
 
-#    dexteritytextindexer.searchable('call_for_paper_tracks')
-#    call_for_paper_tracks = schema.List(
-#        title=_(u"Choose the track for your workshop"),
-#        value_type=schema.Choice(source=vocabCfPTracks),
-#        required=True,
-#    )
+    dexteritytextindexer.searchable('call_for_paper_tracks')
+    call_for_paper_tracks = schema.List(
+        title=_(u"Choose the track for your workshop"),
+        value_type=schema.Choice(source=vocabCfPTracks),
+        required=True,
+    )
 
 
         

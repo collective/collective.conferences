@@ -16,6 +16,7 @@ from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from Acquisition import aq_inner, aq_parent, aq_get
+from collective import dexteritytextindexer
 from collective.conferences.callforpaper import ICallforpaper
 
 #from collective.conferences.track import setdates
@@ -97,12 +98,12 @@ class ITalk(model.Schema):
 #        )
  
 
-#    dexteritytextindexer.searchable('call_for_paper_tracks')
-#    call_for_paper_tracks = schema.List(
-#        title=_(u"Choose the track for your talk"),
-#        value_type=schema.Choice(source=vocabCfPTracks),
-#        required=True,
-#    )
+    dexteritytextindexer.searchable('call_for_paper_tracks')
+    call_for_paper_tracks = schema.List(
+        title=_(u"Choose the track for your talk"),
+        value_type=schema.Choice(source=vocabCfPTracks),
+        required=True,
+    )
 
  
  

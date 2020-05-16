@@ -1,25 +1,26 @@
+# -*- coding: utf-8 -*-
+from collective.conferences import _
+from zope import schema
+from plone.supermodel import model
+from Products.Five import BrowserView
+from plone.supermodel.directives import primary
+from Acquisition import aq_inner, aq_parent
+from plone.autoform.directives import write_permission, read_permission
+from plone.app.textfield import RichText
+from zope.schema.interfaces import IContextSourceBinder
+from zope.interface import directlyProvides
+from collective import dexteritytextindexer
+from zope.security import checkPermission
 import datetime
 
 from zope.interface import invariant, Invalid
 
-from five import grok
-from zope import schema
-
-from Acquisition import aq_inner, aq_parent
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary
-
-from zope.security import checkPermission
-
-from plone.directives import form, dexterity
-from plone.app.textfield import RichText
 
 from z3c.relationfield.schema import RelationChoice
-from plone.formwidget.contenttree import ObjPathSourceBinder
+# from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from plone.formwidget.autocomplete import AutocompleteFieldWidget
 
-from collective.conferences import _
+
 
 from collective.conferences.speaker import ISpeaker
 from collective.conferences.track import ITrack
@@ -27,15 +28,11 @@ from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-#from collective.conferences.track import setdates
-from zope.app.container.interfaces import IObjectAddedEvent
-from zope.lifecycleevent.interfaces import IObjectModifiedEvent
-from collective import dexteritytextindexer
-from zope.lifecycleevent.interfaces import IObjectMovedEvent
+# from collective import dexteritytextindexer
+
 from collective.conferences.callforpaper import ICallforpaper
 
 
-@grok.provider(schema.interfaces.IContextSourceBinder)
 def vocabCfPTracks(context):
     # For add forms
 
@@ -55,12 +52,14 @@ def vocabCfPTracks(context):
 
     return SimpleVocabulary(terms)
 
+directlyProvides(vocabCfPTracks, IContextSourceBinder)
+
 
 # class StartBeforeEnd(Invalid):
 #     __doc__ = _(u"The start or end date is invalid")
 
 
-class IWorkshop(form.Schema):
+class IWorkshop(model.Schema):
     """A conference workshop. Workshops are managed inside tracks of the Program.
     """
         
@@ -83,25 +82,25 @@ class IWorkshop(form.Schema):
             title=_(u"Workshop summary"),
         )
 
-    form.primary('details')
+    primary('details')
     details = RichText(
             title=_(u"Workshop details"),
             required=False
         )
 
     # use an autocomplete selection widget instead of the default content tree
-    form.widget(speaker=AutocompleteFieldWidget)
-    speaker = RelationChoice(
-            title=_(u"Leader of the workshop"),
-            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-            required=False,
-        )
-    form.widget(speaker=AutocompleteFieldWidget)
-    speaker2 = RelationChoice(
-            title=_(u"Co-Leader of the workshop"),
-            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-            required=False,
-            )
+#    form.widget(speaker=AutocompleteFieldWidget)
+#    speaker = RelationChoice(
+#            title=_(u"Leader of the workshop"),
+#           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
+#            required=False,
+#        )
+#    form.widget(speaker=AutocompleteFieldWidget)
+#    speaker2 = RelationChoice(
+#            title=_(u"Co-Leader of the workshop"),
+#           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
+#            required=False,
+#            )
 
 
     dexteritytextindexer.searchable('call_for_paper_tracks')
@@ -113,14 +112,14 @@ class IWorkshop(form.Schema):
 
 
         
-    dexterity.write_permission(startitem='collective.conferences.ModifyTalktime')
+    write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
             title=_(u"Startdate"),
             description =_(u"Start date"),
             required=False,
         )
 
-    dexterity.write_permission(enditem='collective.conferences.ModifyTalktime')
+    write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
             title=_(u"Enddate"),
             description =_(u"End date"),
@@ -135,7 +134,7 @@ class IWorkshop(form.Schema):
         )
   
 
-    dexterity.write_permission(order='collective.conferences.ModifyTrack')
+    write_permission(order='collective.conferences.ModifyTrack')
     order=schema.Int(
            title=_(u"Orderintrack"),               
            description=_(u"Order in the track: write in an Integer from 1 to 12"),
@@ -166,8 +165,8 @@ class IWorkshop(form.Schema):
         )
     
     
-    dexterity.read_permission(reviewNotes='cmf.ReviewPortalContent')
-    dexterity.write_permission(reviewNotes='cmf.ReviewPortalContent')
+    read_permission(reviewNotes='cmf.ReviewPortalContent')
+    write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
             title=u"Review notes",
             required=False,
@@ -175,10 +174,10 @@ class IWorkshop(form.Schema):
 
 
 
-@grok.subscribe(IWorkshop, IObjectMovedEvent)
-def removeCFP_referenceworkshop(workshop, event):
-    if not ICallforpaper.providedBy(event.newParent):
-        workshop.call_for_paper_tracks = None
+# @grok.subscribe(IWorkshop, IObjectMovedEvent)
+# def removeCFP_referenceworkshop(workshop, event):
+#    if not ICallforpaper.providedBy(event.newParent):
+#        workshop.call_for_paper_tracks = None
 
 
 #    @invariant
@@ -199,15 +198,10 @@ def removeCFP_referenceworkshop(workshop, event):
     
 
 
-class View(dexterity.DisplayForm):
-    grok.context(IWorkshop)
-    grok.require('zope2.View')
+class WorkshopView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
-
-
-
 
     def WorkshopRoom(self):
 

@@ -137,6 +137,27 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.workshop.IWorkshop"
+        class="collective.conferences.workshop.WorkshopView"
+        template="workshop_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.talk.ITalk"
+        class="collective.conferences.talk.TalkView"
+        template="talk_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <adapter
+        for=".program.IProgram"
+        provides="zope.filerepresentation.interfaces.IFileFactory"
+        factory=".program.ProgramFileFactory"
+        />
 
     <subscriber
         for="collective.conferences.speaker.ISpeaker

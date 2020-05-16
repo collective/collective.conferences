@@ -40,7 +40,7 @@
 
 <ul class="roomlist" tal:repeat="room context/objectValues">
     <li>
-    <a tal:attributes="href room/getId"
+    <a tal:attributes="href room/absolute_url"
        tal:content="room/Title" />
     </li>
   </ul>

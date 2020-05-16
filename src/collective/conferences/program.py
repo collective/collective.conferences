@@ -9,7 +9,8 @@ from zope.interface import invariant, Invalid
 from plone.indexer import indexer
 from plone.supermodel.directives import primary
 from plone import api
-
+from plone.autoform import directives
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
 
 from zope.component import createObject
 from zope.event import notify
@@ -18,12 +19,9 @@ from zope.filerepresentation.interfaces import IFileFactory
 
 from DateTime import DateTime
 
-
-# from plone.formwidget.autocomplete import AutocompleteFieldWidget
 from z3c.form.browser.textlines import TextLinesFieldWidget
 
 from Acquisition import aq_inner
-from Products.CMFCore.utils import getToolByName
 
 from collective.conferences.track import ITrack
 
@@ -63,12 +61,12 @@ class IProgram(model.Schema):
             required=False,
         )
 
-#    form.widget(organizer=AutocompleteFieldWidget)
-#    organizer = schema.Choice(
-#            title=_(u"Organiser"),
-#            vocabulary=u"plone.principalsource.Users",
-#            required=False,
-#        )
+    directives.widget(organizer=AjaxSelectFieldWidget)
+    organizer = schema.Choice(
+            title=_(u"Organiser"),
+            vocabulary=u"plone.app.vocabularies.Users",
+            required=False,
+        )
 
 
     @invariant

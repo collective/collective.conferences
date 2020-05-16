@@ -153,6 +153,12 @@
         permission="zope2.View"
         />
 
+    <adapter
+        for=".program.IProgram"
+        provides="zope.filerepresentation.interfaces.IFileFactory"
+        factory=".program.ProgramFileFactory"
+        />
+
     <subscriber
         for="collective.conferences.speaker.ISpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

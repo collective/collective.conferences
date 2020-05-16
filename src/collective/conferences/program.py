@@ -136,14 +136,11 @@ class FullprogramView(BrowserView):
 
 # File representation
 
-#class ProgramFileFactory(grok.Adapter):
+class ProgramFileFactory(object):
     """Custom file factory for programs, which always creates a Track.
     """
 
-#    grok.implements(IFileFactory)
-#    grok.context(IProgram)
-
-#    def __call__(self, name, contentType, data):
-#        track = createObject('collective.conferences.track')
-#        notify(ObjectCreatedEvent(track))
-#        return track
+    def __call__(self, name, contentType, data):
+        track = createObject('collective.conferences.track')
+        notify(ObjectCreatedEvent(track))
+        return track

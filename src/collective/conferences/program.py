@@ -61,6 +61,15 @@ class IProgram(model.Schema):
             required=False,
         )
 
+
+    break_length = schema.List(
+        title=_(u"Length Of Conference Breaks"),
+        description=_(u"Fill in the time slots for conference breaks in minutes. Use a new line for every "
+                      u"value / talk length. Write only the numbers without the addition 'minutes'."),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
     directives.widget(organizer=AjaxSelectFieldWidget)
     organizer = schema.Choice(
             title=_(u"Organiser"),

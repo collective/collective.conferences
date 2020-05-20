@@ -13,7 +13,7 @@
  </property>
 
  <!-- schema interface -->
- <property name="schema">collective.conferences.program.IConference</property>
+ <property name="schema">collective.conferences.conference.IConference</property>
 
  <!-- class used for content items -->
  <property name="klass">plone.dexterity.content.Container</property>

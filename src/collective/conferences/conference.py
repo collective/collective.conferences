@@ -4,6 +4,7 @@ from plone.supermodel import model
 from zope import schema
 from plone.app.textfield import RichText
 from plone.supermodel.directives import primary
+from Products.Five import BrowserView
 
 
 class IConference(model.Schema):
@@ -48,3 +49,7 @@ class IConference(model.Schema):
         value_type=schema.TextLine(),
         required=True,
     )
+
+
+class ConferenceView(BrowserView):
+    pass

@@ -49,24 +49,6 @@ class ICallforpaper(model.Schema):
            value_type=schema.TextLine()
         )
 
-    talk_length = schema.List(
-        title=_(u"Length Of Talks"),
-        description=_(u"Fill in the time slots for conference talks in minutes. Use a new line for every "
-                      u"value / talk length. Write only the numbers without the addition 'minutes'."),
-        value_type=schema.TextLine(),
-        required=True,
-    )
-
-    
-    workshop_length = schema.List(
-        title=_(u"Length Of Workshops"),
-        description=_(u"Fill in the time slots for workshops at the conference in minutes. Use a new line for every "
-                      u"value / workshop length. Write only the numbers without the addition 'minutes'."),
-        value_type=schema.TextLine(),
-        required=True,
-    )
-
-
 # Views
 
 class CallforpaperView(BrowserView):

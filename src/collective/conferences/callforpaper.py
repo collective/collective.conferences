@@ -31,7 +31,8 @@ class ICallforpaper(model.Schema):
         )
 
     description = schema.Text(
-            title=_(u"Call for paper summary"),
+        title=_(u"Call for paper summary"),
+        required=False,
         )
     
     
@@ -48,9 +49,6 @@ class ICallforpaper(model.Schema):
                     'Project-Administration'],
            value_type=schema.TextLine()
         )
-
-    
-
 
 # Views
 

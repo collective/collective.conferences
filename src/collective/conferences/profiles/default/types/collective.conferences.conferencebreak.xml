@@ -1,32 +1,28 @@
 <?xml version="1.0"?>
-<object name="collective.conferences.callforpaper" meta_type="Dexterity FTI"
+<object name="collective.conferences.conferencebreak" meta_type="Dexterity FTI"
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Call for Paper</property>
- <property name="description" i18n:translate="">A Call for Paper</property>
- <property name="content_icon">++resource++collective.conferences/program.gif</property>
+ <property name="title" i18n:translate="">Conference Break</property>
+ <property name="description" i18n:translate="">A Conference Break in a track of the program</property>
+ <property name="content_icon">++resource++collective.conferences/session.gif</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">False</property>
  <property name="filter_content_types">True</property>
- <property name="allowed_content_types">
-     <element value="collective.conferences.talk" />
-     <element value="collective.conferences.workshop" />
- </property>
+ <property name="allowed_content_types" />
 
  <!-- schema interface -->
- <property name="schema">collective.conferences.callforpaper.ICallforpaper</property>
+ <property name="schema">collective.conferences.conferencebreak.IConferencebreak</property>
 
  <!-- class used for content items -->
- <property name="klass">plone.dexterity.content.Container</property>
+ <property name="klass">plone.dexterity.content.Item</property>
 
  <!-- add permission -->
- <property name="add_permission">cmf.AddPortalContent</property>
+ <property name="add_permission">collective.conferences.AddTalk</property>
 
  <!-- enabled behaviors -->
  <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
-     <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
  </property>
 
  <!-- View information -->

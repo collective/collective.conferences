@@ -64,8 +64,8 @@
          <tbody tal:repeat="item container/values">
          
         <tr bgcolor="#EEEEEE" tal:condition="repeat/item/even">
-          <td><h4><a tal:attributes="href item/getId"
-       tal:content="item/Title" /></h4></td>
+          <td><h4><a tal:attributes="href item/absolute_url">
+        <span tal:content="item/Title" /></a></h4></td>
        <td tal:content="item/Description">Description</td>
 
           
@@ -79,8 +79,8 @@
           
         </tr>
          <tr tal:condition="repeat/item/odd">
-          <td><h4><a tal:attributes="href item/getId"
-       tal:content="item/Title" /></h4></td>
+          <td><h4><a tal:attributes="href item/absolute_url">
+          <span tal:content="item/Title" /></a></h4></td>
        <td tal:content="item/Description">Description</td>  
         <td><span tal:condition="item/room">
             <span tal:content="item/room/to_object/Title | nothing" />

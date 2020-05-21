@@ -48,6 +48,14 @@
         name="collective.conferences"
         directory="resources" />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.conference.IConference"
+        class="collective.conferences.conference.ConferenceView"
+        template="conference_templates/view.pt"
+        permission="zope2.View"
+        />
+
 
     <browser:page
         name="view"
@@ -131,9 +139,9 @@
 
     <browser:page
         name="view"
-        for="collective.conferences.conferencesbreak.IConferencebreak"
-        class="collective.conferences.conferencesbreak.ConferencebreakView"
-        template="conferencesbreak_templates/view.pt"
+        for="collective.conferences.conferencebreak.IConferencebreak"
+        class="collective.conferences.conferencebreak.ConferencebreakView"
+        template="conferencebreak_templates/view.pt"
         permission="zope2.View"
         />
 

@@ -9,7 +9,28 @@ from Products.Five import BrowserView
 from zope.security import checkPermission
 from collective.conferences.track import ITrack
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.schema.interfaces import IContextSourceBinder
+from zope.interface import directlyProvides
+from plone.autoform import directives
+from z3c.form.browser.radio import RadioFieldWidget
 
+
+def vocablength(context):
+    from collective.conferences.program import IProgram
+    while context is not None and not IProgram.providedBy(context):
+        # context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    length_list = []
+    if context is not None and context.break_length:
+        length_list = context.break_length
+    terms = []
+    for value in length_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
+    return SimpleVocabulary(terms)
+
+directlyProvides(vocablength, IContextSourceBinder)
 
 
 class IConferencebreak(model.Schema):
@@ -64,16 +85,14 @@ class IConferencebreak(model.Schema):
             description =_(u"End date"),
             required=False,
         )
-    
-            
-    length= schema.Choice(
+
+    directives.widget(length=RadioFieldWidget)
+    length= schema.List(
             title=_(u"Length"),
-            vocabulary=length,
+            value_type=schema.Choice(source=vocablength),
             required=True,
         )
-    
-    
-    
+
 #@grok.subscribe(IConferencebreak, IObjectAddedEvent)
 #def conferencebreakaddedevent(conferencebreak, event):
 #    setdates(conferencebreak)

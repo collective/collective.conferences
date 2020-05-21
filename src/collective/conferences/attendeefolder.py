@@ -20,7 +20,8 @@ class IAttendeefolder(model.Schema):
         )
 
     description = schema.Text(
-            title=_(u"attendee folder description"),
+        title=_(u"attendee folder description"),
+        required=False,
         )
     
 

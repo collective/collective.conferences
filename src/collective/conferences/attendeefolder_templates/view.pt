@@ -19,7 +19,7 @@
 
         <p class="documentDescription" tal:content="context/description" />
         <p class="documentDescription" tal:condition="context/moreinformation" 
-                  tal:content="structure view/w/moreinformation/render | nothing" />
+                  tal:content="structure context/moreinformation/output | nothing" />
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

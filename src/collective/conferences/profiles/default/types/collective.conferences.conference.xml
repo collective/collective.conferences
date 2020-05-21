@@ -11,6 +11,12 @@
  <property name="allowed_content_types">
      <element value="collective.conferences.program" />
      <element value="collective.conferences.callforpaper" />
+     <element value="collective.conferences.roomfolder" />
+     <element value="collective.conferences.attendeefolder" />
+     <element value="collective.conferences.speakerfolder" />
+     <element value="Folder" />
+     <element value="Document" />
+     <element value="Event" />
  </property>
 
  <!-- schema interface -->

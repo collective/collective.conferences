@@ -31,7 +31,8 @@ class ICallforpaper(model.Schema):
         )
 
     description = schema.Text(
-            title=_(u"Call for paper summary"),
+        title=_(u"Call for paper summary"),
+        required=False,
         )
     
     

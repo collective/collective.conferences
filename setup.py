@@ -60,6 +60,8 @@ setup(
         'plone.app.dexterity',
         'Products.validation',
         'collective.dexteritytextindexer',
+        'plone.formwidget.autocomplete',
+        'plone.formwidget.contenttree',
         'plone.formwidget.recaptcha',
       ],
     extras_require={

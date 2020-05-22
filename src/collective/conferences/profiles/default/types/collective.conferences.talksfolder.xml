@@ -1,28 +1,19 @@
 <?xml version="1.0"?>
-<object name="collective.conferences.conference" meta_type="Dexterity FTI"
+<object name="collective.conferences.talksfolder" meta_type="Dexterity FTI"
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Conference</property>
- <property name="description" i18n:translate="">A conference</property>
+ <property name="title" i18n:translate="">Conference Talks Folder</property>
+ <property name="description" i18n:translate="">The talks of the conference</property>
  <property name="allow_discussion">True</property>
- <property name="global_allow">True</property>
+ <property name="global_allow">False</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-     <element value="collective.conferences.program" />
-     <element value="collective.conferences.callforpaper" />
-     <element value="collective.conferences.roomfolder" />
-     <element value="collective.conferences.attendeefolder" />
-     <element value="collective.conferences.speakerfolder" />
-     <element value="collective.conferences.talksfolder" />
-     <element value="collective.conferences.workshopfolder" />
-     <element value="Folder" />
-     <element value="Document" />
-     <element value="Event" />
+  <element value="collective.conferences.talk" />
  </property>
 
  <!-- schema interface -->
- <property name="schema">collective.conferences.conference.IConference</property>
+ <property name="schema">collective.conferences.talksfolder.ITalksfolder</property>
 
  <!-- class used for content items -->
  <property name="klass">plone.dexterity.content.Container</property>
@@ -30,11 +21,11 @@
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>
 
+
  <!-- enabled behaviors -->
  <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <!-- IReferenceable might not be available, but it will not break. -->
-     <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
  </property>
 
  <!-- View information -->
@@ -50,7 +41,7 @@
  <alias from="sharing" to="@@sharing"/>
  <alias from="view" to="@@view"/>
 
- <!-- Actions -->
+  <!-- Actions -->
  <action title="View" action_id="view" category="object" condition_expr=""
     url_expr="string:${object_url}" visible="True">
   <permission value="View"/>
@@ -60,3 +51,4 @@
   <permission value="Modify portal content"/>
  </action>
 </object>
+

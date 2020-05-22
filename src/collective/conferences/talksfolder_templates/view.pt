@@ -15,35 +15,19 @@
 
         <img style="float: left; margin-right: 2px; margin-top: 2px"
              tal:define="navroot context/@@plone_portal_state/navigation_root_url"
-             tal:attributes="src string:${navroot}/++resource++collective.conferences/program.gif"
+             tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif"
              />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
+
 
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
 
-        <div tal:replace="structure provider:plone.abovecontentbody" />
 
-        <div tal:content="structure context/details/output|nothing" />
-        
-        <p>If you want to give a talk or a workshop at the conference, please login to the site and add your
-        talk to this folder.</p>
-        <p>If you already an account on this site,
-        <a tal:attributes="href string:${portal_url}/login" i18n:translate="">
-        you could follow this link
-        </a>
-         and log into the site.
-        </p>
-        <p>In the oposite you have first to register on the site. You could do this by
-        calling the registration form
-        <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">with this link
-        </a>.
-        </p>
-
-
+        <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
 </metal:main>

@@ -5,6 +5,7 @@
  <object name="collective.conferences.speaker" meta_type="Dexterity FTI" />
  <object name="collective.conferences.program" meta_type="Dexterity FTI" />
  <object name="collective.conferences.track" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.talksfolder" meta_type="Dexterity FTI" />
  <object name="collective.conferences.talk" meta_type="Dexterity FTI" />
  <object name="collective.conferences.workshop" meta_type="Dexterity FTI" />
  <object name="collective.conferences.roomfolder" meta_type="Dexterity FTI" />
@@ -12,4 +13,5 @@
  <object name="collective.conferences.attendeefolder" meta_type="Dexterity FTI" />
  <object name="collective.conferences.attendee" meta_type="Dexterity FTI" />
  <object name="collective.conferences.conferencebreak" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.workshopfolder" meta_type="Dexterity FTI" />
 </object>

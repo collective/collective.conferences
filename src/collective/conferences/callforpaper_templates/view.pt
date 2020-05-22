@@ -29,8 +29,21 @@
 
         <div tal:content="structure context/details/output|nothing" />
         
-        <p>If you want to give a talk or a workshop at the conference, please login to the site and add your talk to this folder.</p>
-  
+        <p>If you want to give a talk or a workshop at the conference, please login to the site and add your
+        talk to this folder.</p>
+        <p>If you already an account on this site,
+        <a tal:attributes="href string:${portal_url}/login" i18n:translate="">
+        you could follow this link
+        </a>
+         and log into the site.
+        </p>
+        <p>In the oposite you have first to register on the site. You could do this by
+        calling the registration form
+        <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">with this link
+        </a>.
+        </p>
+
+
 
     </tal:main-macro>
 </metal:main>

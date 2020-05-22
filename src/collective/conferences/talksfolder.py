@@ -5,18 +5,18 @@ from Products.Five import BrowserView
 from zope import schema
 
 
-class ITalkfolder(model.Schema):
+class ITalksfolder(model.Schema):
 
     title=schema.TextLine(
         title=_(u'Name Of The Folder For Talks'),
     )
 
-    description=scheam.Text(
+    description=schema.Text(
         title=_(u'Talk Folder Description'),
         required=False,
     )
 
 
-class TalkfolderView(BrowserView):
+class TalksfolderView(BrowserView):
 
     pass

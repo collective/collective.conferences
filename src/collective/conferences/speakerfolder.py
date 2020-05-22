@@ -15,7 +15,8 @@ class ISpeakerfolder(model.Schema):
         )
 
     description = schema.Text(
-            title=_(u"speakerfolder description"),
+        title=_(u"speakerfolder description"),
+        required=False,
         )
     
 class SpeakerfolderView(BrowserView):

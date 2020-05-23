@@ -186,6 +186,24 @@
         factory=".program.ProgramFileFactory"
         />
 
+    <adapter factory="collective.conferences.createnewtalk.NewTalkSchemaAdapter"/>
+
+
+    <browser:page
+        for="collective.conferences.callforpaper.ICallforpaper"
+        name="new-talk"
+        class="collective.conferences.createnewtalk.ReCaptchaForm"
+        permission="zope2.View"
+        />
+
+
+   <adapter
+      factory=".createnewtalk.ReCaptcha"
+      for="collective.conferences.callforpaper.ICallforpaper"
+      provides=".createnewtalk.IReCaptchaForm"
+   />
+
+
     <subscriber
         for="collective.conferences.speaker.ISpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

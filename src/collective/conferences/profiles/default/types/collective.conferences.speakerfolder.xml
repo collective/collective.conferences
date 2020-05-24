@@ -6,7 +6,7 @@
  <property name="title" i18n:translate="">Conference Speakers</property>
  <property name="description" i18n:translate="">The speaker of the conference</property>
  <property name="allow_discussion">True</property>
- <property name="global_allow">False</property>
+ <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
   <element value="collective.conferences.speaker" />

@@ -109,6 +109,23 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
                 type='error')
             return
 
+        portal=api.portal.get()
+        obj=api.content.create(
+            type='collective.conferences.talk',
+            title=data['talktitle'],
+            description=data['talkdescription'],
+            details=data['talkdetails'],
+            container=portal['talks'],
+        )
+
+        api.portal.show_message(
+            message=_(safe_unicode('The talk has been submitted.')),
+            request=self.request,
+            type='info')
+
+        contextURL = self.context.absolute_url()
+        self.request.response.redirect(contextURL)
+
 
 
     @button.buttonAndHandler(_(safe_unicode('Cancel')))

@@ -10,15 +10,13 @@
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-     <element value="collective.conferences.talk" />
-     <element value="collective.conferences.workshop" />
  </property>
 
  <!-- schema interface -->
  <property name="schema">collective.conferences.callforpaper.ICallforpaper</property>
 
  <!-- class used for content items -->
- <property name="klass">plone.dexterity.content.Container</property>
+ <property name="klass">plone.dexterity.content.Item</property>
 
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>

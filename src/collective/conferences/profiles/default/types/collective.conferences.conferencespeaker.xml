@@ -12,7 +12,7 @@
  <property name="allowed_content_types" />
 
  <!-- schema interface -->
- <property name="schema">collective.conferences.speaker.ISpeaker</property>
+ <property name="schema">collective.conferences.conferencespeaker.IConferenceSpeaker</property>
 
  <!-- class used for content items -->
   <!-- class used for content items -->

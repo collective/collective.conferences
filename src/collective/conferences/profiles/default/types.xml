@@ -2,7 +2,7 @@
  <object name="collective.conferences.conference" meta_type="Dexterity FTI" />
  <object name="collective.conferences.callforpaper" meta_type="Dexterity FTI" />
  <object name="collective.conferences.speakerfolder" meta_type="Dexterity FTI" />
- <object name="collective.conferences.speaker" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.conferencespeaker" meta_type="Dexterity FTI" />
  <object name="collective.conferences.program" meta_type="Dexterity FTI" />
  <object name="collective.conferences.track" meta_type="Dexterity FTI" />
  <object name="collective.conferences.talksfolder" meta_type="Dexterity FTI" />

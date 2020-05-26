@@ -67,9 +67,9 @@
 
     <browser:page
         name="view"
-        for="collective.conferences.speaker.ISpeaker"
-        class="collective.conferences.speaker.SpeakerView"
-        template="speaker_templates/view.pt"
+        for="collective.conferences.conferencespeaker.IConferenceSpeaker"
+        class="collective.conferences.conferencespeaker.ConferenceSpeakerView"
+        template="conferencespeaker_templates/view.pt"
         permission="zope2.View"
         />
 
@@ -203,11 +203,16 @@
       provides=".createnewtalk.IReCaptchaForm"
    />
 
+   <adapter for="collective.conferences.conferencespeaker.IConferenceSpeaker"
+      factory="collective.conferences.customspeakerurl.CustomSpeakerURL"
+      provides="collective.conferences.customspeakerurl.ICustomSpeakerURL"
+      />
+
 
     <subscriber
-        for="collective.conferences.speaker.ISpeaker
+        for="collective.conferences.conferencespeaker.IConferenceSpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
-        handler="collective.conferences.speaker.notifyUser"
+        handler="collective.conferences.conferencespeaker.notifyUser"
         />
 
     <subscriber

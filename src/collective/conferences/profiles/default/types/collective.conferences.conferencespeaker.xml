@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="collective.conferences.speaker" meta_type="Dexterity FTI"
+<object name="collective.conferences.conferencespeaker" meta_type="Dexterity FTI"
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
@@ -15,7 +15,8 @@
  <property name="schema">collective.conferences.speaker.ISpeaker</property>
 
  <!-- class used for content items -->
- <property name="klass">plone.dexterity.content.Item</property>
+  <!-- class used for content items -->
+ <property name="klass">collective.conferences.customspeakername.CustomSpeakerName</property>
 
  <!-- add permission -->
  <property name="add_permission">cmf.AddPortalContent</property>

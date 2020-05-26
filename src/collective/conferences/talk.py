@@ -11,7 +11,7 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from zope.security import checkPermission
 from plone.app.textfield import RichText
-from collective.conferences.speaker import ISpeaker
+from collective.conferences.conferencespeaker import IConferenceSpeaker
 from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm

@@ -23,13 +23,13 @@ def validateEmail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
-class ISpeaker(model.Schema):
+class IConferenceSpeaker(model.Schema):
     """A conference speaker or leader of a workshop. Speaker can be added anywhere.
     """
     
-    title = schema.TextLine(
-            title=_(u"Your complete name"),
-        )
+#    title = schema.TextLine(
+#            title=_(u"Your complete name"),
+#        )
     
     lastname= schema.TextLine(
             title=_(u"Last name"),
@@ -121,7 +121,7 @@ def notifyUser(speaker, event):
         if email is not None:
             mail_host.secureSend(message, email, sender, subject)
 
-class SpeakerView(BrowserView):
+class ConferenceSpeakerView(BrowserView):
 
     def talks_of_speaker(self):
         from collective.conferences.talk import ITalk

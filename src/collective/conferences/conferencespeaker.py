@@ -26,11 +26,7 @@ def validateEmail(value):
 class IConferenceSpeaker(model.Schema):
     """A conference speaker or leader of a workshop. Speaker can be added anywhere.
     """
-    
-#    title = schema.TextLine(
-#            title=_(u"Your complete name"),
-#        )
-    
+
     lastname= schema.TextLine(
             title=_(u"Last name"),
         )

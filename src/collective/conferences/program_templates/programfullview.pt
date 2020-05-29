@@ -42,7 +42,7 @@
 
 <ul tal:repeat="item container/values">
     <li tal:condition="repeat/item">
-          <h4>Track: <a tal:attributes="href item/getId"
+          <h4>Track: <a tal:attributes="href item/absolute_url"
        tal:content="item/Title" /></h4>
         <ul tal:repeat="item container/values">
             <li tal:condition="repeat/item">

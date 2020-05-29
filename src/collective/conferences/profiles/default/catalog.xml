@@ -3,5 +3,8 @@
     <index name="talkspeaker" meta_type="KeywordIndex">
         <indexed_attr value="speaker"/>
     </index>
+    <index name="callforpaper_topics" meta_type="KeywordIndex">
+            <indexed_attr value="cfp_topics" />
+    </index>
     <column value="speaker"/>
 </object>

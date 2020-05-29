@@ -17,7 +17,9 @@ from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from Acquisition import aq_inner, aq_parent, aq_get
 from collective import dexteritytextindexer
-from collective.conferences.callforpaper import ICallforpaper
+from plone import api
+from z3c.form.browser.radio import RadioFieldWidget
+from plone.autoform import directives
 
 #from collective.conferences.track import setdates
 
@@ -26,26 +28,17 @@ from collective.conferences.callforpaper import ICallforpaper
 #   __doc__ = _(u"The start or end date is invalid")
 
 
-def vocabCfPTracks(context):
+def vocabCfPTopics(context):
     # For add forms
-
-    # For other forms edited or displayed
-    
-    if context is not None and not ICallforpaper.providedBy(context):
-        #context = aq_parent(aq_inner(context))
-        context = context.__parent__
-
-    track_list = []
-    if context is not None and hasattr(context, 'cfp_tracks'):
-        track_list = context.cfp_tracks
-
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('callforpaper_topics')
     terms = []
-    for value in track_list:
+    for value in results:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
 
-directlyProvides(vocabCfPTracks, IContextSourceBinder)
+directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
 class ITalk(model.Schema):
@@ -80,7 +73,7 @@ class ITalk(model.Schema):
 #    form.widget(speaker=AutocompleteFieldWidget)
 #    speaker = RelationChoice(
 #            title=_(u"Presenter"),
-#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
+#            source=ObjPathSourceBinder(object_provides=IConferenceSpeaker.__identifier__),
 #            required=False,
 #        )
 #    form.widget(speaker=AutocompleteFieldWidget)
@@ -98,10 +91,11 @@ class ITalk(model.Schema):
 #        )
  
 
-    dexteritytextindexer.searchable('call_for_paper_tracks')
-    call_for_paper_tracks = schema.List(
-        title=_(u"Choose the track for your talk"),
-        value_type=schema.Choice(source=vocabCfPTracks),
+    dexteritytextindexer.searchable('call_for_paper_topics')
+    directives.widget(call_for_paper_topic=RadioFieldWidget)
+    call_for_paper_topic = schema.List(
+        title=_(u"Choose the topic for your talk"),
+        value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 

@@ -11,6 +11,7 @@ class ITalksfolder(model.Schema):
     directives.mode(title='hidden')
     title=schema.TextLine(
         title=_(u'Name Of The Folder For Talks'),
+        default=_(u'Talks')
     )
 
     description=schema.Text(

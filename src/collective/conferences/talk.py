@@ -41,17 +41,22 @@ def vocabCfPTopics(context):
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
+def vocabTalkLength(context):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('talklength')
+    terms = []
+    for value in results:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+
+directlyProvides(vocabTalkLength, IContextSourceBinder)
+
+
 class ITalk(model.Schema):
     """A conference talk. Talks are managed inside tracks of the Program.
     """
-    
-    length = SimpleVocabulary(
-       [SimpleTerm(value=u'15', title=_(u'15 minutes')),
-        SimpleTerm(value=u'30', title=_(u'30 minutes')),
-        SimpleTerm(value=u'45', title=_(u'45 minutes')),
-        SimpleTerm(value=u'60', title=_(u'60 minutes'))]
-        )
- 
+
 
     title = schema.TextLine(
             title=_(u"Title"),
@@ -124,10 +129,11 @@ class ITalk(model.Schema):
             required=False,
         )
 
-        
-    length= schema.Choice(
-            title=_(u"Length"),
-            vocabulary=length,
+    directives.widget(planedtalklength=RadioFieldWidget)
+    planedtalklength=  schema.List(
+            title=_(u"Planed Length"),
+            description=_(u"Give an estimation about the time you'd plan for plan for your talk."),
+            value_type=schema.Choice(source=vocabTalkLength),
             required=True,
         )
     write_permission(order='collective.conferences.ModifyTrack')

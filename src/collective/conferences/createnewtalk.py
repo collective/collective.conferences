@@ -15,10 +15,41 @@ from z3c.form import field
 from z3c.form import button
 from zope.component import getMultiAdapter
 from Acquisition import aq_inner
+from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope.schema.interfaces import IContextSourceBinder
+from zope.interface import directlyProvides
+from z3c.form.browser.radio import RadioFieldWidget
+from plone.autoform import directives
 import logging
 
 
 logger = logging.getLogger(__name__)
+
+
+def vocabCfPTopics(context):
+    # For add forms
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('callforpaper_topics')
+    terms = []
+    for value in results:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+
+directlyProvides(vocabCfPTopics, IContextSourceBinder)
+
+
+def vocabTalkLength(context):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('talklength')
+    terms = []
+    for value in results:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+
+directlyProvides(vocabTalkLength, IContextSourceBinder)
+
 
 
 class IReCaptchaForm(interface.Interface):
@@ -54,6 +85,21 @@ class NewTalkSchema(interface.Interface):
             required=True
         )
 
+    directives.widget(cfp_topic=RadioFieldWidget)
+    cfp_topic = schema.List(
+        title=_(u"Choose the topic for your talk"),
+        value_type=schema.Choice(source=vocabCfPTopics),
+        required=True,
+    )
+
+    directives.widget(ptalklength=RadioFieldWidget)
+    ptalklength = schema.List(
+        title=_(u"Planed Length"),
+        description=_(u"Give an estimation about the time you'd plan for plan for your talk."),
+        value_type=schema.Choice(source=vocabTalkLength),
+        required=True,
+    )
+
 
 
 @implementer(NewTalkSchema)
@@ -64,6 +110,7 @@ class NewTalkSchemaAdapter(object):
         self.talktitle = None
         self.talkdescription = None
         self.talkdetails = None
+        self.cfp_topic = None
 
 class NewTalkForm(AutoExtensibleForm, form.Form):
     schema = NewTalkSchema
@@ -83,7 +130,7 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
         super(NewTalkForm, self).update()
 
 
-    @button.buttonAndHandler(_(safe_unicode('Submit the talk')))
+    @button.buttonAndHandler(_(safe_unicode('Submit Your talk')))
     def handleApply(self, action):
         data, errors = self.extractData()
         captcha = getMultiAdapter(
@@ -115,6 +162,8 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
             title=data['talktitle'],
             description=data['talkdescription'],
             details=data['talkdetails'],
+            call_for_paper_topic=data['cfp_topic'],
+            planedtalklength=data['ptalklength'],
             container=portal['talks'],
         )
 

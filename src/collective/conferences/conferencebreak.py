@@ -13,24 +13,21 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from plone.autoform import directives
 from z3c.form.browser.radio import RadioFieldWidget
+from plone import api
 
 
-def vocablength(context):
-    from collective.conferences.program import IProgram
-    while context is not None and not IProgram.providedBy(context):
-        # context = aq_parent(aq_inner(context))
-        context = context.__parent__
 
-    length_list = []
-    if context is not None and context.break_length:
-        length_list = context.break_length
+def vocabBreakLength(context):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('breaklength')
     terms = []
-    for value in length_list:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
-                                title=value))
+    for value in results:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
     return SimpleVocabulary(terms)
 
-directlyProvides(vocablength, IContextSourceBinder)
+directlyProvides(vocabBreakLength, IContextSourceBinder)
+
 
 
 class IConferencebreak(model.Schema):
@@ -89,7 +86,7 @@ class IConferencebreak(model.Schema):
     directives.widget(length=RadioFieldWidget)
     length= schema.List(
             title=_(u"Length"),
-            value_type=schema.Choice(source=vocablength),
+            value_type=schema.Choice(source=vocabBreakLength),
             required=True,
         )
 

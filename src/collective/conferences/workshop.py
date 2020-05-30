@@ -19,7 +19,7 @@ from zope.interface import invariant, Invalid
 from z3c.relationfield.schema import RelationChoice
 # from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from collective.conferences.speaker import ISpeaker
+from collective.conferences.conferencespeaker import IConferenceSpeaker
 from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm

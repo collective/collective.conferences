@@ -43,7 +43,7 @@ class ICallforpaper(model.Schema):
             required=True,
         )
         
-    cfp_tracks = schema.List(title=_(u"Tracks for the Call for Papers"),
+    cfp_topics = schema.List(title=_(u"Topics for the Call for Papers"),
            default=['Development',
                     'Documentation',
                     'Project-Administration'],

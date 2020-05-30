@@ -6,7 +6,7 @@ from zope import schema
 from plone.app.textfield import RichText
 import datetime
 from zope.interface import invariant, Invalid
-from plone.indexer import indexer
+from plone.indexer.decorator import indexer
 from plone.supermodel.directives import primary
 from plone import api
 from plone.autoform import directives
@@ -61,11 +61,27 @@ class IProgram(model.Schema):
             required=False,
         )
 
+    talk_length = schema.List(
+        title=_(u"Length Of Conference Talks"),
+        description=_(u"Fill in the time slots for talks in minutes. Use a new line for every value / "
+                      u"talk length. Write only the numbers without the addition 'minutes'."),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
+    workshop_length = schema.List(
+        title=_(u"Length Of Conference Workshops"),
+        description=_(u"Fill in the time slots for workshops in minutes. Use a new line for every value / "
+                      u"workshop length. Write only the numbers without the addition 'minutes'."),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
 
     break_length = schema.List(
         title=_(u"Length Of Conference Breaks"),
         description=_(u"Fill in the time slots for conference breaks in minutes. Use a new line for every "
-                      u"value / talk length. Write only the numbers without the addition 'minutes'."),
+                      u"value / break length. Write only the numbers without the addition 'minutes'."),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -116,7 +132,7 @@ def endIndexer(obj):
 # grok.global_adapter(endIndexer, name="end")
 
 
-@indexer(IProgram)
+@indexer(ITrack)
 def tracksIndexer(obj):
     return obj.tracks
 # grok.global_adapter(tracksIndexer, name="Subject")

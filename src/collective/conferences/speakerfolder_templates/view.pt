@@ -29,7 +29,7 @@
 
 <ul class="speakerlist" tal:repeat="speaker context/objectValues">
     <li>
-    <a tal:attributes="href speaker/getId"
+    <a tal:attributes="href speaker/absolute_url"
        tal:content="speaker/Title" />
     </li>
   </ul>

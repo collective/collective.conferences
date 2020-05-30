@@ -32,16 +32,6 @@ directlyProvides(vocabBreakLength, IContextSourceBinder)
 
 class IConferencebreak(model.Schema):
 
-    """A conferences break. Breaks (e.g. for lunch) are managed inside tracks of the Program.
-    """
-
-    length = SimpleVocabulary(
-       [SimpleTerm(value=u'15', title=_(u'15 minutes')),
-        SimpleTerm(value=u'30', title=_(u'30 minutes')),
-        SimpleTerm(value=u'45', title=_(u'45 minutes')),
-        SimpleTerm(value=u'60', title=_(u'60 minutes'))]
-        )
-    
     
     title = schema.TextLine(
             title=_(u"Title"),
@@ -83,8 +73,8 @@ class IConferencebreak(model.Schema):
             required=False,
         )
 
-    directives.widget(length=RadioFieldWidget)
-    length= schema.List(
+    directives.widget(breaklength=RadioFieldWidget)
+    breaklength= schema.List(
             title=_(u"Length"),
             value_type=schema.Choice(source=vocabBreakLength),
             required=True,

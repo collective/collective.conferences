@@ -19,7 +19,6 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from z3c.form.browser.radio import RadioFieldWidget
-from plone.autoform import directives
 import logging
 
 

@@ -85,14 +85,12 @@ class NewTalkSchema(interface.Interface):
             required=True
         )
 
-    directives.widget(cfp_topic=RadioFieldWidget)
     cfp_topic = schema.List(
         title=_(u"Choose the topic for your talk"),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
-    directives.widget(ptalklength=RadioFieldWidget)
     ptalklength = schema.List(
         title=_(u"Planed Length"),
         description=_(u"Give an estimation about the time you'd plan for plan for your talk."),
@@ -111,6 +109,7 @@ class NewTalkSchemaAdapter(object):
         self.talkdescription = None
         self.talkdetails = None
         self.cfp_topic = None
+        self.ptalklength = None
 
 class NewTalkForm(AutoExtensibleForm, form.Form):
     schema = NewTalkSchema
@@ -121,6 +120,8 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
 
     fields = field.Fields(NewTalkSchema, IReCaptchaForm)
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
+    fields['cfp_topic'].widgetFactory = RadioFieldWidget
+    fields['ptalklength'].widgetFactory = RadioFieldWidget
 
     def update(self):
         # disable Plone's editable border

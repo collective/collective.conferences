@@ -203,10 +203,32 @@
       provides=".createnewtalk.IReCaptchaForm"
    />
 
+
+    <adapter factory="collective.conferences.createnewworkshop.NewWorkshopSchemaAdapter"/>
+
+
+    <browser:page
+        for="collective.conferences.callforpaper.ICallforpaper"
+        name="new-workshop"
+        class="collective.conferences.createnewworkshop.ReCaptchaForm"
+        permission="zope2.View"
+        />
+
+
+   <adapter
+      factory=".createnewworkshop.ReCaptcha"
+      for="collective.conferences.callforpaper.ICallforpaper"
+      provides=".createnewworkshop.IReCaptchaForm"
+   />
+
+
    <adapter for="collective.conferences.conferencespeaker.IConferenceSpeaker"
       factory="collective.conferences.customspeakerurl.CustomSpeakerURL"
       provides="collective.conferences.customspeakerurl.ICustomSpeakerURL"
       />
+
+   <adapter name="conferencetracks" factory=".program.tracksIndexer" />
+   <adapter name="tracks" factory=".indexer.conference_tracks" />
 
 
     <subscriber

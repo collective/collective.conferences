@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from plone import api
 from zope import schema
 from plone.supermodel import model
 from Products.Five import BrowserView
@@ -11,6 +12,8 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from collective import dexteritytextindexer
 from zope.security import checkPermission
+from z3c.form.browser.radio import RadioFieldWidget
+from plone.autoform import directives
 import datetime
 
 from zope.interface import invariant, Invalid
@@ -26,26 +29,32 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from collective.conferences.callforpaper import ICallforpaper
 
 
-def vocabCfPTracks(context):
+
+def vocabCfPTopics(context):
     # For add forms
-
-    # For other forms edited or displayed
-
-    if context is not None and not ICallforpaper.providedBy(context):
-        #context = aq_parent(aq_inner(context))
-        context = context.__parent__
-
-    track_list = []
-    if context is not None and hasattr(context, 'cfp_tracks'):
-        track_list = context.cfp_tracks
-
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('callforpaper_topics')
     terms = []
-    for value in track_list:
+    for value in results:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
 
-directlyProvides(vocabCfPTracks, IContextSourceBinder)
+directlyProvides(vocabCfPTopics, IContextSourceBinder)
+
+
+def vocabWorkshopLength(context):
+    catalog = api.portal.get_tool(name='portal_catalog')
+    results = catalog.uniqueValuesFor('workshoplength')
+    terms = []
+    for value in results:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
+
+    return SimpleVocabulary(terms)
+
+directlyProvides(vocabWorkshopLength, IContextSourceBinder)
+
+
 
 
 # class StartBeforeEnd(Invalid):
@@ -55,16 +64,7 @@ directlyProvides(vocabCfPTracks, IContextSourceBinder)
 class IWorkshop(model.Schema):
     """A conference workshop. Workshops are managed inside tracks of the Program.
     """
-        
-    length = SimpleVocabulary(
-       [SimpleTerm(value=u'30', title=_(u'30 minutes')),
-        SimpleTerm(value=u'45', title=_(u'45 minutes')),
-        SimpleTerm(value=u'60', title=_(u'60 minutes')),
-        SimpleTerm(value=u'120', title=_(u'120 minutes')),
-        SimpleTerm(value=u'180', title=_(u'180 minutes')),
-        SimpleTerm(value=u'240', title=_(u'240 minutes')),]
-        )
-    
+
 
     title = schema.TextLine(
             title=_(u"Title"),
@@ -94,15 +94,13 @@ class IWorkshop(model.Schema):
 #           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
 #            required=False,
 #            )
-
-
-    dexteritytextindexer.searchable('call_for_paper_tracks')
-    call_for_paper_tracks = schema.List(
-        title=_(u"Choose the track for your workshop"),
-        value_type=schema.Choice(source=vocabCfPTracks),
+    dexteritytextindexer.searchable('call_for_paper_topics')
+    directives.widget(call_for_paper_topic=RadioFieldWidget)
+    call_for_paper_topic = schema.List(
+        title=_(u"Choose the topic for your workshop"),
+        value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
-
 
         
     write_permission(startitem='collective.conferences.ModifyTalktime')
@@ -118,13 +116,14 @@ class IWorkshop(model.Schema):
             description =_(u"End date"),
             required=False,
         )
-    
-            
-    length= schema.Choice(
-            title=_(u"Length"),
-            vocabulary=length,
-            required=True,
-        )
+
+    directives.widget(planedworkshoplength=RadioFieldWidget)
+    planedworkshoplength = schema.List(
+        title=_(u"Planed Length"),
+        description=_(u"Give an estimation about the time you'd plan for your workshop."),
+        value_type=schema.Choice(source=vocabWorkshopLength),
+        required=True,
+    )
   
 
     write_permission(order='collective.conferences.ModifyTrack')

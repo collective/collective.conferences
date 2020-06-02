@@ -38,16 +38,16 @@ def vocabCfPTopics(context):
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
-def vocabTalkLength(context):
+def vocabWorkshopLength(context):
     catalog = api.portal.get_tool(name='portal_catalog')
-    results = catalog.uniqueValuesFor('talklength')
+    results = catalog.uniqueValuesFor('workshoplength')
     terms = []
     for value in results:
         terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
 
     return SimpleVocabulary(terms)
 
-directlyProvides(vocabTalkLength, IContextSourceBinder)
+directlyProvides(vocabWorkshopLength, IContextSourceBinder)
 
 
 
@@ -68,69 +68,68 @@ class ReCaptcha(object):
 
 
 
-class NewTalkSchema(interface.Interface):
+class NewWorkshopSchema(interface.Interface):
 
-    talktitle=schema.TextLine(
-        title=_(u'The Title Of Your Talk'),
-        description=_(u'Fill in the title of your proposed conference talk'),
+    workshoptitle=schema.TextLine(
+        title=_(u'The Title Of Your Workshop'),
+        description=_(u'Fill in the title of your proposed conference workshop'),
     )
 
-    talkdescription = schema.Text(
-        title=_(u"Talk summary"),
+    workshopdescription = schema.Text(
+        title=_(u"Workshop summary"),
     )
 
-    talkdetails = RichText(
-            title=_(u"Talk details"),
+    workshopdetails = RichText(
+            title=_(u"Workshop details"),
             required=True
         )
 
     cfp_topic = schema.List(
-        title=_(u"Choose the topic for your talk"),
+        title=_(u"Choose the topic for your workshop"),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
-    ptalklength = schema.List(
+    wtalklength = schema.List(
         title=_(u"Planed Length"),
-        description=_(u"Give an estimation about the time you'd plan for your talk."),
-        value_type=schema.Choice(source=vocabTalkLength),
+        description=_(u"Give an estimation about the time you'd plan for your workshop."),
+        value_type=schema.Choice(source=vocabWorkshopLength),
         required=True,
     )
 
 
-
-@implementer(NewTalkSchema)
+@implementer(NewWorkshopSchema)
 @adapter(interface.Interface)
-class NewTalkSchemaAdapter(object):
+class NewWorkshopSchemaAdapter(object):
 
     def __init__(self, context):
-        self.talktitle = None
-        self.talkdescription = None
-        self.talkdetails = None
+        self.workshoptitle = None
+        self.workshopdescription = None
+        self.workshopdetails = None
         self.cfp_topic = None
-        self.ptalklength = None
+        self.wtalklength = None
 
-class NewTalkForm(AutoExtensibleForm, form.Form):
-    schema = NewTalkSchema
-    form_name = 'newtalkform'
-    label = _(safe_unicode('Submit A Conference Talk'))
-    description = _(safe_unicode('Submit a proposal for a conference talk.'))
+class NewWorkshopForm(AutoExtensibleForm, form.Form):
+    schema = NewWorkshopSchema
+    form_name = 'newworkshopform'
+    label = _(safe_unicode('Submit A Conference Workshop'))
+    description = _(safe_unicode('Submit a proposal for a conference workshop.'))
 
 
-    fields = field.Fields(NewTalkSchema, IReCaptchaForm)
+    fields = field.Fields(NewWorkshopSchema, IReCaptchaForm)
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
     fields['cfp_topic'].widgetFactory = RadioFieldWidget
-    fields['ptalklength'].widgetFactory = RadioFieldWidget
+    fields['wtalklength'].widgetFactory = RadioFieldWidget
 
     def update(self):
         # disable Plone's editable border
         self.request.set('disable_border', True)
 
         # call the base class version - this is very important!
-        super(NewTalkForm, self).update()
+        super(NewWorkshopForm, self).update()
 
 
-    @button.buttonAndHandler(_(safe_unicode('Submit Your talk')))
+    @button.buttonAndHandler(_(safe_unicode('Submit Your Workshop')))
     def handleApply(self, action):
         data, errors = self.extractData()
         captcha = getMultiAdapter(
@@ -158,17 +157,17 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
 
         portal=api.portal.get()
         obj=api.content.create(
-            type='collective.conferences.talk',
-            title=data['talktitle'],
-            description=data['talkdescription'],
-            details=data['talkdetails'],
+            type='collective.conferences.workshop',
+            title=data['workshoptitle'],
+            description=data['workshopdescription'],
+            details=data['workshopdetails'],
             call_for_paper_topic=data['cfp_topic'],
-            planedtalklength=data['ptalklength'],
-            container=portal['talks'],
+            planedworkshoplength=data['wtalklength'],
+            container=portal['workshops'],
         )
 
         api.portal.show_message(
-            message=_(safe_unicode('The talk has been submitted.')),
+            message=_(safe_unicode('The workshop has been submitted.')),
             request=self.request,
             type='info')
 
@@ -185,4 +184,4 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
         self.request.response.redirect(contextURL)
 
 
-ReCaptchaForm = wrap_form(NewTalkForm)
+ReCaptchaForm = wrap_form(NewWorkshopForm)

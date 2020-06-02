@@ -132,7 +132,7 @@ class ITalk(model.Schema):
     directives.widget(planedtalklength=RadioFieldWidget)
     planedtalklength=  schema.List(
             title=_(u"Planed Length"),
-            description=_(u"Give an estimation about the time you'd plan for plan for your talk."),
+            description=_(u"Give an estimation about the time you'd plan for your talk."),
             value_type=schema.Choice(source=vocabTalkLength),
             required=True,
         )

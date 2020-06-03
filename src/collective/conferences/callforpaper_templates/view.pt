@@ -9,7 +9,9 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                    isAnonymous context/@@plone_portal_state/anonymous">
+         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -28,9 +30,10 @@
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <div tal:content="structure context/details/output|nothing" />
-        
-        <p>If you want to give a talk or a workshop at the conference, please login to the site and add your
-        talk to this folder.</p>
+
+        <div tal:condition="python: isAnonymous">
+        <p>If you want to give a talk or a workshop at the conference, please login to the site. There will be
+        a link on this site to submit a new talk or workshop available once you are logged in.</p>
         <p>If you already an account on this site,
         <a tal:attributes="href string:${portal_url}/login" i18n:translate="">
         you could follow this link
@@ -42,6 +45,7 @@
         <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">with this link
         </a>.
         </p>
+        </div>
 
 
 

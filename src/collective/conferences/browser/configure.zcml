@@ -18,4 +18,11 @@
       directory="static"
       />
 
+  <browser:page
+    name="collectiveconf-controlpanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlpanel.CollectiveconfControlPanelView"
+    permission="cmf.ManagePortal"
+    />
+
 </configure>

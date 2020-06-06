@@ -17,19 +17,6 @@ from plone import api
 
 
 
-def vocabBreakLength(context):
-    catalog = api.portal.get_tool(name='portal_catalog')
-    results = catalog.uniqueValuesFor('breaklength')
-    terms = []
-    for value in results:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
-
-    return SimpleVocabulary(terms)
-
-directlyProvides(vocabBreakLength, IContextSourceBinder)
-
-
-
 class IConferencebreak(model.Schema):
 
     
@@ -76,9 +63,16 @@ class IConferencebreak(model.Schema):
     directives.widget(breaklength=RadioFieldWidget)
     breaklength= schema.List(
             title=_(u"Length"),
-            value_type=schema.Choice(source=vocabBreakLength),
+            value_type=schema.Choice(source="BreakLength"),
             required=True,
         )
+
+    directives.widget(test=RadioFieldWidget)
+    test= schema.List(
+        title=_(u"Test"),
+        value_type=schema.Choice(source="BreakLength"),
+        required=True,
+    )
 
 #@grok.subscribe(IConferencebreak, IObjectAddedEvent)
 #def conferencebreakaddedevent(conferencebreak, event):

@@ -38,17 +38,6 @@ def vocabCfPTopics(context):
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
-def vocabTalkLength(context):
-    catalog = api.portal.get_tool(name='portal_catalog')
-    results = catalog.uniqueValuesFor('talklength')
-    terms = []
-    for value in results:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
-
-    return SimpleVocabulary(terms)
-
-directlyProvides(vocabTalkLength, IContextSourceBinder)
-
 
 
 class IReCaptchaForm(interface.Interface):
@@ -93,7 +82,7 @@ class NewTalkSchema(interface.Interface):
     ptalklength = schema.List(
         title=_(u"Planed Length"),
         description=_(u"Give an estimation about the time you'd plan for your talk."),
-        value_type=schema.Choice(source=vocabTalkLength),
+        value_type=schema.Choice(source="TalkLength"),
         required=True,
     )
 

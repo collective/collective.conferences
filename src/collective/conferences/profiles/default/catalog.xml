@@ -6,14 +6,5 @@
     <index name="callforpaper_topics" meta_type="KeywordIndex">
             <indexed_attr value="cfp_topics" />
     </index>
-    <index name="talklength" meta_type="KeywordIndex">
-        <indexed_attr value="talk_length" />
-    </index>
-    <index name="workshoplength" meta_type="KeywordIndex">
-        <indexed_attr value="workshop_length" />
-    </index>
-    <index name="breaklength" meta_type="KeywordIndex">
-        <indexed_attr value="break_length" />
-    </index>
     <column value="speaker"/>
 </object>

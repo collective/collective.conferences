@@ -8,3 +8,13 @@ from zope.schema.interfaces import IVocabularyFactory
 def BreakLengthVocabularyFactory(context):
     values = api.portal.get_registry_record('collectiveconf.break_length')
     return safe_simplevocabulary_from_values(values)
+
+@provider(IVocabularyFactory)
+def TalkLengthVocabularyFactory(context):
+    values = api.portal.get_registry_record('collectiveconf.talk_length')
+    return safe_simplevocabulary_from_values(values)
+
+@provider(IVocabularyFactory)
+def WorkshopLengthVocabularyFactory(context):
+    values = api.portal.get_registry_record('collectiveconf.workshop_length')
+    return safe_simplevocabulary_from_values(values)

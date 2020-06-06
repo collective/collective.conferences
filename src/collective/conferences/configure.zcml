@@ -247,4 +247,12 @@
         name="BreakLength"
         component=".vocabularies.BreakLengthVocabularyFactory" />
 
+    <utility
+        name="TalkLength"
+        component=".vocabularies.TalkLengthVocabularyFactory" />
+
+    <utility
+        name="WorkshopLength"
+        component=".vocabularies.WorkshopLengthVocabularyFactory" />
+
 </configure>

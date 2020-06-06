@@ -43,19 +43,6 @@ def vocabCfPTopics(context):
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
-def vocabWorkshopLength(context):
-    catalog = api.portal.get_tool(name='portal_catalog')
-    results = catalog.uniqueValuesFor('workshoplength')
-    terms = []
-    for value in results:
-        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'), title=value))
-
-    return SimpleVocabulary(terms)
-
-directlyProvides(vocabWorkshopLength, IContextSourceBinder)
-
-
-
 
 # class StartBeforeEnd(Invalid):
 #     __doc__ = _(u"The start or end date is invalid")
@@ -121,7 +108,7 @@ class IWorkshop(model.Schema):
     planedworkshoplength = schema.List(
         title=_(u"Planed Length"),
         description=_(u"Give an estimation about the time you'd plan for your workshop."),
-        value_type=schema.Choice(source=vocabWorkshopLength),
+        value_type=schema.Choice(source="WorkshopLength"),
         required=True,
     )
   

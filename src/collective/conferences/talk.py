@@ -23,6 +23,7 @@ from plone.autoform import directives
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.app.z3cform.widget import SelectFieldWidget
+from plone.app.contentlisting.interfaces import IContentListing
 
 #from collective.conferences.track import setdates
 
@@ -74,31 +75,6 @@ class ITalk(model.Schema):
     )
     directives.widget(
         'speaker',
-        SelectFieldWidget,
-    )
-
-
-    speaker2 = RelationList(
-        title=_(u'Co-Presenter'),
-        default=[],
-        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
-        required=False,
-        missing_value=[],
-    )
-    directives.widget(
-        'speaker2',
-        SelectFieldWidget,
-    )
-
-    speaker3 = RelationList(
-        title=_(u'Co-Presenter'),
-        default=[],
-        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
-        required=False,
-        missing_value=[],
-    )
-    directives.widget(
-        'speaker3',
         SelectFieldWidget,
     )
 
@@ -251,3 +227,14 @@ class TalkView(BrowserView):
            room = parent.room.to_object.title
        else: room = ""
        return room
+
+    def talkPresenters(self):
+        results = []
+        for rel in self.context.speaker:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)

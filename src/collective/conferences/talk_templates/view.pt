@@ -9,7 +9,7 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main">
+    <tal:main-macro metal:define-macro="main" tal:define="presenter view/talkPresenters">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -23,54 +23,25 @@
 
         <p class="documentDescription" tal:content="context/description" />
         <div tal:condition="context/speaker">
-            <label i18n:translate="presenter">Presenter:</label>
-            <a tal:attributes="href context/speaker/to_object/absolute_url"><span tal:content="context/speaker/to_object/Title | nothing" /></a>
-        </div>
-        <div tal:condition="context/speaker2">
-            <label i18n:translate="co_presenter">Co-Presenter:</label>
-            <a tal:attributes="href context/speaker2/to_object/absolute_url"><span tal:content="context/speaker2/to_object/Title | nothing" /></a>
-        </div>
-
-        <div tal:condition="context/speaker3">
-            <label i18n:translate="co_presenter">Co-Presenter:</label>
-            <a tal:attributes="href context/speaker3/to_object/absolute_url"><span tal:content="context/speaker3/to_object/Title | nothing" /></a>
+        <h3>Speaker</h3>
+        <ul>
+        <tal:loop repeat="talkpresenters presenter">
+        <li><a tal:attributes="href python: talkpresenters.getURL()">
+                            <span tal:content="talkpresenters/Title" />,
+                            </a>
+                            </li>
+                        </tal:loop>
+        </ul>
         </div>
 
 
-        <div tal:condition="context/track">
-            <label i18n:translate="track">Track:</label>
-            <a tal:attributes="href context/track/to_object/absolute_url">
-            <span tal:content="context/track/to_object/Title | nothing" />
-            </a>
-        </div>
-        
-        <div>
-             <label i18n:translate="time">Time:</label>
-             
-             <span tal:condition="context/startitem" tal:content="python:context.startitem.strftime('%d.%b.%Y from %H:%M to ')" /> 
-             <span tal:condition="context/enditem" tal:content="python:context.enditem.strftime('%H:%M')" /> 
-        </div>
-        
-        <div tal:condition="context/length">
-            <label i18n:translate="length">Length of the Talk:</label>
-            <span tal:content="context/length | nothing" />
-            <span>minutes</span>
-        </div>
-
-        <div class="talkroom">
-
-         <label i18n:translate="label_room">Room:</label>
-
-         <span tal:content="view/TalkRoom" />
-
-        </div>
 
 
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
         <h4>Details of the Talk</h4>
 
-        <div tal:content="structure view/w/details/render" />
+        <div tal:content="structure context/details/output|nothing" />
 
          <div tal:condition="context/slides">
 

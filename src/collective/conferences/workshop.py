@@ -80,20 +80,6 @@ class IWorkshop(model.Schema):
         SelectFieldWidget,
     )
 
-
-    # use an autocomplete selection widget instead of the default content tree
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker = RelationChoice(
-#            title=_(u"Leader of the workshop"),
-#           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#        )
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker2 = RelationChoice(
-#            title=_(u"Co-Leader of the workshop"),
-#           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#            )
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(

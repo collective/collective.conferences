@@ -14,6 +14,9 @@ from collective import dexteritytextindexer
 from zope.security import checkPermission
 from z3c.form.browser.radio import RadioFieldWidget
 from plone.autoform import directives
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
 import datetime
 
 from zope.interface import invariant, Invalid
@@ -22,11 +25,8 @@ from zope.interface import invariant, Invalid
 from z3c.relationfield.schema import RelationChoice
 # from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from collective.conferences.conferencespeaker import IConferenceSpeaker
-from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from collective.conferences.callforpaper import ICallforpaper
 
 
 
@@ -67,6 +67,19 @@ class IWorkshop(model.Schema):
             title=_(u"Workshop details"),
             required=False
         )
+
+    speaker = RelationList(
+        title=_(u'Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'speaker',
+        SelectFieldWidget,
+    )
+
 
     # use an autocomplete selection widget instead of the default content tree
 #    form.widget(speaker=AutocompleteFieldWidget)

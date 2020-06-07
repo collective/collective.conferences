@@ -6,6 +6,8 @@ from Products.Five import BrowserView
 from plone.supermodel.directives import primary
 from plone import api
 import datetime
+from z3c.form.browser.radio import RadioFieldWidget
+from plone.autoform import directives
 
 from zope.interface import invariant, Invalid
 from DateTime import DateTime
@@ -68,6 +70,13 @@ class ITrack(model.Schema):
             description =_(u"End date"),
             required=False,
         )
+
+    directives.widget(room=RadioFieldWidget)
+    room = schema.List(
+        title=_(u"Choose the topic for your talk"),
+        value_type=schema.Choice(source="ConferenceRoom"),
+        required=True,
+    )
     # use an autocomplete selection widget instead of the default content tree
 #    form.widget(room=AutocompleteFieldWidget)
 #    room = RelationChoice(

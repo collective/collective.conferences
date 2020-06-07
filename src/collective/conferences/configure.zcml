@@ -255,4 +255,12 @@
         name="WorkshopLength"
         component=".vocabularies.WorkshopLengthVocabularyFactory" />
 
+    <utility
+        name="ConferenceSpeaker"
+        component=".vocabularies.ConferenceSpeakerVocabularyFactory" />
+
+    <utility
+        name="ConferenceRoom"
+        component=".vocabularies.ConferenceRoomVocabularyFactory" />
+
 </configure>

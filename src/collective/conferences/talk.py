@@ -11,8 +11,6 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from zope.security import checkPermission
 from plone.app.textfield import RichText
-from collective.conferences.conferencespeaker import IConferenceSpeaker
-from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from Acquisition import aq_inner, aq_parent, aq_get
@@ -20,8 +18,11 @@ from collective import dexteritytextindexer
 from plone import api
 from z3c.form.browser.radio import RadioFieldWidget
 from plone.autoform import directives
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
+from plone.app.contentlisting.interfaces import IContentListing
 
-#from collective.conferences.track import setdates
 
 
 # class StartBeforeEnd(Invalid):
@@ -62,27 +63,18 @@ class ITalk(model.Schema):
             required=True
         )
 
-    # use an autocomplete selection widget instead of the default content tree
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker = RelationChoice(
-#            title=_(u"Presenter"),
-#            source=ObjPathSourceBinder(object_provides=IConferenceSpeaker.__identifier__),
-#            required=False,
-#        )
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker2 = RelationChoice(
-#            title=_(u"Co-Presenter"),
-#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#        )
- 
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker3 = RelationChoice(
-#            title=_(u"Co-Presenter"),
-#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#        )
- 
+    speaker = RelationList(
+        title=_(u'Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'speaker',
+        SelectFieldWidget,
+    )
+
 
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
@@ -232,3 +224,14 @@ class TalkView(BrowserView):
            room = parent.room.to_object.title
        else: room = ""
        return room
+
+    def talkPresenters(self):
+        results = []
+        for rel in self.context.speaker:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)

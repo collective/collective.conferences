@@ -11,8 +11,6 @@ from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from zope.security import checkPermission
 from plone.app.textfield import RichText
-from collective.conferences.conferencespeaker import IConferenceSpeaker
-from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from Acquisition import aq_inner, aq_parent, aq_get
@@ -25,7 +23,6 @@ from z3c.relationfield.schema import RelationList
 from plone.app.z3cform.widget import SelectFieldWidget
 from plone.app.contentlisting.interfaces import IContentListing
 
-#from collective.conferences.track import setdates
 
 
 # class StartBeforeEnd(Invalid):

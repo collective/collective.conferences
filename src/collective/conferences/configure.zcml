@@ -259,4 +259,8 @@
         name="ConferenceSpeaker"
         component=".vocabularies.ConferenceSpeakerVocabularyFactory" />
 
+    <utility
+        name="ConferenceRoom"
+        component=".vocabularies.ConferenceRoomVocabularyFactory" />
+
 </configure>

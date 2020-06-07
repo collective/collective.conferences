@@ -20,6 +20,9 @@ from collective import dexteritytextindexer
 from plone import api
 from z3c.form.browser.radio import RadioFieldWidget
 from plone.autoform import directives
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
 
 #from collective.conferences.track import setdates
 
@@ -62,27 +65,43 @@ class ITalk(model.Schema):
             required=True
         )
 
-    # use an autocomplete selection widget instead of the default content tree
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker = RelationChoice(
-#            title=_(u"Presenter"),
-#            source=ObjPathSourceBinder(object_provides=IConferenceSpeaker.__identifier__),
-#            required=False,
-#        )
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker2 = RelationChoice(
-#            title=_(u"Co-Presenter"),
-#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#        )
- 
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker3 = RelationChoice(
-#            title=_(u"Co-Presenter"),
-#            source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#        )
- 
+    speaker = RelationList(
+        title=_(u'Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'speaker',
+        SelectFieldWidget,
+    )
+
+
+    speaker2 = RelationList(
+        title=_(u'Co-Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'speaker2',
+        SelectFieldWidget,
+    )
+
+    speaker3 = RelationList(
+        title=_(u'Co-Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'speaker3',
+        SelectFieldWidget,
+    )
+
 
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)

@@ -39,3 +39,21 @@ class ConferenceSpeakerVocabulary(object):
 
 
 ConferenceSpeakerVocabularyFactory = ConferenceSpeakerVocabulary()
+
+
+@implementer(IVocabularyFactory)
+class ConferenceRoomVocabulary(object):
+
+    def __call__(self, context=None):
+        terms = []
+        # Use getObject since the DataConverter expects a real object.
+        for brain in api.content.find(portal_type='collective.conferences.room', sort_on='sortable_title'):
+            terms.append(SimpleTerm(
+                value=brain.getObject(),
+                token=brain.UID,
+                title=u'{} ({})'.format(brain.Title, brain.getPath()),
+            ))
+        return SimpleVocabulary(terms)
+
+
+ConferenceRoomVocabularyFactory = ConferenceRoomVocabulary()

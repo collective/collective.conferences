@@ -39,6 +39,14 @@
 
         <div tal:content="structure view/w/details/render" />
         </div>
+        <h3 i18n:translate="">Room</h3>
+        <div tal:condition="context/room">
+        <tal:loop repeat="trackroom context/room">
+        <h4 tal:content="trackroom/Title">
+        </tal:loop>
+        <div>
+
+
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
         <table border="0" width="100%">

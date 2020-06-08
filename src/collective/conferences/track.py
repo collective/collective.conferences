@@ -73,7 +73,7 @@ class ITrack(model.Schema):
 
     directives.widget(room=RadioFieldWidget)
     room = schema.List(
-        title=_(u"Choose the topic for your talk"),
+        title=_(u"Choose the room for the track"),
         value_type=schema.Choice(source="ConferenceRoom"),
         required=True,
     )

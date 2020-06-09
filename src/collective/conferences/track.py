@@ -12,7 +12,9 @@ from plone.autoform import directives
 from zope.interface import invariant, Invalid
 from DateTime import DateTime
 from plone.indexer import indexer
-
+from z3c.relationfield.schema import RelationList
+from z3c.relationfield.schema import RelationChoice
+from plone.app.contentlisting.interfaces import IContentListing
 
 
 from zope.security import checkPermission
@@ -71,12 +73,18 @@ class ITrack(model.Schema):
             required=False,
         )
 
-    directives.widget(room=RadioFieldWidget)
-    room = schema.List(
-        title=_(u"Choose the room for the track"),
-        value_type=schema.Choice(source="ConferenceRoom"),
-        required=True,
+    room = RelationList(
+        title=_(u'Choose the room for the track'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceRoom'),
+        required=False,
+        missing_value=[],
     )
+    directives.widget(
+        'room',
+        RadioFieldWidget,
+    )
+
     # use an autocomplete selection widget instead of the default content tree
 #    form.widget(room=AutocompleteFieldWidget)
 #    room = RelationChoice(
@@ -146,3 +154,16 @@ class TrackView(BrowserView):
             depth=1),
             sort_on='getObjPositionInParent')
         return [x.getObject() for x in talks]
+
+
+
+    def trackRoom(self):
+        results = []
+        for rel in self.context.room:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)

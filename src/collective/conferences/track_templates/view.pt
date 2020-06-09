@@ -8,7 +8,7 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main">
+    <tal:main-macro metal:define-macro="main" tal:define="trackroom view/trackRoom">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -39,12 +39,17 @@
 
         <div tal:content="structure view/w/details/render" />
         </div>
+
         <h3 i18n:translate="">Room</h3>
         <div tal:condition="context/room">
-        <tal:loop repeat="trackroom context/room">
-        <h4 tal:content="trackroom/Title">
-        </tal:loop>
-        <div>
+        <tal:loop repeat="trackroom trackroom">
+        <h4>
+        <a tal:attributes="href python: trackroom.getURL()">
+                            <span tal:content="trackroom/Title" />
+         </a>
+         </h4>
+         </tal:loop>
+        </div>
 
 
 

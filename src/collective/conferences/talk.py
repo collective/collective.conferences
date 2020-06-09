@@ -84,6 +84,19 @@ class ITalk(model.Schema):
         required=True,
     )
 
+
+    conferencetrack = RelationList(
+        title=_(u'Choose the track for this talk'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceTrack'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'conferencetrack',
+        RadioFieldWidget,
+    )
+
  
  
 #    form.widget(track=AutocompleteFieldWidget)
@@ -235,3 +248,16 @@ class TalkView(BrowserView):
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
         return IContentListing(results)
+
+
+    def conferenceTrack(self):
+        results = []
+        for rel in self.context.conferencetrack:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)
+

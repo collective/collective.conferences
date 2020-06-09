@@ -263,4 +263,8 @@
         name="ConferenceRoom"
         component=".vocabularies.ConferenceRoomVocabularyFactory" />
 
+    <utility
+        name="ConferenceTrack"
+        component=".vocabularies.ConferenceTrackVocabularyFactory" />
+
 </configure>

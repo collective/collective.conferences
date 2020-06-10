@@ -84,7 +84,8 @@ class ITalk(model.Schema):
         required=True,
     )
 
-
+    read_permission(conferencetrack='cmf.ReviewPortalContent')
+    write_permission(conferencetrack='cmf.ReviewPortalContent')
     conferencetrack = RelationList(
         title=_(u'Choose the track for this talk'),
         default=[],

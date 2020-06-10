@@ -75,12 +75,19 @@ class ITalk(model.Schema):
         SelectFieldWidget,
     )
 
-
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(
         title=_(u"Choose the topic for your talk"),
         value_type=schema.Choice(source=vocabCfPTopics),
+        required=True,
+    )
+
+    directives.widget(planedtalklength=RadioFieldWidget)
+    planedtalklength = schema.List(
+        title=_(u"Planed Length"),
+        description=_(u"Give an estimation about the time you'd plan for your talk."),
+        value_type=schema.Choice(source="TalkLength"),
         required=True,
     )
 
@@ -97,6 +104,18 @@ class ITalk(model.Schema):
         'conferencetrack',
         RadioFieldWidget,
     )
+
+
+    read_permission(talklength='cmf.ReviewPortalContent')
+    write_permission(talklength='cmf.ReviewPortalContent')
+    directives.widget(talklength=RadioFieldWidget)
+    talklength = schema.List(
+        title=_(u"Talk Length"),
+        description=_(u"Set a time frame for the talk in minutes."),
+        value_type=schema.Choice(source="TalkLength"),
+        required=False,
+    )
+
 
  
  
@@ -123,13 +142,6 @@ class ITalk(model.Schema):
             required=False,
         )
 
-    directives.widget(planedtalklength=RadioFieldWidget)
-    planedtalklength=  schema.List(
-            title=_(u"Planed Length"),
-            description=_(u"Give an estimation about the time you'd plan for your talk."),
-            value_type=schema.Choice(source="TalkLength"),
-            required=True,
-        )
     write_permission(order='collective.conferences.ModifyTrack')
     order=schema.Int(
            title=_(u"Orderintrack"),               

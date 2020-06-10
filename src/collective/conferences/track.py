@@ -85,19 +85,6 @@ class ITrack(model.Schema):
         RadioFieldWidget,
     )
 
-    # use an autocomplete selection widget instead of the default content tree
-#    form.widget(room=AutocompleteFieldWidget)
-#    room = RelationChoice(
-#            title=_(u"Room"),
-#            source=ObjPathSourceBinder(object_provides=IRoom.__identifier__),
-#            required=False,
-#        )
-
-
-
-#    room = schema.TextLine(
-#            title= _(u"Room"),
-#        )
 
     def startTimeTalk(data):
         if data.start is not None:
@@ -119,10 +106,7 @@ class ITrack(model.Schema):
 #                raise StartBeforeConferenceProgram(_(
 #                    u"The start date could not before the begin of the conference program."))
 
-# @indexer(ITrack)
-# def roomsInde xer(obj):
-#    return obj.rooms
-#grok.global_adapter(roomsIndexer, name="Subject")
+
 
 #def setdates(item):
 #    if not item.track:

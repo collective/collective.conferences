@@ -14,6 +14,9 @@ from collective import dexteritytextindexer
 from zope.security import checkPermission
 from z3c.form.browser.radio import RadioFieldWidget
 from plone.autoform import directives
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
 import datetime
 
 from zope.interface import invariant, Invalid
@@ -22,11 +25,8 @@ from zope.interface import invariant, Invalid
 from z3c.relationfield.schema import RelationChoice
 # from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from collective.conferences.conferencespeaker import IConferenceSpeaker
-from collective.conferences.track import ITrack
 from plone.namedfile.field import NamedBlobFile
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from collective.conferences.callforpaper import ICallforpaper
 
 
 
@@ -68,19 +68,18 @@ class IWorkshop(model.Schema):
             required=False
         )
 
-    # use an autocomplete selection widget instead of the default content tree
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker = RelationChoice(
-#            title=_(u"Leader of the workshop"),
-#           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#        )
-#    form.widget(speaker=AutocompleteFieldWidget)
-#    speaker2 = RelationChoice(
-#            title=_(u"Co-Leader of the workshop"),
-#           # source=ObjPathSourceBinder(object_provides=ISpeaker.__identifier__),
-#            required=False,
-#            )
+    speaker = RelationList(
+        title=_(u'Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'speaker',
+        SelectFieldWidget,
+    )
+
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(

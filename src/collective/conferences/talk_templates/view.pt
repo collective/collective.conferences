@@ -9,7 +9,9 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main" tal:define="presenter view/talkPresenters">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="presenter view/talkPresenters;
+                    conferencetrack view/conferenceTrack">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -33,7 +35,24 @@
                         </tal:loop>
         </ul>
         </div>
+        <div tal:condition="context/conferencetrack">
+        <h3 i18n:translate="">Track</h3>
+        <tal:loop repeat="Track conferencetrack">
+        <h4>
+        <a tal:attributes="href python: Track.getURL()">
+                            <span tal:content="Track/Title" />
+         </a>
+         </h4>
+         </tal:loop>
 
+         <div tal:condition="context/talklength">
+         <h3 i18n:translate="">Talk Length</h3>
+
+         <tal:loop repeat="length context/talklength">
+
+         <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
+         </tal:loop>
+        </div>
 
 
 

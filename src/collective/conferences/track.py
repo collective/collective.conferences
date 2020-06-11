@@ -12,7 +12,9 @@ from plone.autoform import directives
 from zope.interface import invariant, Invalid
 from DateTime import DateTime
 from plone.indexer import indexer
-
+from z3c.relationfield.schema import RelationList
+from z3c.relationfield.schema import RelationChoice
+from plone.app.contentlisting.interfaces import IContentListing
 
 
 from zope.security import checkPermission
@@ -71,25 +73,18 @@ class ITrack(model.Schema):
             required=False,
         )
 
-    directives.widget(room=RadioFieldWidget)
-    room = schema.List(
-        title=_(u"Choose the topic for your talk"),
-        value_type=schema.Choice(source="ConferenceRoom"),
-        required=True,
+    room = RelationList(
+        title=_(u'Choose the room for the track'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceRoom'),
+        required=False,
+        missing_value=[],
     )
-    # use an autocomplete selection widget instead of the default content tree
-#    form.widget(room=AutocompleteFieldWidget)
-#    room = RelationChoice(
-#            title=_(u"Room"),
-#            source=ObjPathSourceBinder(object_provides=IRoom.__identifier__),
-#            required=False,
-#        )
+    directives.widget(
+        'room',
+        RadioFieldWidget,
+    )
 
-
-
-#    room = schema.TextLine(
-#            title= _(u"Room"),
-#        )
 
     def startTimeTalk(data):
         if data.start is not None:
@@ -111,10 +106,7 @@ class ITrack(model.Schema):
 #                raise StartBeforeConferenceProgram(_(
 #                    u"The start date could not before the begin of the conference program."))
 
-# @indexer(ITrack)
-# def roomsInde xer(obj):
-#    return obj.rooms
-#grok.global_adapter(roomsIndexer, name="Subject")
+
 
 #def setdates(item):
 #    if not item.track:
@@ -139,10 +131,21 @@ class TrackView(BrowserView):
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
 
+
     def talks(self):
-        catalog = api.portal.get_tool(name='portal_catalog')
-        talks = catalog.searchResults(
-            path=dict(query='/'.join(self.context.getPhysicalPath()),
-            depth=1),
-            sort_on='getObjPositionInParent')
+        talks = api.content.find(depth=3, portal_type='collective.conferences.talk',
+                                 sort_on='talkorderintrack')
         return [x.getObject() for x in talks]
+
+
+
+    def trackRoom(self):
+        results = []
+        for rel in self.context.room:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)

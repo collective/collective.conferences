@@ -75,7 +75,6 @@ class ITalk(model.Schema):
         SelectFieldWidget,
     )
 
-
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(
@@ -84,7 +83,47 @@ class ITalk(model.Schema):
         required=True,
     )
 
- 
+    directives.widget(planedtalklength=RadioFieldWidget)
+    planedtalklength = schema.List(
+        title=_(u"Planed Length"),
+        description=_(u"Give an estimation about the time you'd plan for your talk."),
+        value_type=schema.Choice(source="TalkLength"),
+        required=True,
+    )
+
+    read_permission(conferencetrack='cmf.ReviewPortalContent')
+    write_permission(conferencetrack='cmf.ReviewPortalContent')
+    conferencetrack = RelationList(
+        title=_(u'Choose the track for this talk'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceTrack'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'conferencetrack',
+        RadioFieldWidget,
+    )
+
+
+    read_permission(talklength='cmf.ReviewPortalContent')
+    write_permission(talklength='cmf.ReviewPortalContent')
+    directives.widget(talklength=RadioFieldWidget)
+    talklength = schema.List(
+        title=_(u"Talk Length"),
+        description=_(u"Set a time frame for the talk in minutes."),
+        value_type=schema.Choice(source="TalkLength"),
+        required=False,
+    )
+
+    read_permission(talkpositionintrack='cmf.ReviewPortalContent')
+    write_permission(talkpositionintrack='cmf.ReviewPortalContent')
+    talkpositionintrack = schema.Int(
+        title=_(u'Position In The Track'),
+        description=_(u'Choose a number for the order in the track'),
+        required=False,
+    )
+
  
 #    form.widget(track=AutocompleteFieldWidget)
 #    track = RelationChoice(
@@ -109,13 +148,6 @@ class ITalk(model.Schema):
             required=False,
         )
 
-    directives.widget(planedtalklength=RadioFieldWidget)
-    planedtalklength=  schema.List(
-            title=_(u"Planed Length"),
-            description=_(u"Give an estimation about the time you'd plan for your talk."),
-            value_type=schema.Choice(source="TalkLength"),
-            required=True,
-        )
     write_permission(order='collective.conferences.ModifyTrack')
     order=schema.Int(
            title=_(u"Orderintrack"),               
@@ -217,14 +249,6 @@ class TalkView(BrowserView):
         return checkPermission('cmf.RequestReview', self.context)
 
 
-    def TalkRoom(self):
-       from collective.conferences.track import ITrack
-       parent = aq_parent(aq_inner(self.context))
-       if ITrack.providedBy(parent):
-           room = parent.room.to_object.title
-       else: room = ""
-       return room
-
     def talkPresenters(self):
         results = []
         for rel in self.context.speaker:
@@ -235,3 +259,17 @@ class TalkView(BrowserView):
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
         return IContentListing(results)
+
+
+    def conferenceTrack(self):
+        results = []
+        for rel in self.context.conferencetrack:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)
+
+

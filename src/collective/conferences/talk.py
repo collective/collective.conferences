@@ -116,8 +116,14 @@ class ITalk(model.Schema):
         required=False,
     )
 
+    read_permission(talkpositionintrack='cmf.ReviewPortalContent')
+    write_permission(talkpositionintrack='cmf.ReviewPortalContent')
+    talkpositionintrack = schema.Int(
+        title=_(u'Position In The Track'),
+        description=_(u'Choose a number for the order in the track'),
+        required=False,
+    )
 
- 
  
 #    form.widget(track=AutocompleteFieldWidget)
 #    track = RelationChoice(
@@ -273,4 +279,5 @@ class TalkView(BrowserView):
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
         return IContentListing(results)
+
 

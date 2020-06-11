@@ -10,8 +10,6 @@ from plone import api
 
 import re
 
-from Products.CMFCore.utils import getToolByName
-
 
 
 

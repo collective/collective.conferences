@@ -131,12 +131,10 @@ class TrackView(BrowserView):
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
 
+
     def talks(self):
-        catalog = api.portal.get_tool(name='portal_catalog')
-        talks = catalog.searchResults(
-            path=dict(query='/'.join(self.context.getPhysicalPath()),
-            depth=1),
-            sort_on='getObjPositionInParent')
+        talks = api.content.find(depth=3, portal_type='collective.conferences.talk',
+                                 sort_on='talkorderintrack')
         return [x.getObject() for x in talks]
 
 

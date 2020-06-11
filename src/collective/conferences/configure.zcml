@@ -228,9 +228,9 @@
       />
 
     <subscriber
-        for="collective.conferences.conferencespeaker.IConferenceSpeaker
+        for=".conferencespeaker.IConferenceSpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"
-        handler="collective.conferences.conferencespeaker.notifyUser"
+        handler=".conferencespeaker.notifyUser"
         />
 
     <subscriber

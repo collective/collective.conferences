@@ -97,25 +97,24 @@ class IConferenceSpeaker(model.Schema):
             required=False,
         )
 
-def notifyUser(speaker, event):
-    acl_users = getToolByName(speaker, 'acl_users')
-    mail_host = getToolByName(speaker, 'MailHost')
-    portal_url = getToolByName(speaker, 'portal_url')
-
-    portal = portal_url.getPortalObject()
-    sender = portal.getProperty('email_from_address')
+def notifyUser(self, event):
+    user = api.user.get_current()
+    sender = api.portal.get_registry_record(
+        'plone.email_from_address')
+    email = user.getProperty('email')
 
     if not sender:
         return
 
     subject = "Is this you?"
-    message = "A speaker /leader of a workshop called %s was added here %s. If this is you, everything is fine." % (speaker.title, speaker.absolute_url(),)
+    message = "A speaker /leader of a workshop called %s was added here %s. If this is you, everything is fine." % (self.title, self.absolute_url(),)
 
-    matching_users = acl_users.searchUsers(fullname=speaker.title)
-    for user_info in matching_users:
-        email = user_info.get('email', None)
-        if email is not None:
-            mail_host.secureSend(message, email, sender, subject)
+    api.portal.send_email(
+        recipient='{0}'.format(email),
+        sender= '{0}'.format(sender),
+        subject='{0}'.format(subject),
+        body='{0}'.format(message),)
+
 
 class ConferenceSpeakerView(BrowserView):
 

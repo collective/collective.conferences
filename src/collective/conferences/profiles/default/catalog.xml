@@ -6,5 +6,11 @@
     <index name="callforpaper_topics" meta_type="KeywordIndex">
             <indexed_attr value="cfp_topics" />
     </index>
+    <index name="lengthoftalk" meta_type="FieldIndex">
+        <indexed_attr value="talklength" />
+    </index>
+    <index name="talkorderintrack" meta_type="KeywordIndex">
+        <indexed_attr value="talkpositionintrack" />
+    </index>
     <column value="speaker"/>
 </object>

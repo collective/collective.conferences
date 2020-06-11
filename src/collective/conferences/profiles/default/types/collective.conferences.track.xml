@@ -9,8 +9,6 @@
  <property name="global_allow">False</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-     <element value="collective.conferences.talk" />
-     <element value="collective.conferences.workshop" />
      <element value="collective.conferences.conferencebreak" />
  </property>
 

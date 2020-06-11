@@ -8,7 +8,9 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main" tal:define="trackroom view/trackRoom">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="trackroom view/trackRoom;
+                    talks view/talks;">
     <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
@@ -53,17 +55,28 @@
         </div>
 
 
-
-        <div tal:replace="structure provider:plone.belowcontentbody" />
         <table border="0" width="100%">
         <tr bgcolor="#18A303">
          <th><label i18n:translate="talk_workshop">Talk/Workshop</label></th>
-         <th><label i18n:translate="room">Room</label></th>
          <th><label i18n:translate="time">Time</label></th>
          <th><label i18n:translate="subject_of_the_talk">Subject of the talk</label></th>
          </tr>
+         <tbody tal:repeat="talk view/talks">
+         <tr>
+         <td>
+         <h4>
+         <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
+         </h4>
+         </td>
+         <td>
+         </td>
+         <td><h4 tal:content="talk/description" />
+         </td>
+       </tr>
+         </tbody>
 
       </table>
+
 
 
 

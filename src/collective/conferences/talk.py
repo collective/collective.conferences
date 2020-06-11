@@ -249,14 +249,6 @@ class TalkView(BrowserView):
         return checkPermission('cmf.RequestReview', self.context)
 
 
-    def TalkRoom(self):
-       from collective.conferences.track import ITrack
-       parent = aq_parent(aq_inner(self.context))
-       if ITrack.providedBy(parent):
-           room = parent.room.to_object.title
-       else: room = ""
-       return room
-
     def talkPresenters(self):
         results = []
         for rel in self.context.speaker:

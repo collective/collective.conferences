@@ -19,6 +19,9 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.schema.interfaces import IContextSourceBinder
 from zope.interface import directlyProvides
 from z3c.form.browser.radio import RadioFieldWidget
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from plone.app.z3cform.widget import SelectFieldWidget
 import logging
 
 
@@ -73,6 +76,14 @@ class NewTalkSchema(interface.Interface):
             required=True
         )
 
+    speaker = RelationList(
+        title=_(u'Presenter'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
+        required=False,
+        missing_value=[],
+    )
+
     cfp_topic = schema.List(
         title=_(u"Choose the topic for your talk"),
         value_type=schema.Choice(source=vocabCfPTopics),
@@ -96,6 +107,7 @@ class NewTalkSchemaAdapter(object):
         self.talktitle = None
         self.talkdescription = None
         self.talkdetails = None
+        self.speaker = None
         self.cfp_topic = None
         self.ptalklength = None
 
@@ -110,6 +122,7 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
     fields['cfp_topic'].widgetFactory = RadioFieldWidget
     fields['ptalklength'].widgetFactory = RadioFieldWidget
+    fields['speaker'].widgetFactory = SelectFieldWidget
 
     def update(self):
         # disable Plone's editable border

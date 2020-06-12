@@ -88,7 +88,48 @@ class IWorkshop(model.Schema):
         required=True,
     )
 
-        
+    directives.widget(planedworkshoplength=RadioFieldWidget)
+    planedworkshoplength = schema.List(
+        title=_(u"Planed Length"),
+        description=_(u"Give an estimation about the time you'd plan for your workshop."),
+        value_type=schema.Choice(source="WorkshopLength"),
+        required=True,
+    )
+
+
+    read_permission(conferencetrack='cmf.ReviewPortalContent')
+    write_permission(conferencetrack='cmf.ReviewPortalContent')
+    conferencetrack = RelationList(
+        title=_(u'Choose the track for this talk'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceTrack'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'conferencetrack',
+        RadioFieldWidget,
+    )
+
+    read_permission(workshoplength='cmf.ReviewPortalContent')
+    write_permission(workshoplength='cmf.ReviewPortalContent')
+    directives.widget(workshoplength=RadioFieldWidget)
+    workshoplength = schema.List(
+        title=_(u"Workshop Length"),
+        description=_(u"Set a time frame for the workshop in minutes."),
+        value_type=schema.Choice(source="WorkshopLength"),
+        required=False,
+    )
+
+    read_permission(workshoppositionintrack='cmf.ReviewPortalContent')
+    write_permission(workshoppositionintrack='cmf.ReviewPortalContent')
+    workshoppositionintrack = schema.Int(
+        title=_(u'Position In The Track'),
+        description=_(u'Choose a number for the order in the track'),
+        required=False,
+    )
+
+
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
             title=_(u"Startdate"),
@@ -103,14 +144,6 @@ class IWorkshop(model.Schema):
             required=False,
         )
 
-    directives.widget(planedworkshoplength=RadioFieldWidget)
-    planedworkshoplength = schema.List(
-        title=_(u"Planed Length"),
-        description=_(u"Give an estimation about the time you'd plan for your workshop."),
-        value_type=schema.Choice(source="WorkshopLength"),
-        required=True,
-    )
-  
 
     write_permission(order='collective.conferences.ModifyTrack')
     order=schema.Int(

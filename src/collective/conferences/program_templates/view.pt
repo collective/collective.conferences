@@ -67,40 +67,46 @@
           <td><h4><a tal:attributes="href item/absolute_url">
         <span tal:content="item/Title" /></a></h4></td>
        <td tal:content="item/Description">Description</td>
-
-          
+       <td><span tal:condition="item/room">
+       <tal:loop tal:repeat="room item/room">
+           ${room/to_object/Title}
+       </tal:loop>
+       </span>
+       </td>
       <td><tal:block condition="item/start">
            <span tal:content="python:item.start.strftime('%d. %b %Y %H:%M')" />
-       </tal:block></td>
+       </tal:block>
+       </td>
        <td> <tal:block condition="item/end">
                 <span tal:content="python:item.end.strftime('%d. %b %Y %H:%M')" />
-       </tal:block></td>
-       
-          
-        </tr>
-         <tr tal:condition="repeat/item/odd">
-          <td><h4><a tal:attributes="href item/absolute_url">
-          <span tal:content="item/Title" /></a></h4></td>
+       </tal:block>
+       </td>
+       </tr>
+       <tr tal:condition="repeat/item/odd">
+       <td><h4><a tal:attributes="href item/absolute_url">
+          <span tal:content="item/Title" /></a></h4>
+       </td>
        <td tal:content="item/Description">Description</td>  
-        <td><span tal:condition="item/room">
-            <span tal:content="item/room/to_object/Title | nothing" />
-           </span>
-            
-        </td>
-            
-      <td> <tal:block condition="item/start">
-                
+       <td><span tal:condition="item/room">
+       <tal:loop tal:repeat="room item/room">
+           ${room/to_object/Title}
+       </tal:loop>
+       </span>
+       </td>
+       <td>
+       <tal:block condition="item/start">
                 <span tal:content="python:item.start.strftime('%d. %b %Y %H:%M')" />
-       </tal:block></td>
-       <td> <tal:block condition="item/end">
+       </tal:block>
+       </td>
+       <td>
+       <tal:block condition="item/end">
                 <span tal:content="python:item.end.strftime('%d. %b %Y %H:%M')" />
-       </tal:block></td>
-        
+       </tal:block>
+       </td>
         </tr>
         </tbody>
       </table>
     </tal:main-macro>
 </metal:main>
-
 </body>
 </html>

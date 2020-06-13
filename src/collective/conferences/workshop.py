@@ -69,7 +69,7 @@ class IWorkshop(model.Schema):
         )
 
     speaker = RelationList(
-        title=_(u'Presenter'),
+        title=_(u'Workshop Leader'),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
         required=False,

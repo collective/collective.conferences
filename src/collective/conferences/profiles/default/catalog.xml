@@ -12,5 +12,7 @@
     <index name="presenters" meta_type="KeywordIndex">
         <indexed_attr value="presenters" />
     </index>
-    <column value="speaker"/>
+    <index name="workshopleader" meta_type="KeywordIndex">
+        <indexed_attr value="workshopleader" />
+    </index>
 </object>

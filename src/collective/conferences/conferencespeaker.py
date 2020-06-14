@@ -148,3 +148,19 @@ class ConferenceSpeakerView(BrowserView):
             title = brain.Title
 
         return title
+
+
+
+    def speakertalks(self):
+
+        speakername = self.context.title
+        results  = api.content.find(portal_type="collective.conferences.talk",
+                                    review_state="published",
+                                    presenters=speakername)
+
+        objects =[]
+
+        for brain in results:
+            objects.append(brain)
+
+        return objects

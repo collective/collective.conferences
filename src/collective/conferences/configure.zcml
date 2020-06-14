@@ -227,6 +227,8 @@
       provides="collective.conferences.customspeakerurl.ICustomSpeakerURL"
       />
 
+    <adapter name="presenters" factory=".indexers.presenternames" />
+
     <subscriber
         for=".conferencespeaker.IConferenceSpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

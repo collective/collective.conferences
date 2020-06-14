@@ -63,6 +63,7 @@ setup(
         'plone.formwidget.autocomplete',
         'plone.formwidget.contenttree',
         'plone.formwidget.recaptcha',
+        'plone.app.z3cform >= 3.2.0',
       ],
     extras_require={
         'test': [

@@ -16,20 +16,9 @@ from z3c.relationfield.schema import RelationList
 from z3c.relationfield.schema import RelationChoice
 from plone.app.contentlisting.interfaces import IContentListing
 
-
 from zope.security import checkPermission
 
 from plone.app.textfield import RichText
-
-from z3c.relationfield.schema import RelationChoice
-
-
-from Products.CMFCore.utils import getToolByName
-
-from collective.conferences.room import IRoom
-
-
-
 
 
 

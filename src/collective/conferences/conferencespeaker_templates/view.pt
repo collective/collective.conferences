@@ -9,7 +9,7 @@
 <head>
     <metal:block fill-slot="style_slot">
         <link rel="stylesheet" type="text/css"
-            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url;"
             tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
             />
     </metal:block>
@@ -18,7 +18,8 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="speakertalks view/speakertalks">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -40,8 +41,18 @@
         
         <div tal:content="structure context/bio/output | string:" />
 
-        <p>The Speaker has submittet the following talks: <span tal:content="view/talks_of_speaker" /></p>
+        <p>The Speaker has submittet the following talks: </p>
 
+<ul>
+<tal:loop repeat="talks speakertalks">
+<li><a tal:attributes="href python: talks.getURL()">
+                            <span tal:content="talks/Title" />,
+                            </a>
+                            </li>
+
+
+        </tal:loop>
+</ul>
 
         
         <div tal:replace="structure provider:plone.belowcontentbody" />

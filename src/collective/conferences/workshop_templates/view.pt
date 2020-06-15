@@ -9,7 +9,8 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="workshopleader view/workshopLeaders">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -22,44 +23,18 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
-
         <div tal:condition="context/speaker">
-            <label i18n:translate="workshop_leader">Leader of the Workshop:</label>
-            <a tal:attributes="href context/speaker/to_object/absolute_url"><span tal:content="context/speaker/to_object/Title | nothing" /></a>
-        </div>
-        <div tal:condition="context/speaker2">
-            <label i18n:translate="workshop_coleader">Co-Leader of the Workshop:</label>
-            <a tal:attributes="href context/speaker2/to_object/absolute_url"><span tal:content="context/speaker2/to_object/Title | nothing" /></a>
-        </div>
-
-        <div>
-             <label i18n:translate="time">Time:</label>
-             
-             <span tal:condition="context/startitem" tal:content="python:context.startitem.strftime('%d.%m.%Y from %H:%M to ')" />
-             <span tal:condition="context/enditem" tal:content="python:context.enditem.strftime('%H:%M  o\'Clock')" />
-        </div>
-        <div tal:condition="context/length">
-            <label i18n:translate="length">Length of the Talk:</label>
-            <span tal:content="context/length | nothing" />
-            <span>minutes</span>
+        <h3 i18n:translate="">Workshop Leader</h3>
+        <ul>
+        <tal:loop repeat="workshopleader workshopleader">
+        <li><a tal:attributes="href python: workshopleader.getURL()">
+                            <span tal:content="workshopleader/Title" />,
+                            </a>
+                            </li>
+                        </tal:loop>
+        </ul>
         </div>
 
-        <div class="workshoproom">
-
-         <label i18n:translate="label_room">Room:</label>
-
-         <span tal:content="view/WorkshopRoom" />
-
-        </div>
-
-
-        <div tal:replace="structure provider:plone.abovecontentbody" />
-
-        <h4>Details of the Workshop</h4>
-
-        <div tal:content="structure view/w/details/render" />
-
-        <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>
 </metal:main>

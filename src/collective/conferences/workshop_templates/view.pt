@@ -10,7 +10,8 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-        tal:define="workshopleader view/workshopLeaders">
+        tal:define="workshopleader view/workshopLeaders;
+                    conferencetrack view/conferenceTrack">
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -34,6 +35,26 @@
                         </tal:loop>
         </ul>
         </div>
+        <div tal:condition="context/conferencetrack">
+        <h3 i18n:translate="">Track</h3>
+        <tal:loop repeat="Track conferencetrack">
+        <h4>
+        <a tal:attributes="href python: Track.getURL()">
+                            <span tal:content="Track/Title" />
+         </a>
+         </h4>
+         </tal:loop>
+         </div>
+
+         <div tal:condition="context/workshoplength">
+         <h3 i18n:translate="">Workshop Length</h3>
+
+         <tal:loop repeat="length context/workshoplength">
+
+         <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
+         </tal:loop>
+        </div>
+
 
 
     </tal:main-macro>

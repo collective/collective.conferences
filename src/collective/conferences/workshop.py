@@ -229,6 +229,18 @@ class WorkshopView(BrowserView):
 
 
 
+    def conferenceTrack(self):
+        results = []
+        for rel in self.context.conferencetrack:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)
+
+
     def WorkshopRoom(self):
 
        from collective.conferences.track import ITrack

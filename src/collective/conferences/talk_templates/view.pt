@@ -44,6 +44,7 @@
          </a>
          </h4>
          </tal:loop>
+         </div>
 
          <div tal:condition="context/talklength">
          <h3 i18n:translate="">Talk Length</h3>

@@ -12,12 +12,13 @@
     <tal:main-macro metal:define-macro="main"
         tal:define="presenter view/talkPresenters;
                     conferencetrack view/conferenceTrack">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
-        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="suggest_review">
+        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="">
             Please submit this for review.
         </div>
 

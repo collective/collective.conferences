@@ -19,6 +19,7 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
+    <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -31,10 +32,10 @@
         <li tal:content="context/email" />
         <li tal:condition="context/organisation" tal:content="context/organisation | nothing" />
         <tal:block condition="context/paymentway">
-        <li> <span>Registration fee paid: <span tal:content="context/paymentway | nothing" /></li>
+        <li> <span i18n:translate="">Registration fee paid: <span tal:content="context/paymentway | nothing" /></li>
         </tal:block>
         <tal:block condition="context/usedbank">
-        <li> <span>Bank used for the payment: <span tal:content="context/usedbank | nothing" /></li>
+        <li> <span i18n:translate="">Bank used for the payment: <span tal:content="context/usedbank | nothing" /></li>
         </tal:block>
                 
         </ul>

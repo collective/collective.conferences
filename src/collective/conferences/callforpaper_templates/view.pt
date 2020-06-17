@@ -32,32 +32,33 @@
         <div tal:content="structure context/details/output|nothing" />
 
         <div tal:condition="python: isAnonymous">
-        <p>If you want to give a talk or a workshop at the conference, please login to the site. There will be
-        a link on this site to submit a new talk or workshop available once you are logged in.</p>
-        <p>If you already an account on this site,
+        <p i18n:translate="">If you want to give a talk or a workshop at the conference, please login to the site.
+        There will be a link on this site to submit a new talk or workshop available once you are logged in.</p>
+        <p i18n:translate="">If you already an account on this site,
         <a tal:attributes="href string:${portal_url}/login" i18n:translate="">
-        you could follow this link
+        <span i18n:translate="">you could follow this link</span>
         </a>
-         and log into the site.
+         <span i18n:translate="">and log into the site.</span>
         </p>
-        <p>In the oposite you have first to register on the site. You could do this by
+        <p i18n:translate="">In the oposite you have first to register on the site. You could do this by
         calling the registration form
-        <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">with this link
+        <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">
+        <span i18n:translate="">with this link</span>
         </a>.
         </p>
         </div>
         <div tal:condition="python: not isAnonymous">
-        <p>You can submit a new talk or workshop by following one of the following links. They
+        <p i18n:translate="">You can submit a new talk or workshop by following one of the following links. They
         will open a form with the necessary entries to create a new conference talk or workshop proposal:
         <ul>
         <li>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/@@new-talk">
-        Submit a conference talk
+        <span i18n:translate="">Submit a conference talk</span>
         </a>
         </li>
         <li>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/@@new-workshop">
-        Submit a conference workshop
+        <span i18n:translate="">Submit a conference workshop</span>
         </a>
         </li>
         </ul>

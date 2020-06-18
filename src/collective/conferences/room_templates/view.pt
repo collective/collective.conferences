@@ -19,6 +19,7 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
+    <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -42,9 +43,9 @@
         <p class="roomLongDescription" tal:content=" structure context/details/output" />
         
         
-        <h4 class="roocapacity">Capacity of the room</h4>
+        <h4 class="roocapacity" i18n:translate="">Capacity of the room</h4>
         <p class="roomcapacity">
-        <span tal:content=" structure context/capacity" /><span> Person</span>
+        <span tal:content=" structure context/capacity" /><span i18n:translate=""> Person</span>
 
 
         <div tal:replace="structure provider:plone.belowcontentbody" />

@@ -42,7 +42,7 @@
         
         <div tal:content="structure context/bio/output | string:" />
 
-        <p i18n:tranlate="">The Speaker has submittet the following talks: </p>
+        <p i18n:translate="">The Speaker has submittet the following talks: </p>
 
 <ul>
 <tal:loop repeat="talks speakertalks">

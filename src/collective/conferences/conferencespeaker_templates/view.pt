@@ -20,6 +20,7 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="speakertalks view/speakertalks">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -41,7 +42,7 @@
         
         <div tal:content="structure context/bio/output | string:" />
 
-        <p>The Speaker has submittet the following talks: </p>
+        <p i18n:tranlate="">The Speaker has submittet the following talks: </p>
 
 <ul>
 <tal:loop repeat="talks speakertalks">

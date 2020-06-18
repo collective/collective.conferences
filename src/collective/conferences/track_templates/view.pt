@@ -22,11 +22,11 @@
         <p><span i18n:translate="label_the">The</span> <span tal:content="context/title" />
 
             <tal:block condition="context/start">
-                <span i18n:translate="label_begins_at"> begins at</span>
+                <span i18n:translate=""> begins at</span>
                 <span tal:content="python:context.start.strftime('%d. %b %Y %H:%M')" />
             </tal:block>
             <tal:block condition="context/end">
-                <span i18n:translate="label_and_ends_at">and ends at</span>
+                <span i18n:translate="">and ends at</span>
                 <span tal:content="python:context.end.strftime('%d. %b %Y %H:%M')" />
             </tal:block>.
         </div>
@@ -57,9 +57,9 @@
 
         <table border="0" width="100%">
         <tr bgcolor="#18A303">
-         <th><label i18n:translate="talk_workshop">Talk/Workshop</label></th>
-         <th><label i18n:translate="time">Time</label></th>
-         <th><label i18n:translate="subject_of_the_talk">Subject of the talk</label></th>
+         <th><label i18n:translate="">Talk/Workshop</label></th>
+         <th><label i18n:translate="">Time</label></th>
+         <th><label i18n:translate="">Subject of the talk</label></th>
          </tr>
          <tbody tal:repeat="talk view/talks">
          <tr>

@@ -10,6 +10,7 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main">
+    <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 

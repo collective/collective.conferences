@@ -10,7 +10,7 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="trackroom view/trackRoom;
-                    talks view/talks;">
+                    talks view/talks_workshops;">
     <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
@@ -61,7 +61,7 @@
          <th><label i18n:translate="">Time</label></th>
          <th><label i18n:translate="">Subject of the talk</label></th>
          </tr>
-         <tbody tal:repeat="talk view/talks">
+         <tbody tal:repeat="talk view/talks_workshops">
          <tr>
          <td>
          <h4>

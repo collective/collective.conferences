@@ -272,4 +272,3 @@ class TalkView(BrowserView):
                 results.append(obj)
         return IContentListing(results)
 
-

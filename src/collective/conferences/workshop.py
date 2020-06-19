@@ -17,6 +17,7 @@ from plone.autoform import directives
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from plone.app.z3cform.widget import SelectFieldWidget
+from plone.app.contentlisting.interfaces import IContentListing
 import datetime
 
 from zope.interface import invariant, Invalid
@@ -213,6 +214,32 @@ class WorkshopView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
+
+
+    def workshopLeaders(self):
+        results = []
+        for rel in self.context.speaker:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)
+
+
+
+    def conferenceTrack(self):
+        results = []
+        for rel in self.context.conferencetrack:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)
+
 
     def WorkshopRoom(self):
 

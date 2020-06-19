@@ -9,57 +9,67 @@
 <body>
 
 <metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="workshopleader view/workshopLeaders;
+                    conferencetrack view/conferenceTrack">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
-        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="suggest_review">
+        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="">
             Please submit this for review.
         </div>
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
-
         <div tal:condition="context/speaker">
-            <label i18n:translate="workshop_leader">Leader of the Workshop:</label>
-            <a tal:attributes="href context/speaker/to_object/absolute_url"><span tal:content="context/speaker/to_object/Title | nothing" /></a>
+        <h3 i18n:translate="">Workshop Leader</h3>
+        <ul>
+        <tal:loop repeat="workshopleader workshopleader">
+        <li><a tal:attributes="href python: workshopleader.getURL()">
+                            <span tal:content="workshopleader/Title" />,
+                            </a>
+                            </li>
+                        </tal:loop>
+        </ul>
         </div>
-        <div tal:condition="context/speaker2">
-            <label i18n:translate="workshop_coleader">Co-Leader of the Workshop:</label>
-            <a tal:attributes="href context/speaker2/to_object/absolute_url"><span tal:content="context/speaker2/to_object/Title | nothing" /></a>
+        <div tal:condition="context/conferencetrack">
+        <h3 i18n:translate="">Track</h3>
+        <tal:loop repeat="Track conferencetrack">
+        <h4>
+        <a tal:attributes="href python: Track.getURL()">
+                            <span tal:content="Track/Title" />
+         </a>
+         </h4>
+         </tal:loop>
+         </div>
+
+         <div tal:condition="context/workshoplength">
+         <h3 i18n:translate="">Workshop Length</h3>
+
+         <tal:loop repeat="length context/workshoplength">
+
+         <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
+         </tal:loop>
         </div>
-
-        <div>
-             <label i18n:translate="time">Time:</label>
-             
-             <span tal:condition="context/startitem" tal:content="python:context.startitem.strftime('%d.%m.%Y from %H:%M to ')" />
-             <span tal:condition="context/enditem" tal:content="python:context.enditem.strftime('%H:%M  o\'Clock')" />
-        </div>
-        <div tal:condition="context/length">
-            <label i18n:translate="length">Length of the Talk:</label>
-            <span tal:content="context/length | nothing" />
-            <span>minutes</span>
-        </div>
-
-        <div class="workshoproom">
-
-         <label i18n:translate="label_room">Room:</label>
-
-         <span tal:content="view/WorkshopRoom" />
-
-        </div>
-
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
+        <h4 i18n:translate="">Details of the Workshop</h4>
 
-        <h4>Details of the Workshop</h4>
+        <div tal:content="structure context/details/output|nothing" />
 
-        <div tal:content="structure view/w/details/render" />
+        <div tal:condition="context/slides">
+        <h4 i18n:translate="">Presentation Slides</h4>
+        <a tal:attributes="href string:${context/absolute_url}/@@download/slides/${context/slides/filename}">
+        <span i18n:translate="">Slides</span>
+        </a>
+        </div>
 
-        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+
 
     </tal:main-macro>
 </metal:main>

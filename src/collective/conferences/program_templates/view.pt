@@ -10,6 +10,7 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -39,24 +40,24 @@
 
         <div tal:content="structure context/details/output|nothing" />
         
-        <h2 i18n:translate="heading_tracks">Tracks</h2>
+        <h2 i18n:translate="">Tracks</h2>
 
   
 <table border="0" width="100%">
         <thead>
-         <td><h4 i18n:translate="track">Track</h4>
+         <td><h4 i18n:translate="">Track</h4>
          </td>
          <td>
-         <h4 i18n:translate="description">Description</h4>
+         <h4 i18n:translate="">Description</h4>
          </td>
          <td>
-         <h4 i18n:translate="room">Room</h4>
+         <h4 i18n:translate="">Room</h4>
          </td>
          <td>
-         <h4 i18n:translate="from">From</h4>
+         <h4 i18n:translate="">From</h4>
          </td>
          <td>
-         <h4 i18n:translate="to">To</h4>
+         <h4 i18n:translate="">To</h4>
          </td>
          
          </thead>

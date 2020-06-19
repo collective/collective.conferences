@@ -19,7 +19,9 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-        tal:define="speakertalks view/speakertalks">
+        tal:define="speakertalks view/speakertalks;
+                    speakerworkshops view/speakerworkshops">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -41,12 +43,25 @@
         
         <div tal:content="structure context/bio/output | string:" />
 
-        <p>The Speaker has submittet the following talks: </p>
+        <p i18n:translate="">The Speaker has submitted the following talks: </p>
 
 <ul>
 <tal:loop repeat="talks speakertalks">
 <li><a tal:attributes="href python: talks.getURL()">
                             <span tal:content="talks/Title" />,
+                            </a>
+                            </li>
+
+
+        </tal:loop>
+</ul>
+
+        <p i18n:translate="">and the following workshops: </p>
+
+<ul>
+<tal:loop repeat="workshops speakerworkshops">
+<li><a tal:attributes="href python: workshops.getURL()">
+                            <span tal:content="workshops/Title" />,
                             </a>
                             </li>
 

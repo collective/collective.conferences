@@ -10,6 +10,7 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 

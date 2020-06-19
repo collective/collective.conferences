@@ -229,6 +229,8 @@
 
     <adapter name="presenters" factory=".indexers.presenternames" />
 
+    <adapter name="workshopleader" factory=".indexers.workshopleadernames" />
+
     <subscriber
         for=".conferencespeaker.IConferenceSpeaker
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

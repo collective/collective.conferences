@@ -116,9 +116,9 @@ class ITalk(model.Schema):
         required=False,
     )
 
-    read_permission(talkpositionintrack='cmf.ReviewPortalContent')
-    write_permission(talkpositionintrack='cmf.ReviewPortalContent')
-    talkpositionintrack = schema.Int(
+    read_permission(positionintrack='cmf.ReviewPortalContent')
+    write_permission(positionintrack='cmf.ReviewPortalContent')
+    positionintrack = schema.Int(
         title=_(u'Position In The Track'),
         description=_(u'Choose a number for the order in the track'),
         required=False,

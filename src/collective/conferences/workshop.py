@@ -122,9 +122,9 @@ class IWorkshop(model.Schema):
         required=False,
     )
 
-    read_permission(workshoppositionintrack='cmf.ReviewPortalContent')
-    write_permission(workshoppositionintrack='cmf.ReviewPortalContent')
-    workshoppositionintrack = schema.Int(
+    read_permission(positionintrack='cmf.ReviewPortalContent')
+    write_permission(positionintrack='cmf.ReviewPortalContent')
+    positionintrack = schema.Int(
         title=_(u'Position In The Track'),
         description=_(u'Choose a number for the order in the track'),
         required=False,

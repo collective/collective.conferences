@@ -6,8 +6,14 @@
     <index name="lengthoftalk" meta_type="FieldIndex">
         <indexed_attr value="talklength" />
     </index>
-    <index name="talkorderintrack" meta_type="KeywordIndex">
-        <indexed_attr value="talkpositionintrack" />
+    <index name="lengthofworkshop" meta_type="FieldIndex">
+        <indexed_attr value="workshoplength" />
+    </index>
+    <index name="conferencetrack" meta_type="KeywordIndex">
+        <indexed_attr value="programtrack" />
+    </index>
+    <index name="orderintrack" meta_type="KeywordIndex">
+        <indexed_attr value="positionintrack" />
     </index>
     <index name="presenters" meta_type="KeywordIndex">
         <indexed_attr value="presenters" />

@@ -25,3 +25,23 @@ def workshopleadernames(object, **kw):
         obj = rel.to_object.title
         results.append(obj)
     return results
+
+@indexer(IWorkshop)
+def workshoptrackname(object, **kw):
+    results = []
+    for rel in object.conferencetrack:
+        if rel.isBroken():
+            continue
+        obj = rel.to_object.title
+        results.append(obj)
+    return results
+
+@indexer(ITalk)
+def talktrackname(object, **kw):
+    results = []
+    for rel in object.conferencetrack:
+        if rel.isBroken():
+            continue
+        obj = rel.to_object.title
+        results.append(obj)
+    return results

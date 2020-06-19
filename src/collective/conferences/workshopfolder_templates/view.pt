@@ -25,7 +25,11 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
-
+        <ul class="workshoplist" tal:repeat="workshop context/objectValues">
+        <li>
+        <a tal:attributes="href workshop/absolute_url" tal:content="workshop/Title" />
+        </li>
+        </ul>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

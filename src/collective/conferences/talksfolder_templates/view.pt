@@ -27,6 +27,12 @@
 
         <p class="documentDescription" tal:content="context/description" />
 
+        <ul class="talkslist" tal:repeat="talk context/objectValues">
+        <li>
+        <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
+        </li>
+        </ul>
+
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

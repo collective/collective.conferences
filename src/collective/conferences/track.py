@@ -50,13 +50,13 @@ class ITrack(model.Schema):
         )
 
 
-    start = schema.Datetime(
+    trackstart = schema.Datetime(
             title=_(u"Startdate"),
             description =_(u"Start date"),
             required=False,
         )
 
-    end = schema.Datetime(
+    trackend = schema.Datetime(
             title=_(u"Enddate"),
             description =_(u"End date"),
             required=False,
@@ -82,8 +82,8 @@ class ITrack(model.Schema):
 
     @invariant
     def validateStartEnd(data):
-        if data.start is not None and data.end is not None:
-            if data.start > data.end:
+        if data.trackstart is not None and data.trackend is not None:
+            if data.trackstart > data.trackend:
                 raise StartBeforeEnd(_(
                     u"The start date must be before the end date."))
 

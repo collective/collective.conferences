@@ -77,26 +77,6 @@ class IProgram(model.Schema):
                     u"The start date must be before the end date."))
 
 
-# @form.default_value(field=IProgram['start'])
-#def startDefaultValue(data):
-#    # To get hold of the folder, do: context = data.context
-#    return datetime.datetime.today() + datetime.timedelta(7)
-
-
-#@form.default_value(field=IProgram['end'])
-#def endDefaultValue(data):
-    # To get hold of the folder, do: context = data.context
-#    return datetime.datetime.today() + datetime.timedelta(10)
-
-# Indexers
-
-
-
-@indexer(ITrack)
-def tracksIndexer(obj):
-    return obj.tracks
-# grok.global_adapter(tracksIndexer, name="Subject")
-
 
 # Views
 

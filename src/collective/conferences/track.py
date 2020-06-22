@@ -26,8 +26,8 @@ from plone.app.textfield import RichText
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
 
-#class StartBeforeConferenceProgram(Invalid):
-#    __doc__ = _(u"The start of the track could not before the conference program.")
+class StartBeforeConferenceProgram(Invalid):
+    __doc__ = _(u"The start of the track could not before the conference program.")
 
 
 class ITrack(model.Schema):
@@ -86,6 +86,16 @@ class ITrack(model.Schema):
             if data.trackstart > data.trackend:
                 raise StartBeforeEnd(_(
                     u"The start date must be before the end date."))
+
+    @invariant
+    def validateStartNotBeforeProgram(data):
+        if data.trackstart is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            result = catalog.uniqueValuesFor('programstart')
+            trackstart = DateTime(data.trackstart).toZone('UTC')
+            if DateTime(trackstart) < DateTime(result[0]):
+                raise StartBeforeConferenceProgram(
+                    _(u"The start date could not before the begin of the conference program."))
 
 #    @invariant
 #   def validateStartNotBeforeProgram(data):

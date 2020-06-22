@@ -53,12 +53,13 @@ def talktrackname(object, **kw):
 def programStartIndexer(obj):
     if obj.start is None:
         return None
-    return DateTime(obj.start.isoformat())
+    programstart = DateTime(obj.start).toZone('UTC')
+    return DateTime(programstart).ISO()
 
 
 @indexer(IProgram)
 def programEndIndexer(obj):
     if obj.end is None:
         return None
-    return DateTime(obj.end.isoformat())
+    return DateTime(obj.end).ISO()
 

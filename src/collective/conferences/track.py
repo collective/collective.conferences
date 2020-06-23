@@ -26,8 +26,11 @@ from plone.app.textfield import RichText
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
 
-#class StartBeforeConferenceProgram(Invalid):
-#    __doc__ = _(u"The start of the track could not before the conference program.")
+class StartBeforeConferenceProgram(Invalid):
+    __doc__ = _(u"The start of the track could not be set before the conference program.")
+
+class EndAfterConferenceProgram(Invalid):
+    __doc__ = _(u'The end of the track could not be set after the conference program.')
 
 
 class ITrack(model.Schema):
@@ -50,13 +53,13 @@ class ITrack(model.Schema):
         )
 
 
-    start = schema.Datetime(
+    trackstart = schema.Datetime(
             title=_(u"Startdate"),
             description =_(u"Start date"),
             required=False,
         )
 
-    end = schema.Datetime(
+    trackend = schema.Datetime(
             title=_(u"Enddate"),
             description =_(u"End date"),
             required=False,
@@ -82,11 +85,31 @@ class ITrack(model.Schema):
 
     @invariant
     def validateStartEnd(data):
-        if data.start is not None and data.end is not None:
-            if data.start > data.end:
+        if data.trackstart is not None and data.trackend is not None:
+            if data.trackstart > data.trackend:
                 raise StartBeforeEnd(_(
                     u"The start date must be before the end date."))
 
+    @invariant
+    def validateStartNotBeforeProgram(data):
+        if data.trackstart is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            result = catalog.uniqueValuesFor('programstart')
+            trackstart = DateTime(data.trackstart).toZone('UTC')
+            if DateTime(trackstart) < DateTime(result[0]):
+                raise StartBeforeConferenceProgram(
+                    _(u"The start date could not be set before the begin of the conference program."))
+
+
+    @invariant
+    def validateEndNotAfterProgram(data):
+        if data.trackend is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            result = catalog.uniqueValuesFor('programend')
+            trackend = DateTime(data.trackend).toZone('UTC')
+            if DateTime(trackend) > DateTime(result[0]):
+                raise EndAfterConferenceProgram(
+                    _(u"The end date couldn't be set after the end of the conference program."))
 #    @invariant
 #   def validateStartNotBeforeProgram(data):
 #        if data.start is not None:

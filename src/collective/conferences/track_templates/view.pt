@@ -21,13 +21,13 @@
         <div class="discreet">
         <p><span i18n:translate="label_the">The</span> <span tal:content="context/title" />
 
-            <tal:block condition="context/start">
+            <tal:block condition="context/trackstart">
                 <span i18n:translate=""> begins at</span>
-                <span tal:content="python:context.start.strftime('%d. %b %Y %H:%M')" />
+                <span tal:content="python:context.trackstart.strftime('%d. %b %Y %H:%M')" />
             </tal:block>
-            <tal:block condition="context/end">
+            <tal:block condition="context/trackend">
                 <span i18n:translate="">and ends at</span>
-                <span tal:content="python:context.end.strftime('%d. %b %Y %H:%M')" />
+                <span tal:content="python:context.trackend.strftime('%d. %b %Y %H:%M')" />
             </tal:block>.
         </div>
 

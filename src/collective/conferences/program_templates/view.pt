@@ -75,12 +75,12 @@
 
        </span>
        </td>
-      <td><tal:block condition="item/start">
-           <span tal:content="python:item.start.strftime('%d. %b %Y %H:%M')" />
+      <td><tal:block condition="item/trackstart">
+           <span tal:content="python:item.trackstart.strftime('%d. %b %Y %H:%M')" />
        </tal:block>
        </td>
-       <td> <tal:block condition="item/end">
-                <span tal:content="python:item.end.strftime('%d. %b %Y %H:%M')" />
+       <td> <tal:block condition="item/trackend">
+                <span tal:content="python:item.trackend.strftime('%d. %b %Y %H:%M')" />
        </tal:block>
        </td>
        </tr>
@@ -96,13 +96,13 @@
        </span>
        </td>
        <td>
-       <tal:block condition="item/start">
-                <span tal:content="python:item.start.strftime('%d. %b %Y %H:%M')" />
+       <tal:block condition="item/trackstart">
+                <span tal:content="python:item.trackstart.strftime('%d. %b %Y %H:%M')" />
        </tal:block>
        </td>
        <td>
-       <tal:block condition="item/end">
-                <span tal:content="python:item.end.strftime('%d. %b %Y %H:%M')" />
+       <tal:block condition="item/trackend">
+                <span tal:content="python:item.trackend.strftime('%d. %b %Y %H:%M')" />
        </tal:block>
        </td>
         </tr>

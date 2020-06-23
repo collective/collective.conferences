@@ -21,4 +21,10 @@
     <index name="workshopleader" meta_type="KeywordIndex">
         <indexed_attr value="workshopleader" />
     </index>
+    <index name="programstart" meta_type="FieldIndex">
+        <indexed_attr value="programstart" />
+    </index>
+    <index name="programend" meta_type="FieldIndex">
+        <indexed_attr value="programend" />
+    </index>
 </object>

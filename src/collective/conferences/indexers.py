@@ -61,5 +61,6 @@ def programStartIndexer(obj):
 def programEndIndexer(obj):
     if obj.end is None:
         return None
-    return DateTime(obj.end).ISO()
+    programend = DateTime(obj.end).toZone('UTC')
+    return DateTime(programend).ISO()
 

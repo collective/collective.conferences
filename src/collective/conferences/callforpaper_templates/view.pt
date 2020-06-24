@@ -48,6 +48,17 @@
         </p>
         </div>
         <div tal:condition="python: not isAnonymous">
+        <p i18n:translate="">If you not already registered a conference speaker for you, please follow the following
+        link and add a speaker profile to this site:
+        <ul>
+        <li>
+         <a class="pointer"
+         tal:attributes="href string:${portal_url}/speakers/++add++collective.conferences.conferencespeaker">
+         <span i18n:translate="">Add your speaker profile</span>
+         </a>
+        </li>
+        </ul>
+        </p>
         <p i18n:translate="">You can submit a new talk or workshop by following one of the following links. They
         will open a form with the necessary entries to create a new conference talk or workshop proposal:
         <ul>

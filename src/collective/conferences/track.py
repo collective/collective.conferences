@@ -110,14 +110,6 @@ class ITrack(model.Schema):
             if DateTime(trackend) > DateTime(result[0]):
                 raise EndAfterConferenceProgram(
                     _(u"The end date couldn't be set after the end of the conference program."))
-#    @invariant
-#   def validateStartNotBeforeProgram(data):
-#        if data.start is not None:
-#            startprogram = datetime.date (aq_parent (data.start))
-#            if data.start < datetime(startprogram):
-#                raise StartBeforeConferenceProgram(_(
-#                    u"The start date could not before the begin of the conference program."))
-
 
 
 #def setdates(item):

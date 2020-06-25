@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import logging
-
 from Acquisition import aq_inner
 from collective.conferences import _
 from plone import api
@@ -10,14 +8,24 @@ from plone.autoform.form import AutoExtensibleForm
 from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
 from plone.z3cform.layout import wrap_form
 from Products.CMFPlone.utils import safe_unicode
-from z3c.form import button, field, form
+from z3c.form import button
+from z3c.form import field
+from z3c.form import form
 from z3c.form.browser.radio import RadioFieldWidget
-from z3c.relationfield.schema import RelationChoice, RelationList
-from zope import interface, schema
-from zope.component import adapter, getMultiAdapter
-from zope.interface import directlyProvides, implementer
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from zope import interface
+from zope import schema
+from zope.component import adapter
+from zope.component import getMultiAdapter
+from zope.interface import directlyProvides
+from zope.interface import implementer
 from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
+
+import logging
+
 
 logger = logging.getLogger(__name__)
 
@@ -32,13 +40,11 @@ def vocabCfPTopics(context):
 
     return SimpleVocabulary(terms)
 
+
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
-
-
 class IReCaptchaForm(interface.Interface):
-
     captcha = schema.TextLine(
         title=safe_unicode('ReCaptcha'),
         description=safe_unicode(''),
@@ -53,10 +59,8 @@ class ReCaptcha(object):
         self.context = context
 
 
-
 class NewTalkSchema(interface.Interface):
-
-    talktitle=schema.TextLine(
+    talktitle = schema.TextLine(
         title=_(u'The Title Of Your Talk'),
         description=_(u'Fill in the title of your proposed conference talk'),
     )
@@ -66,9 +70,9 @@ class NewTalkSchema(interface.Interface):
     )
 
     talkdetails = RichText(
-            title=_(u"Talk details"),
-            required=True
-        )
+        title=_(u"Talk details"),
+        required=True
+    )
 
     speaker = RelationList(
         title=_(u'Presenter'),
@@ -92,7 +96,6 @@ class NewTalkSchema(interface.Interface):
     )
 
 
-
 @implementer(NewTalkSchema)
 @adapter(interface.Interface)
 class NewTalkSchemaAdapter(object):
@@ -105,12 +108,12 @@ class NewTalkSchemaAdapter(object):
         self.cfp_topic = None
         self.ptalklength = None
 
+
 class NewTalkForm(AutoExtensibleForm, form.Form):
     schema = NewTalkSchema
     form_name = 'newtalkform'
     label = _(safe_unicode('Submit A Conference Talk'))
     description = _(safe_unicode('Submit a proposal for a conference talk.'))
-
 
     fields = field.Fields(NewTalkSchema, IReCaptchaForm)
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
@@ -124,7 +127,6 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
 
         # call the base class version - this is very important!
         super(NewTalkForm, self).update()
-
 
     @button.buttonAndHandler(_(safe_unicode('Submit Your talk')))
     def handleApply(self, action):
@@ -152,8 +154,8 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
                 type='error')
             return
 
-        portal=api.portal.get()
-        obj=api.content.create(
+        portal = api.portal.get()
+        obj = api.content.create(
             type='collective.conferences.talk',
             title=data['talktitle'],
             description=data['talkdescription'],
@@ -170,8 +172,6 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
 
         contextURL = self.context.absolute_url()
         self.request.response.redirect(contextURL)
-
-
 
     @button.buttonAndHandler(_(safe_unicode('Cancel')))
     def handleCancel(self, action):

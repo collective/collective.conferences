@@ -12,75 +12,71 @@ from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
 from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 from zope.security import checkPermission
 
 
 class IConferencebreak(model.Schema):
-
-    
     title = schema.TextLine(
-            title=_(u"Title"),
-            description=_(u"Conference break title"),
-        )
+        title=_(u"Title"),
+        description=_(u"Conference break title"),
+    )
 
     description = schema.Text(
-            title=_(u"Conference break summary"),
-            required=False
-        )
+        title=_(u"Conference break summary"),
+        required=False
+    )
 
     primary('details')
     details = RichText(
-            title=_(u"Conference break details"),
-            required=False
-        )
-        
-        
-#    form.widget(track=AutocompleteFieldWidget)
-#    track = RelationChoice(
-#            title=_(u"Track"),
-#            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
-#            required=False,
-#        )
+        title=_(u"Conference break details"),
+        required=False
+    )
 
+    #    form.widget(track=AutocompleteFieldWidget)
+    #    track = RelationChoice(
+    #            title=_(u"Track"),
+    #            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
+    #            required=False,
+    #        )
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
-            title=_(u"Startdate"),
-            description =_(u"Start date"),
-            required=False,
-        )
-    
+        title=_(u"Startdate"),
+        description=_(u"Start date"),
+        required=False,
+    )
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
-            title=_(u"Enddate"),
-            description =_(u"End date"),
-            required=False,
-        )
+        title=_(u"Enddate"),
+        description=_(u"End date"),
+        required=False,
+    )
 
     directives.widget(breaklength=RadioFieldWidget)
-    breaklength= schema.List(
-            title=_(u"Length"),
-            value_type=schema.Choice(source="BreakLength"),
-            required=True,
-        )
+    breaklength = schema.List(
+        title=_(u"Length"),
+        value_type=schema.Choice(source="BreakLength"),
+        required=True,
+    )
 
     directives.widget(test=RadioFieldWidget)
-    test= schema.List(
+    test = schema.List(
         title=_(u"Test"),
         value_type=schema.Choice(source="BreakLength"),
         required=True,
     )
 
-#@grok.subscribe(IConferencebreak, IObjectAddedEvent)
-#def conferencebreakaddedevent(conferencebreak, event):
+
+# @grok.subscribe(IConferencebreak, IObjectAddedEvent)
+# def conferencebreakaddedevent(conferencebreak, event):
 #    setdates(conferencebreak)
 
-#@grok.subscribe(IConferencebreak, IObjectModifiedEvent)
-#def conferencebreakmodifiedevent(conferencebreak, event):
+# @grok.subscribe(IConferencebreak, IObjectModifiedEvent)
+# def conferencebreakmodifiedevent(conferencebreak, event):
 #    setdates(conferencebreak)
-    
 
 
 class ConferencebreakView(BrowserView):

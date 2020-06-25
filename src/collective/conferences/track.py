@@ -1,28 +1,31 @@
 # -*- coding: utf-8 -*-
-import datetime
-
 from collective.conferences import _
 from DateTime import DateTime
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
 from plone.autoform import directives
-from plone.indexer import indexer
 from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
-from z3c.relationfield.schema import RelationChoice, RelationList
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
 from zope import schema
-from zope.interface import Invalid, invariant
+from zope.interface import Invalid
+from zope.interface import invariant
 from zope.security import checkPermission
+
+import datetime
 
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u"The start or end date is invalid")
 
+
 class StartBeforeConferenceProgram(Invalid):
     __doc__ = _(u"The start of the track could not be set before the conference program.")
+
 
 class EndAfterConferenceProgram(Invalid):
     __doc__ = _(u'The end of the track could not be set after the conference program.')
@@ -33,32 +36,31 @@ class ITrack(model.Schema):
     """
 
     title = schema.TextLine(
-            title=_(u"Title"),
-            description=_(u"Track title"),
-        )
+        title=_(u'Title'),
+        description=_(u'Track title'),
+    )
 
     description = schema.Text(
-            title=_(u"Track summary"),
-        )
+        title=_(u'Track summary'),
+    )
 
     primary('details')
     details = RichText(
-            title=_(u"Track details"),
-            required=False
-        )
-
+        title=_(u'Track details'),
+        required=False
+    )
 
     trackstart = schema.Datetime(
-            title=_(u"Startdate"),
-            description =_(u"Start date"),
-            required=False,
-        )
+        title=_(u'Startdate'),
+        description=_(u'Start date'),
+        required=False,
+    )
 
     trackend = schema.Datetime(
-            title=_(u"Enddate"),
-            description =_(u"End date"),
-            required=False,
-        )
+        title=_(u'Enddate'),
+        description=_(u'End date'),
+        required=False,
+    )
 
     room = RelationList(
         title=_(u'Choose the room for the track'),
@@ -72,7 +74,6 @@ class ITrack(model.Schema):
         RadioFieldWidget,
     )
 
-
     def startTimeTalk(data):
         if data.start is not None:
             talkstart = data.start
@@ -83,7 +84,7 @@ class ITrack(model.Schema):
         if data.trackstart is not None and data.trackend is not None:
             if data.trackstart > data.trackend:
                 raise StartBeforeEnd(_(
-                    u"The start date must be before the end date."))
+                    u'The start date must be before the end date.'))
 
     @invariant
     def validateStartNotBeforeProgram(data):
@@ -93,8 +94,7 @@ class ITrack(model.Schema):
             trackstart = DateTime(data.trackstart).toZone('UTC')
             if DateTime(trackstart) < DateTime(result[0]):
                 raise StartBeforeConferenceProgram(
-                    _(u"The start date could not be set before the begin of the conference program."))
-
+                    _(u'The start date could not be set before the begin of the conference program.'))
 
     @invariant
     def validateEndNotAfterProgram(data):
@@ -107,7 +107,7 @@ class ITrack(model.Schema):
                     _(u"The end date couldn't be set after the end of the conference program."))
 
 
-#def setdates(item):
+# def setdates(item):
 #    if not item.track:
 #        return
 #    catalog = component.getUtility(ICatalog)
@@ -123,16 +123,16 @@ class ITrack(model.Schema):
 
 
 def trackmodified(track, event):
-   print ("track modified")
+    print('track modified')
+
 
 class TrackView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
 
-
     def talks_workshops(self):
-        tracktitle=self.context.title
+        tracktitle = self.context.title
         talks_workshops = api.content.find(depth=3,
                                            portal_type=('collective.conferences.talk',
                                                         'collective.conferences.workshop'),
@@ -140,8 +140,6 @@ class TrackView(BrowserView):
                                            review_state='published',
                                            sort_on='orderintrack')
         return [x.getObject() for x in talks_workshops]
-
-
 
     def trackRoom(self):
         results = []

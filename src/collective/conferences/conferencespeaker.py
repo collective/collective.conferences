@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import re
-
 from collective.conferences import _
 from plone import api
 from plone.app.textfield import RichText
@@ -10,87 +8,94 @@ from Products.Five import BrowserView
 from zope import schema
 from zope.interface import Invalid
 
+import re
+
 checkEmail = re.compile(
-     r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
-     
+    r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
+
+
 def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u"Invalid email address"))
     return True
 
+
 class IConferenceSpeaker(model.Schema):
     """A conference speaker or leader of a workshop. Speaker can be added anywhere.
     """
 
-    lastname= schema.TextLine(
-            title=_(u"Last name"),
-        )
-    
+    lastname = schema.TextLine(
+        title=_(u"Last name"),
+    )
+
     firstname = schema.TextLine(
-             title=_(u"First name"),
-             required=True,
-        )
-  
+        title=_(u"First name"),
+        required=True,
+    )
+
     street = schema.TextLine(
-            title=_(u"Street"),
-            description=_(u"For those requiring visa, please add your full postal address details"),
-            required=False,
-        )
-    
+        title=_(u"Street"),
+        description=_(u"For those requiring visa, please add your full postal address details"),
+        required=False,
+    )
+
     city = schema.TextLine(
-            title=_(u"City"),
-            description=_(u"For those requiring visa, please add your full postal address details"),
-            required=False,
-        )
-    
+        title=_(u"City"),
+        description=_(u"For those requiring visa, please add your full postal address details"),
+        required=False,
+    )
+
     postalcode = schema.TextLine(
-                 title=_(u"Postal Code"),
-                 description=_(u"For those requiring visa, please add your full postal address details"),
-                 required=False,
-        )
-    
+        title=_(u"Postal Code"),
+        description=_(u"For those requiring visa, please add your full postal address details"),
+        required=False,
+    )
+
     country = schema.TextLine(
-              title=_(u"Country"),
-              description=_(u"For those requiring visa, please add your full postal address details"),
-              required=False,
-        )
+        title=_(u"Country"),
+        description=_(u"For those requiring visa, please add your full postal address details"),
+        required=False,
+    )
 
     email = schema.ASCIILine(
-            title=_(u"Your email address"),
-            constraint=validateEmail,
-            required=True,
-        )
+        title=_(u"Your email address"),
+        constraint=validateEmail,
+        required=True,
+    )
 
     telephonenumber = schema.TextLine(
-            title=_(u"Telephone Number"),
-            description=_(u"Please fill in your telephone number so that we could get in contact with you by phone if necessary."),
-            required=False,
-        )
+        title=_(u"Telephone Number"),
+        description=_(
+            u"Please fill in your telephone number so that we could get in contact with you by phone if necessary."),
+        required=False,
+    )
     mobiletelepone = schema.TextLine(
-            title=_(u"Mobile Telephone Number"),
-            description=_(u"Please fill in your mobile telephone number so that we could get in contact with you during the conference."),
-            required=True,
-        )
-    
+        title=_(u"Mobile Telephone Number"),
+        description=_(
+            u"Please fill in your mobile telephone number so that we could get in contact with you during the conference."),
+        required=True,
+    )
+
     organisation = schema.TextLine(
-            title=_(u"Organisation"),
-            required=False,
-        )
+        title=_(u"Organisation"),
+        required=False,
+    )
 
     description = schema.Text(
-            title=_(u"A short bio"),
-        )
-    
+        title=_(u"A short bio"),
+    )
+
     bio = RichText(
-            title=_(u"Bio"),
-            required=False
-        )
-    
+        title=_(u"Bio"),
+        required=False
+    )
+
     picture = NamedBlobImage(
-            title=_(u"Picture"),
-            description=_(u"Please upload an image"),
-            required=False,
-        )
+        title=_(u"Picture"),
+        description=_(u"Please upload an image"),
+        required=False,
+    )
+
 
 def notifyUser(self, event):
     user = api.user.get_current()
@@ -102,13 +107,14 @@ def notifyUser(self, event):
         return
 
     subject = "Is this you?"
-    message = "A speaker /leader of a workshop called %s was added here %s. If this is you, everything is fine." % (self.title, self.absolute_url(),)
+    message = "A speaker /leader of a workshop called %s was added here %s. If this is you, everything is fine." % (
+    self.title, self.absolute_url(),)
 
     api.portal.send_email(
         recipient='{0}'.format(email),
-        sender= '{0}'.format(sender),
+        sender='{0}'.format(sender),
         subject='{0}'.format(subject),
-        body='{0}'.format(message),)
+        body='{0}'.format(message), )
 
 
 class ConferenceSpeakerView(BrowserView):
@@ -128,7 +134,6 @@ class ConferenceSpeakerView(BrowserView):
 
         return url
 
-
     def talks_of_speaker2(self):
         from collective.conferences.talk import ITalk
         context = self.context
@@ -146,32 +151,28 @@ class ConferenceSpeakerView(BrowserView):
 
         return title
 
-
-
     def speakertalks(self):
 
         speakername = self.context.title
-        results  = api.content.find(portal_type="collective.conferences.talk",
-                                    review_state="published",
-                                    presenters=speakername)
+        results = api.content.find(portal_type="collective.conferences.talk",
+                                   review_state="published",
+                                   presenters=speakername)
 
-        objects =[]
+        objects = []
 
         for brain in results:
             objects.append(brain)
 
         return objects
 
-
-
     def speakerworkshops(self):
 
         speakername = self.context.title
-        results  = api.content.find(portal_type="collective.conferences.workshop",
-                                    review_state="published",
-                                    workshopleader=speakername)
+        results = api.content.find(portal_type="collective.conferences.workshop",
+                                   review_state="published",
+                                   workshopleader=speakername)
 
-        objects =[]
+        objects = []
 
         for brain in results:
             objects.append(brain)

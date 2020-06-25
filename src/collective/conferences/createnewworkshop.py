@@ -73,7 +73,7 @@ class NewWorkshopSchema(interface.Interface):
 
     workshopdetails = RichText(
         title=_(u'Workshop details'),
-        required=True
+        required=True,
     )
 
     speaker = RelationList(

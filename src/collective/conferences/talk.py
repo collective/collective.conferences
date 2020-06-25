@@ -136,7 +136,7 @@ class ITalk(model.Schema):
         title=_(u'Enddate'),
         description=_(u'End date'),
         required=False,
-        )
+    )
 
     write_permission(order='collective.conferences.ModifyTrack')
     order = schema.Int(

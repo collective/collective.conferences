@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import logging
-
 from Acquisition import aq_inner
 from collective.conferences import _
 from plone import api
@@ -10,14 +8,24 @@ from plone.autoform.form import AutoExtensibleForm
 from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
 from plone.z3cform.layout import wrap_form
 from Products.CMFPlone.utils import safe_unicode
-from z3c.form import button, field, form
+from z3c.form import button
+from z3c.form import field
+from z3c.form import form
 from z3c.form.browser.radio import RadioFieldWidget
-from z3c.relationfield.schema import RelationChoice, RelationList
-from zope import interface, schema
-from zope.component import adapter, getMultiAdapter
-from zope.interface import directlyProvides, implementer
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
+from zope import interface
+from zope import schema
+from zope.component import adapter
+from zope.component import getMultiAdapter
+from zope.interface import directlyProvides
+from zope.interface import implementer
 from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
+
+import logging
+
 
 logger = logging.getLogger(__name__)
 

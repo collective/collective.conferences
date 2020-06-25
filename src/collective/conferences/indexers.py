@@ -3,7 +3,6 @@ from collective.conferences.program import IProgram
 from collective.conferences.talk import ITalk
 from collective.conferences.workshop import IWorkshop
 from DateTime import DateTime
-from plone import api
 from plone.indexer.decorator import indexer
 
 

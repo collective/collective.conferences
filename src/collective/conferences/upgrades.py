@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
+from plone.app.upgrade.utils import loadMigrationProfile
+
 import logging
 
-from plone import api
-from plone.app.upgrade.utils import loadMigrationProfile
 
 logger = logging.getLogger(__name__)
 

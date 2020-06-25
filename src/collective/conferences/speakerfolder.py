@@ -11,14 +11,14 @@ class ISpeakerfolder(model.Schema):
     """
 
     title = schema.TextLine(
-            title=_(u"Name of the speaker folder"),
-        )
+        title=_(u'Name of the speaker folder'),
+    )
 
     description = schema.Text(
-        title=_(u"speakerfolder description"),
+        title=_(u'speakerfolder description'),
         required=False,
-        )
-    
+    )
+
 class SpeakerfolderView(BrowserView):
 
     def canRequestReview(self):

@@ -148,64 +148,66 @@ class ITalk(model.Schema):
     )
 
     slides = NamedBlobFile(
-            title=_(u'Presentation slides in ODT-File-Format'),
-            description=_(u'Please upload your presentation shortly after you have given your talk.'),
-            required=False,
-        )
+        title=_(u'Presentation slides in ODT-File-Format'),
+        description=_(u'Please upload your presentation shortly after you have given your talk.'),
+        required=False,
+    )
     
     slides2 = NamedBlobFile(
-            title=_(u'Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format'),
-            description=_(u'Please upload your presentation shortly after you have given your talk.'),
-            required=False,
-        )
+        title=_(u'Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format'),
+        description=_(u'Please upload your presentation shortly after you have given your talk.'),
+        required=False,
+     )
 
     slides3 = schema.URI(
-            title=_(u'Link to the presentation slides in ODT-File-Format'),
-            required=False,
-        )
+        title=_(u'Link to the presentation slides in ODT-File-Format'),
+        required=False,
+    )
+
     slides4 = schema.URI(
         title=_(u'Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format'),
         required=False,
-       )
+    )
 
     files = NamedBlobFile(
-            title=_(u'Additional Files of your presentation.'),
-            description=_(u'Please upload the additional files of your presentation (in archive format) '
-                          u'shortly after you have given your talk.'),
-            required=False,
-        )
+        title=_(u'Additional Files of your presentation.'),
+        description=_(u'Please upload the additional files of your presentation (in archive format) '
+                      u'shortly after you have given your talk.'),
+        required=False,
+    )
 
     files2 = schema.URI(
-            title=_(u'Link to additional Files of your presentation in archive file format (e.g. zip-file-format.'),
-            required=False,
-        )
+        title=_(u'Link to additional Files of your presentation in archive file format (e.g. zip-file-format.'),
+        required=False,
+    )
 
     video = schema.URI(
-            title=_(u'Link to the Video of the talk'),
-            required=False,
-        )
+        title=_(u'Link to the Video of the talk'),
+        required=False,
+    )
+
     creativecommonslicense = schema.Bool(
         title=_(u'label_creative_commons_license', default=u'License is Creative Commons Attribution-Share '
                                                            u'Alike 3.0 License.'),
         description=_(u'help_creative_commons_license',
                       default=u'You agree that your talk and slides are provided under the Creative Commons '
                               u'Attribution-Share Alike 3.0 License.'),
-        default=True
+        default=True,
     )
-    
+
     messagetocommittee = schema.Text(
-            title=_(u'Messages to the Program Committee'),
-            description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
-                          u'available to give the talk'),
-            required=False,                     
-        )
-    
+        title=_(u'Messages to the Program Committee'),
+        description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
+                      u'available to give the talk'),
+        required=False,
+    )
+
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
             title=u'Review notes',
             required=False,
-        )
+    )
 
 # @indexer(ITalk)
 # def speakerIndexer(obj):
@@ -220,7 +222,7 @@ class ITalk(model.Schema):
 #    if not ICallforpaper.providedBy(event.newParent):
 #        talk.call_for_paper_tracks = None
 
-    
+
 # @grok.subscribe(ITalk, IObjectAddedEvent)
 # def talkaddedevent(talk, event):
 #    setdates(talk)
@@ -228,7 +230,7 @@ class ITalk(model.Schema):
 # @grok.subscribe(ITalk, IObjectModifiedEvent)
 # def talkmodifiedevent(talk, event):
 #    setdates(talk)
-    
+
 
 #    @invariant
 #    def validateStartEnd(data):

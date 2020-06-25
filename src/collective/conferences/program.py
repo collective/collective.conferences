@@ -18,7 +18,7 @@ from zope.lifecycleevent import ObjectCreatedEvent
 
 
 class StartBeforeEnd(Invalid):
-    __doc__ = _(u"The start or end date is invalid")
+    __doc__ = _(u'The start or end date is invalid')
 
 
 class IProgram(model.Schema):
@@ -26,34 +26,34 @@ class IProgram(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u"Program name"),
+        title=_(u'Program name'),
     )
 
     description = schema.Text(
-        title=_(u"Program summary"),
+        title=_(u'Program summary'),
     )
 
     start = schema.Datetime(
-        title=_(u"Start date"),
+        title=_(u'Start date'),
         required=False,
     )
 
     end = schema.Datetime(
-        title=_(u"End date"),
+        title=_(u'End date'),
         required=False,
     )
 
     primary('details')
     details = RichText(
-        title=_(u"Details"),
-        description=_(u"Details about the program"),
+        title=_(u'Details'),
+        description=_(u'Details about the program'),
         required=False,
     )
 
     directives.widget(organizer=AjaxSelectFieldWidget)
     organizer = schema.Choice(
-        title=_(u"Organiser"),
-        vocabulary=u"plone.app.vocabularies.Users",
+        title=_(u'Organiser'),
+        vocabulary=u'plone.app.vocabularies.Users',
         required=False,
     )
 
@@ -62,7 +62,7 @@ class IProgram(model.Schema):
         if data.start is not None and data.end is not None:
             if data.start > data.end:
                 raise StartBeforeEnd(_(
-                    u"The start date must be before the end date."))
+                    u'The start date must be before the end date.'))
 
 
 # Views

@@ -9,12 +9,12 @@ from zope import schema
 class IWorkshopfolder(model.Schema):
 
     directives.mode(title='hidden')
-    title=schema.TextLine(
+    title = schema.TextLine(
         title=_(u'Name Of The Workshopfolder'),
-        default=_(u'Workshops')
+        default=_(u'Workshops'),
     )
 
-    description=schema.Text(
+    description = schema.Text(
         title=_(u'Workshop Folder Description'),
         required=False,
     )

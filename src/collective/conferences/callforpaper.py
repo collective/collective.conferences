@@ -1,23 +1,17 @@
 # -*- coding: utf-8 -*-
+from Acquisition import aq_inner
 from collective.conferences import _
-from zope import schema
-from plone.supermodel import model
-from plone.app.textfield import RichText
-from plone.supermodel.directives import primary
-from Products.Five import BrowserView
 from plone import api
-
+from plone.app.textfield import RichText
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from Products.CMFCore.utils import getToolByName
+from Products.Five import BrowserView
+from zope import schema
 from zope.component import createObject
 from zope.event import notify
-from zope.lifecycleevent import ObjectCreatedEvent
 from zope.filerepresentation.interfaces import IFileFactory
-
-
-
-
-from Acquisition import aq_inner
-from Products.CMFCore.utils import getToolByName
-
+from zope.lifecycleevent import ObjectCreatedEvent
 
 
 class ICallforpaper(model.Schema):

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
+from collective.conferences.program import IProgram
 from collective.conferences.talk import ITalk
 from collective.conferences.workshop import IWorkshop
-from collective.conferences.program import IProgram
-from plone.indexer.decorator import indexer
-from plone import api
-
 from DateTime import DateTime
+from plone import api
+from plone.indexer.decorator import indexer
+
 
 @indexer(ITalk)
 def presenternames(object, **kw):
@@ -63,4 +63,3 @@ def programEndIndexer(obj):
         return None
     programend = DateTime(obj.end).toZone('UTC')
     return DateTime(programend).ISO()
-

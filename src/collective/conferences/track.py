@@ -1,26 +1,21 @@
 # -*- coding: utf-8 -*-
-from collective.conferences import _
-from zope import schema
-from plone.supermodel import model
-from Products.Five import BrowserView
-from plone.supermodel.directives import primary
-from plone import api
 import datetime
-from z3c.form.browser.radio import RadioFieldWidget
-from plone.autoform import directives
 
-from zope.interface import invariant, Invalid
+from collective.conferences import _
 from DateTime import DateTime
-from plone.indexer import indexer
-from z3c.relationfield.schema import RelationList
-from z3c.relationfield.schema import RelationChoice
+from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
-
-from zope.security import checkPermission
-
 from plone.app.textfield import RichText
-
-
+from plone.autoform import directives
+from plone.indexer import indexer
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from Products.Five import BrowserView
+from z3c.form.browser.radio import RadioFieldWidget
+from z3c.relationfield.schema import RelationChoice, RelationList
+from zope import schema
+from zope.interface import Invalid, invariant
+from zope.security import checkPermission
 
 
 class StartBeforeEnd(Invalid):

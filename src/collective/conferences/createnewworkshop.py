@@ -1,29 +1,23 @@
 # -*- coding: utf-8 -*-
-from collective.conferences import _
-from plone import api
-from zope import interface
-from zope import schema
-from plone.app.textfield import RichText
-from zope.interface import implementer
-from zope.component import adapter
-from plone.autoform.form import AutoExtensibleForm
-from z3c.form import form
-from Products.CMFPlone.utils import safe_unicode
-from plone.z3cform.layout import wrap_form
-from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
-from z3c.form import field
-from z3c.form import button
-from zope.component import getMultiAdapter
-from Acquisition import aq_inner
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.schema.interfaces import IContextSourceBinder
-from zope.interface import directlyProvides
-from z3c.form.browser.radio import RadioFieldWidget
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
-from plone.app.z3cform.widget import SelectFieldWidget
 import logging
 
+from Acquisition import aq_inner
+from collective.conferences import _
+from plone import api
+from plone.app.textfield import RichText
+from plone.app.z3cform.widget import SelectFieldWidget
+from plone.autoform.form import AutoExtensibleForm
+from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
+from plone.z3cform.layout import wrap_form
+from Products.CMFPlone.utils import safe_unicode
+from z3c.form import button, field, form
+from z3c.form.browser.radio import RadioFieldWidget
+from z3c.relationfield.schema import RelationChoice, RelationList
+from zope import interface, schema
+from zope.component import adapter, getMultiAdapter
+from zope.interface import directlyProvides, implementer
+from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 
 logger = logging.getLogger(__name__)
 

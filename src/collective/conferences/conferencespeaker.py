@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
+import re
+
 from collective.conferences import _
-from zope.interface import Invalid
+from plone import api
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
-from plone import api
-
-import re
-
-
-
+from zope.interface import Invalid
 
 checkEmail = re.compile(
      r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
@@ -178,4 +175,3 @@ class ConferenceSpeakerView(BrowserView):
 
         for brain in results:
             objects.append(brain)
-

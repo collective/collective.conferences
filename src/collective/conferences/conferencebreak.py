@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from plone.supermodel import model
-from zope import schema
-from plone.app.textfield import RichText
-from plone.supermodel.directives import primary
-from plone.autoform.directives import write_permission
-from Products.Five import BrowserView
-from zope.security import checkPermission
 from collective.conferences.track import ITrack
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.schema.interfaces import IContextSourceBinder
-from zope.interface import directlyProvides
-from plone.autoform import directives
-from z3c.form.browser.radio import RadioFieldWidget
 from plone import api
-
+from plone.app.textfield import RichText
+from plone.autoform import directives
+from plone.autoform.directives import write_permission
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from Products.Five import BrowserView
+from z3c.form.browser.radio import RadioFieldWidget
+from zope import schema
+from zope.interface import directlyProvides
+from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.security import checkPermission
 
 
 class IConferencebreak(model.Schema):
@@ -88,4 +87,3 @@ class ConferencebreakView(BrowserView):
 
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
-    

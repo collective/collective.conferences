@@ -3,8 +3,8 @@ from collective.conferences import _
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
-
 from zope.security import checkPermission
+
 
 class ISpeakerfolder(model.Schema):
     """A speaker folder. The speaker of the conference are created in the folder.

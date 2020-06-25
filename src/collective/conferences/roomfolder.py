@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from plone.supermodel import model
-from Products.Five import BrowserView
 from plone.app.textfield import RichText
+from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.Five import BrowserView
 from zope import schema
 from zope.security import checkPermission
 

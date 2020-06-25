@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from plone.supermodel import model
-from Products.Five import BrowserView
-from zope import schema
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
+from plone.supermodel import model
 from plone.supermodel.directives import primary
-
+from Products.Five import BrowserView
+from zope import schema
 
 
 class IRoom(model.Schema):

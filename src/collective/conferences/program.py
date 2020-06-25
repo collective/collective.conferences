@@ -1,31 +1,25 @@
 # -*- coding: utf-8 -*-
-from collective.conferences import _
-from plone.supermodel import model
-from Products.Five import BrowserView
-from zope import schema
-from plone.app.textfield import RichText
 import datetime
-from zope.interface import invariant, Invalid
-from plone.indexer.decorator import indexer
-from plone.supermodel.directives import primary
-from plone import api
-from plone.autoform import directives
-from plone.app.z3cform.widget import AjaxSelectFieldWidget
-
-from zope.component import createObject
-from zope.event import notify
-from zope.lifecycleevent import ObjectCreatedEvent
-from zope.filerepresentation.interfaces import IFileFactory
-
-from DateTime import DateTime
-
-from z3c.form.browser.textlines import TextLinesFieldWidget
 
 from Acquisition import aq_inner
-
+from collective.conferences import _
 from collective.conferences.track import ITrack
-
-
+from DateTime import DateTime
+from plone import api
+from plone.app.textfield import RichText
+from plone.app.z3cform.widget import AjaxSelectFieldWidget
+from plone.autoform import directives
+from plone.indexer.decorator import indexer
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from Products.Five import BrowserView
+from z3c.form.browser.textlines import TextLinesFieldWidget
+from zope import schema
+from zope.component import createObject
+from zope.event import notify
+from zope.filerepresentation.interfaces import IFileFactory
+from zope.interface import Invalid, invariant
+from zope.lifecycleevent import ObjectCreatedEvent
 
 
 class StartBeforeEnd(Invalid):

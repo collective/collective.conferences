@@ -1,33 +1,29 @@
 # -*- coding: utf-8 -*-
-from collective.conferences import _
-from plone import api
-from zope import schema
-from plone.supermodel import model
-from Products.Five import BrowserView
-from plone.supermodel.directives import primary
-from Acquisition import aq_inner, aq_parent
-from plone.autoform.directives import write_permission, read_permission
-from plone.app.textfield import RichText
-from zope.schema.interfaces import IContextSourceBinder
-from zope.interface import directlyProvides
-from collective import dexteritytextindexer
-from zope.security import checkPermission
-from z3c.form.browser.radio import RadioFieldWidget
-from plone.autoform import directives
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
-from plone.app.z3cform.widget import SelectFieldWidget
-from plone.app.contentlisting.interfaces import IContentListing
 import datetime
 
-from zope.interface import invariant, Invalid
+from Acquisition import aq_inner, aq_parent
+from collective import dexteritytextindexer
+from collective.conferences import _
+from plone import api
+from plone.app.contentlisting.interfaces import IContentListing
+from plone.app.textfield import RichText
+from plone.app.z3cform.widget import SelectFieldWidget
+from plone.autoform import directives
+from plone.autoform.directives import read_permission, write_permission
+from plone.namedfile.field import NamedBlobFile
+from plone.supermodel import model
+from plone.supermodel.directives import primary
+from Products.Five import BrowserView
+from z3c.form.browser.radio import RadioFieldWidget
+from z3c.relationfield.schema import RelationChoice, RelationList
+from zope import schema
+from zope.interface import Invalid, directlyProvides, invariant
+from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.security import checkPermission
 
-
-from z3c.relationfield.schema import RelationChoice
 # from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from plone.namedfile.field import NamedBlobFile
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 
 

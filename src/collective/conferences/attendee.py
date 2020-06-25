@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from zope import schema
+from collective.conferences.common import yesnochoice
 from plone.supermodel import model
 from Products.Five import BrowserView
-from collective.conferences.common import yesnochoice
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from zope import schema
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 
 
 class IAttendee(model.Schema):

@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-from plone import api
-from plone.app.upgrade.utils import loadMigrationProfile
-
 import logging
 
+from plone import api
+from plone.app.upgrade.utils import loadMigrationProfile
 
 logger = logging.getLogger(__name__)
 
@@ -13,4 +12,3 @@ def reload_gs_profile(context):
         context,
         'profile-collective.conferences:default',
     )
-

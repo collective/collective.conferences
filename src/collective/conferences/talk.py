@@ -53,7 +53,7 @@ class ITalk(model.Schema):
     primary('details')
     details = RichText(
         title=_(u'Talk details'),
-        required=True
+        required=True,
     )
 
     speaker = RelationList(
@@ -116,7 +116,7 @@ class ITalk(model.Schema):
         required=False,
     )
 
- 
+
 #    form.widget(track=AutocompleteFieldWidget)
 #    track = RelationChoice(
 #            title=_(u"Track"),
@@ -126,25 +126,25 @@ class ITalk(model.Schema):
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
-            title=_(u'Startdate'),
-            description=_(u'Start date'),
-            required=False,
-        )
+        title=_(u'Startdate'),
+        description=_(u'Start date'),
+        required=False,
+    )
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
-            title=_(u'Enddate'),
-            description=_(u'End date'),
-            required=False,
+        title=_(u'Enddate'),
+        description=_(u'End date'),
+        required=False,
         )
 
     write_permission(order='collective.conferences.ModifyTrack')
     order = schema.Int(
-            title=_(u'Orderintrack'),
-            description=_(u'Order in the track: write in an Integer from 1 to 12'),
-            min=1,
-            max=12,
-            required=False,
+        title=_(u'Orderintrack'),
+        description=_(u'Order in the track: write in an Integer from 1 to 12'),
+        min=1,
+        max=12,
+        required=False,
     )
 
     slides = NamedBlobFile(
@@ -152,12 +152,12 @@ class ITalk(model.Schema):
         description=_(u'Please upload your presentation shortly after you have given your talk.'),
         required=False,
     )
-    
+
     slides2 = NamedBlobFile(
         title=_(u'Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format'),
         description=_(u'Please upload your presentation shortly after you have given your talk.'),
         required=False,
-     )
+    )
 
     slides3 = schema.URI(
         title=_(u'Link to the presentation slides in ODT-File-Format'),
@@ -205,8 +205,8 @@ class ITalk(model.Schema):
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
-            title=u'Review notes',
-            required=False,
+        title=u'Review notes',
+        required=False,
     )
 
 # @indexer(ITalk)

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from Acquisition import aq_get, aq_inner, aq_parent
 from collective import dexteritytextindexer
 from collective.conferences import _
 from plone import api
@@ -34,13 +33,13 @@ def vocabCfPTopics(context):
 
     return SimpleVocabulary(terms)
 
+
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
 class ITalk(model.Schema):
     """A conference talk. Talks are managed inside tracks of the Program.
     """
-
 
     title = schema.TextLine(
             title=_(u"Title"),
@@ -50,7 +49,6 @@ class ITalk(model.Schema):
     description = schema.Text(
             title=_(u"Talk summary"),
         )
-
 
     primary('details')
     details = RichText(
@@ -100,7 +98,6 @@ class ITalk(model.Schema):
         RadioFieldWidget,
     )
 
-
     read_permission(talklength='cmf.ReviewPortalContent')
     write_permission(talklength='cmf.ReviewPortalContent')
     directives.widget(talklength=RadioFieldWidget)
@@ -127,32 +124,29 @@ class ITalk(model.Schema):
 #            required=False,
 #        )
 
-
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
             title=_(u"Startdate"),
-            description =_(u"Start date"),
+            description=_(u"Start date"),
             required=False,
         )
-    
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
             title=_(u"Enddate"),
-            description =_(u"End date"),
+            description=_(u"End date"),
             required=False,
         )
 
     write_permission(order='collective.conferences.ModifyTrack')
-    order=schema.Int(
-           title=_(u"Orderintrack"),               
-           description=_(u"Order in the track: write in an Integer from 1 to 12"),
-           min=1,
-           max=12,
-           required=False,
-        )
-                  
-    
+    order = schema.Int(
+            title=_(u"Orderintrack"),
+            description=_(u"Order in the track: write in an Integer from 1 to 12"),
+            min=1,
+            max=12,
+            required=False,
+    )
+
     slides = NamedBlobFile(
             title=_(u"Presentation slides in ODT-File-Format"),
             description=_(u"Please upload your presentation shortly after you have given your talk."),
@@ -176,7 +170,8 @@ class ITalk(model.Schema):
 
     files = NamedBlobFile(
             title=_(u"Additional Files of your presentation."),
-            description=_(u"Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."),
+            description=_(u"Please upload the additional files of your presentation (in archive format) "
+                          u"shortly after you have given your talk."),
             required=False,
         )
 
@@ -189,15 +184,19 @@ class ITalk(model.Schema):
             title=_(u"Link to the Video of the talk"),
             required=False,
         )
-    creativecommonslicense= schema.Bool(
-            title=_(u'label_creative_commons_license', default=u'License is Creative Commons Attribution-Share Alike 3.0 License.'),
-                description=_(u'help_creative_commons_license', default=u'You agree that your talk and slides are provided under the Creative Commons Attribution-Share Alike 3.0 License.'),
-                default=True
-        )
+    creativecommonslicense = schema.Bool(
+        title=_(u'label_creative_commons_license', default=u'License is Creative Commons Attribution-Share '
+                                                           u'Alike 3.0 License.'),
+        description=_(u'help_creative_commons_license',
+                      default=u'You agree that your talk and slides are provided under the Creative Commons '
+                              u'Attribution-Share Alike 3.0 License.'),
+        default=True
+    )
     
-    messagetocommittee = schema.Text (
+    messagetocommittee = schema.Text(
             title=_(u'Messages to the Program Committee'),
-            description=_(u'You can give some information to the committee here, e.g. about days you are (not) available to give the talk'),
+            description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
+                          u'available to give the talk'),
             required=False,                     
         )
     
@@ -222,12 +221,12 @@ class ITalk(model.Schema):
 #        talk.call_for_paper_tracks = None
 
     
-#@grok.subscribe(ITalk, IObjectAddedEvent)
-#def talkaddedevent(talk, event):
+# @grok.subscribe(ITalk, IObjectAddedEvent)
+# def talkaddedevent(talk, event):
 #    setdates(talk)
 
-#@grok.subscribe(ITalk, IObjectModifiedEvent)
-#def talkmodifiedevent(talk, event):
+# @grok.subscribe(ITalk, IObjectModifiedEvent)
+# def talkmodifiedevent(talk, event):
 #    setdates(talk)
     
 
@@ -243,7 +242,6 @@ class TalkView(BrowserView):
     def canRequestReview(self):
         return checkPermission('cmf.RequestReview', self.context)
 
-
     def talkPresenters(self):
         results = []
         for rel in self.context.speaker:
@@ -254,7 +252,6 @@ class TalkView(BrowserView):
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
         return IContentListing(results)
-
 
     def conferenceTrack(self):
         results = []

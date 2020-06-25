@@ -42,19 +42,19 @@ class ITalk(model.Schema):
     """
 
     title = schema.TextLine(
-            title=_(u"Title"),
-            description=_(u"Talk title"),
-        )
+        title=_(u'Title'),
+        description=_(u'Talk title'),
+    )
 
     description = schema.Text(
-            title=_(u"Talk summary"),
-        )
+        title=_(u'Talk summary'),
+    )
 
     primary('details')
     details = RichText(
-            title=_(u"Talk details"),
-            required=True
-        )
+        title=_(u'Talk details'),
+        required=True
+    )
 
     speaker = RelationList(
         title=_(u'Presenter'),
@@ -71,16 +71,16 @@ class ITalk(model.Schema):
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(
-        title=_(u"Choose the topic for your talk"),
+        title=_(u'Choose the topic for your talk'),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
     directives.widget(planedtalklength=RadioFieldWidget)
     planedtalklength = schema.List(
-        title=_(u"Planed Length"),
+        title=_(u'Planed Length'),
         description=_(u"Give an estimation about the time you'd plan for your talk."),
-        value_type=schema.Choice(source="TalkLength"),
+        value_type=schema.Choice(source='TalkLength'),
         required=True,
     )
 
@@ -102,9 +102,9 @@ class ITalk(model.Schema):
     write_permission(talklength='cmf.ReviewPortalContent')
     directives.widget(talklength=RadioFieldWidget)
     talklength = schema.List(
-        title=_(u"Talk Length"),
-        description=_(u"Set a time frame for the talk in minutes."),
-        value_type=schema.Choice(source="TalkLength"),
+        title=_(u'Talk Length'),
+        description=_(u'Set a time frame for the talk in minutes.'),
+        value_type=schema.Choice(source='TalkLength'),
         required=False,
     )
 
@@ -126,62 +126,62 @@ class ITalk(model.Schema):
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
-            title=_(u"Startdate"),
-            description=_(u"Start date"),
+            title=_(u'Startdate'),
+            description=_(u'Start date'),
             required=False,
         )
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
-            title=_(u"Enddate"),
-            description=_(u"End date"),
+            title=_(u'Enddate'),
+            description=_(u'End date'),
             required=False,
         )
 
     write_permission(order='collective.conferences.ModifyTrack')
     order = schema.Int(
-            title=_(u"Orderintrack"),
-            description=_(u"Order in the track: write in an Integer from 1 to 12"),
+            title=_(u'Orderintrack'),
+            description=_(u'Order in the track: write in an Integer from 1 to 12'),
             min=1,
             max=12,
             required=False,
     )
 
     slides = NamedBlobFile(
-            title=_(u"Presentation slides in ODT-File-Format"),
-            description=_(u"Please upload your presentation shortly after you have given your talk."),
+            title=_(u'Presentation slides in ODT-File-Format'),
+            description=_(u'Please upload your presentation shortly after you have given your talk.'),
             required=False,
         )
     
     slides2 = NamedBlobFile(
-            title=_(u"Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"),
-            description=_(u"Please upload your presentation shortly after you have given your talk."),
+            title=_(u'Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format'),
+            description=_(u'Please upload your presentation shortly after you have given your talk.'),
             required=False,
         )
 
     slides3 = schema.URI(
-            title=_(u"Link to the presentation slides in ODT-File-Format"),
+            title=_(u'Link to the presentation slides in ODT-File-Format'),
             required=False,
         )
     slides4 = schema.URI(
-        title=_(u"Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"),
+        title=_(u'Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format'),
         required=False,
        )
 
     files = NamedBlobFile(
-            title=_(u"Additional Files of your presentation."),
-            description=_(u"Please upload the additional files of your presentation (in archive format) "
-                          u"shortly after you have given your talk."),
+            title=_(u'Additional Files of your presentation.'),
+            description=_(u'Please upload the additional files of your presentation (in archive format) '
+                          u'shortly after you have given your talk.'),
             required=False,
         )
 
     files2 = schema.URI(
-            title=_(u"Link to additional Files of your presentation in archive file format (e.g. zip-file-format."),
+            title=_(u'Link to additional Files of your presentation in archive file format (e.g. zip-file-format.'),
             required=False,
         )
 
     video = schema.URI(
-            title=_(u"Link to the Video of the talk"),
+            title=_(u'Link to the Video of the talk'),
             required=False,
         )
     creativecommonslicense = schema.Bool(
@@ -203,7 +203,7 @@ class ITalk(model.Schema):
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
-            title=u"Review notes",
+            title=u'Review notes',
             required=False,
         )
 

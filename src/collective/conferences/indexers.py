@@ -27,6 +27,7 @@ def workshopleadernames(object, **kw):
         results.append(obj)
     return results
 
+
 @indexer(IWorkshop)
 def workshoptrackname(object, **kw):
     results = []
@@ -36,6 +37,7 @@ def workshoptrackname(object, **kw):
         obj = rel.to_object.title
         results.append(obj)
     return results
+
 
 @indexer(ITalk)
 def talktrackname(object, **kw):

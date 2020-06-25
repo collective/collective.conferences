@@ -40,8 +40,8 @@ def vocabCfPTopics(context):
 
     return SimpleVocabulary(terms)
 
-directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
+directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
 class IReCaptchaForm(interface.Interface):
@@ -60,20 +60,19 @@ class ReCaptcha(object):
         self.context = context
 
 
-
 class NewWorkshopSchema(interface.Interface):
 
-    workshoptitle=schema.TextLine(
+    workshoptitle = schema.TextLine(
         title=_(u'The Title Of Your Workshop'),
         description=_(u'Fill in the title of your proposed conference workshop'),
     )
 
     workshopdescription = schema.Text(
-        title=_(u"Workshop summary"),
+        title=_(u'Workshop summary'),
     )
 
     workshopdetails = RichText(
-            title=_(u"Workshop details"),
+            title=_(u'Workshop details'),
             required=True
         )
 
@@ -86,15 +85,15 @@ class NewWorkshopSchema(interface.Interface):
     )
 
     cfp_topic = schema.List(
-        title=_(u"Choose the topic for your workshop"),
+        title=_(u'Choose the topic for your workshop'),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
     wtalklength = schema.List(
-        title=_(u"Planed Length"),
+        title=_(u'Planed Length'),
         description=_(u"Give an estimation about the time you'd plan for your workshop."),
-        value_type=schema.Choice(source="WorkshopLength"),
+        value_type=schema.Choice(source='WorkshopLength'),
         required=True,
     )
 
@@ -111,12 +110,12 @@ class NewWorkshopSchemaAdapter(object):
         self.cfp_topic = None
         self.wtalklength = None
 
+
 class NewWorkshopForm(AutoExtensibleForm, form.Form):
     schema = NewWorkshopSchema
     form_name = 'newworkshopform'
     label = _(safe_unicode('Submit A Conference Workshop'))
     description = _(safe_unicode('Submit a proposal for a conference workshop.'))
-
 
     fields = field.Fields(NewWorkshopSchema, IReCaptchaForm)
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
@@ -130,7 +129,6 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
 
         # call the base class version - this is very important!
         super(NewWorkshopForm, self).update()
-
 
     @button.buttonAndHandler(_(safe_unicode('Submit Your Workshop')))
     def handleApply(self, action):
@@ -158,8 +156,8 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
                 type='error')
             return
 
-        portal=api.portal.get()
-        obj=api.content.create(
+        portal = api.portal.get()
+        api.content.create(
             type='collective.conferences.workshop',
             title=data['workshoptitle'],
             description=data['workshopdescription'],
@@ -176,8 +174,6 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
 
         contextURL = self.context.absolute_url()
         self.request.response.redirect(contextURL)
-
-
 
     @button.buttonAndHandler(_(safe_unicode('Cancel')))
     def handleCancel(self, action):

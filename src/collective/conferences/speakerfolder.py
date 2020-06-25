@@ -19,6 +19,7 @@ class ISpeakerfolder(model.Schema):
         required=False,
     )
 
+
 class SpeakerfolderView(BrowserView):
 
     def canRequestReview(self):

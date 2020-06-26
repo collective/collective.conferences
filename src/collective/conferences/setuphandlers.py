@@ -10,7 +10,7 @@ PROFILE_ID = 'profile-collective.conferences:default'
 
 # catalog indexes to add
 CATALOG_INDEXES = (
-    
+
 )
 
 

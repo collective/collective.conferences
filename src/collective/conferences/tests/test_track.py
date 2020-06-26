@@ -12,7 +12,6 @@ import unittest2 as unittest
 
 
 class TestTrackIntegration(unittest.TestCase):
-
     layer = COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 
     def setUp(self):
@@ -56,6 +55,7 @@ class TestTrackIntegration(unittest.TestCase):
     def test_catalog_index_metadata(self):
         self.failUnless('track' in self.portal.portal_catalog.indexes())
         self.failUnless('track' in self.portal.portal_catalog.schema())
+
 
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)

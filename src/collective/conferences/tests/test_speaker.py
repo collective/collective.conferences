@@ -20,7 +20,7 @@ class TestPresenterMock(MockTestCase):
         speaker = self.create_dummy(
             __parent__=None,
             __name__=None,
-            title="Jim",
+            title='Jim',
             absolute_url=lambda: 'http://example.org/speaker',
         )
 

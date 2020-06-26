@@ -15,7 +15,7 @@ class IConference(model.Schema):
 
     description = schema.Text(
         title=_(u'Conference summary'),
-        required= False,
+        required=False,
     )
 
     primary('details')

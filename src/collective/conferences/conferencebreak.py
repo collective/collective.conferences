@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from collective.conferences.track import ITrack
-from plone import api
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.autoform.directives import write_permission
@@ -10,28 +8,24 @@ from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
-from zope.interface import directlyProvides
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
 from zope.security import checkPermission
 
 
 class IConferencebreak(model.Schema):
     title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Conference break title"),
+        title=_(u'Title'),
+        description=_(u'Conference break title'),
     )
 
     description = schema.Text(
-        title=_(u"Conference break summary"),
-        required=False
+        title=_(u'Conference break summary'),
+        required=False,
     )
 
     primary('details')
     details = RichText(
-        title=_(u"Conference break details"),
-        required=False
+        title=_(u'Conference break details'),
+        required=False,
     )
 
     #    form.widget(track=AutocompleteFieldWidget)
@@ -43,29 +37,29 @@ class IConferencebreak(model.Schema):
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
-        title=_(u"Startdate"),
-        description=_(u"Start date"),
+        title=_(u'Startdate'),
+        description=_(u'Start date'),
         required=False,
     )
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
-        title=_(u"Enddate"),
-        description=_(u"End date"),
+        title=_(u'Enddate'),
+        description=_(u'End date'),
         required=False,
     )
 
     directives.widget(breaklength=RadioFieldWidget)
     breaklength = schema.List(
-        title=_(u"Length"),
-        value_type=schema.Choice(source="BreakLength"),
+        title=_(u'Length'),
+        value_type=schema.Choice(source='BreakLength'),
         required=True,
     )
 
     directives.widget(test=RadioFieldWidget)
     test = schema.List(
-        title=_(u"Test"),
-        value_type=schema.Choice(source="BreakLength"),
+        title=_(u'Test'),
+        value_type=schema.Choice(source='BreakLength'),
         required=True,
     )
 

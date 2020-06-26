@@ -12,7 +12,7 @@ import re
 
 
 checkEmail = re.compile(
-    r"[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}").match
+    r'[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}').match
 
 
 def validateEmail(value):
@@ -89,7 +89,7 @@ class IConferenceSpeaker(model.Schema):
 
     bio = RichText(
         title=_(u'Bio'),
-        required=False
+        required=False,
     )
 
     picture = NamedBlobImage(
@@ -109,7 +109,8 @@ def notifyUser(self, event):
         return
 
     subject = 'Is this you?'
-    message = 'A speaker /leader of a workshop called %s was added here %s. If this is you, everything is fine.' % (
+    message = 'A speaker / leader of a workshop called {0} was added here {1}. If ' \
+              'this is you, everything is fine.'.format(
         self.title, self.absolute_url(),)
 
     api.portal.send_email(

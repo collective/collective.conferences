@@ -20,11 +20,11 @@ import datetime
 
 
 class StartBeforeEnd(Invalid):
-    __doc__ = _(u"The start or end date is invalid")
+    __doc__ = _(u'The start or end date is invalid')
 
 
 class StartBeforeConferenceProgram(Invalid):
-    __doc__ = _(u"The start of the track could not be set before the conference program.")
+    __doc__ = _(u'The start of the track could not be set before the conference program.')
 
 
 class EndAfterConferenceProgram(Invalid):
@@ -47,7 +47,7 @@ class ITrack(model.Schema):
     primary('details')
     details = RichText(
         title=_(u'Track details'),
-        required=False
+        required=False,
     )
 
     trackstart = schema.Datetime(

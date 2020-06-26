@@ -15,7 +15,7 @@ class IAttendee(model.Schema):
     paymentway = SimpleVocabulary(
         [SimpleTerm(value=u'by bank transfer', title=_(u'By Bank transfer')),
          SimpleTerm(value=u'by paypal', title=_(u'Payment by PayPal')),
-         SimpleTerm(value=u'by check', title=_(u'By Check'))]
+         SimpleTerm(value=u'by check', title=_(u'By Check'))],
     )
 
     title = schema.TextLine(

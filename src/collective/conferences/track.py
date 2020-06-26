@@ -16,8 +16,6 @@ from zope.interface import Invalid
 from zope.interface import invariant
 from zope.security import checkPermission
 
-import datetime
-
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u'The start or end date is invalid')
@@ -74,7 +72,6 @@ class ITrack(model.Schema):
         RadioFieldWidget,
     )
 
-
     @invariant
     def validateStartEnd(data):
         if data.trackstart is not None and data.trackend is not None:
@@ -125,7 +122,7 @@ def trackmodified(track, event):
 class TrackView(BrowserView):
 
     def canRequestReview(self):
-        return checkPermission('cmf.RequestReview', self.context)
+        return api.user.has_permission('cmf.RequestReview', obj=self.context)
 
     def talks_workshops(self):
         tracktitle = self.context.title

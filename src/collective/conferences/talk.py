@@ -246,7 +246,7 @@ class ITalk(model.Schema):
 class TalkView(BrowserView):
 
     def canRequestReview(self):
-        return checkPermission('cmf.RequestReview', self.context)
+        return api.user.has_permission('cmf.RequestReview', obj=self.context)
 
     def talkPresenters(self):
         results = []

@@ -33,35 +33,11 @@ class ICallforpaper(model.Schema):
                              default=['Development',
                                       'Documentation',
                                       'Project-Administration'],
-                             value_type=schema.TextLine()
+                             value_type=schema.TextLine(),
                              )
 
 
 # Views
 
 class CallforpaperView(BrowserView):
-
-    def talks(self):
-        """Return a catalog search result of talks to show
-        """
-
-        context = aq_inner(self.context)
-        catalog = api.portal.get_tool(name='portal_catalog')
-
-        return catalog(object_provides=ITalk.__identifier__,
-                       path='/'.join(context.getPhysicalPath()),
-                       sort_order='sortable_title')
-
-# File representation
-
-# class CallforpaperFileFactory(grok.Adapter):
-#    """Custom file factory for programs, which always creates a Track.
-#    """
-
-#    grok.implements(IFileFactory)
-#    grok.context(ICallforpaper)
-
-#    def __call__(self, name, contentType, data):
-#        talk = createObject('collective.conferences.talk')
-#        notify(ObjectCreatedEvent(talk))
-#        return talk
+    pass

@@ -15,7 +15,7 @@ class IAttendeefolder(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Name of the attendee folder')
+        title=_(u'Name of the attendee folder'),
     )
 
     description = schema.Text(

@@ -12,24 +12,22 @@ class IRoomfolder(model.Schema):
     """A folder for the rooms of a conference.
     """
 
-
     title = schema.TextLine(
-            title=_(u"Name of the room folder"),
-        )
+        title=_(u'Name of the room folder'),
+    )
 
     description = schema.Text(
-            title=_(u"roomfolder description"),
-        )
-    
-    
+        title=_(u'roomfolder description'),
+    )
+
     primary('details')
     details = RichText(
-            title=_(u"Information about the Conference Rooms"),
-            required=False
-        )
+        title=_(u'Information about the Conference Rooms'),
+        required=False
+    )
 
-    
+
 class RoomfolderView(BrowserView):
 
     def canRequestReview(self):
-        return checkPermission('cmf.RequestReview', self.context)   
+        return checkPermission('cmf.RequestReview', self.context)

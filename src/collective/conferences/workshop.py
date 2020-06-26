@@ -125,7 +125,7 @@ class IWorkshop(model.Schema):
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
         title=_(u'Startdate'),
-        description=_(u"Start date"),
+        description=_(u'Start date'),
         required=False,
     )
 
@@ -159,7 +159,7 @@ class IWorkshop(model.Schema):
         description=_(u'help_creative_commons_license',
                       default=u'You agree that your talk and slides are provided under the Creative '
                               u'Commons Attribution-Share Alike 3.0 License.'),
-        default=True
+        default=True,
     )
 
     messagetocommittee = schema.Text(

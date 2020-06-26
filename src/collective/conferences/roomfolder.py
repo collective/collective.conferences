@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from plone import api
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from plone.supermodel.directives import primary

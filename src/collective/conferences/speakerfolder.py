@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from plone import api
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema

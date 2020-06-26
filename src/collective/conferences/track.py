@@ -74,10 +74,6 @@ class ITrack(model.Schema):
         RadioFieldWidget,
     )
 
-    def startTimeTalk(data):
-        if data.start is not None:
-            talkstart = data.start
-            return datetime.datetime.talkstart()
 
     @invariant
     def validateStartEnd(data):

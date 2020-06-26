@@ -14,7 +14,6 @@ from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import Invalid
 from zope.interface import invariant
-from zope.security import checkPermission
 
 
 class StartBeforeEnd(Invalid):

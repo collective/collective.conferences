@@ -20,7 +20,6 @@ from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-from zope.security import checkPermission
 
 
 # class StartBeforeEnd(Invalid):

@@ -5,7 +5,6 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from zope import schema
-from zope.security import checkPermission
 
 
 # from collective.conferences.attendee import IAttendee
@@ -33,4 +32,4 @@ class IAttendeefolder(model.Schema):
 class AttendeefolderView(BrowserView):
 
     def canRequestReview(self):
-        return checkPermission('cmf.RequestReview', self.context)
+        return api.user.has_permission('cmf.RequestReview', obj=self.context)

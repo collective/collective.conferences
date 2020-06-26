@@ -22,7 +22,6 @@ from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-from zope.security import checkPermission
 
 
 def vocabCfPTopics(context):
@@ -203,7 +202,7 @@ class IWorkshop(model.Schema):
 class WorkshopView(BrowserView):
 
     def canRequestReview(self):
-        return checkPermission('cmf.RequestReview', self.context)
+        return api.user.has_permission('cmf.RequestReview', obj=self.context)
 
     def workshopLeaders(self):
         results = []

@@ -5,7 +5,6 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from zope import schema
-from zope.security import checkPermission
 
 
 class IRoomfolder(model.Schema):
@@ -30,4 +29,4 @@ class IRoomfolder(model.Schema):
 class RoomfolderView(BrowserView):
 
     def canRequestReview(self):
-        return checkPermission('cmf.RequestReview', self.context)
+        return api.user.has_permission('cmf.RequestReview', obj=self.context)

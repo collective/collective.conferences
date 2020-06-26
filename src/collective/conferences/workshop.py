@@ -19,17 +19,10 @@ from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import directlyProvides
-from zope.interface import Invalid
-from zope.interface import invariant
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.security import checkPermission
-
-import datetime
-
-
-# from plone.formwidget.contenttree import ObjPathSourceBinder
 
 
 def vocabCfPTopics(context):
@@ -55,18 +48,18 @@ class IWorkshop(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u"Title"),
-        description=_(u"Workshop title"),
+        title=_(u'Title'),
+        description=_(u'Workshop title'),
     )
 
     description = schema.Text(
-        title=_(u"Workshop summary"),
+        title=_(u'Workshop summary'),
     )
 
     primary('details')
     details = RichText(
-        title=_(u"Workshop details"),
-        required=False
+        title=_(u'Workshop details'),
+        required=False,
     )
 
     speaker = RelationList(
@@ -84,16 +77,16 @@ class IWorkshop(model.Schema):
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(
-        title=_(u"Choose the topic for your workshop"),
+        title=_(u'Choose the topic for your workshop'),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
     directives.widget(planedworkshoplength=RadioFieldWidget)
     planedworkshoplength = schema.List(
-        title=_(u"Planed Length"),
+        title=_(u'Planed Length'),
         description=_(u"Give an estimation about the time you'd plan for your workshop."),
-        value_type=schema.Choice(source="WorkshopLength"),
+        value_type=schema.Choice(source='WorkshopLength'),
         required=True,
     )
 
@@ -115,9 +108,9 @@ class IWorkshop(model.Schema):
     write_permission(workshoplength='cmf.ReviewPortalContent')
     directives.widget(workshoplength=RadioFieldWidget)
     workshoplength = schema.List(
-        title=_(u"Workshop Length"),
-        description=_(u"Set a time frame for the workshop in minutes."),
-        value_type=schema.Choice(source="WorkshopLength"),
+        title=_(u'Workshop Length'),
+        description=_(u'Set a time frame for the workshop in minutes.'),
+        value_type=schema.Choice(source='WorkshopLength'),
         required=False,
     )
 
@@ -131,31 +124,32 @@ class IWorkshop(model.Schema):
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
-        title=_(u"Startdate"),
+        title=_(u'Startdate'),
         description=_(u"Start date"),
         required=False,
     )
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
-        title=_(u"Enddate"),
-        description=_(u"End date"),
+        title=_(u'Enddate'),
+        description=_(u'End date'),
         required=False,
     )
 
     write_permission(order='collective.conferences.ModifyTrack')
     order = schema.Int(
-        title=_(u"Orderintrack"),
-        description=_(u"Order in the track: write in an Integer from 1 to 12"),
+        title=_(u'Orderintrack'),
+        description=_(u'Order in the track: write in an Integer from 1 to 12'),
         min=1,
         max=12,
         required=False,
     )
 
     slides = NamedBlobFile(
-        title=_(u"Workshop slides / material"),
+        title=_(u'Workshop slides / material'),
         description=_(
-            u"Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."),
+            u'Please upload your workshop presentation or material about the content of the workshop '
+            u'in front or short after you have given the workshop.'),
         required=False,
     )
 
@@ -163,7 +157,8 @@ class IWorkshop(model.Schema):
         title=_(u'label_creative_commons_license',
                 default=u'License is Creative Commons Attribution-Share Alike 3.0 License.'),
         description=_(u'help_creative_commons_license',
-                      default=u'You agree that your talk and slides are provided under the Creative Commons Attribution-Share Alike 3.0 License.'),
+                      default=u'You agree that your talk and slides are provided under the Creative '
+                              u'Commons Attribution-Share Alike 3.0 License.'),
         default=True
     )
 
@@ -177,7 +172,7 @@ class IWorkshop(model.Schema):
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
-        title=u"Review notes",
+        title=u'Review notes',
         required=False,
     )
 
@@ -239,5 +234,5 @@ class WorkshopView(BrowserView):
         if ITrack.providedBy(parent):
             room = parent.room.to_object.title
         else:
-            room = ""
+            room = ''
         return room

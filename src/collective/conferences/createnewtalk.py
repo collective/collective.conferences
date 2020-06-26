@@ -66,12 +66,12 @@ class NewTalkSchema(interface.Interface):
     )
 
     talkdescription = schema.Text(
-        title=_(u"Talk summary"),
+        title=_(u'Talk summary'),
     )
 
     talkdetails = RichText(
-        title=_(u"Talk details"),
-        required=True
+        title=_(u'Talk details'),
+        required=True,
     )
 
     speaker = RelationList(
@@ -83,15 +83,15 @@ class NewTalkSchema(interface.Interface):
     )
 
     cfp_topic = schema.List(
-        title=_(u"Choose the topic for your talk"),
+        title=_(u'Choose the topic for your talk'),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
     ptalklength = schema.List(
-        title=_(u"Planed Length"),
+        title=_(u'Planed Length'),
         description=_(u"Give an estimation about the time you'd plan for your talk."),
-        value_type=schema.Choice(source="TalkLength"),
+        value_type=schema.Choice(source='TalkLength'),
         required=True,
     )
 
@@ -155,7 +155,7 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
             return
 
         portal = api.portal.get()
-        obj = api.content.create(
+        api.content.create(
             type='collective.conferences.talk',
             title=data['talktitle'],
             description=data['talkdescription'],

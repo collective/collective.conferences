@@ -15,18 +15,18 @@ class IAttendeefolder(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u"Name of the attendee folder"),
+        title=_(u'Name of the attendee folder')
     )
 
     description = schema.Text(
-        title=_(u"attendee folder description"),
+        title=_(u'attendee folder description'),
         required=False,
     )
 
     primary('moreinformation')
     moreinformation = RichText(
-        title=_(u"Information about registration process"),
-        required=False
+        title=_(u'Information about registration process'),
+        required=False,
     )
 
 

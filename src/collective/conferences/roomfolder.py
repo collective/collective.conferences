@@ -23,7 +23,7 @@ class IRoomfolder(model.Schema):
     primary('details')
     details = RichText(
         title=_(u'Information about the Conference Rooms'),
-        required=False
+        required=False,
     )
 
 

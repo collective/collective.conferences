@@ -110,36 +110,30 @@ def notifyUser(self, event):
 
     subject = 'Is this you?'
     message = 'A speaker / leader of a workshop called {0} was added here {1}. If ' \
-              'this is you, everything is fine.'.format(
-        self.title, self.absolute_url(),)
+              'this is you, everything is fine.'.format(self.title, self.absolute_url())
 
     api.portal.send_email(
         recipient='{0}'.format(email),
         sender='{0}'.format(sender),
         subject='{0}'.format(subject),
-        body='{0}'.format(message), )
+        body='{0}'.format(message))
 
 
 class ConferenceSpeakerView(BrowserView):
 
     def talks_of_speaker(self):
-        from collective.conferences.talk import ITalk
-        context = self.context
         catalog = api.portal.get_tool(name='portal_catalog')
 
         # execute a search
         results = catalog(speakertalk='Talk 1')
         # examine the results
         for brain in results:
-            start = brain.start
             url = brain.getURL()
-            obj = brain.getObject()
 
         return url
 
     def talks_of_speaker2(self):
         from collective.conferences.talk import ITalk
-        context = self.context
         catalog = api.portal.get_tool(name='portal_catalog')
 
         # execute a search
@@ -147,9 +141,6 @@ class ConferenceSpeakerView(BrowserView):
                           review_state='published')
         # examine the results
         for brain in results:
-            start = brain.start
-            url = brain.getURL()
-            obj = brain.getObject()
             title = brain.Title
 
         return title

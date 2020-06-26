@@ -133,7 +133,6 @@ class ConferenceSpeakerView(BrowserView):
         return url
 
     def talks_of_speaker2(self):
-        from collective.conferences.talk import ITalk
         catalog = api.portal.get_tool(name='portal_catalog')
 
         # execute a search

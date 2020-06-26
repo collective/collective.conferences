@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-import logging
-
 from plone import api
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
+
+import logging
+
 
 PROFILE_ID = 'profile-collective.conferences:default'
 

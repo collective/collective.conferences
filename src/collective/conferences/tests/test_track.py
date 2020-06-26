@@ -1,20 +1,14 @@
-import unittest2 as unittest
-
+# -*- coding: utf-8 -*-
+from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+from collective.conferences.track import ITrack
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.dexterity.interfaces import IDexterityFTI
 from zExceptions import Unauthorized
-
 from zope.component import createObject
 from zope.component import queryUtility
 
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
-
-from plone.dexterity.interfaces import IDexterityFTI
-
-from collective.conferences.track import ITrack
-
-
-from collective.conferences.testing import\
-    COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+import unittest2 as unittest
 
 
 class TestTrackIntegration(unittest.TestCase):

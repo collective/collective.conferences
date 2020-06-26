@@ -1,35 +1,28 @@
-import unittest2 as unittest
-
+# -*- coding: utf-8 -*-
+from collective.conferences.speaker import ISpeaker
+from collective.conferences.speaker import notifyUser
+from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.dexterity.interfaces import IDexterityFTI
 from plone.mocktestcase import MockTestCase
-
+from zope.app.container.contained import ObjectAddedEvent
 from zope.component import createObject
 from zope.component import queryUtility
 
-from zope.app.container.contained import ObjectAddedEvent
-
-from plone.app.testing import TEST_USER_ID
-from plone.app.testing import setRoles
-
-from plone.dexterity.interfaces import IDexterityFTI
-
-from collective.conferences.speaker import ISpeaker
-from collective.conferences.speaker import notifyUser
-
-from collective.conferences.testing import\
-    COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+import unittest2 as unittest
 
 
 class TestPresenterMock(MockTestCase):
 
     def test_notify_user(self):
-
         # dummy speaker
         speaker = self.create_dummy(
-                __parent__=None,
-                __name__=None,
-                title="Jim",
-                absolute_url=lambda: 'http://example.org/speaker',
-            )
+            __parent__=None,
+            __name__=None,
+            title="Jim",
+            absolute_url=lambda: 'http://example.org/speaker',
+        )
 
         # dummy event
         event = ObjectAddedEvent(speaker)
@@ -38,10 +31,10 @@ class TestPresenterMock(MockTestCase):
         user_info = [{'email': 'jim@example.org', 'id': 'jim'}]
 
         # email data
-        message = "A speaker called Jim was added here http://example.org/speaker"
-        email = "jim@example.org"
-        sender = "test@example.org"
-        subject = "Is this you?"
+        message = 'A speaker called Jim was added here http://example.org/speaker'
+        email = 'jim@example.org'
+        sender = 'test@example.org'
+        subject = 'Is this you?'
 
         # mock tools/portal
 
@@ -72,7 +65,6 @@ class TestPresenterMock(MockTestCase):
 
 
 class TestPresenterIntegration(unittest.TestCase):
-
     layer = COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 
     def setUp(self):

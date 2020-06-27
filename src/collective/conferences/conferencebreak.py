@@ -9,6 +9,8 @@ from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
+from z3c.relationfield.schema import RelationChoice
+from z3c.relationfield.schema import RelationList
 
 
 class IConferencebreak(model.Schema):
@@ -35,20 +37,20 @@ class IConferencebreak(model.Schema):
     #            required=False,
     #        )
 
-    write_permission(startitem='collective.conferences.ModifyTalktime')
-    startitem = schema.Datetime(
+    write_permission(breakstart='collective.conferences.ModifyTalktime')
+    breakstart = schema.Datetime(
         title=_(u'Startdate'),
         description=_(u'Start date'),
         required=False,
     )
 
-    write_permission(enditem='collective.conferences.ModifyTalktime')
-    enditem = schema.Datetime(
+    write_permission(breakend='collective.conferences.ModifyTalktime')
+    breakend = schema.Datetime(
         title=_(u'Enddate'),
         description=_(u'End date'),
         required=False,
     )
-
+    write_permission(breakend='collective.conferences.ModifyTalktime')
     directives.widget(breaklength=RadioFieldWidget)
     breaklength = schema.List(
         title=_(u'Length'),
@@ -56,21 +58,26 @@ class IConferencebreak(model.Schema):
         required=True,
     )
 
-    directives.widget(test=RadioFieldWidget)
-    test = schema.List(
-        title=_(u'Test'),
-        value_type=schema.Choice(source='BreakLength'),
-        required=True,
+    write_permission(breakend='collective.conferences.ModifyTalktime')
+    conferencetrack = RelationList(
+        title=_(u'Choose the track for this break'),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceTrack'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'conferencetrack',
+        RadioFieldWidget,
+    )
+
+    positionintrack = schema.Int(
+        title=_(u'Position In The Track'),
+        description=_(u'Choose a number for the order in the track'),
+        required=False,
     )
 
 
-# @grok.subscribe(IConferencebreak, IObjectAddedEvent)
-# def conferencebreakaddedevent(conferencebreak, event):
-#    setdates(conferencebreak)
-
-# @grok.subscribe(IConferencebreak, IObjectModifiedEvent)
-# def conferencebreakmodifiedevent(conferencebreak, event):
-#    setdates(conferencebreak)
 
 
 class ConferencebreakView(BrowserView):

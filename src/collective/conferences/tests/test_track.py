@@ -24,8 +24,8 @@ class TestTrackIntegration(unittest.TestCase):
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
-        portal=api.portal.get()
-        program= portal['test-folder']
+        portal = api.portal.get()
+        program = portal['test-folder']
 
         # We can't add this directly
         try:

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from collective.conferences.program import endDefaultValue
 from collective.conferences.program import IProgram
 from collective.conferences.program import StartBeforeEnd

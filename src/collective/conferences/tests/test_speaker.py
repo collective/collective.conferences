@@ -77,8 +77,8 @@ class TestPresenterIntegration(unittest.TestCase):
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
-        portal=api.portal.get()
-        testfolder=portal['test-folder']
+        portal = api.portal.get()
+        testfolder = portal['test-folder']
         api.content.create(container=testfolder, type='collective.conferences.conferencespeaker', title='conferencespeaker1')
         p1 = self.folder['test-folder/conferencespeaker1']
         self.assertTrue(IConferenceSpeaker.providedBy(p1))

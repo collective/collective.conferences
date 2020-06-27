@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 from collective.conferences.track import ITrack
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
@@ -17,7 +18,8 @@ class TestTrackIntegration(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
+        portal = api.portal.get()
+        api.content.create(type='collective.conferences.program', title='test-folder', container=portal)
         setRoles(self.portal, TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 
@@ -25,7 +27,7 @@ class TestTrackIntegration(unittest.TestCase):
 
         # We can't add this directly
         try:
-            self.folder.invokeFactory('collective.conferences.trackk', 'track1')
+            self.folder.invokeFactory('collective.conferences.track', 'track1')
             self.fail('Conference tracks should not be addable except within conferences programs.')
         except (ValueError, Unauthorized):
             pass
@@ -35,26 +37,26 @@ class TestTrackIntegration(unittest.TestCase):
 
         p1.invokeFactory('collective.conferences.track', 'track1')
         s1 = p1['track1']
-        self.failUnless(ITrack.providedBy(s1))
+        self.assertTrue(ITrack.providedBy(s1))
 
     def test_fti(self):
         fti = queryUtility(IDexterityFTI, name='collective.conferences.track')
-        self.assertNotEquals(None, fti)
+        self.assertNotEqual(None, fti)
 
     def test_schema(self):
         fti = queryUtility(IDexterityFTI, name='collective.conferences.track')
         schema = fti.lookupSchema()
-        self.assertEquals(ITrack, schema)
+        self.assertEqual(ITrack, schema)
 
     def test_factory(self):
         fti = queryUtility(IDexterityFTI, name='collective.conferences.track')
         factory = fti.factory
         new_object = createObject(factory)
-        self.failUnless(ITrack.providedBy(new_object))
+        self.assertTrue(ITrack.providedBy(new_object))
 
     def test_catalog_index_metadata(self):
-        self.failUnless('track' in self.portal.portal_catalog.indexes())
-        self.failUnless('track' in self.portal.portal_catalog.schema())
+        self.assertTrue('track' in self.portal.portal_catalog.indexes())
+        self.assertTrue('track' in self.portal.portal_catalog.schema())
 
 
 def test_suite():

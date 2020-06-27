@@ -16,6 +16,16 @@ from zope.interface import Invalid
 from zope.interface import invariant
 from zope.lifecycleevent import ObjectCreatedEvent
 
+import datetime
+
+
+def startDefaultValue():
+    return datetime.datetime.today() + datetime.timedelta(14)
+
+
+def endDefaultValue():
+    return datetime.datetime.today() + datetime.timedelta(17)
+
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u'The start or end date is invalid')
@@ -36,11 +46,13 @@ class IProgram(model.Schema):
     start = schema.Datetime(
         title=_(u'Start date'),
         required=False,
+        defaultFactory=startDefaultValue,
     )
 
     end = schema.Datetime(
         title=_(u'End date'),
         required=False,
+        defaultFactory=endDefaultValue
     )
 
     primary('details')

@@ -1,27 +1,29 @@
 # -*- coding: utf-8 -*-
+from Acquisition import aq_inner
 from collective.conferences import _
 from plone import api
-from zope import interface
-from zope import schema
 from plone.app.textfield import RichText
-from zope.interface import implementer
-from zope.component import adapter
+from plone.app.z3cform.widget import SelectFieldWidget
 from plone.autoform.form import AutoExtensibleForm
-from z3c.form import form
-from Products.CMFPlone.utils import safe_unicode
-from plone.z3cform.layout import wrap_form
 from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
-from z3c.form import field
+from plone.z3cform.layout import wrap_form
+from Products.CMFPlone.utils import safe_unicode
 from z3c.form import button
-from zope.component import getMultiAdapter
-from Acquisition import aq_inner
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.schema.interfaces import IContextSourceBinder
-from zope.interface import directlyProvides
+from z3c.form import field
+from z3c.form import form
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
-from plone.app.z3cform.widget import SelectFieldWidget
+from zope import interface
+from zope import schema
+from zope.component import adapter
+from zope.component import getMultiAdapter
+from zope.interface import directlyProvides
+from zope.interface import implementer
+from zope.schema.interfaces import IContextSourceBinder
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
+
 import logging
 
 
@@ -38,13 +40,11 @@ def vocabCfPTopics(context):
 
     return SimpleVocabulary(terms)
 
+
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
-
-
 class IReCaptchaForm(interface.Interface):
-
     captcha = schema.TextLine(
         title=safe_unicode('ReCaptcha'),
         description=safe_unicode(''),
@@ -59,22 +59,20 @@ class ReCaptcha(object):
         self.context = context
 
 
-
 class NewTalkSchema(interface.Interface):
-
-    talktitle=schema.TextLine(
+    talktitle = schema.TextLine(
         title=_(u'The Title Of Your Talk'),
         description=_(u'Fill in the title of your proposed conference talk'),
     )
 
     talkdescription = schema.Text(
-        title=_(u"Talk summary"),
+        title=_(u'Talk summary'),
     )
 
     talkdetails = RichText(
-            title=_(u"Talk details"),
-            required=True
-        )
+        title=_(u'Talk details'),
+        required=True,
+    )
 
     speaker = RelationList(
         title=_(u'Presenter'),
@@ -85,18 +83,17 @@ class NewTalkSchema(interface.Interface):
     )
 
     cfp_topic = schema.List(
-        title=_(u"Choose the topic for your talk"),
+        title=_(u'Choose the topic for your talk'),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
     ptalklength = schema.List(
-        title=_(u"Planed Length"),
+        title=_(u'Planed Length'),
         description=_(u"Give an estimation about the time you'd plan for your talk."),
-        value_type=schema.Choice(source="TalkLength"),
+        value_type=schema.Choice(source='TalkLength'),
         required=True,
     )
-
 
 
 @implementer(NewTalkSchema)
@@ -111,12 +108,12 @@ class NewTalkSchemaAdapter(object):
         self.cfp_topic = None
         self.ptalklength = None
 
+
 class NewTalkForm(AutoExtensibleForm, form.Form):
     schema = NewTalkSchema
     form_name = 'newtalkform'
     label = _(safe_unicode('Submit A Conference Talk'))
     description = _(safe_unicode('Submit a proposal for a conference talk.'))
-
 
     fields = field.Fields(NewTalkSchema, IReCaptchaForm)
     fields['captcha'].widgetFactory = ReCaptchaFieldWidget
@@ -130,7 +127,6 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
 
         # call the base class version - this is very important!
         super(NewTalkForm, self).update()
-
 
     @button.buttonAndHandler(_(safe_unicode('Submit Your talk')))
     def handleApply(self, action):
@@ -158,8 +154,8 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
                 type='error')
             return
 
-        portal=api.portal.get()
-        obj=api.content.create(
+        portal = api.portal.get()
+        api.content.create(
             type='collective.conferences.talk',
             title=data['talktitle'],
             description=data['talkdescription'],
@@ -176,8 +172,6 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
 
         contextURL = self.context.absolute_url()
         self.request.response.redirect(contextURL)
-
-
 
     @button.buttonAndHandler(_(safe_unicode('Cancel')))
     def handleCancel(self, action):

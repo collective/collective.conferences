@@ -246,12 +246,6 @@
         handler=".conferencespeaker.notifyUser"
         />
 
-    <subscriber
-        for="collective.conferences.track.ITrack
-              zope.lifecycleevent.interfaces.IObjectModifiedEvent"
-        handler="collective.conferences.track.trackmodified"
-        />
-
     <utility
         name="BreakLength"
         component=".vocabularies.BreakLengthVocabularyFactory" />

@@ -1,22 +1,20 @@
-import unittest2 as unittest
+# -*- coding: utf-8 -*-
+from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+from plone import api
 
-from Products.CMFCore.utils import getToolByName
-
-from collective.conferences.testing import\
-    COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+import unittest
 
 
 class TestExample(unittest.TestCase):
-
     layer = COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
-    
+
     def setUp(self):
         self.app = self.layer['app']
         self.portal = self.layer['portal']
-        self.qi_tool = getToolByName(self.portal, 'portal_quickinstaller')
-    
+        self.qi_tool = api.portal.get_tool(name='portal_quickinstaller')
+
     def test_product_is_installed(self):
-        """ Validate that our products GS profile has been run and the product 
+        """ Validate that our products GS profile has been run and the product
             installed
         """
         pid = 'collective.conferences'

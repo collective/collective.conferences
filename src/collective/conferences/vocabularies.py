@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 from plone import api
 from plone.app.vocabularies.terms import safe_simplevocabulary_from_values
+from zope.interface import implementer
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-from zope.interface import implementer
 
 
 @provider(IVocabularyFactory)
@@ -13,15 +13,18 @@ def BreakLengthVocabularyFactory(context):
     values = api.portal.get_registry_record('collectiveconf.break_length')
     return safe_simplevocabulary_from_values(values)
 
+
 @provider(IVocabularyFactory)
 def TalkLengthVocabularyFactory(context):
     values = api.portal.get_registry_record('collectiveconf.talk_length')
     return safe_simplevocabulary_from_values(values)
 
+
 @provider(IVocabularyFactory)
 def WorkshopLengthVocabularyFactory(context):
     values = api.portal.get_registry_record('collectiveconf.workshop_length')
     return safe_simplevocabulary_from_values(values)
+
 
 @implementer(IVocabularyFactory)
 class ConferenceSpeakerVocabulary(object):
@@ -33,7 +36,7 @@ class ConferenceSpeakerVocabulary(object):
             terms.append(SimpleTerm(
                 value=brain.getObject(),
                 token=brain.UID,
-                title=u'{} ({})'.format(brain.Title, brain.getPath()),
+                title=u'{0} ({1})'.format(brain.Title, brain.getPath()),
             ))
         return SimpleVocabulary(terms)
 
@@ -51,13 +54,12 @@ class ConferenceRoomVocabulary(object):
             terms.append(SimpleTerm(
                 value=brain.getObject(),
                 token=brain.UID,
-                title=u'{} ({})'.format(brain.Title, brain.getPath()),
+                title=u'{0} ({1})'.format(brain.Title, brain.getPath()),
             ))
         return SimpleVocabulary(terms)
 
 
 ConferenceRoomVocabularyFactory = ConferenceRoomVocabulary()
-
 
 
 @implementer(IVocabularyFactory)
@@ -70,7 +72,7 @@ class ConferenceTrackVocabulary(object):
             terms.append(SimpleTerm(
                 value=brain.getObject(),
                 token=brain.UID,
-                title=u'{} ({})'.format(brain.Title, brain.getPath()),
+                title=u'{0} ({1})'.format(brain.Title, brain.getPath()),
             ))
         return SimpleVocabulary(terms)
 

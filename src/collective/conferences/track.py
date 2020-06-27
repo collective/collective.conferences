@@ -114,10 +114,6 @@ class ITrack(model.Schema):
 #        start = t.enditem
 
 
-def trackmodified(track, event):
-    print('track modified')
-
-
 class TrackView(BrowserView):
 
     def canRequestReview(self):

@@ -72,14 +72,16 @@ class TestPresenterIntegration(unittest.TestCase):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         portal = api.portal.get()
-        api.content.create(type='Folder', title='test-folder', container=portal)
-#        self.portal.invokeFactory('Folder', 'test-folder')
+        api.content.create(type='collective.conferences.speakerfolder', title='test-folder', container=portal)
         setRoles(self.portal, TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
-        self.folder.invokeFactory('collective.conferences.conferencespeaker', 'conferencespeaker1')
-        p1 = self.folder['conferencespeaker1']
+        portal= api.portal.get()
+        testfolder =portal['test-folder']
+        api.content.create(container=testfolder, type='collective.conferences.conferencespeaker', title='conferencespeaker1')
+#        self.folder.invokeFactory('collective.conferences.conferencespeaker', 'conferencespeaker1')
+        p1 = self.folder['test-folder/conferencespeaker1']
         self.failUnless(IConferenceSpeaker.providedBy(p1))
 
     def test_fti(self):

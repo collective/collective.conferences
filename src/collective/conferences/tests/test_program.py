@@ -2,6 +2,7 @@ from collective.conferences.program import endDefaultValue
 from collective.conferences.program import IProgram
 from collective.conferences.program import StartBeforeEnd
 from collective.conferences.program import startDefaultValue
+from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 from collective.conferences.track import ITrack
 from DateTime import DateTime
 from plone.app.testing import setRoles
@@ -10,7 +11,6 @@ from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import createObject
 from zope.component import queryUtility
 from zope.filerepresentation.interfaces import IFileFactory
-from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 
 import datetime
 import unittest

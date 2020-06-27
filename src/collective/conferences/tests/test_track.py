@@ -24,18 +24,20 @@ class TestTrackIntegration(unittest.TestCase):
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
+        portal=api.portal.get()
+        program= portal['test-folder']
 
         # We can't add this directly
         try:
-            self.folder.invokeFactory('collective.conferences.track', 'track1')
+            api.content.create(type='collective.conferences.track', title='track1', container=program)
             self.fail('Conference tracks should not be addable except within conferences programs.')
         except (ValueError, Unauthorized):
             pass
 
-        self.folder.invokeFactory('collective.conferences.program', 'program1')
+        api.content.create(type='collective.conferences.program', title='program1', container=portal)
         p1 = self.folder['program1']
 
-        p1.invokeFactory('collective.conferences.track', 'track1')
+        p1.api.content.create(type='collective.conferences.track', title='track1')
         s1 = p1['track1']
         self.assertTrue(ITrack.providedBy(s1))
 

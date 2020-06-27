@@ -30,13 +30,6 @@ class IConferencebreak(model.Schema):
         required=False,
     )
 
-    #    form.widget(track=AutocompleteFieldWidget)
-    #    track = RelationChoice(
-    #            title=_(u"Track"),
-    #            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
-    #            required=False,
-    #        )
-
     write_permission(breakstart='collective.conferences.ModifyTalktime')
     breakstart = schema.Datetime(
         title=_(u'Startdate'),
@@ -76,8 +69,6 @@ class IConferencebreak(model.Schema):
         description=_(u'Choose a number for the order in the track'),
         required=False,
     )
-
-
 
 
 class ConferencebreakView(BrowserView):

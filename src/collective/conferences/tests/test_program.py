@@ -6,6 +6,7 @@ from collective.conferences.program import startDefaultValue
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 from collective.conferences.track import ITrack
 from DateTime import DateTime
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
@@ -76,12 +77,14 @@ class TestProgramIntegration(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
+        portal = api.portal.get()
+        api.content.create(type='Folder', title='test-folder', container=portal)
         setRoles(self.portal, TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
-        self.folder.invokeFactory('collective.conferences.program', 'program1')
+        portal = api.portal.get()
+        api.content.create(type='collective.conferences.program', title='program1', container=portal)
         p1 = self.folder['program1']
         self.assertTrue(IProgram.providedBy(p1))
 
@@ -101,14 +104,16 @@ class TestProgramIntegration(unittest.TestCase):
         self.assertTrue(IProgram.providedBy(new_object))
 
     def test_view(self):
-        self.folder.invokeFactory('collective.conferences.program', 'program1')
+        portal = api.portal.get()
+        api.content.create(type='collective.conferences.program', title='program1', container=portal)
         p1 = self.folder['program1']
         view = p1.restrictedTraverse('@@view')
         tracks = view.tracks()
         self.assertEqual(0, len(tracks))
 
     def test_start_end_dates_indexed(self):
-        self.folder.invokeFactory('collective.conferences.program', 'program1')
+        portal = api.portal.get()
+        api.content.create(type='collective.conferences.program', title='program1', container=portal)
         p1 = self.folder['program1']
         p1.start = datetime.datetime(2009, 1, 1, 14, 00)
         p1.end = datetime.datetime(2009, 1, 2, 15, 00)
@@ -121,7 +126,8 @@ class TestProgramIntegration(unittest.TestCase):
         self.assertEqual(result[0].end, DateTime('2009-01-02T15:02:00'))
 
     def test_tracks_indexed(self):
-        self.folder.invokeFactory('collective.conferences.program', 'program1')
+        portal = api.portal.get()
+        api.content.create(type='collective.conferences.program', title='program1', container=portal)
         p1 = self.folder['program1']
         p1.tracks = ['Track 1', 'Track 2']
         p1.reindexObject()
@@ -132,7 +138,8 @@ class TestProgramIntegration(unittest.TestCase):
         self.assertEqual(result[0].getURL(), p1.absolute_url())
 
     def test_file_factory(self):
-        self.folder.invokeFactory('collective.conferences.program', 'p1')
+        portal = api.portal.get()
+        api.content.create(type='collective.conferences.program', title='program1', container=portal)
         p1 = self.folder['p1']
         fileFactory = IFileFactory(p1)
         newObject = fileFactory('new-track', 'text/plain', 'dummy')

@@ -117,8 +117,8 @@ class TestProgramIntegration(unittest.TestCase):
     def test_start_end_dates_indexed(self):
         self.folder.invokeFactory('collective.conferences.program', 'program1')
         p1 = self.folder['program1']
-        p1.start = datetime.datetime(2009, 1, 1, 14, 01)
-        p1.end = datetime.datetime(2009, 1, 2, 15, 02)
+        p1.start = datetime.datetime(2009, 1, 1, 14, 00)
+        p1.end = datetime.datetime(2009, 1, 2, 15, 00)
         p1.reindexObject()
 
         result = self.portal.portal_catalog(path='/'.join(p1.getPhysicalPath()))

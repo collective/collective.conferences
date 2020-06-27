@@ -76,6 +76,7 @@ setup(
             'plone.app.robotframework[debug]',
             'Products.validation',
             'plone.formwidget.recaptcha',
+            'plone.mocktestcase',
         ],
     },
     entry_points="""

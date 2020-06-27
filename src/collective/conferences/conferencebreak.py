@@ -8,9 +8,9 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
-from zope import schema
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
+from zope import schema
 
 
 class IConferencebreak(model.Schema):

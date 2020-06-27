@@ -2,7 +2,7 @@
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 from Products.CMFCore.utils import getToolByName
 
-import unittest2 as unittest
+import unittest
 
 
 class TestExample(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestExample(unittest.TestCase):
         self.qi_tool = getToolByName(self.portal, 'portal_quickinstaller')
 
     def test_product_is_installed(self):
-        """ Validate that our products GS profile has been run and the product 
+        """ Validate that our products GS profile has been run and the product
             installed
         """
         pid = 'collective.conferences'

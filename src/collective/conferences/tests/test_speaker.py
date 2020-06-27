@@ -77,27 +77,26 @@ class TestPresenterIntegration(unittest.TestCase):
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
-        portal= api.portal.get()
-        testfolder =portal['test-folder']
+        portal=api.portal.get()
+        testfolder=portal['test-folder']
         api.content.create(container=testfolder, type='collective.conferences.conferencespeaker', title='conferencespeaker1')
-#        self.folder.invokeFactory('collective.conferences.conferencespeaker', 'conferencespeaker1')
         p1 = self.folder['test-folder/conferencespeaker1']
-        self.failUnless(IConferenceSpeaker.providedBy(p1))
+        self.assertTrue(IConferenceSpeaker.providedBy(p1))
 
     def test_fti(self):
         fti = queryUtility(IDexterityFTI, name='collective.conferences.conferencespeaker')
-        self.assertNotEquals(None, fti)
+        self.assertNotEqual(None, fti)
 
     def test_schema(self):
         fti = queryUtility(IDexterityFTI, name='collective.conferences.conferencespeaker')
         schema = fti.lookupSchema()
-        self.assertEquals(IConferenceSpeaker, schema)
+        self.assertEqual(IConferenceSpeaker, schema)
 
     def test_factory(self):
         fti = queryUtility(IDexterityFTI, name='collective.conferences.conferencespeaker')
         factory = fti.factory
         new_object = createObject(factory)
-        self.failUnless(IConferenceSpeaker.providedBy(new_object))
+        self.assertTrue(IConferenceSpeaker.providedBy(new_object))
 
 
 def test_suite():

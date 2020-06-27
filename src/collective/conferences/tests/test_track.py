@@ -8,7 +8,7 @@ from zExceptions import Unauthorized
 from zope.component import createObject
 from zope.component import queryUtility
 
-import unittest2 as unittest
+import unittest
 
 
 class TestTrackIntegration(unittest.TestCase):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from collective.conferences.speaker import ISpeaker
-from collective.conferences.speaker import notifyUser
+from collective.conferences.conferencespeaker import IConferenceSpeaker
+from collective.conferences.conferencespeaker import notifyUser
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
@@ -10,28 +10,28 @@ from zope.app.container.contained import ObjectAddedEvent
 from zope.component import createObject
 from zope.component import queryUtility
 
-import unittest2 as unittest
+import unittest
 
 
 class TestPresenterMock(MockTestCase):
 
     def test_notify_user(self):
-        # dummy speaker
-        speaker = self.create_dummy(
+        # dummy conferencespeaker
+        conferencespeaker = self.create_dummy(
             __parent__=None,
             __name__=None,
             title='Jim',
-            absolute_url=lambda: 'http://example.org/speaker',
+            absolute_url=lambda: 'http://example.org/conferencespeaker',
         )
 
         # dummy event
-        event = ObjectAddedEvent(speaker)
+        event = ObjectAddedEvent(conferencespeaker)
 
         # search result for acl_users
         user_info = [{'email': 'jim@example.org', 'id': 'jim'}]
 
         # email data
-        message = 'A speaker called Jim was added here http://example.org/speaker'
+        message = 'A speaker called Jim was added here http://example.org/conferencespeaker'
         email = 'jim@example.org'
         sender = 'test@example.org'
         subject = 'Is this you?'
@@ -57,7 +57,7 @@ class TestPresenterMock(MockTestCase):
         self.replay()
 
         # call the method under test
-        notifyUser(speaker, event)
+        notifyUser(conferencespeaker, event)
 
         # we could make additional assertions here, e.g. if the function
         # returned something. The mock framework will verify the assertions
@@ -75,24 +75,24 @@ class TestPresenterIntegration(unittest.TestCase):
         self.folder = self.portal['test-folder']
 
     def test_adding(self):
-        self.folder.invokeFactory('collective.conferences.speaker', 'speaker1')
-        p1 = self.folder['speaker1']
-        self.failUnless(ISpeaker.providedBy(p1))
+        self.folder.invokeFactory('collective.conferences.conferencespeaker', 'conferencespeaker1')
+        p1 = self.folder['conferencespeaker1']
+        self.failUnless(IConferenceSpeaker.providedBy(p1))
 
     def test_fti(self):
-        fti = queryUtility(IDexterityFTI, name='collective.conferences.speaker')
+        fti = queryUtility(IDexterityFTI, name='collective.conferences.conferencespeaker')
         self.assertNotEquals(None, fti)
 
     def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='collective.conferences.speaker')
+        fti = queryUtility(IDexterityFTI, name='collective.conferences.conferencespeaker')
         schema = fti.lookupSchema()
-        self.assertEquals(ISpeaker, schema)
+        self.assertEquals(IConferenceSpeaker, schema)
 
     def test_factory(self):
-        fti = queryUtility(IDexterityFTI, name='collective.conferences.speaker')
+        fti = queryUtility(IDexterityFTI, name='collective.conferences.conferencespeaker')
         factory = fti.factory
         new_object = createObject(factory)
-        self.failUnless(ISpeaker.providedBy(new_object))
+        self.failUnless(IConferenceSpeaker.providedBy(new_object))
 
 
 def test_suite():

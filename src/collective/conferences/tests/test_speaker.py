@@ -2,6 +2,7 @@
 from collective.conferences.conferencespeaker import IConferenceSpeaker
 from collective.conferences.conferencespeaker import notifyUser
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.dexterity.interfaces import IDexterityFTI
@@ -70,7 +71,9 @@ class TestPresenterIntegration(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        self.portal.invokeFactory('Folder', 'test-folder')
+        portal = api.portal.get()
+        api.content.create(type='Folder', title='test-folder', container=portal)
+#        self.portal.invokeFactory('Folder', 'test-folder')
         setRoles(self.portal, TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 

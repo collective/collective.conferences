@@ -27,4 +27,6 @@
     <index name="programend" meta_type="FieldIndex">
         <indexed_attr value="programend" />
     </index>
+    <column value="track"/>
+    <column value="speaker" />
 </object>

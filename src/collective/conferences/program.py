@@ -96,14 +96,3 @@ class ProgramView(BrowserView):
 class FullprogramView(BrowserView):
     pass
 
-
-# File representation
-
-class ProgramFileFactory(object):
-    """Custom file factory for programs, which always creates a Track.
-    """
-
-    def __call__(self, name, contentType, data):
-        track = createObject('collective.conferences.track')
-        notify(ObjectCreatedEvent(track))
-        return track

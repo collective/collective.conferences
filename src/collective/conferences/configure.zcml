@@ -178,14 +178,6 @@
         permission="zope2.View"
         />
 
-
-
-    <adapter
-        for=".program.IProgram"
-        provides="zope.filerepresentation.interfaces.IFileFactory"
-        factory=".program.ProgramFileFactory"
-        />
-
     <adapter factory="collective.conferences.createnewtalk.NewTalkSchemaAdapter"/>
 
 

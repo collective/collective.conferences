@@ -29,14 +29,14 @@ class TestProgramUnit(unittest.TestCase):
         default_value = startDefaultValue()
         today = datetime.datetime.today()
         delta = default_value - today
-        self.assertEqual(6, delta.days)
+        self.assertEqual(13, delta.days)
 
     def test_end_default(self):
 #        data = MockProgram()
         default_value = endDefaultValue()
         today = datetime.datetime.today()
         delta = default_value - today
-        self.assertEqual(9, delta.days)
+        self.assertEqual(16, delta.days)
 
     def test_validate_invariants_ok(self):
         data = MockProgram()

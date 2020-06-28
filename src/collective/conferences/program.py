@@ -10,11 +10,8 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from zope import schema
-from zope.component import createObject
-from zope.event import notify
 from zope.interface import Invalid
 from zope.interface import invariant
-from zope.lifecycleevent import ObjectCreatedEvent
 
 import datetime
 
@@ -52,7 +49,7 @@ class IProgram(model.Schema):
     end = schema.Datetime(
         title=_(u'End date'),
         required=False,
-        defaultFactory=endDefaultValue
+        defaultFactory=endDefaultValue,
     )
 
     primary('details')
@@ -95,4 +92,3 @@ class ProgramView(BrowserView):
 
 class FullprogramView(BrowserView):
     pass
-

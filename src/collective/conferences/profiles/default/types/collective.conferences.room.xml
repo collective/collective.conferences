@@ -23,7 +23,7 @@
  <!-- enabled behaviors -->
  <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
-     <element value="plone.multilingualbehavior.interfaces.IDexterityTranslatable" />
+     <element value="plone.translatable" />"
  </property>
 
  <!-- View information -->

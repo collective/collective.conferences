@@ -25,6 +25,8 @@ class TestTrackIntegration(unittest.TestCase):
 
     def test_adding(self):
         portal = api.portal.get()
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        api.content.create(type='collective.conferences.program', title='test-folder', container=portal)
         program = portal['test-folder']
 
         # We can't add this directly
@@ -35,7 +37,7 @@ class TestTrackIntegration(unittest.TestCase):
             pass
 
         api.content.create(type='collective.conferences.program', title='program1', container=portal)
-        p1 = self.folder['program1']
+        p1 = portal['program1']
 
         p1.api.content.create(type='collective.conferences.track', title='track1')
         s1 = p1['track1']
@@ -57,7 +59,7 @@ class TestTrackIntegration(unittest.TestCase):
         self.assertTrue(ITrack.providedBy(new_object))
 
     def test_catalog_index_metadata(self):
-        self.assertTrue('track' in self.portal.portal_catalog.indexes())
+        self.assertTrue('conferencetrack' in self.portal.portal_catalog.indexes())
         self.assertTrue('track' in self.portal.portal_catalog.schema())
 
 

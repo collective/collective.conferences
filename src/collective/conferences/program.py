@@ -10,11 +10,18 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.Five import BrowserView
 from zope import schema
-from zope.component import createObject
-from zope.event import notify
 from zope.interface import Invalid
 from zope.interface import invariant
-from zope.lifecycleevent import ObjectCreatedEvent
+
+import datetime
+
+
+def startDefaultValue():
+    return datetime.datetime.today() + datetime.timedelta(14)
+
+
+def endDefaultValue():
+    return datetime.datetime.today() + datetime.timedelta(17)
 
 
 class StartBeforeEnd(Invalid):
@@ -36,11 +43,13 @@ class IProgram(model.Schema):
     start = schema.Datetime(
         title=_(u'Start date'),
         required=False,
+        defaultFactory=startDefaultValue,
     )
 
     end = schema.Datetime(
         title=_(u'End date'),
         required=False,
+        defaultFactory=endDefaultValue,
     )
 
     primary('details')
@@ -83,15 +92,3 @@ class ProgramView(BrowserView):
 
 class FullprogramView(BrowserView):
     pass
-
-
-# File representation
-
-class ProgramFileFactory(object):
-    """Custom file factory for programs, which always creates a Track.
-    """
-
-    def __call__(self, name, contentType, data):
-        track = createObject('collective.conferences.track')
-        notify(ObjectCreatedEvent(track))
-        return track

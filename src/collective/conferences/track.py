@@ -123,7 +123,8 @@ class TrackView(BrowserView):
         tracktitle = self.context.title
         talks_workshops = api.content.find(depth=3,
                                            portal_type=('collective.conferences.talk',
-                                                        'collective.conferences.workshop'),
+                                                        'collective.conferences.workshop',
+                                                        'collective.conferences.conferencebreak'),
                                            conferencetrack=tracktitle,
                                            review_state='published',
                                            sort_on='orderintrack')

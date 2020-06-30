@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
+from collective.conferences.conferencebreak import IConferencebreak
 from collective.conferences.program import IProgram
 from collective.conferences.talk import ITalk
 from collective.conferences.workshop import IWorkshop
-from collective.conferences.conferencebreak import IConferencebreak
 from DateTime import DateTime
 from plone.indexer.decorator import indexer
 

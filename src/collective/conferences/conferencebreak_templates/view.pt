@@ -16,23 +16,18 @@
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
-
-<!--
         <div>
-             <label i18n:translate="time">Time:</label>
-             
-             <span tal:condition="context/startitem" tal:content="python:context.startitem.strftime('%d.%m.%Y from %H:%M to ')" /> 
-             <span tal:condition="context/enditem" tal:content="python:context.enditem.strftime('%H:%M  o\'Clock')" /> 
+             <label i18n:translate="">Time:</label>
+
+             <span tal:condition="context/breakstart" tal:content="python:context.breakstart.strftime('%d.%m.%Y from %H:%M to ')" />
+             <span tal:condition="context/breakend" tal:content="python:context.breakend.strftime('%H:%M  o\'Clock')" />
         </div>
--->
         <div tal:condition="context/breaklength">
             <label i18n:translate="">Length of the Break:</label>
             <tal:loop repeat="length context/breaklength">
             <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
          </tal:loop>
         </div>
-
-
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <h4 tal:condition="context/details" i18n:translate="">Details of the Break</h4>

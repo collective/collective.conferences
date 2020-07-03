@@ -215,9 +215,9 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
                                   'title: {0},\nsummary: {1},\ndetails: {2},\n'
                                   'proposed length: {3} minutes\nfor the call for papers '
                                   'topic: {4}\nwith the following message to the conference '
-                                  'committee: {5}').
-                    format(data['talktitle'], data['talkdescription'], details,
-                           length, cfp, data['messagetocommittee']),
+                                  'committee: {5}').format(
+                    data['talktitle'], data['talkdescription'], details,
+                    length, cfp, data['messagetocommittee']),
             )
 
         api.portal.show_message(

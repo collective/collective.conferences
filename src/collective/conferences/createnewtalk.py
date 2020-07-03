@@ -20,6 +20,8 @@ from zope.component import adapter
 from zope.component import getMultiAdapter
 from zope.interface import directlyProvides
 from zope.interface import implementer
+from zope.interface import Invalid
+from zope.interface import invariant
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -42,6 +44,11 @@ def vocabCfPTopics(context):
 
 
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
+
+
+class ChooseLicense(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a license for your talk.'))
 
 
 class IReCaptchaForm(interface.Interface):
@@ -95,12 +102,31 @@ class NewTalkSchema(interface.Interface):
         required=True,
     )
 
+    license = schema.List(
+        title=_(u'License Of Your Talk'),
+        description=_(u'Choose a license for your talk'),
+        value_type=schema.Choice(source='ContentLicense'),
+        required=True,
+    )
+
+
     messagetocommittee = schema.Text(
         title=_(u'Messages to the Program Committee'),
         description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
                       u'available to give the talk'),
         required=False,
     )
+
+
+    @invariant
+    def validateLicensechoosen(data):
+        if not data.license:
+            raise ChooseLicense(
+                _(safe_unicode(
+                    'Please choose a license for '
+                    'your talk.')
+                )
+            )
 
 
 @implementer(NewTalkSchema)
@@ -114,6 +140,7 @@ class NewTalkSchemaAdapter(object):
         self.speaker = None
         self.cfp_topic = None
         self.ptalklength = None
+        self.license = None
         self.messagetocommittee = None
 
 
@@ -128,6 +155,7 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
     fields['cfp_topic'].widgetFactory = RadioFieldWidget
     fields['ptalklength'].widgetFactory = RadioFieldWidget
     fields['speaker'].widgetFactory = SelectFieldWidget
+    fields['license'].widgetFactory = RadioFieldWidget
 
     def update(self):
         # disable Plone's editable border

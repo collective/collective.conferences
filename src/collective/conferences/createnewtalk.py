@@ -28,7 +28,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -109,7 +108,6 @@ class NewTalkSchema(interface.Interface):
         required=True,
     )
 
-
     messagetocommittee = schema.Text(
         title=_(u'Messages to the Program Committee'),
         description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
@@ -117,15 +115,14 @@ class NewTalkSchema(interface.Interface):
         required=False,
     )
 
-
     @invariant
     def validateLicensechoosen(data):
         if not data.license:
             raise ChooseLicense(
                 _(safe_unicode(
                     'Please choose a license for '
-                    'your talk.')
-                )
+                    'your talk.'),
+                ),
             )
 
 

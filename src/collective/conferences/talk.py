@@ -48,7 +48,6 @@ class ChooseLicense(Invalid):
         'Please choose a license for your talk.'))
 
 
-
 class ITalk(model.Schema):
     """A conference talk. Talks are managed inside tracks of the Program.
     """
@@ -143,13 +142,12 @@ class ITalk(model.Schema):
         required=False,
     )
 
-
-#    form.widget(track=AutocompleteFieldWidget)
-#    track = RelationChoice(
-#            title=_(u"Track"),
-#            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
-#            required=False,
-#        )
+    #    form.widget(track=AutocompleteFieldWidget)
+    #    track = RelationChoice(
+    #            title=_(u"Track"),
+    #            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
+    #            required=False,
+    #        )
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
@@ -217,9 +215,11 @@ class ITalk(model.Schema):
             raise ChooseLicense(
                 _(safe_unicode(
                     'Please choose a license for '
-                    'your talk.')
-                )
+                    'your talk.'),
+                ),
             )
+
+
 # @indexer(ITalk)
 # def speakerIndexer(obj):
 #     if obj.speaker is None:

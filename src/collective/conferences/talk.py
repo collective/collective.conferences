@@ -141,15 +141,6 @@ class ITalk(model.Schema):
         required=False,
     )
 
-    write_permission(order='collective.conferences.ModifyTrack')
-    order = schema.Int(
-        title=_(u'Orderintrack'),
-        description=_(u'Order in the track: write in an Integer from 1 to 12'),
-        min=1,
-        max=12,
-        required=False,
-    )
-
     slides = NamedBlobFile(
         title=_(u'Presentation slides in ODT-File-Format'),
         description=_(u'Please upload your presentation shortly after you have given your talk.'),

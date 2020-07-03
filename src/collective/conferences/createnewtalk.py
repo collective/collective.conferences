@@ -198,6 +198,28 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
             container=portal['talks'],
         )
 
+        if api.portal.get_registry_record(
+                'plone.email_from_address') is not None:
+            contactaddress = api.portal.get_registry_record(
+                'plone.email_from_address')
+            current_user = api.user.get_current()
+            length = (data['ptalklength'])[0]
+            cfp = (data['cfp_topic'])[0]
+            details = (data['talkdetails']).output
+
+            api.portal.send_email(
+                recipient=current_user.getProperty('email'),
+                sender=contactaddress,
+                subject=safe_unicode('Your Talk Proposal'),
+                body=safe_unicode('You submitted a conference talk:\n'
+                                  'title: {0},\nsummary: {1},\ndetails: {2},\n'
+                                  'proposed length: {3} minutes\nfor the call for papers '
+                                  'topic: {4}\nwith the following message to the conference '
+                                  'committee: {5}').
+                    format(data['talktitle'], data['talkdescription'], details,
+                           length, cfp, data['messagetocommittee']),
+            )
+
         api.portal.show_message(
             message=_(safe_unicode('The talk has been submitted.')),
             request=self.request,

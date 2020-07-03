@@ -95,14 +95,12 @@ class NewTalkSchema(interface.Interface):
         required=True,
     )
 
-
     messagetocommittee = schema.Text(
         title=_(u'Messages to the Program Committee'),
         description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
                       u'available to give the talk'),
         required=False,
     )
-
 
 
 @implementer(NewTalkSchema)

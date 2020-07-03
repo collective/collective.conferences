@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collective.conferences.conferencebreak import IConferencebreak
 from collective.conferences.program import IProgram
 from collective.conferences.talk import ITalk
 from collective.conferences.workshop import IWorkshop
@@ -21,6 +22,17 @@ def presenternames(object, **kw):
 def workshopleadernames(object, **kw):
     results = []
     for rel in object.speaker:
+        if rel.isBroken():
+            continue
+        obj = rel.to_object.title
+        results.append(obj)
+    return results
+
+
+@indexer(IConferencebreak)
+def conferencebreaktrackname(object, **kw):
+    results = []
+    for rel in object.conferencetrack:
         if rel.isBroken():
             continue
         obj = rel.to_object.title

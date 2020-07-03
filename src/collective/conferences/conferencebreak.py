@@ -4,9 +4,9 @@ from plone import api
 from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.autoform.directives import write_permission
+from plone.dexterity.browser.view import DefaultView
 from plone.supermodel import model
 from plone.supermodel.directives import primary
-from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -71,7 +71,7 @@ class IConferencebreak(model.Schema):
     )
 
 
-class ConferencebreakView(BrowserView):
+class ConferencebreakView(DefaultView):
 
     def canRequestReview(self):
         return api.user.has_permission('cmf.RequestReview', obj=self.context)

@@ -223,6 +223,8 @@
 
     <adapter name="workshopleader" factory=".indexers.workshopleadernames" />
 
+    <adapter name="programtrack" factory=".indexers.conferencebreaktrackname" />
+
     <adapter name="programtrack" factory=".indexers.workshoptrackname" />
 
     <adapter name="programtrack" factory=".indexers.talktrackname" />
@@ -249,6 +251,10 @@
     <utility
         name="WorkshopLength"
         component=".vocabularies.WorkshopLengthVocabularyFactory" />
+
+    <utility
+        name="ContentLicense"
+        component=".vocabularies.LicenseVocabularyFactory" />
 
     <utility
         name="ConferenceSpeaker"

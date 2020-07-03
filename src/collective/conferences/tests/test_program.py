@@ -23,14 +23,12 @@ class MockProgram(object):
 class TestProgramUnit(unittest.TestCase):
 
     def test_start_defaults(self):
-#        data = MockProgram()
         default_value = startDefaultValue()
         today = datetime.datetime.today()
         delta = default_value - today
         self.assertEqual(13, delta.days)
 
     def test_end_default(self):
-#        data = MockProgram()
         default_value = endDefaultValue()
         today = datetime.datetime.today()
         delta = default_value - today

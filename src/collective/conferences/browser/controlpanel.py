@@ -31,6 +31,14 @@ class ICollectiveconfControlPanel(Interface):
         required=True,
     )
 
+    license = schema.Tuple(
+        title=u'Licenses Of Talks / Workshops',
+        description=u'Fill in the names of the licenses for conference talks and workshops. Use a new line for '
+                    u'every value / license name.',
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
 
 class CollectiveconfControlPanelForm(RegistryEditForm):
     schema = ICollectiveconfControlPanel

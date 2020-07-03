@@ -68,9 +68,9 @@
          <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
          </h4>
          </td>
-         <td>
+         <td >
          </td>
-         <td><h4 tal:content="talk/description" />
+         <td><h4 tal:condition="talk/description" tal:content="talk/description" />
          </td>
        </tr>
          </tbody>

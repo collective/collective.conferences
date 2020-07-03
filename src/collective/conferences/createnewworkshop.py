@@ -97,6 +97,14 @@ class NewWorkshopSchema(interface.Interface):
         required=True,
     )
 
+    messagetocommittee = schema.Text(
+        title=_(u'Messages to the Program Committee'),
+        description=_(
+            u'You can give some information to the committee here, e.g. about days you are (not) available '
+            u'to give the workshop'),
+        required=False,
+    )
+
 
 @implementer(NewWorkshopSchema)
 @adapter(interface.Interface)
@@ -109,6 +117,7 @@ class NewWorkshopSchemaAdapter(object):
         self.speaker = None
         self.cfp_topic = None
         self.wtalklength = None
+        self.messagetocommittee = None
 
 
 class NewWorkshopForm(AutoExtensibleForm, form.Form):
@@ -164,6 +173,7 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
             details=data['workshopdetails'],
             call_for_paper_topic=data['cfp_topic'],
             planedworkshoplength=data['wtalklength'],
+            messagetocommittee=data['messagetocommittee'],
             container=portal['workshops'],
         )
 

@@ -11,12 +11,15 @@ from plone.autoform.directives import write_permission
 from plone.namedfile.field import NamedBlobFile
 from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import directlyProvides
+from zope.interface import Invalid
+from zope.interface import invariant
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -38,6 +41,12 @@ def vocabCfPTopics(context):
 
 
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
+
+
+class ChooseLicense(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a license for your talk.'))
+
 
 
 class ITalk(model.Schema):
@@ -85,6 +94,21 @@ class ITalk(model.Schema):
         description=_(u"Give an estimation about the time you'd plan for your talk."),
         value_type=schema.Choice(source='TalkLength'),
         required=True,
+    )
+
+    directives.widget(license=RadioFieldWidget)
+    license = schema.List(
+        title=_(u'License Of Your Talk'),
+        description=_(u'Choose a license for your talk'),
+        value_type=schema.Choice(source='ContentLicense'),
+        required=True,
+    )
+
+    messagetocommittee = schema.Text(
+        title=_(u'Messages to the Program Committee'),
+        description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
+                      u'available to give the talk'),
+        required=False,
     )
 
     read_permission(conferencetrack='cmf.ReviewPortalContent')
@@ -180,22 +204,6 @@ class ITalk(model.Schema):
         required=False,
     )
 
-    creativecommonslicense = schema.Bool(
-        title=_(u'label_creative_commons_license', default=u'License is Creative Commons Attribution-Share '
-                                                           u'Alike 3.0 License.'),
-        description=_(u'help_creative_commons_license',
-                      default=u'You agree that your talk and slides are provided under the Creative Commons '
-                              u'Attribution-Share Alike 3.0 License.'),
-        default=True,
-    )
-
-    messagetocommittee = schema.Text(
-        title=_(u'Messages to the Program Committee'),
-        description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
-                      u'available to give the talk'),
-        required=False,
-    )
-
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
@@ -203,6 +211,15 @@ class ITalk(model.Schema):
         required=False,
     )
 
+    @invariant
+    def validateLicensechoosen(data):
+        if not data.license:
+            raise ChooseLicense(
+                _(safe_unicode(
+                    'Please choose a license for '
+                    'your talk.')
+                )
+            )
 # @indexer(ITalk)
 # def speakerIndexer(obj):
 #     if obj.speaker is None:

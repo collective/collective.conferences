@@ -120,10 +120,8 @@ class NewTalkSchema(interface.Interface):
     def validateLicensechoosen(data):
         if not data.license:
             raise ChooseLicense(
-                _(safe_unicode(
-                    'Please choose a license for '
-                    'your talk.'),
-                ),
+                _(safe_unicode('Please choose a license for your talk.'),
+                  ),
             )
 
 

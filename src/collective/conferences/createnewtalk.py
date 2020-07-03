@@ -96,6 +96,15 @@ class NewTalkSchema(interface.Interface):
     )
 
 
+    messagetocommittee = schema.Text(
+        title=_(u'Messages to the Program Committee'),
+        description=_(u'You can give some information to the committee here, e.g. about days you are (not) '
+                      u'available to give the talk'),
+        required=False,
+    )
+
+
+
 @implementer(NewTalkSchema)
 @adapter(interface.Interface)
 class NewTalkSchemaAdapter(object):
@@ -107,6 +116,7 @@ class NewTalkSchemaAdapter(object):
         self.speaker = None
         self.cfp_topic = None
         self.ptalklength = None
+        self.messagetocommittee = None
 
 
 class NewTalkForm(AutoExtensibleForm, form.Form):
@@ -162,6 +172,7 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
             details=data['talkdetails'],
             call_for_paper_topic=data['cfp_topic'],
             planedtalklength=data['ptalklength'],
+            messagetocommittee=data['messagetocommittee'],
             container=portal['talks'],
         )
 

@@ -213,10 +213,8 @@ class ITalk(model.Schema):
     def validateLicensechoosen(data):
         if not data.license:
             raise ChooseLicense(
-                _(safe_unicode(
-                    'Please choose a license for '
-                    'your talk.'),
-                ),
+                _(safe_unicode('Please choose a license for your talk.'),
+                  ),
             )
 
 

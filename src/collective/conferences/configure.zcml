@@ -253,6 +253,10 @@
         component=".vocabularies.WorkshopLengthVocabularyFactory" />
 
     <utility
+        name="ContentLicense"
+        component=".vocabularies.LicenseVocabularyFactory" />
+
+    <utility
         name="ConferenceSpeaker"
         component=".vocabularies.ConferenceSpeakerVocabularyFactory" />
 

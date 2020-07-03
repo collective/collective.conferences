@@ -26,6 +26,12 @@ def WorkshopLengthVocabularyFactory(context):
     return safe_simplevocabulary_from_values(values)
 
 
+@provider(IVocabularyFactory)
+def LicenseVocabularyFactory(context):
+    values = api.portal.get_registry_record('collectiveconf.license')
+    return safe_simplevocabulary_from_values(values)
+
+
 @implementer(IVocabularyFactory)
 class ConferenceSpeakerVocabulary(object):
 

@@ -15,8 +15,6 @@ from zope import schema
 from zope.interface import Invalid
 from zope.interface import invariant
 
-import datetime
-
 
 class StartBeforeEnd(Invalid):
     __doc__ = _(u'The start or end date is invalid')

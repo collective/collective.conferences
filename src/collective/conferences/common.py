@@ -5,7 +5,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import datetime
 
-
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
      SimpleTerm(value=1, title=_(u'Yes'))],
@@ -18,4 +17,3 @@ def startDefaultValue():
 
 def endDefaultValue():
     return datetime.datetime.today() + datetime.timedelta(17)
-

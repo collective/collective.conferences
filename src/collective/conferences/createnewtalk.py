@@ -28,7 +28,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -194,7 +193,7 @@ class NewTalkForm(AutoExtensibleForm, form.Form):
             details=data['talkdetails'],
             call_for_paper_topic=data['cfp_topic'],
             planedtalklength=data['ptalklength'],
-            license = data['license'],
+            license=data['license'],
             messagetocommittee=data['messagetocommittee'],
             container=portal['talks'],
         )

@@ -28,7 +28,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import logging
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -45,13 +44,13 @@ def vocabCfPTopics(context):
 
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
+
 class ChooseLicense(Invalid):
     __doc__ = _(safe_unicode(
         'Please choose a license for your talk.'))
 
 
 class IReCaptchaForm(interface.Interface):
-
     captcha = schema.TextLine(
         title=safe_unicode('ReCaptcha'),
         description=safe_unicode(''),
@@ -67,7 +66,6 @@ class ReCaptcha(object):
 
 
 class NewWorkshopSchema(interface.Interface):
-
     workshoptitle = schema.TextLine(
         title=_(u'The Title Of Your Workshop'),
         description=_(u'Fill in the title of your proposed conference workshop'),
@@ -125,7 +123,6 @@ class NewWorkshopSchema(interface.Interface):
                 _(safe_unicode('Please choose a license for your talk.'),
                   ),
             )
-
 
 
 @implementer(NewWorkshopSchema)
@@ -199,7 +196,6 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
             messagetocommittee=data['messagetocommittee'],
             container=portal['workshops'],
         )
-
 
         if api.portal.get_registry_record(
                 'plone.email_from_address') is not None:

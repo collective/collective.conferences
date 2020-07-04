@@ -19,8 +19,8 @@
         <div>
              <label i18n:translate="">Time:</label>
 
-             <span tal:condition="context/breakstart" tal:content="python:context.breakstart.strftime('%d.%m.%Y from %H:%M to ')" />
-             <span tal:condition="context/breakend" tal:content="python:context.breakend.strftime('%H:%M  o\'Clock')" />
+             <span tal:condition="context/startitem" tal:content="python:context.startitem.strftime('%d.%m.%Y from %H:%M to ')" />
+             <span tal:condition="context/enditem" tal:content="python:context.enditem.strftime('%H:%M  o\'Clock')" />
         </div>
         <div tal:condition="context/breaklength">
             <label i18n:translate="">Length of the Break:</label>

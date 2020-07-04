@@ -69,6 +69,8 @@
          </h4>
          </td>
          <td >
+         <span tal:content="python:talk.startitem.strftime('%d. %b %Y %H:%M')" /> to
+         <span tal:content="python:talk.enditem.strftime('%d. %b %Y %H:%M')" />
          </td>
          <td><h4 tal:condition="talk/description" tal:content="talk/description" />
          </td>

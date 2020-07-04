@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from collective.conferences import _
+from collective.conferences.common import endDefaultValue
+from collective.conferences.common import startDefaultValue
 from collective.conferences.track import ITrack
 from plone import api
 from plone.app.textfield import RichText
@@ -14,14 +16,6 @@ from zope.interface import Invalid
 from zope.interface import invariant
 
 import datetime
-
-
-def startDefaultValue():
-    return datetime.datetime.today() + datetime.timedelta(14)
-
-
-def endDefaultValue():
-    return datetime.datetime.today() + datetime.timedelta(17)
 
 
 class StartBeforeEnd(Invalid):

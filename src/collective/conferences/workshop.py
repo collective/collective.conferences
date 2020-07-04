@@ -3,6 +3,8 @@ from Acquisition import aq_inner
 from Acquisition import aq_parent
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import endDefaultValue
+from collective.conferences.common import startDefaultValue
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -141,6 +143,7 @@ class IWorkshop(model.Schema):
     startitem = schema.Datetime(
         title=_(u'Startdate'),
         description=_(u'Start date'),
+        defaultFactory=startDefaultValue,
         required=False,
     )
 
@@ -148,6 +151,7 @@ class IWorkshop(model.Schema):
     enditem = schema.Datetime(
         title=_(u'Enddate'),
         description=_(u'End date'),
+        defaultFactory=endDefaultValue,
         required=False,
     )
 

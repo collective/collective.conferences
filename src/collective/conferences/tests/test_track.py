@@ -27,11 +27,11 @@ class TestTrackIntegration(unittest.TestCase):
         portal = api.portal.get()
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         api.content.create(type='collective.conferences.program', title='test-folder', container=portal)
-        program = portal['test-folder']
+        testfolder = portal['test-folder']
 
         # We can't add this directly
         try:
-            api.content.create(type='collective.conferences.track', title='track1', container=program)
+            api.content.create(type='collective.conferences.track', title='track1', container=testfolder)
             self.fail('Conference tracks should not be addable except within conferences programs.')
         except (ValueError, Unauthorized):
             pass

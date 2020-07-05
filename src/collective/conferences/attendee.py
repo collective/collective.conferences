@@ -2,6 +2,7 @@
 from collective.conferences import _
 from collective.conferences.common import yesnochoice
 from plone.autoform import directives
+from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
 from plone.supermodel import model
 from Products.Five import BrowserView
@@ -106,6 +107,21 @@ class IAttendee(model.Schema):
             u'of the bank you used. We need this information to identify your payment more quickly.'),
         required=False,
     )
+
+
+class AttendeeAddForm(add.DefaultAddForm):
+    portal_type = 'collective.conferences.attendee'
+
+    def updateWidgets(self):
+        super(AttendeeAddForm, self).updateWidgets()
+        if getattr(self.context, 'conferencefee', None) == 0:
+            self.widgets['registrationpayed'].mode = 'hidden'
+            self.widgets['paymentway'].mode = 'hidden'
+            self.widgets['usedbank'].mode = 'hidden'
+
+
+class AttendeeAddView(add.DefaultAddView):
+    form = AttendeeAddForm
 
 
 class AttendeeEditForm(edit.DefaultEditForm):

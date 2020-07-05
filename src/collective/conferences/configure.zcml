@@ -113,6 +113,22 @@
         permission="zope2.View"
         />
 
+    <adapter
+        for="Products.CMFCore.interfaces.IFolderish
+            collective.conferences.interfaces.ICollectiveConferencesLayer
+            plone.dexterity.interfaces.IDexterityFTI"
+        provides="zope.publisher.interfaces.browser.IBrowserPage"
+        factory=".attendee.AttendeeAddView"
+        name="collective.conferences.attendee"
+    />
+
+    <class class=".attendee.AttendeeAddView">
+        <require
+            permission="cmf.AddPortalContent"
+            interface="zope.publisher.interfaces.browser.IBrowserPage"
+        />
+    </class>
+
 
     <browser:page
         name="edit"

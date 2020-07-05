@@ -113,6 +113,15 @@
         permission="zope2.View"
         />
 
+
+    <browser:page
+        name="edit"
+        for="collective.conferences.attendee.IAttendee"
+        class="collective.conferences.attendee.AttendeeEditForm"
+        permission="cmf.ModifyPortalContent"
+    />
+
+
     <browser:page
         name="view"
         for="collective.conferences.program.IProgram"

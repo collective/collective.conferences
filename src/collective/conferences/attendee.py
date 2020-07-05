@@ -1,11 +1,37 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
 from collective.conferences.common import yesnochoice
+from plone.autoform import directives
+from plone.dexterity.browser import edit
 from plone.supermodel import model
 from Products.Five import BrowserView
+from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
+from zope.interface import directlyProvides
+from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+
+
+def vocabpaymentoptions(context):
+    from collective.conferences.attendeefolder import IAttendeefolder
+    while context is not None and not IAttendeefolder.providedBy(context):
+        # context = aq_parent(aq_inner(context))
+        context = context.__parent__
+
+    payment_list = []
+    if context is not None and context.paymentoptions:
+        payment_list = context.paymentoptions
+
+    terms = []
+    for value in payment_list:
+        terms.append(SimpleTerm(value, token=value.encode('unicode_escape'),
+                                title=value))
+
+    return SimpleVocabulary(terms)
+
+
+directlyProvides(vocabpaymentoptions, IContextSourceBinder)
 
 
 class IAttendee(model.Schema):
@@ -64,11 +90,12 @@ class IAttendee(model.Schema):
         required=True,
     )
 
-    paymentway = schema.Choice(
+    directives.widget(paymentway=RadioFieldWidget)
+    paymentway = schema.List(
         title=_(u'Way of Registration Fee Payment'),
         description=_(
             u'If you already payed the registration fee, please tell us, which way you used to transfer the money.'),
-        vocabulary=paymentway,
+        value_type=schema.Choice(source=vocabpaymentoptions),
         required=False,
     )
 
@@ -79,6 +106,17 @@ class IAttendee(model.Schema):
             u'of the bank you used. We need this information to identify your payment more quickly.'),
         required=False,
     )
+
+
+class AttendeeEditForm(edit.DefaultEditForm):
+
+    def updateWidgets(self):
+        super(AttendeeEditForm, self).updateWidgets()
+        parent = self.context.__parent__
+        if getattr(parent, 'conferencefee', None) == 0:
+            self.widgets['registrationpayed'].mode = 'hidden'
+            self.widgets['paymentway'].mode = 'hidden'
+            self.widgets['usedbank'].mode = 'hidden'
 
 
 class AttendeeView(BrowserView):

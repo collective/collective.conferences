@@ -68,7 +68,7 @@
         </a>
         </li>
         <li>
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/@@new-workshop">
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/workshops/++add++collective.conferences.workshop">
         <span i18n:translate="">Submit a conference workshop</span>
         </a>
         </li>

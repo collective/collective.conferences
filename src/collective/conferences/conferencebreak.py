@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from collective.conferences.common import endDefaultValue
+from collective.conferences.common import startDefaultValue
 from plone import api
 from plone.app.textfield import RichText
 from plone.autoform import directives
@@ -30,20 +32,22 @@ class IConferencebreak(model.Schema):
         required=False,
     )
 
-    write_permission(breakstart='collective.conferences.ModifyTalktime')
-    breakstart = schema.Datetime(
+    write_permission(startitem='collective.conferences.ModifyTalktime')
+    startitem = schema.Datetime(
         title=_(u'Startdate'),
         description=_(u'Start date'),
+        defaultFactory=startDefaultValue,
         required=False,
     )
 
-    write_permission(breakend='collective.conferences.ModifyTalktime')
-    breakend = schema.Datetime(
+    write_permission(enditem='collective.conferences.ModifyTalktime')
+    enditem = schema.Datetime(
         title=_(u'Enddate'),
         description=_(u'End date'),
+        defaultFactory=endDefaultValue,
         required=False,
     )
-    write_permission(breakend='collective.conferences.ModifyTalktime')
+    write_permission(breaklength='collective.conferences.ModifyTalktime')
     directives.widget(breaklength=RadioFieldWidget)
     breaklength = schema.List(
         title=_(u'Length'),
@@ -51,7 +55,7 @@ class IConferencebreak(model.Schema):
         required=True,
     )
 
-    write_permission(breakend='collective.conferences.ModifyTalktime')
+    write_permission(conferencetrack='collective.conferences.ModifyTalktime')
     conferencetrack = RelationList(
         title=_(u'Choose the track for this break'),
         default=[],

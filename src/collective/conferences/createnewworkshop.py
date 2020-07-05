@@ -20,6 +20,8 @@ from zope.component import adapter
 from zope.component import getMultiAdapter
 from zope.interface import directlyProvides
 from zope.interface import implementer
+from zope.interface import Invalid
+from zope.interface import invariant
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
@@ -44,8 +46,12 @@ def vocabCfPTopics(context):
 directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 
-class IReCaptchaForm(interface.Interface):
+class ChooseLicense(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a license for your talk.'))
 
+
+class IReCaptchaForm(interface.Interface):
     captcha = schema.TextLine(
         title=safe_unicode('ReCaptcha'),
         description=safe_unicode(''),
@@ -61,7 +67,6 @@ class ReCaptcha(object):
 
 
 class NewWorkshopSchema(interface.Interface):
-
     workshoptitle = schema.TextLine(
         title=_(u'The Title Of Your Workshop'),
         description=_(u'Fill in the title of your proposed conference workshop'),
@@ -97,6 +102,13 @@ class NewWorkshopSchema(interface.Interface):
         required=True,
     )
 
+    license = schema.List(
+        title=_(u'License Of Your Talk'),
+        description=_(u'Choose a license for your talk'),
+        value_type=schema.Choice(source='ContentLicense'),
+        required=True,
+    )
+
     messagetocommittee = schema.Text(
         title=_(u'Messages to the Program Committee'),
         description=_(
@@ -104,6 +116,14 @@ class NewWorkshopSchema(interface.Interface):
             u'to give the workshop'),
         required=False,
     )
+
+    @invariant
+    def validateLicensechoosen(data):
+        if not data.license:
+            raise ChooseLicense(
+                _(safe_unicode('Please choose a license for your talk.'),
+                  ),
+            )
 
 
 @implementer(NewWorkshopSchema)
@@ -131,6 +151,7 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
     fields['cfp_topic'].widgetFactory = RadioFieldWidget
     fields['wtalklength'].widgetFactory = RadioFieldWidget
     fields['speaker'].widgetFactory = SelectFieldWidget
+    fields['license'].widgetFactory = RadioFieldWidget
 
     def update(self):
         # disable Plone's editable border
@@ -176,6 +197,28 @@ class NewWorkshopForm(AutoExtensibleForm, form.Form):
             messagetocommittee=data['messagetocommittee'],
             container=portal['workshops'],
         )
+
+        if api.portal.get_registry_record(
+                'plone.email_from_address') is not None:
+            contactaddress = api.portal.get_registry_record(
+                'plone.email_from_address')
+            current_user = api.user.get_current()
+            length = (data['wtalklength'])[0]
+            cfp = (data['cfp_topic'])[0]
+            details = (data['workshopdetails']).output
+
+            api.portal.send_email(
+                recipient=current_user.getProperty('email'),
+                sender=contactaddress,
+                subject=safe_unicode('Your Workshop Proposal'),
+                body=safe_unicode('You submitted a conference workshop:\n'
+                                  'title: {0},\nsummary: {1},\ndetails: {2},\n'
+                                  'proposed length: {3} minutes\nfor the call for papers '
+                                  'topic: {4}\nwith the following message to the conference '
+                                  'committee: {5}').format(
+                    data['workshoptitle'], data['workshopdescription'], details,
+                    length, cfp, data['messagetocommittee']),
+            )
 
         api.portal.show_message(
             message=_(safe_unicode('The workshop has been submitted.')),

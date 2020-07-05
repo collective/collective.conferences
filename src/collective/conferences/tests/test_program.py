@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences.program import endDefaultValue
 from collective.conferences.program import IProgram
-from collective.conferences.program import StartBeforeEnd
 from collective.conferences.program import startDefaultValue
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 from DateTime import DateTime
@@ -34,40 +33,8 @@ class TestProgramUnit(unittest.TestCase):
         delta = default_value - today
         self.assertEqual(16, delta.days)
 
-    def test_validate_invariants_ok(self):
-        data = MockProgram()
-        data.start = datetime.datetime(2009, 1, 1)
-        data.end = datetime.datetime(2009, 1, 2)
-
-        try:
-            IProgram.validateInvariants(data)
-        except:
-            self.fail('Validate of program data fails')
-
-    def test_validate_invariants_fail(self):
-        data = MockProgram()
-        data.start = datetime.datetime(2009, 1, 2)
-        data.end = datetime.datetime(2009, 1, 1)
-
-        try:
-            IProgram.validateInvariants(data)
-            self.fail()
-        except StartBeforeEnd:
-            pass
-
-    def test_validate_invariants_edge(self):
-        data = MockProgram()
-        data.start = datetime.datetime(2009, 1, 2)
-        data.end = datetime.datetime(2009, 1, 2)
-
-        try:
-            IProgram.validateInvariants(data)
-        except:
-            self.fail()
-
 
 class TestProgramIntegration(unittest.TestCase):
-
     layer = COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 
     def setUp(self):

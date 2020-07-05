@@ -88,13 +88,13 @@
         </div>
 
         <div tal:condition="context/slides3">
-        <label i18n:translate="label_slides_odt_link">Link to slides in ODT-File-Format:</label><br />
+        <label i18n:translate="">Link to slides in ODT-File-Format:</label><br />
         <a tal:attributes="href string:${context/slides3}" tal:content="string:${context/slides3}">Link</a>
 
         </div>
 
         <div tal:condition="context/slides4">
-        <label i18n:translate="label_slides_odt_link">Link to slides in PDF- or PDF-Hybrid-File-Format:</label><br />
+        <label i18n:translate="">Link to slides in PDF- or PDF-Hybrid-File-Format:</label><br />
                 <a tal:attributes="href string:${context/slides4}" tal:content="string:${context/slides4}">Link</a>
 
         </div>
@@ -104,7 +104,7 @@
          </div>
 
         <div tal:condition="context/files2">
-        <label i18n:translate="label_slides_odt_link">Link to additional files:</label><br />
+        <label i18n:translate="">Link to additional files:</label><br />
                 <a tal:attributes="href string:${context/files2}" tal:content="string:${context/files2}">Link</a>
         </div>
 

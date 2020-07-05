@@ -49,7 +49,7 @@
         </div>
         <div tal:condition="python: not isAnonymous">
         <p i18n:translate="">If you not already registered a conference speaker for you, please follow the following
-        link and add a speaker profile to this site:
+        link and add a speaker profile to this site:</p>
         <ul>
         <li>
          <a class="pointer"
@@ -58,9 +58,8 @@
          </a>
         </li>
         </ul>
-        </p>
         <p i18n:translate="">You can submit a new talk or workshop by following one of the following links. They
-        will open a form with the necessary entries to create a new conference talk or workshop proposal:
+        will open a form with the necessary entries to create a new conference talk or workshop proposal:</p>
         <ul>
         <li>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/@@new-talk">
@@ -73,7 +72,6 @@
         </a>
         </li>
         </ul>
-        </p>
 
         </div>
 

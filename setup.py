@@ -38,9 +38,9 @@ setup(
     author_email='maand@gmx.de',
     url='http://github.com/collective/collective.conferences',
     project_urls={
-        'PyPI': 'https://pypi.python.org/pypi/collective.addons',
-        'Source': 'https://github.com/collective/collective.addons',
-        'Tracker': 'https://github.com/collective/collective.addons/issues',
+        'PyPI': 'https://pypi.python.org/pypi/collective.conferences',
+        'Source': 'https://github.com/collective/collective.conferences',
+        'Tracker': 'https://github.com/collective/collective.conferences/issues',
         # 'Documentation':
         # 'https://collective.addons.readthedocs.io/en/latest/',
     },

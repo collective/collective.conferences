@@ -42,7 +42,7 @@ class TestProgramUnit(unittest.TestCase):
         try:
             IProgram.validateInvariants(data)
         except:
-            self.fail()
+            self.fail('Validate of program data fails')
 
     def test_validate_invariants_fail(self):
         data = MockProgram()

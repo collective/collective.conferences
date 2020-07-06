@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-05 14:43+0000\n"
+"POT-Creation-Date: 2020-07-06 15:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -299,6 +299,8 @@ msgstr ""
 msgid "From"
 msgstr ""
 
+#: ./program_templates/programfullview.pt:26
+#: ./program_templates/view.pt:26
 #: ./talk_templates/view.pt:59
 msgid "From:"
 msgstr ""
@@ -847,6 +849,8 @@ msgstr ""
 msgid "To"
 msgstr ""
 
+#: ./program_templates/programfullview.pt:30
+#: ./program_templates/view.pt:30
 #: ./talk_templates/view.pt:64
 msgid "To:"
 msgstr ""
@@ -997,12 +1001,6 @@ msgstr ""
 msgid "collective.conferences (uninstall)"
 msgstr ""
 
-#. Default: "From:"
-#: ./program_templates/programfullview.pt:26
-#: ./program_templates/view.pt:26
-msgid "label_from"
-msgstr ""
-
 #. Default: "Link to video:"
 #: ./talk_templates/view.pt:112
 msgid "label_slides_odt_link"
@@ -1011,12 +1009,6 @@ msgstr ""
 #. Default: "The"
 #: ./track_templates/view.pt:22
 msgid "label_the"
-msgstr ""
-
-#. Default: "To:"
-#: ./program_templates/programfullview.pt:30
-#: ./program_templates/view.pt:30
-msgid "label_to"
 msgstr ""
 
 #: ./roomfolder.py:20

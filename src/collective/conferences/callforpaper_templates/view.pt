@@ -34,14 +34,14 @@
         <div tal:condition="python: isAnonymous">
         <p i18n:translate="">If you want to give a talk or a workshop at the conference, please login to the site.
         There will be a link on this site to submit a new talk or workshop available once you are logged in.</p>
-        <p i18n:translate="">If you already an account on this site,
+        <p><span i18n:translate="">If you already have an account on this site,</span>
         <a tal:attributes="href string:${portal_url}/login">
         <span i18n:translate="">you could follow this link</span>
         </a>
          <span i18n:translate="">and log into the site.</span>
         </p>
-        <p i18n:translate="">In the oposite you have first to register on the site. You could do this by
-        calling the registration form
+        <p><span i18n:translate="">In the oposite you have first to register on the site. You could do this by
+        calling the registration form</span>
         <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">
         <span i18n:translate="">with this link</span>
         </a>.

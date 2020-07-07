@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-07 17:16+0000\n"
+"POT-Creation-Date: 2020-07-07 17:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,8 +323,8 @@ msgstr ""
 msgid "Have you already paid the registration fee?"
 msgstr ""
 
-#: ./callforpaper_templates/view.pt:41
-msgid "If you already an account on this site, <a href=\"${DYNAMIC_CONTENT}\"> <span>x</span> </a> <span>x</span>"
+#: ./callforpaper_templates/view.pt:37
+msgid "If you already have an account on this site,"
 msgstr ""
 
 #: ./attendee.py:97
@@ -347,8 +347,8 @@ msgstr ""
 msgid "If you want to give a talk or a workshop at the conference, please login to the site. There will be a link on this site to submit a new talk or workshop available once you are logged in."
 msgstr ""
 
-#: ./callforpaper_templates/view.pt:46
-msgid "In the oposite you have first to register on the site. You could do this by calling the registration form <a href=\"${DYNAMIC_CONTENT}\">x</a>."
+#: ./callforpaper_templates/view.pt:43
+msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
 msgstr ""
 
 #: ./attendeefolder.py:29

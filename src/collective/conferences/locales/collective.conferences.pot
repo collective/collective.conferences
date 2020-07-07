@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-06 15:58+0000\n"
+"POT-Creation-Date: 2020-07-07 17:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "- A simple workflow for Conference Talk objects."
 msgstr ""
 
-#: ./callforpaper_templates/view.pt:39
+#: ./callforpaper_templates/view.pt:46
 msgid "<span>x</span>"
 msgstr ""
 
@@ -324,7 +324,7 @@ msgid "Have you already paid the registration fee?"
 msgstr ""
 
 #: ./callforpaper_templates/view.pt:41
-msgid "If you already an account on this site, <a href=\"${DYNAMIC_CONTENT}\">x</a> <span>x</span>"
+msgid "If you already an account on this site, <a href=\"${DYNAMIC_CONTENT}\"> <span>x</span> </a> <span>x</span>"
 msgstr ""
 
 #: ./attendee.py:97
@@ -412,6 +412,10 @@ msgstr ""
 
 #: ./talk.py:188
 msgid "Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
+msgstr ""
+
+#: ./talk_templates/view.pt:112
+msgid "Link to video:"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
@@ -757,6 +761,10 @@ msgstr ""
 msgid "Telephone Number"
 msgstr ""
 
+#: ./track_templates/view.pt:22
+msgid "The"
+msgstr ""
+
 #: ./conferencespeaker_templates/view.pt:46
 msgid "The Speaker has submitted the following talks:"
 msgstr ""
@@ -999,16 +1007,6 @@ msgstr ""
 
 #: ./configure.zcml:35
 msgid "collective.conferences (uninstall)"
-msgstr ""
-
-#. Default: "Link to video:"
-#: ./talk_templates/view.pt:112
-msgid "label_slides_odt_link"
-msgstr ""
-
-#. Default: "The"
-#: ./track_templates/view.pt:22
-msgid "label_the"
 msgstr ""
 
 #: ./roomfolder.py:20

@@ -109,7 +109,7 @@
         </div>
 
         <div tal:condition="context/video">
-        <label i18n:translate="label_slides_odt_link">Link to video:</label>
+        <label i18n:translate="">Link to video:</label>
                 <a tal:attributes="href string:${context/video}" tal:content="string:${context/video}">Link</a>
         </div>
 

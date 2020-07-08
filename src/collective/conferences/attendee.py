@@ -51,7 +51,7 @@ class IAttendee(model.Schema):
 
     street = schema.TextLine(
         title=_(u'Street'),
-        description=_(u'This data is mandatory and required for our internal procidures'),
+        description=_(u'This data is mandatory and required for our internal procedures'),
         required=True,
     )
 

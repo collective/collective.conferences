@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-08 18:10+0000\n"
+"POT-Creation-Date: 2020-07-08 18:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -383,7 +383,7 @@ msgid "License Of Your Talk"
 msgstr ""
 
 #: ./talk.py:200
-msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format."
+msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format)."
 msgstr ""
 
 #: ./talk_templates/view.pt:107
@@ -832,6 +832,10 @@ msgid "The workshops of the conference"
 msgstr ""
 
 #: ./attendee.py:54
+msgid "This data is mandatory and required for our internal procedures"
+msgstr ""
+
+#: ./attendee.py:60
 msgid "This data is mandatory and required for our internal procidures"
 msgstr ""
 

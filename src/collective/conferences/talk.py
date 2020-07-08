@@ -197,7 +197,7 @@ class ITalk(model.Schema):
     )
 
     files2 = schema.URI(
-        title=_(u'Link to additional Files of your presentation in archive file format (e.g. zip-file-format.'),
+        title=_(u'Link to additional Files of your presentation in archive file format (e.g. zip-file-format).'),
         required=False,
     )
 

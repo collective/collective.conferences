@@ -42,7 +42,7 @@
         </p>
         <p><span i18n:translate="">In the oposite you have first to register on the site. You could do this by
         calling the registration form</span>
-        <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">
+        <a tal:attributes="href string:${portal_url}/@@register">
         <span i18n:translate="">with this link</span>
         </a>.
         </p>

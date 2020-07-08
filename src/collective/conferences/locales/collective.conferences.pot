@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-07 17:23+0000\n"
+"POT-Creation-Date: 2020-07-07 17:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,6 @@ msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
 msgid "- A simple workflow for Conference Talk objects."
-msgstr ""
-
-#: ./callforpaper_templates/view.pt:46
-msgid "<span>x</span>"
 msgstr ""
 
 #: ./profiles/default/types/collective.conferences.callforpaper.xml

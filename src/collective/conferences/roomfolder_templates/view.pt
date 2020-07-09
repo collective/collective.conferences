@@ -45,11 +45,12 @@
     <a tal:attributes="href room/absolute_url"
        tal:content="room/Title" />
     </h3>
-    <span tal:define="picture nocall:room/picture" tal:condition="nocall:picture">
-    <class="discreet" tal:attributes="href string:${room/absolute_url}/@@images/picture/thumb">
+    <div tal:define="picture nocall:room/picture" tal:condition="nocall:picture">
+    <span class="discreet" tal:attributes="href string:${room/absolute_url}/@@images/picture/thumb">
     <img tal:define="scales room/@@images"
     tal:replace="structure python: scales.tag('picture', width=150, height=100, direction='down')" />
     </span>
+    </div>
 
 
     </li>

@@ -34,22 +34,22 @@
         <div tal:condition="python: isAnonymous">
         <p i18n:translate="">If you want to give a talk or a workshop at the conference, please login to the site.
         There will be a link on this site to submit a new talk or workshop available once you are logged in.</p>
-        <p i18n:translate="">If you already an account on this site,
-        <a tal:attributes="href string:${portal_url}/login" i18n:translate="">
+        <p><span i18n:translate="">If you already have an account on this site,</span>
+        <a tal:attributes="href string:${portal_url}/login">
         <span i18n:translate="">you could follow this link</span>
         </a>
          <span i18n:translate="">and log into the site.</span>
         </p>
-        <p i18n:translate="">In the oposite you have first to register on the site. You could do this by
-        calling the registration form
-        <a tal:attributes="href string:${portal_url}/@@register" i18n:translate="">
+        <p><span i18n:translate="">In the oposite you have first to register on the site. You could do this by
+        calling the registration form</span>
+        <a tal:attributes="href string:${portal_url}/@@register">
         <span i18n:translate="">with this link</span>
         </a>.
         </p>
         </div>
         <div tal:condition="python: not isAnonymous">
         <p i18n:translate="">If you not already registered a conference speaker for you, please follow the following
-        link and add a speaker profile to this site:
+        link and add a speaker profile to this site:</p>
         <ul>
         <li>
          <a class="pointer"
@@ -58,9 +58,8 @@
          </a>
         </li>
         </ul>
-        </p>
         <p i18n:translate="">You can submit a new talk or workshop by following one of the following links. They
-        will open a form with the necessary entries to create a new conference talk or workshop proposal:
+        will open a form with the necessary entries to create a new conference talk or workshop proposal:</p>
         <ul>
         <li>
         <a class="pointer" tal:attributes="href string:${context/absolute_url}/@@new-talk">
@@ -73,7 +72,6 @@
         </a>
         </li>
         </ul>
-        </p>
 
         </div>
 

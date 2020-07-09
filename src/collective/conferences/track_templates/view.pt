@@ -19,7 +19,7 @@
 
 
         <div class="discreet">
-        <p><span i18n:translate="label_the">The</span> <span tal:content="context/title" />
+        <p><span i18n:translate="">The</span> <span tal:content="context/title" />
 
             <tal:block condition="context/trackstart">
                 <span i18n:translate=""> begins at</span>

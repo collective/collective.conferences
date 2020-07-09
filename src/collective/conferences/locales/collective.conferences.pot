@@ -1,0 +1,1026 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-07-08 18:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.conferences\n"
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "- A simple workflow for Conference Talk objects."
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.callforpaper.xml
+msgid "A Call for Paper"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.conferencebreak.xml
+msgid "A Conference Break in a track of the program"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.talk.xml
+msgid "A Talk in a track of the program"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.workshop.xml
+msgid "A Workshop in a track of the program"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.conference.xml
+msgid "A conference"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.program.xml
+msgid "A conference program"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.track.xml
+msgid "A conference track"
+msgstr ""
+
+#: ./room.py:20
+msgid "A description of the room and its location"
+msgstr ""
+
+#: ./room.py:31
+msgid "A full description of the room, it's location and the way to get there"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.attendee.xml
+msgid "A person attending talk or a workshop"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.conferencespeaker.xml
+msgid "A person speaking at the conference or leading a workshop"
+msgstr ""
+
+#: ./room.py:24
+msgid "A picture of the room"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.room.xml
+msgid "A room that is used for the conference"
+msgstr ""
+
+#: ./conferencespeaker.py:87
+msgid "A short bio"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:57
+msgid "Add your speaker profile"
+msgstr ""
+
+#: ./talk.py:193
+msgid "Additional Files of your presentation."
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.attendee.xml
+msgid "Attendee"
+msgstr ""
+
+#: ./attendee_templates/view.pt:38
+msgid "Bank used for the payment:"
+msgstr ""
+
+#: ./conferencespeaker.py:91
+msgid "Bio"
+msgstr ""
+
+#: ./attendee.py:43
+msgid "By Bank transfer"
+msgstr ""
+
+#: ./attendee.py:45
+msgid "By Check"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.callforpaper.xml
+msgid "Call for Paper"
+msgstr ""
+
+#: ./callforpaper.py:19
+msgid "Call for paper summary"
+msgstr ""
+
+#: ./callforpaper.py:15
+msgid "Call for paper title"
+msgstr ""
+
+#: ./createnewtalk.py:232
+#: ./createnewworkshop.py:231
+msgid "Cancel"
+msgstr ""
+
+#: ./room.py:36
+#: ./room_templates/view.pt:46
+msgid "Capacity of the room"
+msgstr ""
+
+#: ./createnewtalk.py:107
+#: ./createnewworkshop.py:107
+#: ./talk.py:103
+msgid "Choose a license for your talk"
+msgstr ""
+
+#: ./conferencebreak.py:73
+#: ./talk.py:143
+#: ./workshop.py:138
+msgid "Choose a number for the order in the track"
+msgstr ""
+
+#: ./track.py:63
+msgid "Choose the room for the track"
+msgstr ""
+
+#: ./createnewtalk.py:93
+#: ./talk.py:87
+msgid "Choose the topic for your talk"
+msgstr ""
+
+#: ./createnewworkshop.py:93
+#: ./workshop.py:89
+msgid "Choose the topic for your workshop"
+msgstr ""
+
+#: ./conferencebreak.py:60
+msgid "Choose the track for this break"
+msgstr ""
+
+#: ./talk.py:118
+#: ./workshop.py:113
+msgid "Choose the track for this talk"
+msgstr ""
+
+#: ./attendee.py:59
+#: ./conferencespeaker.py:44
+msgid "City"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.conference.xml
+msgid "Conference"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.conferencebreak.xml
+msgid "Conference Break"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.room.xml
+msgid "Conference Room"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.roomfolder.xml
+msgid "Conference Rooms Folder"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.speakerfolder.xml
+msgid "Conference Speakers"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Conference Talk Publication Workflow"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.talksfolder.xml
+msgid "Conference Talks Folder"
+msgstr ""
+
+#: ./conference.py:13
+msgid "Conference Title"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.workshopfolder.xml
+msgid "Conference Workshop Folder"
+msgstr ""
+
+#: ./conferencebreak.py:31
+msgid "Conference break details"
+msgstr ""
+
+#: ./conferencebreak.py:25
+msgid "Conference break summary"
+msgstr ""
+
+#: ./conferencebreak.py:21
+msgid "Conference break title"
+msgstr ""
+
+#: ./conference.py:17
+msgid "Conference summary"
+msgstr ""
+
+#: ./attendee.py:71
+#: ./conferencespeaker.py:56
+msgid "Country"
+msgstr ""
+
+#: ./program_templates/view.pt:51
+msgid "Description"
+msgstr ""
+
+#: ./callforpaper.py:25
+#: ./conference.py:23
+#: ./program.py:49
+msgid "Details"
+msgstr ""
+
+#: ./callforpaper.py:26
+#: ./program.py:50
+msgid "Details about the program"
+msgstr ""
+
+#: ./conferencebreak_templates/view.pt:33
+msgid "Details of the Break"
+msgstr ""
+
+#: ./workshop_templates/view.pt:60
+msgid "Details of the Workshop"
+msgstr ""
+
+#: ./attendee.py:77
+msgid "E-Mail"
+msgstr ""
+
+#: ./conferencebreak.py:46
+#: ./program.py:42
+#: ./talk.py:165
+msgid "End date"
+msgstr ""
+
+#: ./conferencebreak.py:45
+#: ./talk.py:164
+#: ./track.py:57
+msgid "Enddate"
+msgstr ""
+
+#: ./attendeefolder.py:42
+msgid "Fill in one payment option per line."
+msgstr ""
+
+#: ./createnewtalk.py:72
+msgid "Fill in the title of your proposed conference talk"
+msgstr ""
+
+#: ./createnewworkshop.py:72
+msgid "Fill in the title of your proposed conference workshop"
+msgstr ""
+
+#: ./conferencespeaker.py:33
+msgid "First name"
+msgstr ""
+
+#: ./attendee.py:49
+msgid "Firstname Lastname"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.attendeefolder.xml
+msgid "Folder for Registration of the Conference Attendees"
+msgstr ""
+
+#: ./conferencespeaker.py:39
+msgid "For those requiring visa, please add your full postal address details"
+msgstr ""
+
+#: ./program_templates/view.pt:57
+msgid "From"
+msgstr ""
+
+#: ./program_templates/programfullview.pt:26
+#: ./program_templates/view.pt:26
+#: ./talk_templates/view.pt:59
+msgid "From:"
+msgstr ""
+
+#: ./createnewtalk.py:100
+#: ./talk.py:95
+msgid "Give an estimation about the time you'd plan for your talk."
+msgstr ""
+
+#: ./createnewworkshop.py:100
+#: ./workshop.py:97
+msgid "Give an estimation about the time you'd plan for your workshop."
+msgstr ""
+
+#: ./attendeefolder.py:35
+msgid "Have one to pay a registration fee?"
+msgstr ""
+
+#: ./attendee.py:89
+msgid "Have you already paid the registration fee?"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:37
+msgid "If you already have an account on this site,"
+msgstr ""
+
+#: ./attendee.py:97
+msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:51
+msgid "If you not already registered a conference speaker for you, please follow the following link and add a speaker profile to this site:"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
+msgstr ""
+
+#: ./attendee.py:105
+msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:35
+msgid "If you want to give a talk or a workshop at the conference, please login to the site. There will be a link on this site to submit a new talk or workshop available once you are logged in."
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:43
+msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
+msgstr ""
+
+#: ./attendeefolder.py:29
+msgid "Information about registration process"
+msgstr ""
+
+#: ./roomfolder.py:25
+#: ./roomfolder_templates/view.pt:33
+msgid "Information about the Conference Rooms"
+msgstr ""
+
+#: ./configure.zcml:26
+msgid "Installs the collective.conferences add-on."
+msgstr ""
+
+#: ./conferencespeaker.py:20
+msgid "Invalid email address"
+msgstr ""
+
+#: ./conferencespeaker.py:29
+msgid "Last name"
+msgstr ""
+
+#: ./conferencebreak.py:53
+msgid "Length"
+msgstr ""
+
+#: ./conferencebreak_templates/view.pt:26
+msgid "Length of the Break:"
+msgstr ""
+
+#: ./createnewtalk.py:106
+#: ./createnewworkshop.py:106
+#: ./talk.py:102
+msgid "License Of Your Talk"
+msgstr ""
+
+#: ./talk.py:200
+msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format)."
+msgstr ""
+
+#: ./talk_templates/view.pt:107
+msgid "Link to additional files:"
+msgstr ""
+
+#: ./talk_templates/view.pt:91
+msgid "Link to slides in ODT-File-Format:"
+msgstr ""
+
+#: ./talk_templates/view.pt:97
+msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
+msgstr ""
+
+#: ./talk.py:205
+msgid "Link to the Video of the talk"
+msgstr ""
+
+#: ./talk.py:183
+msgid "Link to the presentation slides in ODT-File-Format"
+msgstr ""
+
+#: ./talk.py:188
+msgid "Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
+msgstr ""
+
+#: ./talk_templates/view.pt:112
+msgid "Link to video:"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr ""
+
+#: ./createnewtalk.py:113
+#: ./createnewworkshop.py:113
+#: ./talk.py:109
+msgid "Messages to the Program Committee"
+msgstr ""
+
+#: ./conferencebreak_templates/view.pt:28
+#: ./talk_templates/view.pt:55
+#: ./workshop_templates/view.pt:55
+msgid "Minutes"
+msgstr ""
+
+#: ./conferencespeaker.py:74
+msgid "Mobile Telephone Number"
+msgstr ""
+
+#: ./talksfolder.py:13
+msgid "Name Of The Folder For Talks"
+msgstr ""
+
+#: ./workshopfolder.py:13
+msgid "Name Of The Workshopfolder"
+msgstr ""
+
+#: ./room.py:16
+msgid "Name of the Room"
+msgstr ""
+
+#: ./attendeefolder.py:19
+msgid "Name of the attendee folder"
+msgstr ""
+
+#: ./roomfolder.py:16
+msgid "Name of the room folder"
+msgstr ""
+
+#: ./speakerfolder.py:14
+msgid "Name of the speaker folder"
+msgstr ""
+
+#: ./common.py:10
+msgid "No"
+msgstr ""
+
+#: ./attendee.py:83
+#: ./conferencespeaker.py:82
+msgid "Organisation"
+msgstr ""
+
+#: ./program.py:56
+msgid "Organiser"
+msgstr ""
+
+#: ./attendeefolder.py:41
+msgid "Payment Options"
+msgstr ""
+
+#: ./attendee.py:44
+msgid "Payment by PayPal"
+msgstr ""
+
+#: ./attendee.py:88
+msgid "Payment of the Registration Fee"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Pending"
+msgstr ""
+
+#: ./room_templates/view.pt:48
+msgid "Person"
+msgstr ""
+
+#: ./conferencespeaker.py:96
+msgid "Picture"
+msgstr ""
+
+#: ./createnewtalk.py:99
+#: ./createnewworkshop.py:99
+#: ./talk.py:94
+msgid "Planed Length"
+msgstr ""
+
+#: ./createnewtalk.py:50
+#: ./createnewworkshop.py:50
+#: ./talk.py:49
+msgid "Please choose a license for your talk."
+msgstr ""
+
+#: ./room.py:37
+msgid "Please fill in the maximum number of attendees"
+msgstr ""
+
+#: ./conferencespeaker.py:75
+msgid "Please fill in your mobile telephone number so that we could get in contact with you during the conference."
+msgstr ""
+
+#: ./conferencespeaker.py:69
+msgid "Please fill in your telephone number so that we could get in contact with you by phone if necessary."
+msgstr ""
+
+#: ./talk_templates/view.pt:21
+#: ./workshop_templates/view.pt:21
+msgid "Please submit this for review."
+msgstr ""
+
+#: ./conferencespeaker.py:97
+#: ./room.py:25
+msgid "Please upload an image"
+msgstr ""
+
+#: ./talk.py:194
+msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
+msgstr ""
+
+#: ./talk.py:172
+msgid "Please upload your presentation shortly after you have given your talk."
+msgstr ""
+
+#: ./workshop.py:160
+msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
+msgstr ""
+
+#: ./createnewtalk.py:182
+#: ./createnewworkshop.py:182
+msgid "Please validate the recaptcha field before sending the form."
+msgstr ""
+
+#: ./conferencebreak.py:72
+#: ./talk.py:142
+#: ./workshop.py:137
+msgid "Position In The Track"
+msgstr ""
+
+#: ./attendee.py:65
+#: ./conferencespeaker.py:50
+msgid "Postal Code"
+msgstr ""
+
+#: ./workshop_templates/view.pt:65
+msgid "Presentation Slides"
+msgstr ""
+
+#: ./talk.py:171
+msgid "Presentation slides in ODT-File-Format"
+msgstr ""
+
+#: ./talk.py:177
+msgid "Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
+msgstr ""
+
+#: ./createnewtalk.py:85
+#: ./talk.py:73
+msgid "Presenter"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Private"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.program.xml
+msgid "Program"
+msgstr ""
+
+#: ./program.py:28
+msgid "Program name"
+msgstr ""
+
+#: ./program.py:32
+msgid "Program summary"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Publish"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Publishing the item makes it visible to the all
+          users of the site."
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
+msgstr ""
+
+#: ./attendeefolder.py:34
+msgid "Registration Fee?"
+msgstr ""
+
+#: ./attendee_templates/view.pt:35
+msgid "Registration fee paid:"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Retract"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Reviewer sends content back for re-drafting"
+msgstr ""
+
+#: ./program_templates/view.pt:54
+#: ./track_templates/view.pt:46
+msgid "Room"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Send back"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Sending the item back will return the item to the original author instead of publishing it.
+          You should preferably provide a reason to the author why it was not published."
+msgstr ""
+
+#: ./talk.py:134
+msgid "Set a time frame for the talk in minutes."
+msgstr ""
+
+#: ./workshop.py:129
+msgid "Set a time frame for the workshop in minutes."
+msgstr ""
+
+#: ./workshop_templates/view.pt:67
+msgid "Slides"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.conferencespeaker.xml
+msgid "Speaker/Workshop Leader"
+msgstr ""
+
+#: ./conferencebreak.py:38
+#: ./program.py:36
+#: ./talk.py:157
+msgid "Start date"
+msgstr ""
+
+#: ./conferencebreak.py:37
+#: ./talk.py:156
+#: ./track.py:51
+msgid "Startdate"
+msgstr ""
+
+#: ./attendee.py:53
+#: ./conferencespeaker.py:38
+msgid "Street"
+msgstr ""
+
+#: ./track_templates/view.pt:62
+msgid "Subject of the talk"
+msgstr ""
+
+#: ./createnewtalk.py:146
+msgid "Submit A Conference Talk"
+msgstr ""
+
+#: ./createnewworkshop.py:146
+msgid "Submit A Conference Workshop"
+msgstr ""
+
+#: ./createnewworkshop.py:163
+msgid "Submit Your Workshop"
+msgstr ""
+
+#: ./createnewtalk.py:163
+msgid "Submit Your talk"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:66
+msgid "Submit a conference talk"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:71
+msgid "Submit a conference workshop"
+msgstr ""
+
+#: ./createnewtalk.py:147
+msgid "Submit a proposal for a conference talk."
+msgstr ""
+
+#: ./createnewworkshop.py:147
+msgid "Submit a proposal for a conference workshop."
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Submit for publication"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.talk.xml
+msgid "Talk"
+msgstr ""
+
+#: ./talksfolder.py:18
+msgid "Talk Folder Description"
+msgstr ""
+
+#: ./talk.py:133
+#: ./talk_templates/view.pt:51
+msgid "Talk Length"
+msgstr ""
+
+#: ./createnewtalk.py:80
+#: ./talk.py:68
+msgid "Talk details"
+msgstr ""
+
+#: ./createnewtalk.py:76
+#: ./talk.py:63
+msgid "Talk summary"
+msgstr ""
+
+#: ./talk.py:59
+msgid "Talk title"
+msgstr ""
+
+#: ./track_templates/view.pt:60
+msgid "Talk/Workshop"
+msgstr ""
+
+#: ./talksfolder.py:14
+msgid "Talks"
+msgstr ""
+
+#: ./conferencespeaker.py:68
+msgid "Telephone Number"
+msgstr ""
+
+#: ./track_templates/view.pt:22
+msgid "The"
+msgstr ""
+
+#: ./conferencespeaker_templates/view.pt:46
+msgid "The Speaker has submitted the following talks:"
+msgstr ""
+
+#: ./createnewtalk.py:71
+msgid "The Title Of Your Talk"
+msgstr ""
+
+#: ./createnewworkshop.py:71
+msgid "The Title Of Your Workshop"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.attendeefolder.xml
+msgid "The attendee of the conference"
+msgstr ""
+
+#: ./track.py:99
+msgid "The end date couldn't be set after the end of the conference program."
+msgstr ""
+
+#: ./track.py:28
+msgid "The end of the track could not be set after the conference program."
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "The owner can edit the talk"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.roomfolder.xml
+msgid "The rooms of the conference"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.speakerfolder.xml
+msgid "The speaker of the conference"
+msgstr ""
+
+#: ./track.py:89
+msgid "The start date could not be set before the begin of the conference program."
+msgstr ""
+
+#: ./program.py:65
+#: ./track.py:78
+msgid "The start date must be before the end date."
+msgstr ""
+
+#: ./track.py:24
+msgid "The start of the track could not be set before the conference program."
+msgstr ""
+
+#: ./program.py:20
+#: ./track.py:20
+msgid "The start or end date is invalid"
+msgstr ""
+
+#: ./createnewtalk.py:225
+msgid "The talk has been submitted."
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.talksfolder.xml
+msgid "The talks of the conference"
+msgstr ""
+
+#: ./createnewworkshop.py:224
+msgid "The workshop has been submitted."
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.workshopfolder.xml
+msgid "The workshops of the conference"
+msgstr ""
+
+#: ./attendee.py:54
+msgid "This data is mandatory and required for our internal procedures"
+msgstr ""
+
+#: ./attendee.py:60
+msgid "This data is mandatory and required for our internal procidures"
+msgstr ""
+
+#: ./track_templates/view.pt:61
+msgid "Time"
+msgstr ""
+
+#: ./conferencebreak_templates/view.pt:20
+msgid "Time:"
+msgstr ""
+
+#: ./conferencebreak.py:20
+#: ./talk.py:58
+#: ./track.py:36
+msgid "Title"
+msgstr ""
+
+#: ./program_templates/view.pt:60
+msgid "To"
+msgstr ""
+
+#: ./program_templates/programfullview.pt:30
+#: ./program_templates/view.pt:30
+#: ./talk_templates/view.pt:64
+msgid "To:"
+msgstr ""
+
+#: ./callforpaper.py:30
+msgid "Topics for the Call for Papers"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.track.xml
+#: ./program_templates/view.pt:48
+#: ./talk_templates/view.pt:40
+msgid "Track"
+msgstr ""
+
+#: ./track.py:46
+msgid "Track details"
+msgstr ""
+
+#: ./track.py:41
+msgid "Track summary"
+msgstr ""
+
+#: ./track.py:37
+msgid "Track title"
+msgstr ""
+
+#: ./program_templates/view.pt:43
+msgid "Tracks"
+msgstr ""
+
+#: ./configure.zcml:35
+msgid "Uninstalls the collective.conferences add-on."
+msgstr ""
+
+#: ./attendee.py:104
+msgid "Used Bank Account"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Visible to everyone, editable by the owner."
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Waiting for the Review, further editable by
+                                           the owner (contributor)."
+msgstr ""
+
+#: ./attendee.py:96
+msgid "Way of Registration Fee Payment"
+msgstr ""
+
+#: ./attendee.py:78
+msgid "We need this mandatory data to get in contact with you, if we have any questions"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.workshop.xml
+msgid "Workshop"
+msgstr ""
+
+#: ./workshopfolder.py:18
+msgid "Workshop Folder Description"
+msgstr ""
+
+#: ./createnewworkshop.py:85
+#: ./workshop.py:75
+#: ./workshop_templates/view.pt:29
+msgid "Workshop Leader"
+msgstr ""
+
+#: ./workshop.py:128
+#: ./workshop_templates/view.pt:51
+msgid "Workshop Length"
+msgstr ""
+
+#: ./createnewworkshop.py:80
+#: ./workshop.py:70
+msgid "Workshop details"
+msgstr ""
+
+#: ./workshop.py:159
+msgid "Workshop slides / material"
+msgstr ""
+
+#: ./createnewworkshop.py:76
+#: ./workshop.py:65
+msgid "Workshop summary"
+msgstr ""
+
+#: ./workshop.py:61
+msgid "Workshop title"
+msgstr ""
+
+#: ./workshopfolder.py:14
+msgid "Workshops"
+msgstr ""
+
+#: ./conference.py:24
+msgid "Write information about the conference"
+msgstr ""
+
+#: ./common.py:11
+msgid "Yes"
+msgstr ""
+
+#: ./createnewtalk.py:114
+#: ./talk.py:110
+msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
+msgstr ""
+
+#: ./createnewworkshop.py:114
+#: ./workshop.py:168
+msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:61
+msgid "You can submit a new talk or workshop by following one of the following links. They will open a form with the necessary entries to create a new conference talk or workshop proposal:"
+msgstr ""
+
+#: ./conferencespeaker.py:62
+msgid "Your email address"
+msgstr ""
+
+#: ./track_templates/view.pt:29
+msgid "and ends at"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:41
+msgid "and log into the site."
+msgstr ""
+
+#: ./conferencespeaker_templates/view.pt:59
+msgid "and the following workshops:"
+msgstr ""
+
+#: ./attendeefolder.py:23
+msgid "attendee folder description"
+msgstr ""
+
+#: ./track_templates/view.pt:25
+msgid "begins at"
+msgstr ""
+
+#: ./configure.zcml:26
+msgid "collective.conferences"
+msgstr ""
+
+#: ./configure.zcml:35
+msgid "collective.conferences (uninstall)"
+msgstr ""
+
+#: ./roomfolder.py:20
+msgid "roomfolder description"
+msgstr ""
+
+#: ./speakerfolder.py:18
+msgid "speakerfolder description"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:46
+msgid "with this link"
+msgstr ""
+
+#: ./callforpaper_templates/view.pt:39
+msgid "you could follow this link"
+msgstr ""

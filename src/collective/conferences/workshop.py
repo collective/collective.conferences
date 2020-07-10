@@ -161,7 +161,7 @@ class IWorkshop(model.Schema):
     model.fieldset('slides',
                    label=_(u'Slides'),
                    fields=['slides'],
-    )
+                   )
 
     slides = NamedBlobFile(
         title=_(u'Workshop slides / material'),

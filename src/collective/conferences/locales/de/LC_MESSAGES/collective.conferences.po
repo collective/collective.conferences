@@ -134,7 +134,7 @@ msgstr "Wählen Sie eine Lizenz für Ihren Talk"
 
 #: ./conferencebreak.py:73
 #: ./talk.py:143
-#: ./workshop.py:138
+#: ./workshop.py:145
 msgid "Choose a number for the order in the track"
 msgstr "Wählen Sie eine Nummer für Sortierung im Track"
 
@@ -540,7 +540,7 @@ msgstr "Bitte laden Sie die ergänzenden Dateien zu Ihrer Präsentation (im Arch
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr "Bitte laden Sie ihre Präsentation hoch kurz nachdem Sie ihren Talk gegeben haben."
 
-#: ./workshop.py:160
+#: ./workshop.py:167
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr "Bitte laden Sie Ihre Workshop-Präsentation oder Material zu dem Inhalt des Workshops hoch, vor oder kurz nachdem Sie den Workshop gegeben haben."
 
@@ -551,7 +551,7 @@ msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden
 
 #: ./conferencebreak.py:72
 #: ./talk.py:142
-#: ./workshop.py:137
+#: ./workshop.py:144
 msgid "Position In The Track"
 msgstr "Position im Track"
 
@@ -638,7 +638,7 @@ msgstr "Zurück senden"
 msgid "Set a time frame for the talk in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Talk in Minuten."
 
-#: ./workshop.py:129
+#: ./workshop.py:136
 msgid "Set a time frame for the workshop in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Workshop in Minuten."
 
@@ -912,7 +912,7 @@ msgstr "Workshop-Ordner-Beschreibung"
 msgid "Workshop Leader"
 msgstr "Workshopleiter"
 
-#: ./workshop.py:128
+#: ./workshop.py:135
 #: ./workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr "Workshoplänge"
@@ -922,7 +922,7 @@ msgstr "Workshoplänge"
 msgid "Workshop details"
 msgstr "Workshopdetails"
 
-#: ./workshop.py:159
+#: ./workshop.py:166
 msgid "Workshop slides / material"
 msgstr "Workshop-Folien/-Material"
 
@@ -953,7 +953,7 @@ msgid "You can give some information to the committee here, e.g. about days you 
 msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. zu den Tagen, an denen Sie (nicht) verfügbar sind, um den Talk zu geben"
 
 #: ./createnewworkshop.py:114
-#: ./workshop.py:168
+#: ./workshop.py:126
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. zu den Tagen, an denen Sie (nicht) verfügbar sind, um den Workshop zu halten"
 

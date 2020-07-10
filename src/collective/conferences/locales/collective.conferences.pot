@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-10 09:54+0000\n"
+"POT-Creation-Date: 2020-07-10 10:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ./conferencebreak.py:73
 #: ./talk.py:143
-#: ./workshop.py:138
+#: ./workshop.py:145
 msgid "Choose a number for the order in the track"
 msgstr ""
 
@@ -541,7 +541,7 @@ msgstr ""
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./workshop.py:160
+#: ./workshop.py:167
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
 
@@ -552,7 +552,7 @@ msgstr ""
 
 #: ./conferencebreak.py:72
 #: ./talk.py:142
-#: ./workshop.py:137
+#: ./workshop.py:144
 msgid "Position In The Track"
 msgstr ""
 
@@ -649,7 +649,7 @@ msgstr ""
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
-#: ./workshop.py:129
+#: ./workshop.py:136
 msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
@@ -928,7 +928,7 @@ msgstr ""
 msgid "Workshop Leader"
 msgstr ""
 
-#: ./workshop.py:128
+#: ./workshop.py:135
 #: ./workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr ""
@@ -938,7 +938,7 @@ msgstr ""
 msgid "Workshop details"
 msgstr ""
 
-#: ./workshop.py:159
+#: ./workshop.py:166
 msgid "Workshop slides / material"
 msgstr ""
 
@@ -969,7 +969,7 @@ msgid "You can give some information to the committee here, e.g. about days you 
 msgstr ""
 
 #: ./createnewworkshop.py:114
-#: ./workshop.py:168
+#: ./workshop.py:126
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr ""
 

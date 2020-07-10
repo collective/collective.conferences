@@ -121,6 +121,13 @@ class IWorkshop(model.Schema):
         RadioFieldWidget,
     )
 
+    messagetocommittee = schema.Text(
+        title=_(u'Messages to the Program Committee'),
+        description=_(
+            u'You can give some information to the committee here, e.g. about days you are (not) available to give the workshop'),
+        required=False,
+    )
+
     read_permission(workshoplength='cmf.ReviewPortalContent')
     write_permission(workshoplength='cmf.ReviewPortalContent')
     directives.widget(workshoplength=RadioFieldWidget)
@@ -163,13 +170,6 @@ class IWorkshop(model.Schema):
         required=False,
     )
 
-    messagetocommittee = schema.Text(
-        title=_(u'Messages to the Program Committee'),
-        description=_(
-            u'You can give some information to the committee here, e.g. about days you are (not) available to give the workshop'),
-        required=False,
-    )
-
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
@@ -186,27 +186,33 @@ class IWorkshop(model.Schema):
             )
 
 
-# @grok.subscribe(IWorkshop, IObjectMovedEvent)
-# def removeCFP_referenceworkshop(workshop, event):
-#    if not ICallforpaper.providedBy(event.newParent):
-#        workshop.call_for_paper_tracks = None
+def newworkshopadded(self, event):
+    if api.portal.get_registry_record(
+            'plone.email_from_address') is not None:
+        contactaddress = api.portal.get_registry_record(
+            'plone.email_from_address')
+        current_user = api.user.get_current()
 
+        length = self.planedworkshoplength[0]
+        cfp = self.call_for_paper_topic[0]
+        details = self.details.output
 
-#    @invariant
-#    def validateStartEnd(data):
-#        if data.start is not None and data.end is not None:
-#            if data.start > data.end:
-#                raise StartBeforeEnd(_(
-#                    u"The start date must be before the end date."))
-
-
-# @grok.subscribe(IWorkshop, IObjectAddedEvent)
-# def workshopaddedevent(workshop, event):
-#    setdates(workshop)
-
-# @grok.subscribe(IWorkshop, IObjectModifiedEvent)
-# def workshopmodifiedevent(workshop, event):
-#    setdates(workshop)
+        api.portal.send_email(
+            recipient=current_user.getProperty('email'),
+            sender=contactaddress,
+            subject=safe_unicode('Your Workshop Proposal'),
+            body=safe_unicode('You submitted a conference workshop:\n'
+                              'title: {0},\n'
+                              'summary: {1},\n'
+                              'details: {2},\n'
+                              'proposed length: {3} minutes\nfor the call for papers '
+                              'topic: {4}\nwith the following message to the conference '
+                              'committee: {5}\n\n'
+                              'Best regards,\n'
+                              'The Conference Committee').format(
+                self.title, self.description, details,
+                length, cfp, self.messagetocommittee),
+        )
 
 
 class WorkshopView(BrowserView):

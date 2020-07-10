@@ -233,7 +233,7 @@ def newtalkadded(self, event):
             body=safe_unicode('You submitted a conference talk:\n'
                               'title: {0},\n'
                               'summary: {1},\n'
-                              'Speaker: \ndetails: {2},\n'
+                              'details: {2},\n'
                               'proposed length: {3} minutes\nfor the call for papers '
                               'topic: {4}\nwith the following message to the conference '
                               'committee: {5}\n\n'

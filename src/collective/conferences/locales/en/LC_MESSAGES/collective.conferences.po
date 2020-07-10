@@ -78,7 +78,7 @@ msgstr ""
 msgid "Add your speaker profile"
 msgstr ""
 
-#: ./talk.py:193
+#: ./talk.py:186
 msgid "Additional Files of your presentation."
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ./conferencebreak.py:73
 #: ./talk.py:143
-#: ./workshop.py:138
+#: ./workshop.py:145
 msgid "Choose a number for the order in the track"
 msgstr ""
 
@@ -250,12 +250,12 @@ msgstr ""
 
 #: ./conferencebreak.py:46
 #: ./program.py:42
-#: ./talk.py:165
+#: ./talk.py:158
 msgid "End date"
 msgstr ""
 
 #: ./conferencebreak.py:45
-#: ./talk.py:164
+#: ./talk.py:157
 #: ./track.py:57
 msgid "Enddate"
 msgstr ""
@@ -379,7 +379,7 @@ msgstr ""
 msgid "License Of Your Talk"
 msgstr ""
 
-#: ./talk.py:200
+#: ./talk.py:193
 msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format)."
 msgstr ""
 
@@ -395,15 +395,15 @@ msgstr ""
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
-#: ./talk.py:205
+#: ./talk.py:198
 msgid "Link to the Video of the talk"
 msgstr ""
 
-#: ./talk.py:183
+#: ./talk.py:176
 msgid "Link to the presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:188
+#: ./talk.py:181
 msgid "Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
@@ -530,15 +530,15 @@ msgstr ""
 msgid "Please upload an image"
 msgstr ""
 
-#: ./talk.py:194
+#: ./talk.py:187
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr ""
 
-#: ./talk.py:172
+#: ./talk.py:165
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./workshop.py:160
+#: ./workshop.py:167
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
 
@@ -549,7 +549,7 @@ msgstr ""
 
 #: ./conferencebreak.py:72
 #: ./talk.py:142
-#: ./workshop.py:137
+#: ./workshop.py:144
 msgid "Position In The Track"
 msgstr ""
 
@@ -562,11 +562,11 @@ msgstr ""
 msgid "Presentation Slides"
 msgstr ""
 
-#: ./talk.py:171
+#: ./talk.py:164
 msgid "Presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:177
+#: ./talk.py:170
 msgid "Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
@@ -636,7 +636,7 @@ msgstr ""
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
-#: ./workshop.py:129
+#: ./workshop.py:136
 msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
@@ -650,12 +650,12 @@ msgstr ""
 
 #: ./conferencebreak.py:38
 #: ./program.py:36
-#: ./talk.py:157
+#: ./talk.py:150
 msgid "Start date"
 msgstr ""
 
 #: ./conferencebreak.py:37
-#: ./talk.py:156
+#: ./talk.py:149
 #: ./track.py:51
 msgid "Startdate"
 msgstr ""
@@ -910,7 +910,7 @@ msgstr ""
 msgid "Workshop Leader"
 msgstr ""
 
-#: ./workshop.py:128
+#: ./workshop.py:135
 #: ./workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr ""
@@ -920,7 +920,7 @@ msgstr ""
 msgid "Workshop details"
 msgstr ""
 
-#: ./workshop.py:159
+#: ./workshop.py:166
 msgid "Workshop slides / material"
 msgstr ""
 
@@ -951,7 +951,7 @@ msgid "You can give some information to the committee here, e.g. about days you 
 msgstr ""
 
 #: ./createnewworkshop.py:114
-#: ./workshop.py:168
+#: ./workshop.py:126
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr ""
 

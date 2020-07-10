@@ -2,6 +2,7 @@
 from collective.conferences import _
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+from zope.interface import Invalid
 
 import datetime
 import re
@@ -22,3 +23,10 @@ def endDefaultValue():
 
 checkEmail = re.compile(
     r'[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}').match
+
+
+def validateEmail(value):
+    if not checkEmail(value):
+        raise Invalid(_(u'Invalid email address'))
+    return True
+

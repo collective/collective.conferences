@@ -12,6 +12,7 @@ from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+from collective.conferences.common import validateEmail
 
 
 def vocabpaymentoptions(context):
@@ -76,6 +77,7 @@ class IAttendee(model.Schema):
     email = schema.TextLine(
         title=_(u'E-Mail'),
         description=_(u'We need this mandatory data to get in contact with you, if we have any questions'),
+        constraint=validateEmail,
         required=True,
     )
 

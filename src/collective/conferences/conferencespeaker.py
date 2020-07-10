@@ -6,14 +6,8 @@ from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
-from zope.interface import Invalid
-from collective.conferences.common import checkEmail
+from collective.conferences.common import validateEmail
 
-
-def validateEmail(value):
-    if not checkEmail(value):
-        raise Invalid(_(u'Invalid email address'))
-    return True
 
 
 class IConferenceSpeaker(model.Schema):

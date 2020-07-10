@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-08 18:33+0000\n"
+"POT-Creation-Date: 2020-07-10 09:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,7 +81,7 @@ msgstr ""
 msgid "Add your speaker profile"
 msgstr ""
 
-#: ./talk.py:193
+#: ./talk.py:186
 msgid "Additional Files of your presentation."
 msgstr ""
 
@@ -253,12 +253,12 @@ msgstr ""
 
 #: ./conferencebreak.py:46
 #: ./program.py:42
-#: ./talk.py:165
+#: ./talk.py:158
 msgid "End date"
 msgstr ""
 
 #: ./conferencebreak.py:45
-#: ./talk.py:164
+#: ./talk.py:157
 #: ./track.py:57
 msgid "Enddate"
 msgstr ""
@@ -382,7 +382,7 @@ msgstr ""
 msgid "License Of Your Talk"
 msgstr ""
 
-#: ./talk.py:200
+#: ./talk.py:193
 msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format)."
 msgstr ""
 
@@ -398,15 +398,15 @@ msgstr ""
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
-#: ./talk.py:205
+#: ./talk.py:198
 msgid "Link to the Video of the talk"
 msgstr ""
 
-#: ./talk.py:183
+#: ./talk.py:176
 msgid "Link to the presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:188
+#: ./talk.py:181
 msgid "Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
@@ -533,11 +533,11 @@ msgstr ""
 msgid "Please upload an image"
 msgstr ""
 
-#: ./talk.py:194
+#: ./talk.py:187
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr ""
 
-#: ./talk.py:172
+#: ./talk.py:165
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
@@ -565,11 +565,11 @@ msgstr ""
 msgid "Presentation Slides"
 msgstr ""
 
-#: ./talk.py:171
+#: ./talk.py:164
 msgid "Presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:177
+#: ./talk.py:170
 msgid "Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
@@ -663,12 +663,12 @@ msgstr ""
 
 #: ./conferencebreak.py:38
 #: ./program.py:36
-#: ./talk.py:157
+#: ./talk.py:150
 msgid "Start date"
 msgstr ""
 
 #: ./conferencebreak.py:37
-#: ./talk.py:156
+#: ./talk.py:149
 #: ./track.py:51
 msgid "Startdate"
 msgstr ""

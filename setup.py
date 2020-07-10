@@ -16,7 +16,7 @@ version = '0.2.dev0'
 
 setup(
     name='collective.conferences',
-    version='0.1.dev0',
+    version= version,
     description="A Conference Management System for Plone",
     long_description=long_description,
     # Get more strings from

@@ -4,7 +4,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 import datetime
-
+import re
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
@@ -18,3 +18,7 @@ def startDefaultValue():
 
 def endDefaultValue():
     return datetime.datetime.today() + datetime.timedelta(17)
+
+
+checkEmail = re.compile(
+    r'[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}').match

@@ -7,12 +7,7 @@ from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
 from zope.interface import Invalid
-
-import re
-
-
-checkEmail = re.compile(
-    r'[a-zA-Z0-9._%-]+@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}').match
+from collective.conferences.common import checkEmail
 
 
 def validateEmail(value):

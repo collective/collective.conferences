@@ -48,12 +48,8 @@ class ChooseLicense(Invalid):
         'Please choose a license for your talk.'))
 
 
-# class StartBeforeEnd(Invalid):
-#     __doc__ = _(u"The start or end date is invalid")
-
-
 class IWorkshop(model.Schema):
-    """A conference workshop. Workshops are managed inside tracks of the Program.
+    """A conference workshop.
     """
 
     title = schema.TextLine(

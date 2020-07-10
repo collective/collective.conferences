@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from zope.interface import Invalid
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-from zope.interface import Invalid
 
 import datetime
 import re
+
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
@@ -29,4 +30,3 @@ def validateEmail(value):
     if not checkEmail(value):
         raise Invalid(_(u'Invalid email address'))
     return True
-

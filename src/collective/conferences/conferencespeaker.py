@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from collective.conferences.common import validateEmail
 from plone import api
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.Five import BrowserView
 from zope import schema
-from collective.conferences.common import validateEmail
-
 
 
 class IConferenceSpeaker(model.Schema):

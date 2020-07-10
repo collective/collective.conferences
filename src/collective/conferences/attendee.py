@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from collective.conferences.common import validateEmail
 from collective.conferences.common import yesnochoice
 from plone.autoform import directives
 from plone.dexterity.browser import add
@@ -76,6 +77,7 @@ class IAttendee(model.Schema):
     email = schema.TextLine(
         title=_(u'E-Mail'),
         description=_(u'We need this mandatory data to get in contact with you, if we have any questions'),
+        constraint=validateEmail,
         required=True,
     )
 

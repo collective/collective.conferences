@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-10 10:06+0000\n"
+"POT-Creation-Date: 2020-07-10 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.conferences\n"
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "- A simple workflow for Conference Talk objects."
-msgstr ""
 
 #: ./profiles/default/types/collective.conferences.callforpaper.xml
 msgid "A Call for Paper"
@@ -73,7 +69,7 @@ msgstr ""
 msgid "A room that is used for the conference"
 msgstr ""
 
-#: ./conferencespeaker.py:87
+#: ./conferencespeaker.py:75
 msgid "A short bio"
 msgstr ""
 
@@ -81,7 +77,7 @@ msgstr ""
 msgid "Add your speaker profile"
 msgstr ""
 
-#: ./talk.py:186
+#: ./talk.py:201
 msgid "Additional Files of your presentation."
 msgstr ""
 
@@ -93,15 +89,15 @@ msgstr ""
 msgid "Bank used for the payment:"
 msgstr ""
 
-#: ./conferencespeaker.py:91
+#: ./conferencespeaker.py:79
 msgid "Bio"
 msgstr ""
 
-#: ./attendee.py:43
+#: ./attendee.py:44
 msgid "By Bank transfer"
 msgstr ""
 
-#: ./attendee.py:45
+#: ./attendee.py:46
 msgid "By Check"
 msgstr ""
 
@@ -135,7 +131,7 @@ msgstr ""
 
 #: ./conferencebreak.py:73
 #: ./talk.py:143
-#: ./workshop.py:145
+#: ./workshop.py:141
 msgid "Choose a number for the order in the track"
 msgstr ""
 
@@ -149,7 +145,7 @@ msgid "Choose the topic for your talk"
 msgstr ""
 
 #: ./createnewworkshop.py:93
-#: ./workshop.py:89
+#: ./workshop.py:85
 msgid "Choose the topic for your workshop"
 msgstr ""
 
@@ -158,12 +154,12 @@ msgid "Choose the track for this break"
 msgstr ""
 
 #: ./talk.py:118
-#: ./workshop.py:113
+#: ./workshop.py:109
 msgid "Choose the track for this talk"
 msgstr ""
 
-#: ./attendee.py:59
-#: ./conferencespeaker.py:44
+#: ./attendee.py:60
+#: ./conferencespeaker.py:32
 msgid "City"
 msgstr ""
 
@@ -185,10 +181,6 @@ msgstr ""
 
 #: ./profiles/default/types/collective.conferences.speakerfolder.xml
 msgid "Conference Speakers"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Conference Talk Publication Workflow"
 msgstr ""
 
 #: ./profiles/default/types/collective.conferences.talksfolder.xml
@@ -219,8 +211,8 @@ msgstr ""
 msgid "Conference summary"
 msgstr ""
 
-#: ./attendee.py:71
-#: ./conferencespeaker.py:56
+#: ./attendee.py:72
+#: ./conferencespeaker.py:44
 msgid "Country"
 msgstr ""
 
@@ -247,7 +239,7 @@ msgstr ""
 msgid "Details of the Workshop"
 msgstr ""
 
-#: ./attendee.py:77
+#: ./attendee.py:78
 msgid "E-Mail"
 msgstr ""
 
@@ -263,6 +255,10 @@ msgstr ""
 msgid "Enddate"
 msgstr ""
 
+#: ./talk.py:169
+msgid "Files"
+msgstr ""
+
 #: ./attendeefolder.py:42
 msgid "Fill in one payment option per line."
 msgstr ""
@@ -275,11 +271,11 @@ msgstr ""
 msgid "Fill in the title of your proposed conference workshop"
 msgstr ""
 
-#: ./conferencespeaker.py:33
+#: ./conferencespeaker.py:21
 msgid "First name"
 msgstr ""
 
-#: ./attendee.py:49
+#: ./attendee.py:50
 msgid "Firstname Lastname"
 msgstr ""
 
@@ -287,7 +283,7 @@ msgstr ""
 msgid "Folder for Registration of the Conference Attendees"
 msgstr ""
 
-#: ./conferencespeaker.py:39
+#: ./conferencespeaker.py:27
 msgid "For those requiring visa, please add your full postal address details"
 msgstr ""
 
@@ -307,7 +303,7 @@ msgid "Give an estimation about the time you'd plan for your talk."
 msgstr ""
 
 #: ./createnewworkshop.py:100
-#: ./workshop.py:97
+#: ./workshop.py:93
 msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr ""
 
@@ -315,7 +311,7 @@ msgstr ""
 msgid "Have one to pay a registration fee?"
 msgstr ""
 
-#: ./attendee.py:89
+#: ./attendee.py:91
 msgid "Have you already paid the registration fee?"
 msgstr ""
 
@@ -323,7 +319,7 @@ msgstr ""
 msgid "If you already have an account on this site,"
 msgstr ""
 
-#: ./attendee.py:97
+#: ./attendee.py:99
 msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
 msgstr ""
 
@@ -331,11 +327,7 @@ msgstr ""
 msgid "If you not already registered a conference speaker for you, please follow the following link and add a speaker profile to this site:"
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
-msgstr ""
-
-#: ./attendee.py:105
+#: ./attendee.py:107
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr ""
 
@@ -360,11 +352,11 @@ msgstr ""
 msgid "Installs the collective.conferences add-on."
 msgstr ""
 
-#: ./conferencespeaker.py:20
+#: ./common.py:31
 msgid "Invalid email address"
 msgstr ""
 
-#: ./conferencespeaker.py:29
+#: ./conferencespeaker.py:17
 msgid "Last name"
 msgstr ""
 
@@ -382,7 +374,7 @@ msgstr ""
 msgid "License Of Your Talk"
 msgstr ""
 
-#: ./talk.py:193
+#: ./talk.py:208
 msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format)."
 msgstr ""
 
@@ -398,28 +390,20 @@ msgstr ""
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
-#: ./talk.py:198
+#: ./talk.py:213
 msgid "Link to the Video of the talk"
 msgstr ""
 
-#: ./talk.py:176
+#: ./talk.py:191
 msgid "Link to the presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:181
+#: ./talk.py:196
 msgid "Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
 #: ./talk_templates/view.pt:112
 msgid "Link to video:"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Member retracts submission"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Member submits content for publication"
 msgstr ""
 
 #: ./createnewtalk.py:113
@@ -434,7 +418,7 @@ msgstr ""
 msgid "Minutes"
 msgstr ""
 
-#: ./conferencespeaker.py:74
+#: ./conferencespeaker.py:62
 msgid "Mobile Telephone Number"
 msgstr ""
 
@@ -462,12 +446,12 @@ msgstr ""
 msgid "Name of the speaker folder"
 msgstr ""
 
-#: ./common.py:10
+#: ./common.py:12
 msgid "No"
 msgstr ""
 
-#: ./attendee.py:83
-#: ./conferencespeaker.py:82
+#: ./attendee.py:85
+#: ./conferencespeaker.py:70
 msgid "Organisation"
 msgstr ""
 
@@ -479,23 +463,19 @@ msgstr ""
 msgid "Payment Options"
 msgstr ""
 
-#: ./attendee.py:44
+#: ./attendee.py:45
 msgid "Payment by PayPal"
 msgstr ""
 
-#: ./attendee.py:88
+#: ./attendee.py:90
 msgid "Payment of the Registration Fee"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Pending"
 msgstr ""
 
 #: ./room_templates/view.pt:48
 msgid "Person"
 msgstr ""
 
-#: ./conferencespeaker.py:96
+#: ./conferencespeaker.py:84
 msgid "Picture"
 msgstr ""
 
@@ -515,11 +495,11 @@ msgstr ""
 msgid "Please fill in the maximum number of attendees"
 msgstr ""
 
-#: ./conferencespeaker.py:75
+#: ./conferencespeaker.py:63
 msgid "Please fill in your mobile telephone number so that we could get in contact with you during the conference."
 msgstr ""
 
-#: ./conferencespeaker.py:69
+#: ./conferencespeaker.py:57
 msgid "Please fill in your telephone number so that we could get in contact with you by phone if necessary."
 msgstr ""
 
@@ -528,20 +508,20 @@ msgstr ""
 msgid "Please submit this for review."
 msgstr ""
 
-#: ./conferencespeaker.py:97
+#: ./conferencespeaker.py:85
 #: ./room.py:25
 msgid "Please upload an image"
 msgstr ""
 
-#: ./talk.py:187
+#: ./talk.py:202
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr ""
 
-#: ./talk.py:165
+#: ./talk.py:180
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./workshop.py:167
+#: ./workshop.py:168
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
 
@@ -552,12 +532,12 @@ msgstr ""
 
 #: ./conferencebreak.py:72
 #: ./talk.py:142
-#: ./workshop.py:144
+#: ./workshop.py:140
 msgid "Position In The Track"
 msgstr ""
 
-#: ./attendee.py:65
-#: ./conferencespeaker.py:50
+#: ./attendee.py:66
+#: ./conferencespeaker.py:38
 msgid "Postal Code"
 msgstr ""
 
@@ -565,21 +545,17 @@ msgstr ""
 msgid "Presentation Slides"
 msgstr ""
 
-#: ./talk.py:164
+#: ./talk.py:179
 msgid "Presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:170
+#: ./talk.py:185
 msgid "Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
 #: ./createnewtalk.py:85
 #: ./talk.py:73
 msgid "Presenter"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Private"
 msgstr ""
 
 #: ./profiles/default/types/collective.conferences.program.xml
@@ -594,23 +570,6 @@ msgstr ""
 msgid "Program summary"
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Publish"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Published"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Publishing the item makes it visible to the all
-          users of the site."
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Puts your item in a review queue, so it can be published on the site."
-msgstr ""
-
 #: ./attendeefolder.py:34
 msgid "Registration Fee?"
 msgstr ""
@@ -619,40 +578,21 @@ msgstr ""
 msgid "Registration fee paid:"
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Retract"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Reviewer publishes content"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Reviewer sends content back for re-drafting"
-msgstr ""
-
 #: ./program_templates/view.pt:54
 #: ./track_templates/view.pt:46
 msgid "Room"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Send back"
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Sending the item back will return the item to the original author instead of publishing it.
-          You should preferably provide a reason to the author why it was not published."
 msgstr ""
 
 #: ./talk.py:134
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
-#: ./workshop.py:136
+#: ./workshop.py:132
 msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
+#: ./talk.py:164
+#: ./workshop.py:162
 #: ./workshop_templates/view.pt:67
 msgid "Slides"
 msgstr ""
@@ -673,8 +613,8 @@ msgstr ""
 msgid "Startdate"
 msgstr ""
 
-#: ./attendee.py:53
-#: ./conferencespeaker.py:38
+#: ./attendee.py:54
+#: ./conferencespeaker.py:26
 msgid "Street"
 msgstr ""
 
@@ -714,10 +654,6 @@ msgstr ""
 msgid "Submit a proposal for a conference workshop."
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Submit for publication"
-msgstr ""
-
 #: ./profiles/default/types/collective.conferences.talk.xml
 msgid "Talk"
 msgstr ""
@@ -753,7 +689,7 @@ msgstr ""
 msgid "Talks"
 msgstr ""
 
-#: ./conferencespeaker.py:68
+#: ./conferencespeaker.py:56
 msgid "Telephone Number"
 msgstr ""
 
@@ -783,10 +719,6 @@ msgstr ""
 
 #: ./track.py:28
 msgid "The end of the track could not be set after the conference program."
-msgstr ""
-
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "The owner can edit the talk"
 msgstr ""
 
 #: ./profiles/default/types/collective.conferences.roomfolder.xml
@@ -831,11 +763,11 @@ msgstr ""
 msgid "The workshops of the conference"
 msgstr ""
 
-#: ./attendee.py:54
+#: ./attendee.py:55
 msgid "This data is mandatory and required for our internal procedures"
 msgstr ""
 
-#: ./attendee.py:60
+#: ./attendee.py:61
 msgid "This data is mandatory and required for our internal procidures"
 msgstr ""
 
@@ -893,24 +825,19 @@ msgstr ""
 msgid "Uninstalls the collective.conferences add-on."
 msgstr ""
 
-#: ./attendee.py:104
+#: ./attendee.py:106
 msgid "Used Bank Account"
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Visible to everyone, editable by the owner."
+#: ./talk.py:174
+msgid "Video"
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
-msgid "Waiting for the Review, further editable by
-                                           the owner (contributor)."
-msgstr ""
-
-#: ./attendee.py:96
+#: ./attendee.py:98
 msgid "Way of Registration Fee Payment"
 msgstr ""
 
-#: ./attendee.py:78
+#: ./attendee.py:79
 msgid "We need this mandatory data to get in contact with you, if we have any questions"
 msgstr ""
 
@@ -923,31 +850,31 @@ msgid "Workshop Folder Description"
 msgstr ""
 
 #: ./createnewworkshop.py:85
-#: ./workshop.py:75
+#: ./workshop.py:71
 #: ./workshop_templates/view.pt:29
 msgid "Workshop Leader"
 msgstr ""
 
-#: ./workshop.py:135
+#: ./workshop.py:131
 #: ./workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr ""
 
 #: ./createnewworkshop.py:80
-#: ./workshop.py:70
+#: ./workshop.py:66
 msgid "Workshop details"
 msgstr ""
 
-#: ./workshop.py:166
+#: ./workshop.py:167
 msgid "Workshop slides / material"
 msgstr ""
 
 #: ./createnewworkshop.py:76
-#: ./workshop.py:65
+#: ./workshop.py:61
 msgid "Workshop summary"
 msgstr ""
 
-#: ./workshop.py:61
+#: ./workshop.py:57
 msgid "Workshop title"
 msgstr ""
 
@@ -959,7 +886,7 @@ msgstr ""
 msgid "Write information about the conference"
 msgstr ""
 
-#: ./common.py:11
+#: ./common.py:13
 msgid "Yes"
 msgstr ""
 
@@ -969,7 +896,7 @@ msgid "You can give some information to the committee here, e.g. about days you 
 msgstr ""
 
 #: ./createnewworkshop.py:114
-#: ./workshop.py:126
+#: ./workshop.py:122
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr ""
 
@@ -977,7 +904,7 @@ msgstr ""
 msgid "You can submit a new talk or workshop by following one of the following links. They will open a form with the necessary entries to create a new conference talk or workshop proposal:"
 msgstr ""
 
-#: ./conferencespeaker.py:62
+#: ./conferencespeaker.py:50
 msgid "Your email address"
 msgstr ""
 

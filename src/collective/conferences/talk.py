@@ -144,13 +144,6 @@ class ITalk(model.Schema):
         required=False,
     )
 
-    #    form.widget(track=AutocompleteFieldWidget)
-    #    track = RelationChoice(
-    #            title=_(u"Track"),
-    #            source=ObjPathSourceBinder(object_provides=ITrack.__identifier__),
-    #            required=False,
-    #        )
-
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
         title=_(u'Startdate'),
@@ -222,35 +215,34 @@ class ITalk(model.Schema):
             )
 
 
-# @indexer(ITalk)
-# def speakerIndexer(obj):
-#     if obj.speaker is None:
-#        return None
-#    return obj.speaker
-# grok.global_adapter(speakerIndexer, name="Subject")
+def newtalkadded(self, event):
+    if api.portal.get_registry_record(
+            'plone.email_from_address') is not None:
+        contactaddress = api.portal.get_registry_record(
+            'plone.email_from_address')
+        current_user = api.user.get_current()
 
+        length = self.planedtalklength[0]
+        cfp = self.call_for_paper_topic[0]
+        details = self.details.output
 
-# @grok.subscribe(ITalk, IObjectMovedEvent)
-# def removeCFP_reference(talk, event):
-#    if not ICallforpaper.providedBy(event.newParent):
-#        talk.call_for_paper_tracks = None
+        api.portal.send_email(
+            recipient=current_user.getProperty('email'),
+            sender=contactaddress,
+            subject=safe_unicode('Your Talk Proposal'),
+            body=safe_unicode('You submitted a conference talk:\n'
+                              'title: {0},\n'
+                              'summary: {1},\n'
+                              'Speaker: \ndetails: {2},\n'
+                              'proposed length: {3} minutes\nfor the call for papers '
+                              'topic: {4}\nwith the following message to the conference '
+                              'committee: {5}\n\n'
+                              'Best regards,\n'
+                              'The Conference Committee').format(
+                self.title, self.description, details,
+                length, cfp, self.messagetocommittee),
+        )
 
-
-# @grok.subscribe(ITalk, IObjectAddedEvent)
-# def talkaddedevent(talk, event):
-#    setdates(talk)
-
-# @grok.subscribe(ITalk, IObjectModifiedEvent)
-# def talkmodifiedevent(talk, event):
-#    setdates(talk)
-
-
-#    @invariant
-#    def validateStartEnd(data):
-#        if data.start is not None and data.end is not None:
-#            if data.start > data.end:
-#                raise StartBeforeEnd(_(
-#                    u"The start date must be before the end date."))
 
 class TalkView(BrowserView):
 

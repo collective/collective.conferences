@@ -265,6 +265,12 @@
         handler=".conferencespeaker.notifyUser"
         />
 
+    <subscriber
+        for="collective.conferences.talk.ITalk
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler="collective.conferences.talk.newtalkadded"
+    />
+
     <utility
         name="BreakLength"
         component=".vocabularies.BreakLengthVocabularyFactory" />

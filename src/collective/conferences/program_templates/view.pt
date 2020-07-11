@@ -43,7 +43,7 @@
         <h2 i18n:translate="">Tracks</h2>
 
   
-<table border="0" width="100%">
+<table class="plone-has-table" border="0" width="100%">
         <thead>
          <td><h4 i18n:translate="">Track</h4>
          </td>

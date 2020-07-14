@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<registry>
+<!-- -*- extra stuff goes here -*- -->
+    <records remove="True" interface="collective.conferences.browser.controlpanel.ICollectiveconfControlPanel"
+         prefix="collectiveconf" />
+
+</registry>

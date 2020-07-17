@@ -19,9 +19,9 @@
       />
 
   <browser:page
-    name="collectiveconf-controlpanel"
+    name="collectiveconference-controlpanel"
     for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-    class=".controlpanel.CollectiveconfControlPanelView"
+    class=".controlpanel.CollectiveconferenceControlPanelView"
     permission="cmf.ManagePortal"
     />
 

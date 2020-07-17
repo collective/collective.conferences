@@ -55,7 +55,7 @@
         </div>
 
 
-        <table border="0" width="100%">
+        <table class="plone-has-table" border="0" width="100%">
         <tr bgcolor="#18A303">
          <th><label i18n:translate="">Talk/Workshop</label></th>
          <th><label i18n:translate="">Time</label></th>

@@ -4,8 +4,12 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
-
+- Move functions for validation of email to the common module [Andreas Mantke]
+- Add validation for email to attendee module [Andreas Mantke]
+- Improve edit mode of talk and workshop module with register for slides,
+  files and video [Andreas Mantke]
+- Add Barceloneta theme class to table on the program and track view [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
 
 0.1 (2020-07-10)
 ----------------

@@ -8,7 +8,8 @@
       condition_expr=""
       icon_expr=""
       url_expr="string:${portal_url}/@@collectiveconference-controlpanel"
-      visible="True">
+      visible="True"
+      remove="True">
     <permission>Manage portal</permission>
   </configlet>
 </object>

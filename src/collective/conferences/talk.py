@@ -160,6 +160,21 @@ class ITalk(model.Schema):
         required=False,
     )
 
+    model.fieldset('slides',
+                   label=_(u'Slides'),
+                   fields=['slides', 'slides2', 'slides3', 'slides4'],
+                   )
+
+    model.fieldset('files',
+                   label=_(u'Files'),
+                   fields=['files', 'files2'],
+                   )
+
+    model.fieldset('video',
+                   label=_(u'Video'),
+                   fields=['video'],
+                   )
+
     slides = NamedBlobFile(
         title=_(u'Presentation slides in ODT-File-Format'),
         description=_(u'Please upload your presentation shortly after you have given your talk.'),

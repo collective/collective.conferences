@@ -6,7 +6,7 @@ from zope import schema
 from zope.interface import Interface
 
 
-class ICollectiveconfControlPanel(Interface):
+class ICollectiveconferenceControlPanel(Interface):
     break_length = schema.Tuple(
         title=u'Length Of Conference Breaks',
         description=u'Fill in the time slots for conference breaks in minutes. Use a new line for every '
@@ -40,11 +40,11 @@ class ICollectiveconfControlPanel(Interface):
     )
 
 
-class CollectiveconfControlPanelForm(RegistryEditForm):
-    schema = ICollectiveconfControlPanel
-    schema_prefix = 'collectiveconf'
-    label = u'Collectiveconf Settings'
+class CollectiveconferenceControlPanelForm(RegistryEditForm):
+    schema = ICollectiveconferenceControlPanel
+    schema_prefix = 'collectiveconference'
+    label = u'Collective Conference Settings'
 
 
-CollectiveconfControlPanelView = layout.wrap_form(
-    CollectiveconfControlPanelForm, ControlPanelFormWrapper)
+CollectiveconferenceControlPanelView = layout.wrap_form(
+    CollectiveconferenceControlPanelForm, ControlPanelFormWrapper)

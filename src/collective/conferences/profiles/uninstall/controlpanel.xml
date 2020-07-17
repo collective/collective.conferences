@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <object name="portal_controlpanel">
   <configlet
-      title="Collectiveconf Settings"
-      action_id="collectiveconf-controlpanel"
-      appId="collectiveconf-controlpanel"
+      title="Collective Conference Settings"
+      action_id="collectiveconference-controlpanel"
+      appId="collectiveconference-controlpanel"
       category="Products"
       condition_expr=""
       icon_expr=""
-      url_expr="string:${portal_url}/@@collectiveconf-controlpanel"
+      url_expr="string:${portal_url}/@@collectiveconference-controlpanel"
       visible="True"
       remove="True">
     <permission>Manage portal</permission>

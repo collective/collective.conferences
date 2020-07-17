@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <registry>
 <!-- -*- extra stuff goes here -*- -->
-    <records interface="collective.conferences.browser.controlpanel.ICollectiveconfControlPanel"
-         prefix="collectiveconf" />
+    <records interface="collective.conferences.browser.controlpanel.ICollectiveconferenceControlPanel"
+         prefix="collectiveconference" />
 
 </registry>

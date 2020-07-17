@@ -10,25 +10,25 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 @provider(IVocabularyFactory)
 def BreakLengthVocabularyFactory(context):
-    values = api.portal.get_registry_record('collectiveconf.break_length')
+    values = api.portal.get_registry_record('collectiveconference.break_length')
     return safe_simplevocabulary_from_values(values)
 
 
 @provider(IVocabularyFactory)
 def TalkLengthVocabularyFactory(context):
-    values = api.portal.get_registry_record('collectiveconf.talk_length')
+    values = api.portal.get_registry_record('collectiveconference.talk_length')
     return safe_simplevocabulary_from_values(values)
 
 
 @provider(IVocabularyFactory)
 def WorkshopLengthVocabularyFactory(context):
-    values = api.portal.get_registry_record('collectiveconf.workshop_length')
+    values = api.portal.get_registry_record('collectiveconference.workshop_length')
     return safe_simplevocabulary_from_values(values)
 
 
 @provider(IVocabularyFactory)
 def LicenseVocabularyFactory(context):
-    values = api.portal.get_registry_record('collectiveconf.license')
+    values = api.portal.get_registry_record('collectiveconference.license')
     return safe_simplevocabulary_from_values(values)
 
 

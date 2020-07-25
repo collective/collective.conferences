@@ -15,7 +15,7 @@ class ICollectiveconferenceControlPanel(Interface):
                                    "value / talk length. Write only the numbers without the addition 'minutes'.")),
         default=(15,
                  20,
-                 30,),
+                 30),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -26,7 +26,7 @@ class ICollectiveconferenceControlPanel(Interface):
                                    "value / talk length. Write only the numbers without the addition 'minutes'.")),
         default=(30,
                  45,
-                 60,),
+                 60),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -38,7 +38,7 @@ class ICollectiveconferenceControlPanel(Interface):
                          "value / workshop length. Write only the numbers without the addition 'minutes'.")),
         default=(60,
                  120,
-                 180,),
+                 180),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -57,7 +57,7 @@ class ICollectiveconferenceControlPanel(Interface):
             'Attribution-ShareAlike 3.0)',
             'CC-BY-SA-v4 (Creative Commons'
             'Attribution-ShareAlike 4.0 '
-            'International)',),
+            'International)'),
         value_type=schema.TextLine(),
         required=True,
     )

@@ -3,6 +3,7 @@ from collective.conferences import _
 from zope.interface import Invalid
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+from Products.CMFPlone.utils import safe_unicode
 
 import datetime
 import re
@@ -28,5 +29,6 @@ checkEmail = re.compile(
 
 def validateEmail(value):
     if not checkEmail(value):
-        raise Invalid(_(u'Invalid email address'))
+        raise Invalid(_(
+            safe_unicode('Invalid email address')))
     return True

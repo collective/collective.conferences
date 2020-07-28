@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from plone import api
 from plone.app.vocabularies.terms import safe_simplevocabulary_from_values
+from Products.CMFPlone.utils import safe_unicode
 from zope.interface import implementer
 from zope.interface import provider
 from zope.schema.interfaces import IVocabularyFactory
@@ -42,7 +43,7 @@ class ConferenceSpeakerVocabulary(object):
             terms.append(SimpleTerm(
                 value=brain.getObject(),
                 token=brain.UID,
-                title=u'{0} ({1})'.format(brain.Title, brain.getPath()),
+                title=safe_unicode('{0} ({1})').format(brain.Title, brain.getPath()),
             ))
         return SimpleVocabulary(terms)
 
@@ -60,7 +61,7 @@ class ConferenceRoomVocabulary(object):
             terms.append(SimpleTerm(
                 value=brain.getObject(),
                 token=brain.UID,
-                title=u'{0} ({1})'.format(brain.Title, brain.getPath()),
+                title=safe_unicode('{0} ({1})').format(brain.Title, brain.getPath()),
             ))
         return SimpleVocabulary(terms)
 

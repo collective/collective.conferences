@@ -5,6 +5,7 @@ from plone import api
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
 
@@ -14,75 +15,79 @@ class IConferenceSpeaker(model.Schema):
     """
 
     lastname = schema.TextLine(
-        title=_(u'Last name'),
+        title=_(safe_unicode('Last name')),
     )
 
     firstname = schema.TextLine(
-        title=_(u'First name'),
+        title=_(safe_unicode('First name')),
         required=True,
     )
 
     street = schema.TextLine(
-        title=_(u'Street'),
-        description=_(u'For those requiring visa, please add your full postal address details'),
+        title=_(safe_unicode('Street')),
+        description=_(safe_unicode(
+            'For those requiring visa, please add your full postal address details')),
         required=False,
     )
 
     city = schema.TextLine(
-        title=_(u'City'),
-        description=_(u'For those requiring visa, please add your full postal address details'),
+        title=_(safe_unicode('City')),
+        description=_(safe_unicode(
+            'For those requiring visa, please add your full postal address details')),
         required=False,
     )
 
     postalcode = schema.TextLine(
-        title=_(u'Postal Code'),
-        description=_(u'For those requiring visa, please add your full postal address details'),
+        title=_(safe_unicode('Postal Code')),
+        description=_(safe_unicode(
+            'For those requiring visa, please add your full postal address details')),
         required=False,
     )
 
     country = schema.TextLine(
-        title=_(u'Country'),
-        description=_(u'For those requiring visa, please add your full postal address details'),
+        title=_(safe_unicode('Country')),
+        description=_(safe_unicode(
+            'For those requiring visa, please add your full postal address details')),
         required=False,
     )
 
     email = schema.ASCIILine(
-        title=_(u'Your email address'),
+        title=_(safe_unicode('Your email address')),
         constraint=validateEmail,
         required=True,
     )
 
     telephonenumber = schema.TextLine(
-        title=_(u'Telephone Number'),
-        description=_(
-            u'Please fill in your telephone number so that we could get in contact with you by phone if necessary.'),
+        title=_(safe_unicode('Telephone Number')),
+        description=_(safe_unicode(
+            'Please fill in your telephone number so that we could get in contact with you by phone if necessary.')),
         required=False,
     )
     mobiletelepone = schema.TextLine(
-        title=_(u'Mobile Telephone Number'),
-        description=_(
-            u'Please fill in your mobile telephone number so that we could get in contact with you '
-            u'during the conference.'),
+        title=_(safe_unicode('Mobile Telephone Number')),
+        description=_(safe_unicode(
+            'Please fill in your mobile telephone number so that we could get in contact with you '
+            'during the conference.')),
         required=True,
     )
 
     organisation = schema.TextLine(
-        title=_(u'Organisation'),
+        title=_(safe_unicode('Organisation')),
         required=False,
     )
 
     description = schema.Text(
-        title=_(u'A short bio'),
+        title=_(safe_unicode('A short bio')),
     )
 
     bio = RichText(
-        title=_(u'Bio'),
+        title=_(safe_unicode('Bio')),
         required=False,
     )
 
     picture = NamedBlobImage(
-        title=_(u'Picture'),
-        description=_(u'Please upload an image'),
+        title=_(safe_unicode('Picture')),
+        description=_(safe_unicode('Please upload an image')),
         required=False,
     )
 

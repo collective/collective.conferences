@@ -2,6 +2,7 @@
 from collective.conferences import _
 from plone import api
 from plone.supermodel import model
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
 
@@ -11,11 +12,11 @@ class ISpeakerfolder(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Name of the speaker folder'),
+        title=_(safe_unicode('Name of the speaker folder')),
     )
 
     description = schema.Text(
-        title=_(u'speakerfolder description'),
+        title=_(safe_unicode('speakerfolder description')),
         required=False,
     )
 

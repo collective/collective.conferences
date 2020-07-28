@@ -12,7 +12,7 @@ class ICollectiveconferenceControlPanel(Interface):
     break_length = schema.Tuple(
         title=_(safe_unicode('Length Of Conference Breaks')),
         description=_(safe_unicode('Fill in the time slots for conference breaks in minutes. Use a new line for every '
-                                   "value / talk length. Write only the numbers without the addition 'minutes'.")),
+                                   "value / break length. Write only the numbers without the addition 'minutes'.")),
         default=(15,
                  20,
                  30),

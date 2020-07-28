@@ -4,6 +4,7 @@ from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
 
@@ -13,28 +14,29 @@ class IRoom(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Name of the Room'),
+        title=_(safe_unicode('Name of the Room')),
     )
 
     description = schema.Text(
-        title=_(u'A description of the room and its location'),
+        title=_(safe_unicode('A description of the room and its location')),
     )
 
     picture = NamedBlobImage(
-        title=_(u'A picture of the room'),
-        description=_(u'Please upload an image'),
+        title=_(safe_unicode('A picture of the room')),
+        description=_(safe_unicode('Please upload an image')),
         required=False,
     )
 
     primary('details')
     details = RichText(
-        title=_(u"A full description of the room, it's location and the way to get there"),
+        title=_(safe_unicode(
+            "A full description of the room, it's location and the way to get there")),
         required=True,
     )
 
     capacity = schema.Int(
-        title=_(u'Capacity of the room'),
-        description=_(u'Please fill in the maximum number of attendees'),
+        title=_(safe_unicode('Capacity of the room')),
+        description=_(safe_unicode('Please fill in the maximum number of attendees')),
         required=False,
     )
 

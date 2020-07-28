@@ -4,6 +4,7 @@ from plone import api
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
 
@@ -13,16 +14,16 @@ class IRoomfolder(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Name of the room folder'),
+        title=_(safe_unicode('Name of the room folder')),
     )
 
     description = schema.Text(
-        title=_(u'roomfolder description'),
+        title=_(safe_unicode('roomfolder description')),
     )
 
     primary('details')
     details = RichText(
-        title=_(u'Information about the Conference Rooms'),
+        title=_(safe_unicode('Information about the Conference Rooms')),
         required=False,
     )
 

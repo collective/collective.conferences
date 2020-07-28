@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-07-10 14:55+0000\n"
+"POT-Creation-Date: 2020-07-28 12:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,11 +42,11 @@ msgstr ""
 msgid "A conference track"
 msgstr ""
 
-#: ./room.py:20
+#: ./room.py:21
 msgid "A description of the room and its location"
 msgstr ""
 
-#: ./room.py:31
+#: ./room.py:32
 msgid "A full description of the room, it's location and the way to get there"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgstr ""
 msgid "A person speaking at the conference or leading a workshop"
 msgstr ""
 
-#: ./room.py:24
+#: ./room.py:25
 msgid "A picture of the room"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "A room that is used for the conference"
 msgstr ""
 
-#: ./conferencespeaker.py:75
+#: ./conferencespeaker.py:80
 msgid "A short bio"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Add your speaker profile"
 msgstr ""
 
-#: ./talk.py:201
+#: ./talk.py:207
 msgid "Additional Files of your presentation."
 msgstr ""
 
@@ -86,27 +86,19 @@ msgstr ""
 msgid "Bank used for the payment:"
 msgstr ""
 
-#: ./conferencespeaker.py:79
+#: ./conferencespeaker.py:84
 msgid "Bio"
-msgstr ""
-
-#: ./attendee.py:44
-msgid "By Bank transfer"
-msgstr ""
-
-#: ./attendee.py:46
-msgid "By Check"
 msgstr ""
 
 #: ./profiles/default/types/collective.conferences.callforpaper.xml
 msgid "Call for Paper"
 msgstr ""
 
-#: ./callforpaper.py:19
+#: ./callforpaper.py:20
 msgid "Call for paper summary"
 msgstr ""
 
-#: ./callforpaper.py:15
+#: ./callforpaper.py:16
 msgid "Call for paper title"
 msgstr ""
 
@@ -115,24 +107,24 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ./room.py:36
+#: ./room.py:38
 #: ./room_templates/view.pt:46
 msgid "Capacity of the room"
 msgstr ""
 
 #: ./createnewtalk.py:107
 #: ./createnewworkshop.py:107
-#: ./talk.py:103
+#: ./talk.py:104
 msgid "Choose a license for your talk"
 msgstr ""
 
-#: ./conferencebreak.py:73
-#: ./talk.py:143
-#: ./workshop.py:141
+#: ./conferencebreak.py:74
+#: ./talk.py:145
+#: ./workshop.py:143
 msgid "Choose a number for the order in the track"
 msgstr ""
 
-#: ./track.py:63
+#: ./track.py:64
 msgid "Choose the room for the track"
 msgstr ""
 
@@ -146,17 +138,17 @@ msgstr ""
 msgid "Choose the topic for your workshop"
 msgstr ""
 
-#: ./conferencebreak.py:60
+#: ./conferencebreak.py:61
 msgid "Choose the track for this break"
 msgstr ""
 
-#: ./talk.py:118
-#: ./workshop.py:109
+#: ./talk.py:120
+#: ./workshop.py:110
 msgid "Choose the track for this talk"
 msgstr ""
 
-#: ./attendee.py:60
-#: ./conferencespeaker.py:32
+#: ./attendee.py:55
+#: ./conferencespeaker.py:34
 msgid "City"
 msgstr ""
 
@@ -192,15 +184,15 @@ msgstr ""
 msgid "Conference Workshop Folder"
 msgstr ""
 
-#: ./conferencebreak.py:31
+#: ./conferencebreak.py:32
 msgid "Conference break details"
 msgstr ""
 
-#: ./conferencebreak.py:25
+#: ./conferencebreak.py:26
 msgid "Conference break summary"
 msgstr ""
 
-#: ./conferencebreak.py:21
+#: ./conferencebreak.py:22
 msgid "Conference break title"
 msgstr ""
 
@@ -208,8 +200,8 @@ msgstr ""
 msgid "Conference summary"
 msgstr ""
 
-#: ./attendee.py:72
-#: ./conferencespeaker.py:44
+#: ./attendee.py:67
+#: ./conferencespeaker.py:48
 msgid "Country"
 msgstr ""
 
@@ -217,14 +209,14 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./callforpaper.py:25
+#: ./callforpaper.py:26
 #: ./conference.py:23
-#: ./program.py:49
+#: ./program.py:50
 msgid "Details"
 msgstr ""
 
-#: ./callforpaper.py:26
-#: ./program.py:50
+#: ./callforpaper.py:27
+#: ./program.py:51
 msgid "Details about the program"
 msgstr ""
 
@@ -236,28 +228,44 @@ msgstr ""
 msgid "Details of the Workshop"
 msgstr ""
 
-#: ./attendee.py:78
+#: ./attendee.py:73
 msgid "E-Mail"
 msgstr ""
 
-#: ./conferencebreak.py:46
-#: ./program.py:42
-#: ./talk.py:158
+#: ./conferencebreak.py:47
+#: ./program.py:43
+#: ./talk.py:160
 msgid "End date"
 msgstr ""
 
-#: ./conferencebreak.py:45
-#: ./talk.py:157
-#: ./track.py:57
+#: ./conferencebreak.py:46
+#: ./talk.py:159
+#: ./track.py:58
 msgid "Enddate"
 msgstr ""
 
-#: ./talk.py:169
+#: ./talk.py:171
 msgid "Files"
 msgstr ""
 
-#: ./attendeefolder.py:42
+#: ./attendeefolder.py:43
 msgid "Fill in one payment option per line."
+msgstr ""
+
+#: ./browser/controlpanel.py:48
+msgid "Fill in the names of the licenses for conference talks and workshops. Use a new line for every value / license name."
+msgstr ""
+
+#: ./browser/controlpanel.py:14
+msgid "Fill in the time slots for conference breaks in minutes. Use a new line for every value / break length. Write only the numbers without the addition 'minutes'."
+msgstr ""
+
+#: ./browser/controlpanel.py:25
+msgid "Fill in the time slots for conference talks in minutes. Use a new line for every value / talk length. Write only the numbers without the addition 'minutes'."
+msgstr ""
+
+#: ./browser/controlpanel.py:36
+msgid "Fill in the time slots for workshops at the conference in minutes. Use a new line for every value / workshop length. Write only the numbers without the addition 'minutes'."
 msgstr ""
 
 #: ./createnewtalk.py:72
@@ -268,11 +276,11 @@ msgstr ""
 msgid "Fill in the title of your proposed conference workshop"
 msgstr ""
 
-#: ./conferencespeaker.py:21
+#: ./conferencespeaker.py:22
 msgid "First name"
 msgstr ""
 
-#: ./attendee.py:50
+#: ./attendee.py:45
 msgid "Firstname Lastname"
 msgstr ""
 
@@ -280,7 +288,7 @@ msgstr ""
 msgid "Folder for Registration of the Conference Attendees"
 msgstr ""
 
-#: ./conferencespeaker.py:27
+#: ./conferencespeaker.py:28
 msgid "For those requiring visa, please add your full postal address details"
 msgstr ""
 
@@ -304,11 +312,11 @@ msgstr ""
 msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr ""
 
-#: ./attendeefolder.py:35
+#: ./attendeefolder.py:36
 msgid "Have one to pay a registration fee?"
 msgstr ""
 
-#: ./attendee.py:91
+#: ./attendee.py:86
 msgid "Have you already paid the registration fee?"
 msgstr ""
 
@@ -316,7 +324,7 @@ msgstr ""
 msgid "If you already have an account on this site,"
 msgstr ""
 
-#: ./attendee.py:99
+#: ./attendee.py:94
 msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
 msgstr ""
 
@@ -324,7 +332,7 @@ msgstr ""
 msgid "If you not already registered a conference speaker for you, please follow the following link and add a speaker profile to this site:"
 msgstr ""
 
-#: ./attendee.py:107
+#: ./attendee.py:102
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr ""
 
@@ -336,11 +344,11 @@ msgstr ""
 msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
 msgstr ""
 
-#: ./attendeefolder.py:29
+#: ./attendeefolder.py:30
 msgid "Information about registration process"
 msgstr ""
 
-#: ./roomfolder.py:25
+#: ./roomfolder.py:26
 #: ./roomfolder_templates/view.pt:33
 msgid "Information about the Conference Rooms"
 msgstr ""
@@ -349,16 +357,28 @@ msgstr ""
 msgid "Installs the collective.conferences add-on."
 msgstr ""
 
-#: ./common.py:31
+#: ./common.py:32
 msgid "Invalid email address"
 msgstr ""
 
-#: ./conferencespeaker.py:17
+#: ./conferencespeaker.py:18
 msgid "Last name"
 msgstr ""
 
-#: ./conferencebreak.py:53
+#: ./conferencebreak.py:54
 msgid "Length"
+msgstr ""
+
+#: ./browser/controlpanel.py:13
+msgid "Length Of Conference Breaks"
+msgstr ""
+
+#: ./browser/controlpanel.py:24
+msgid "Length Of Talks"
+msgstr ""
+
+#: ./browser/controlpanel.py:35
+msgid "Length Of Workshops"
 msgstr ""
 
 #: ./conferencebreak_templates/view.pt:26
@@ -367,11 +387,15 @@ msgstr ""
 
 #: ./createnewtalk.py:106
 #: ./createnewworkshop.py:106
-#: ./talk.py:102
+#: ./talk.py:103
 msgid "License Of Your Talk"
 msgstr ""
 
-#: ./talk.py:208
+#: ./browser/controlpanel.py:47
+msgid "Licenses Of Talks / Workshops"
+msgstr ""
+
+#: ./talk.py:215
 msgid "Link to additional Files of your presentation in archive file format (e.g. zip-file-format)."
 msgstr ""
 
@@ -387,15 +411,15 @@ msgstr ""
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
-#: ./talk.py:213
+#: ./talk.py:221
 msgid "Link to the Video of the talk"
 msgstr ""
 
-#: ./talk.py:191
+#: ./talk.py:196
 msgid "Link to the presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:196
+#: ./talk.py:201
 msgid "Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
@@ -405,7 +429,7 @@ msgstr ""
 
 #: ./createnewtalk.py:113
 #: ./createnewworkshop.py:113
-#: ./talk.py:109
+#: ./talk.py:110
 msgid "Messages to the Program Committee"
 msgstr ""
 
@@ -415,7 +439,7 @@ msgstr ""
 msgid "Minutes"
 msgstr ""
 
-#: ./conferencespeaker.py:62
+#: ./conferencespeaker.py:67
 msgid "Mobile Telephone Number"
 msgstr ""
 
@@ -427,44 +451,40 @@ msgstr ""
 msgid "Name Of The Workshopfolder"
 msgstr ""
 
-#: ./room.py:16
+#: ./room.py:17
 msgid "Name of the Room"
 msgstr ""
 
-#: ./attendeefolder.py:19
+#: ./attendeefolder.py:20
 msgid "Name of the attendee folder"
 msgstr ""
 
-#: ./roomfolder.py:16
+#: ./roomfolder.py:17
 msgid "Name of the room folder"
 msgstr ""
 
-#: ./speakerfolder.py:14
+#: ./speakerfolder.py:15
 msgid "Name of the speaker folder"
 msgstr ""
 
-#: ./common.py:12
+#: ./common.py:13
 msgid "No"
 msgstr ""
 
-#: ./attendee.py:85
-#: ./conferencespeaker.py:70
+#: ./attendee.py:80
+#: ./conferencespeaker.py:75
 msgid "Organisation"
 msgstr ""
 
-#: ./program.py:56
+#: ./program.py:57
 msgid "Organiser"
 msgstr ""
 
-#: ./attendeefolder.py:41
+#: ./attendeefolder.py:42
 msgid "Payment Options"
 msgstr ""
 
-#: ./attendee.py:45
-msgid "Payment by PayPal"
-msgstr ""
-
-#: ./attendee.py:90
+#: ./attendee.py:85
 msgid "Payment of the Registration Fee"
 msgstr ""
 
@@ -472,7 +492,7 @@ msgstr ""
 msgid "Person"
 msgstr ""
 
-#: ./conferencespeaker.py:84
+#: ./conferencespeaker.py:89
 msgid "Picture"
 msgstr ""
 
@@ -488,15 +508,15 @@ msgstr ""
 msgid "Please choose a license for your talk."
 msgstr ""
 
-#: ./room.py:37
+#: ./room.py:39
 msgid "Please fill in the maximum number of attendees"
 msgstr ""
 
-#: ./conferencespeaker.py:63
+#: ./conferencespeaker.py:68
 msgid "Please fill in your mobile telephone number so that we could get in contact with you during the conference."
 msgstr ""
 
-#: ./conferencespeaker.py:57
+#: ./conferencespeaker.py:62
 msgid "Please fill in your telephone number so that we could get in contact with you by phone if necessary."
 msgstr ""
 
@@ -505,20 +525,20 @@ msgstr ""
 msgid "Please submit this for review."
 msgstr ""
 
-#: ./conferencespeaker.py:85
-#: ./room.py:25
+#: ./conferencespeaker.py:90
+#: ./room.py:26
 msgid "Please upload an image"
 msgstr ""
 
-#: ./talk.py:202
+#: ./talk.py:208
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr ""
 
-#: ./talk.py:180
+#: ./talk.py:182
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./workshop.py:168
+#: ./workshop.py:170
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
 
@@ -527,14 +547,14 @@ msgstr ""
 msgid "Please validate the recaptcha field before sending the form."
 msgstr ""
 
-#: ./conferencebreak.py:72
-#: ./talk.py:142
-#: ./workshop.py:140
+#: ./conferencebreak.py:73
+#: ./talk.py:144
+#: ./workshop.py:142
 msgid "Position In The Track"
 msgstr ""
 
-#: ./attendee.py:66
-#: ./conferencespeaker.py:38
+#: ./attendee.py:61
+#: ./conferencespeaker.py:41
 msgid "Postal Code"
 msgstr ""
 
@@ -542,11 +562,11 @@ msgstr ""
 msgid "Presentation Slides"
 msgstr ""
 
-#: ./talk.py:179
+#: ./talk.py:181
 msgid "Presentation slides in ODT-File-Format"
 msgstr ""
 
-#: ./talk.py:185
+#: ./talk.py:188
 msgid "Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format"
 msgstr ""
 
@@ -559,15 +579,15 @@ msgstr ""
 msgid "Program"
 msgstr ""
 
-#: ./program.py:28
+#: ./program.py:29
 msgid "Program name"
 msgstr ""
 
-#: ./program.py:32
+#: ./program.py:33
 msgid "Program summary"
 msgstr ""
 
-#: ./attendeefolder.py:34
+#: ./attendeefolder.py:35
 msgid "Registration Fee?"
 msgstr ""
 
@@ -575,21 +595,26 @@ msgstr ""
 msgid "Registration fee paid:"
 msgstr ""
 
+#: ./talk.py:228
+#: ./workshop.py:179
+msgid "Review notes"
+msgstr ""
+
 #: ./program_templates/view.pt:54
 #: ./track_templates/view.pt:46
 msgid "Room"
 msgstr ""
 
-#: ./talk.py:134
+#: ./talk.py:136
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
-#: ./workshop.py:132
+#: ./workshop.py:134
 msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
-#: ./talk.py:164
-#: ./workshop.py:162
+#: ./talk.py:166
+#: ./workshop.py:164
 #: ./workshop_templates/view.pt:67
 msgid "Slides"
 msgstr ""
@@ -598,20 +623,20 @@ msgstr ""
 msgid "Speaker/Workshop Leader"
 msgstr ""
 
-#: ./conferencebreak.py:38
-#: ./program.py:36
-#: ./talk.py:150
+#: ./conferencebreak.py:39
+#: ./program.py:37
+#: ./talk.py:152
 msgid "Start date"
 msgstr ""
 
-#: ./conferencebreak.py:37
-#: ./talk.py:149
-#: ./track.py:51
+#: ./conferencebreak.py:38
+#: ./talk.py:151
+#: ./track.py:52
 msgid "Startdate"
 msgstr ""
 
-#: ./attendee.py:54
-#: ./conferencespeaker.py:26
+#: ./attendee.py:49
+#: ./conferencespeaker.py:27
 msgid "Street"
 msgstr ""
 
@@ -659,7 +684,7 @@ msgstr ""
 msgid "Talk Folder Description"
 msgstr ""
 
-#: ./talk.py:133
+#: ./talk.py:135
 #: ./talk_templates/view.pt:51
 msgid "Talk Length"
 msgstr ""
@@ -686,7 +711,7 @@ msgstr ""
 msgid "Talks"
 msgstr ""
 
-#: ./conferencespeaker.py:56
+#: ./conferencespeaker.py:61
 msgid "Telephone Number"
 msgstr ""
 
@@ -710,11 +735,11 @@ msgstr ""
 msgid "The attendee of the conference"
 msgstr ""
 
-#: ./track.py:99
+#: ./track.py:102
 msgid "The end date couldn't be set after the end of the conference program."
 msgstr ""
 
-#: ./track.py:28
+#: ./track.py:29
 msgid "The end of the track could not be set after the conference program."
 msgstr ""
 
@@ -726,21 +751,21 @@ msgstr ""
 msgid "The speaker of the conference"
 msgstr ""
 
-#: ./track.py:89
+#: ./track.py:91
 msgid "The start date could not be set before the begin of the conference program."
 msgstr ""
 
-#: ./program.py:65
-#: ./track.py:78
+#: ./program.py:66
+#: ./track.py:79
 msgid "The start date must be before the end date."
 msgstr ""
 
-#: ./track.py:24
+#: ./track.py:25
 msgid "The start of the track could not be set before the conference program."
 msgstr ""
 
-#: ./program.py:20
-#: ./track.py:20
+#: ./program.py:21
+#: ./track.py:21
 msgid "The start or end date is invalid"
 msgstr ""
 
@@ -760,11 +785,11 @@ msgstr ""
 msgid "The workshops of the conference"
 msgstr ""
 
-#: ./attendee.py:55
+#: ./attendee.py:50
 msgid "This data is mandatory and required for our internal procedures"
 msgstr ""
 
-#: ./attendee.py:61
+#: ./attendee.py:56
 msgid "This data is mandatory and required for our internal procidures"
 msgstr ""
 
@@ -776,9 +801,9 @@ msgstr ""
 msgid "Time:"
 msgstr ""
 
-#: ./conferencebreak.py:20
+#: ./conferencebreak.py:21
 #: ./talk.py:58
-#: ./track.py:36
+#: ./track.py:37
 msgid "Title"
 msgstr ""
 
@@ -792,7 +817,7 @@ msgstr ""
 msgid "To:"
 msgstr ""
 
-#: ./callforpaper.py:30
+#: ./callforpaper.py:31
 msgid "Topics for the Call for Papers"
 msgstr ""
 
@@ -802,15 +827,15 @@ msgstr ""
 msgid "Track"
 msgstr ""
 
-#: ./track.py:46
+#: ./track.py:47
 msgid "Track details"
 msgstr ""
 
-#: ./track.py:41
+#: ./track.py:42
 msgid "Track summary"
 msgstr ""
 
-#: ./track.py:37
+#: ./track.py:38
 msgid "Track title"
 msgstr ""
 
@@ -822,19 +847,19 @@ msgstr ""
 msgid "Uninstalls the collective.conferences add-on."
 msgstr ""
 
-#: ./attendee.py:106
+#: ./attendee.py:101
 msgid "Used Bank Account"
 msgstr ""
 
-#: ./talk.py:174
+#: ./talk.py:176
 msgid "Video"
 msgstr ""
 
-#: ./attendee.py:98
+#: ./attendee.py:93
 msgid "Way of Registration Fee Payment"
 msgstr ""
 
-#: ./attendee.py:79
+#: ./attendee.py:74
 msgid "We need this mandatory data to get in contact with you, if we have any questions"
 msgstr ""
 
@@ -852,7 +877,7 @@ msgstr ""
 msgid "Workshop Leader"
 msgstr ""
 
-#: ./workshop.py:131
+#: ./workshop.py:133
 #: ./workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr ""
@@ -862,7 +887,7 @@ msgstr ""
 msgid "Workshop details"
 msgstr ""
 
-#: ./workshop.py:167
+#: ./workshop.py:169
 msgid "Workshop slides / material"
 msgstr ""
 
@@ -883,17 +908,17 @@ msgstr ""
 msgid "Write information about the conference"
 msgstr ""
 
-#: ./common.py:13
+#: ./common.py:14
 msgid "Yes"
 msgstr ""
 
 #: ./createnewtalk.py:114
-#: ./talk.py:110
+#: ./talk.py:111
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
 msgstr ""
 
 #: ./createnewworkshop.py:114
-#: ./workshop.py:122
+#: ./workshop.py:123
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr ""
 
@@ -901,7 +926,7 @@ msgstr ""
 msgid "You can submit a new talk or workshop by following one of the following links. They will open a form with the necessary entries to create a new conference talk or workshop proposal:"
 msgstr ""
 
-#: ./conferencespeaker.py:50
+#: ./conferencespeaker.py:55
 msgid "Your email address"
 msgstr ""
 
@@ -917,7 +942,7 @@ msgstr ""
 msgid "and the following workshops:"
 msgstr ""
 
-#: ./attendeefolder.py:23
+#: ./attendeefolder.py:24
 msgid "attendee folder description"
 msgstr ""
 
@@ -933,11 +958,11 @@ msgstr ""
 msgid "collective.conferences (uninstall)"
 msgstr ""
 
-#: ./roomfolder.py:20
+#: ./roomfolder.py:21
 msgid "roomfolder description"
 msgstr ""
 
-#: ./speakerfolder.py:18
+#: ./speakerfolder.py:19
 msgid "speakerfolder description"
 msgstr ""
 

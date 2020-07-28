@@ -5,6 +5,7 @@ from plone import api
 from plone.app.textfield import RichText
 from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
 
@@ -16,30 +17,30 @@ class IAttendeefolder(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Name of the attendee folder'),
+        title=_(safe_unicode('Name of the attendee folder')),
     )
 
     description = schema.Text(
-        title=_(u'attendee folder description'),
+        title=_(safe_unicode('attendee folder description')),
         required=False,
     )
 
     primary('moreinformation')
     moreinformation = RichText(
-        title=_(u'Information about registration process'),
+        title=_(safe_unicode('Information about registration process')),
         required=False,
     )
 
     conferencefee = schema.Choice(
-        title=_(u'Registration Fee?'),
-        description=_(u'Have one to pay a registration fee?'),
+        title=_(safe_unicode('Registration Fee?')),
+        description=_(safe_unicode('Have one to pay a registration fee?')),
         vocabulary=yesnochoice,
         required=True,
     )
 
     paymentoptions = schema.List(
-        title=_(u'Payment Options'),
-        description=_(u'Fill in one payment option per line.'),
+        title=_(safe_unicode('Payment Options')),
+        description=_(safe_unicode('Fill in one payment option per line.')),
         default=['Bank one',
                  'Bank two'],
         value_type=schema.TextLine(),

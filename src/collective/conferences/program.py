@@ -10,6 +10,7 @@ from plone.app.z3cform.widget import AjaxSelectFieldWidget
 from plone.autoform import directives
 from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
 from zope.interface import Invalid
@@ -17,7 +18,7 @@ from zope.interface import invariant
 
 
 class StartBeforeEnd(Invalid):
-    __doc__ = _(u'The start or end date is invalid')
+    __doc__ = _(safe_unicode('The start or end date is invalid'))
 
 
 class IProgram(model.Schema):
@@ -25,36 +26,36 @@ class IProgram(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Program name'),
+        title=_(safe_unicode('Program name')),
     )
 
     description = schema.Text(
-        title=_(u'Program summary'),
+        title=_(safe_unicode('Program summary')),
     )
 
     start = schema.Datetime(
-        title=_(u'Start date'),
+        title=_(safe_unicode('Start date')),
         required=False,
         defaultFactory=startDefaultValue,
     )
 
     end = schema.Datetime(
-        title=_(u'End date'),
+        title=_(safe_unicode('End date')),
         required=False,
         defaultFactory=endDefaultValue,
     )
 
     primary('details')
     details = RichText(
-        title=_(u'Details'),
-        description=_(u'Details about the program'),
+        title=_(safe_unicode('Details')),
+        description=_(safe_unicode('Details about the program')),
         required=False,
     )
 
     directives.widget(organizer=AjaxSelectFieldWidget)
     organizer = schema.Choice(
-        title=_(u'Organiser'),
-        vocabulary=u'plone.app.vocabularies.Users',
+        title=_(safe_unicode('Organiser')),
+        vocabulary=safe_unicode('plone.app.vocabularies.Users'),
         required=False,
     )
 
@@ -63,7 +64,8 @@ class IProgram(model.Schema):
         if data.start is not None and data.end is not None:
             if data.start > data.end:
                 raise StartBeforeEnd(_(
-                    u'The start date must be before the end date.'))
+                    safe_unicode(
+                        'The start date must be before the end date.')))
 
 
 # Views

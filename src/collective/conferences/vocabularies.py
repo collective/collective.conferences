@@ -79,7 +79,7 @@ class ConferenceTrackVocabulary(object):
             terms.append(SimpleTerm(
                 value=brain.getObject(),
                 token=brain.UID,
-                title=u'{0} ({1})'.format(brain.Title, brain.getPath()),
+                title=safe_unicode('{0} ({1})').format(brain.Title, brain.getPath()),
             ))
         return SimpleVocabulary(terms)
 

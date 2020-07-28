@@ -53,22 +53,22 @@ class IWorkshop(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Title'),
-        description=_(u'Workshop title'),
+        title=_(safe_unicode('Title')),
+        description=_(safe_unicode('Workshop title')),
     )
 
     description = schema.Text(
-        title=_(u'Workshop summary'),
+        title=_(safe_unicode('Workshop summary')),
     )
 
     primary('details')
     details = RichText(
-        title=_(u'Workshop details'),
+        title=_(safe_unicode('Workshop details')),
         required=False,
     )
 
     speaker = RelationList(
-        title=_(u'Workshop Leader'),
+        title=_(safe_unicode('Workshop Leader')),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
         required=False,
@@ -82,23 +82,24 @@ class IWorkshop(model.Schema):
     dexteritytextindexer.searchable('call_for_paper_topics')
     directives.widget(call_for_paper_topic=RadioFieldWidget)
     call_for_paper_topic = schema.List(
-        title=_(u'Choose the topic for your workshop'),
+        title=_(safe_unicode('Choose the topic for your workshop')),
         value_type=schema.Choice(source=vocabCfPTopics),
         required=True,
     )
 
     directives.widget(planedworkshoplength=RadioFieldWidget)
     planedworkshoplength = schema.List(
-        title=_(u'Planed Length'),
-        description=_(u"Give an estimation about the time you'd plan for your workshop."),
+        title=_(safe_unicode('Planed Length')),
+        description=_(safe_unicode(
+            "Give an estimation about the time you'd plan for your workshop.")),
         value_type=schema.Choice(source='WorkshopLength'),
         required=True,
     )
 
     directives.widget(license=RadioFieldWidget)
     license = schema.List(
-        title=_(u'License Of Your Talk'),
-        description=_(u'Choose a license for your talk'),
+        title=_(safe_unicode('License Of Your Talk')),
+        description=_(safe_unicode('Choose a license for your talk')),
         value_type=schema.Choice(source='ContentLicense'),
         required=True,
     )
@@ -106,7 +107,7 @@ class IWorkshop(model.Schema):
     read_permission(conferencetrack='cmf.ReviewPortalContent')
     write_permission(conferencetrack='cmf.ReviewPortalContent')
     conferencetrack = RelationList(
-        title=_(u'Choose the track for this talk'),
+        title=_(safe_unicode('Choose the track for this talk')),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceTrack'),
         required=False,
@@ -118,9 +119,10 @@ class IWorkshop(model.Schema):
     )
 
     messagetocommittee = schema.Text(
-        title=_(u'Messages to the Program Committee'),
-        description=_(
-            u'You can give some information to the committee here, e.g. about days you are (not) available to give the workshop'),
+        title=_(safe_unicode('Messages to the Program Committee')),
+        description=_(safe_unicode(
+            'You can give some information to the committee here, e.g. about days you are (not) '
+            'available to give the workshop')),
         required=False,
     )
 
@@ -128,8 +130,8 @@ class IWorkshop(model.Schema):
     write_permission(workshoplength='cmf.ReviewPortalContent')
     directives.widget(workshoplength=RadioFieldWidget)
     workshoplength = schema.List(
-        title=_(u'Workshop Length'),
-        description=_(u'Set a time frame for the workshop in minutes.'),
+        title=_(safe_unicode('Workshop Length')),
+        description=_(safe_unicode('Set a time frame for the workshop in minutes.')),
         value_type=schema.Choice(source='WorkshopLength'),
         required=False,
     )
@@ -137,44 +139,44 @@ class IWorkshop(model.Schema):
     read_permission(positionintrack='cmf.ReviewPortalContent')
     write_permission(positionintrack='cmf.ReviewPortalContent')
     positionintrack = schema.Int(
-        title=_(u'Position In The Track'),
-        description=_(u'Choose a number for the order in the track'),
+        title=_(safe_unicode('Position In The Track')),
+        description=_(safe_unicode('Choose a number for the order in the track')),
         required=False,
     )
 
     write_permission(startitem='collective.conferences.ModifyTalktime')
     startitem = schema.Datetime(
-        title=_(u'Startdate'),
-        description=_(u'Start date'),
+        title=_(safe_unicode('Startdate')),
+        description=_(safe_unicode('Start date')),
         defaultFactory=startDefaultValue,
         required=False,
     )
 
     write_permission(enditem='collective.conferences.ModifyTalktime')
     enditem = schema.Datetime(
-        title=_(u'Enddate'),
-        description=_(u'End date'),
+        title=_(safe_unicode('Enddate')),
+        description=_(safe_unicode('End date')),
         defaultFactory=endDefaultValue,
         required=False,
     )
 
     model.fieldset('slides',
-                   label=_(u'Slides'),
+                   label=_(safe_unicode('Slides')),
                    fields=['slides'],
                    )
 
     slides = NamedBlobFile(
-        title=_(u'Workshop slides / material'),
-        description=_(
-            u'Please upload your workshop presentation or material about the content of the workshop '
-            u'in front or short after you have given the workshop.'),
+        title=_(safe_unicode('Workshop slides / material')),
+        description=_(safe_unicode(
+            'Please upload your workshop presentation or material about the content of the workshop '
+            'in front or short after you have given the workshop.')),
         required=False,
     )
 
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')
     reviewNotes = schema.Text(
-        title=u'Review notes',
+        title=_(safe_unicode('Review notes')),
         required=False,
     )
 

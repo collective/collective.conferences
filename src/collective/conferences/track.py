@@ -7,6 +7,7 @@ from plone.app.textfield import RichText
 from plone.autoform import directives
 from plone.supermodel import model
 from plone.supermodel.directives import primary
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
@@ -17,15 +18,15 @@ from zope.interface import invariant
 
 
 class StartBeforeEnd(Invalid):
-    __doc__ = _(u'The start or end date is invalid')
+    __doc__ = _(safe_unicode('The start or end date is invalid'))
 
 
 class StartBeforeConferenceProgram(Invalid):
-    __doc__ = _(u'The start of the track could not be set before the conference program.')
+    __doc__ = _(safe_unicode('The start of the track could not be set before the conference program.'))
 
 
 class EndAfterConferenceProgram(Invalid):
-    __doc__ = _(u'The end of the track could not be set after the conference program.')
+    __doc__ = _(safe_unicode('The end of the track could not be set after the conference program.'))
 
 
 class ITrack(model.Schema):
@@ -33,34 +34,34 @@ class ITrack(model.Schema):
     """
 
     title = schema.TextLine(
-        title=_(u'Title'),
-        description=_(u'Track title'),
+        title=_(safe_unicode('Title')),
+        description=_(safe_unicode('Track title')),
     )
 
     description = schema.Text(
-        title=_(u'Track summary'),
+        title=_(safe_unicode('Track summary')),
     )
 
     primary('details')
     details = RichText(
-        title=_(u'Track details'),
+        title=_(safe_unicode('Track details')),
         required=False,
     )
 
     trackstart = schema.Datetime(
-        title=_(u'Startdate'),
-        description=_(u'Start date'),
+        title=_(safe_unicode('Startdate')),
+        description=_(safe_unicode('Start date')),
         required=False,
     )
 
     trackend = schema.Datetime(
-        title=_(u'Enddate'),
-        description=_(u'End date'),
+        title=_(safe_unicode('Enddate')),
+        description=_(safe_unicode('End date')),
         required=False,
     )
 
     room = RelationList(
-        title=_(u'Choose the room for the track'),
+        title=_(safe_unicode('Choose the room for the track')),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceRoom'),
         required=False,
@@ -76,7 +77,8 @@ class ITrack(model.Schema):
         if data.trackstart is not None and data.trackend is not None:
             if data.trackstart > data.trackend:
                 raise StartBeforeEnd(_(
-                    u'The start date must be before the end date.'))
+                    safe_unicode(
+                        'The start date must be before the end date.')))
 
     @invariant
     def validateStartNotBeforeProgram(data):
@@ -86,7 +88,8 @@ class ITrack(model.Schema):
             trackstart = DateTime(data.trackstart).toZone('UTC')
             if DateTime(trackstart) < DateTime(result[0]):
                 raise StartBeforeConferenceProgram(
-                    _(u'The start date could not be set before the begin of the conference program.'))
+                    _(safe_unicode(
+                        'The start date could not be set before the begin of the conference program.')))
 
     @invariant
     def validateEndNotAfterProgram(data):
@@ -96,7 +99,7 @@ class ITrack(model.Schema):
             trackend = DateTime(data.trackend).toZone('UTC')
             if DateTime(trackend) > DateTime(result[0]):
                 raise EndAfterConferenceProgram(
-                    _(u"The end date couldn't be set after the end of the conference program."))
+                    _(safe_unicode("The end date couldn't be set after the end of the conference program.")))
 
 
 # def setdates(item):

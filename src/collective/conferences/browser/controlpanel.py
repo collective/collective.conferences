@@ -62,6 +62,13 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
+    allowed_conferenceimageextension = schema.TextLine(
+        title=_(safe_unicode('Allowed image file extension')),
+        description=_(safe_unicode('Fill in the allowed image file extensions, seperated '
+                                   "by a pipe '|'.")),
+        default=safe_unicode('jpg|jpeg|png|gif'),
+    )
+
 
 class CollectiveconferenceControlPanelForm(RegistryEditForm):
     schema = ICollectiveconferenceControlPanel

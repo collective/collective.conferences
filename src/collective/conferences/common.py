@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from plone import api
 from Products.CMFPlone.utils import safe_unicode
 from zope.interface import Invalid
 from zope.schema.vocabulary import SimpleTerm
@@ -7,7 +8,6 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 import datetime
 import re
-
 
 yesnochoice = SimpleVocabulary(
     [SimpleTerm(value=0, title=_(u'No')),
@@ -32,3 +32,7 @@ def validateEmail(value):
         raise Invalid(_(
             safe_unicode('Invalid email address')))
     return True
+
+
+def allowedconferenceimageextensions():
+    return api.portal.get_registry_record('collectiveconference.allowed_conferenceimageextension').replace('|', ', ')

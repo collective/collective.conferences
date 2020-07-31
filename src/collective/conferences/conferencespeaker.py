@@ -2,6 +2,7 @@
 from collective.conferences import _
 from collective.conferences.common import validateEmail
 from collective.conferences.common import validateimagefileextension
+from collective.conferences.common import validatePhoneNumber
 from plone import api
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedBlobImage
@@ -65,6 +66,7 @@ class IConferenceSpeaker(model.Schema):
         title=_(safe_unicode('Telephone Number')),
         description=_(safe_unicode(
             'Please fill in your telephone number so that we could get in contact with you by phone if necessary.')),
+        constraint=validatePhoneNumber,
         required=False,
     )
     mobiletelepone = schema.TextLine(

@@ -49,3 +49,14 @@ def validateimagefileextension(value):
             'Please try again to upload a file with the correct file'
             'extension.'))
     return True
+
+
+checkphonenumber = re.compile(
+    r'[+]{1}[0-9]{7}').match
+
+
+def validatePhoneNumber(value):
+    if not checkphonenumber(value):
+        raise Invalid(_(
+            safe_unicode('Invalid phone number')))
+    return True

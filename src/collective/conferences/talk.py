@@ -50,6 +50,16 @@ class ChooseLicense(Invalid):
         'Please choose a license for your talk.'))
 
 
+class ChooseCfpTopic(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a call for paper topic for your talk.'))
+
+
+class ChoosePlanedLength(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a planed length for your talk.'))
+
+
 class ITalk(model.Schema):
     """A conference talk. Talks are managed inside tracks of the Program.
     """
@@ -234,6 +244,22 @@ class ITalk(model.Schema):
         if not data.license:
             raise ChooseLicense(
                 _(safe_unicode('Please choose a license for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validatecfptopicchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChooseCfpTopic(
+                _(safe_unicode('Please choose a call for paper topic for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validateplanedlengthchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChoosePlanedLength(
+                _(safe_unicode('Please choose a planed length for your talk.'),
                   ),
             )
 

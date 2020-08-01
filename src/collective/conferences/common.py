@@ -39,8 +39,24 @@ def allowedconferenceimageextensions():
     return api.portal.get_registry_record('collectiveconference.allowed_conferenceimageextension').replace('|', ', ')
 
 
+def allowedconferenceworkshopmaterialextensions():
+    return api.portal.get_registry_record('collectiveconference.allowed_workshop_material_extension').replace('|', ', ')
+
+
 def validateimagefileextension(value):
     result = str(api.portal.get_registry_record('collectiveconference.allowed_conferenceimageextension'))
+    pattern = r'^.*\.({0})'.format(result[0])
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(safe_unicode(
+            'You could only upload files with an allowed file extension. '
+            'Please try again to upload a file with the correct file'
+            'extension.'))
+    return True
+
+
+def validateworkshopmaterialfileextension(value):
+    result = str(api.portal.get_registry_record('collectiveconference.allowed_workshop_material_extension'))
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):

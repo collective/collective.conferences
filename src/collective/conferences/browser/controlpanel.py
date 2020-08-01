@@ -69,6 +69,13 @@ class ICollectiveconferenceControlPanel(Interface):
         default=safe_unicode('jpg|jpeg|png|gif'),
     )
 
+    allowed_workshop_material_extension = schema.TextLine(
+        title=_(safe_unicode('Allowed workshop material / presentation file extensions')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the material of or'
+                                   "slides of a workshop, seperated by a pipe '|'.")),
+        default=safe_unicode('otp|pdf|zip'),
+    )
+
 
 class CollectiveconferenceControlPanelForm(RegistryEditForm):
     schema = ICollectiveconferenceControlPanel

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import endDefaultValue
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validatevideofileextension
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -184,7 +186,8 @@ class ITalk(model.Schema):
 
     model.fieldset('video',
                    label=_(safe_unicode('Video')),
-                   fields=['video'],
+                   fields=['videofileextension',
+                           'video'],
                    )
 
     slides = NamedBlobFile(
@@ -227,8 +230,17 @@ class ITalk(model.Schema):
         required=False,
     )
 
+    directives.mode(videofileextension='display')
+    videofileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for conference '
+            'video uploads (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencevideoextensions,
+    )
+
     video = schema.URI(
         title=_(safe_unicode('Link to the Video of the talk')),
+        constraint=validatevideofileextension,
         required=False,
     )
 

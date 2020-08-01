@@ -3,8 +3,10 @@ from Acquisition import aq_inner
 from Acquisition import aq_parent
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferenceworkshopmaterialextensions
 from collective.conferences.common import endDefaultValue
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validateworkshopmaterialfileextension
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -45,7 +47,17 @@ directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 class ChooseLicense(Invalid):
     __doc__ = _(safe_unicode(
-        'Please choose a license for your talk.'))
+        'Please choose a license for your workshop.'))
+
+
+class ChooseCfpTopic(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a call for paper topic for your workshop.'))
+
+
+class ChoosePlanedLength(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a planed length for your workshop.'))
 
 
 class IWorkshop(model.Schema):
@@ -162,14 +174,24 @@ class IWorkshop(model.Schema):
 
     model.fieldset('slides',
                    label=_(safe_unicode('Slides')),
-                   fields=['slides'],
+                   fields=['materialfileextension',
+                           'slides'],
                    )
+
+    directives.mode(materialfileextension='display')
+    materialfileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for workshop '
+            'material uploads (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferenceworkshopmaterialextensions,
+    )
 
     slides = NamedBlobFile(
         title=_(safe_unicode('Workshop slides / material')),
         description=_(safe_unicode(
             'Please upload your workshop presentation or material about the content of the workshop '
             'in front or short after you have given the workshop.')),
+        constraint=validateworkshopmaterialfileextension,
         required=False,
     )
 
@@ -185,6 +207,22 @@ class IWorkshop(model.Schema):
         if not data.license:
             raise ChooseLicense(
                 _(safe_unicode('Please choose a license for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validatecfptopicchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChooseCfpTopic(
+                _(safe_unicode('Please choose a call for paper topic for your workshop.'),
+                  ),
+            )
+
+    @invariant
+    def validateplanedlengthchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChoosePlanedLength(
+                _(safe_unicode('Please choose a planed length for your workshop.'),
                   ),
             )
 

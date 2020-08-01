@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from collective.conferences.common import allowedconferenceimageextensions
 from collective.conferences.common import validateEmail
 from collective.conferences.common import validateimagefileextension
 from collective.conferences.common import validatePhoneNumber
 from plone import api
 from plone.app.textfield import RichText
+from plone.autoform import directives
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.CMFPlone.utils import safe_unicode
@@ -72,6 +74,7 @@ class IConferenceSpeaker(model.Schema):
         description=_(safe_unicode(
             'Please fill in your mobile telephone number so that we could get in contact with you '
             'during the conference.')),
+        constraint=validatePhoneNumber,
         required=True,
     )
 
@@ -88,6 +91,14 @@ class IConferenceSpeaker(model.Schema):
     bio = RichText(
         title=_(safe_unicode('Bio')),
         required=False,
+    )
+
+    directives.mode(speakerpicture='display')
+    speakerpicture = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the picture '
+            'files (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferenceimageextensions,
     )
 
     picture = NamedBlobImage(

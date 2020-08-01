@@ -68,7 +68,7 @@ def validateworkshopmaterialfileextension(value):
 
 
 checkphonenumber = re.compile(
-    r'[+]{1}[0-9]{7}').match
+    r'[+]{1}[0-9]{7,}').match
 
 
 def validatePhoneNumber(value):

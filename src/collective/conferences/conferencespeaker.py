@@ -10,8 +10,6 @@ from plone.supermodel import model
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zope import schema
-from zope.interface import Invalid
-from zope.interface import invariant
 
 
 class IConferenceSpeaker(model.Schema):
@@ -98,41 +96,6 @@ class IConferenceSpeaker(model.Schema):
         constraint=validateimagefileextension,
         required=False,
     )
-
-
-@invariant
-def noflastname(value):
-    if not value.lastname:
-        raise Invalid(_(safe_unicode(
-            'Please add your last name / family name.')))
-
-
-@invariant
-def nofirstname(value):
-    if not value.firstname:
-        raise Invalid(_(safe_unicode(
-            'Please add your first name.')))
-
-
-@invariant
-def noemail(value):
-    if not value.email:
-        raise Invalid(_(safe_unicode(
-            'Please add your enail address.')))
-
-
-@invariant
-def nomobilphonenumber(value):
-    if not value.mobiletelepone:
-        raise Invalid(_(safe_unicode(
-            'Please add a mobile phone number.')))
-
-
-@invariant
-def noshortbio(value):
-    if not value.description:
-        raise Invalid(_(safe_unicode(
-            'Please add a short bio.')))
 
 
 def notifyUser(self, event):

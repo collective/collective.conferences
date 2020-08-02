@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferencetalkslideextensions
 from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import endDefaultValue
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validatelinkedtalkslidefileextension
+from collective.conferences.common import validatetalkslidefileextension
 from collective.conferences.common import validatevideofileextension
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
@@ -176,7 +179,7 @@ class ITalk(model.Schema):
 
     model.fieldset('slides',
                    label=_(safe_unicode('Slides')),
-                   fields=['slides', 'slides2', 'slides3', 'slides4'],
+                   fields=['slidefileextension', 'slides', 'slides2', 'slides3', 'slides4'],
                    )
 
     model.fieldset('files',
@@ -190,29 +193,42 @@ class ITalk(model.Schema):
                            'video'],
                    )
 
+
+    directives.mode(slidefileextension='display')
+    slidefileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the upload of '
+            'slides of conference talks (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencetalkslideextensions,
+    )
+
     slides = NamedBlobFile(
-        title=_(safe_unicode('Presentation slides in ODT-File-Format')),
+        title=_(safe_unicode('Presentation slides')),
         description=_(safe_unicode(
             'Please upload your presentation shortly after you have given your talk.')),
+        constraint=validatetalkslidefileextension,
         required=False,
     )
 
     slides2 = NamedBlobFile(
         title=_(safe_unicode(
-            'Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format')),
+            'Presentation Slides In Further File Format')),
         description=_(safe_unicode(
             'Please upload your presentation shortly after you have given your talk.')),
+        conferencetrack=validatetalkslidefileextension,
         required=False,
     )
 
     slides3 = schema.URI(
-        title=_(safe_unicode('Link to the presentation slides in ODT-File-Format')),
+        title=_(safe_unicode('Link To The Presentation Slides')),
+        constraint=validatelinkedtalkslidefileextension,
         required=False,
     )
 
     slides4 = schema.URI(
         title=_(safe_unicode(
-            'Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format')),
+            'Link To The Presentation Sslides In Further File Format')),
+        constraint=validatelinkedtalkslidefileextension,
         required=False,
     )
 

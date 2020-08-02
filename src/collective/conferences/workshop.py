@@ -182,7 +182,7 @@ class IWorkshop(model.Schema):
                            'slides2',
                            'slides3',
                            'slides4',
-                           'material'
+                           'material',
                            ],
                    )
 
@@ -200,7 +200,7 @@ class IWorkshop(model.Schema):
         description=_(safe_unicode(
             'If you used slides during your workshop, please upload your '
             'slides shortly after you have given your workshop.')),
-        constraint=validateworshopslidefileextension
+        constraint=validateworshopslidefileextension,
     )
 
     slides2 = NamedBlobFile(

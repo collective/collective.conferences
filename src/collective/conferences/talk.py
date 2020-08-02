@@ -193,7 +193,6 @@ class ITalk(model.Schema):
                            'video'],
                    )
 
-
     directives.mode(slidefileextension='display')
     slidefileextension = schema.TextLine(
         title=_(safe_unicode(

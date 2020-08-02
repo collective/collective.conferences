@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferencetalkmaterialextensions
 from collective.conferences.common import allowedconferencetalkslideextensions
 from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import endDefaultValue
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validatelinkedtalkmaterialfileextension
 from collective.conferences.common import validatelinkedtalkslidefileextension
+from collective.conferences.common import validatetalkmaterialfileextension
 from collective.conferences.common import validatetalkslidefileextension
 from collective.conferences.common import validatevideofileextension
 from plone import api
@@ -232,17 +235,29 @@ class ITalk(model.Schema):
         required=False,
     )
 
+    directives.mode(fileextension='display')
+    fileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the upload of '
+            'material or additional files for conference talks as well as '
+            'for linked material/ additional files '
+            '(upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencetalkmaterialextensions,
+    )
+
     files = NamedBlobFile(
         title=_(safe_unicode('Additional Files of your presentation.')),
         description=_(safe_unicode(
             'Please upload the additional files of your presentation (in archive format) '
             'shortly after you have given your talk.')),
+        constraint=validatetalkmaterialfileextension,
         required=False,
     )
 
     files2 = schema.URI(
         title=_(safe_unicode(
-            'Link to additional Files of your presentation in archive file format (e.g. zip-file-format).')),
+            'Link to additional Files of your presentation in the correct file format (see for it above).')),
+        constraint=validatelinkedtalkmaterialfileextension,
         required=False,
     )
 

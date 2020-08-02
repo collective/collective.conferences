@@ -228,7 +228,7 @@ class ITalk(model.Schema):
 
     slides4 = schema.URI(
         title=_(safe_unicode(
-            'Link To The Presentation Sslides In Further File Format')),
+            'Link To The Presentation Slides In Further File Format')),
         constraint=validatelinkedtalkslidefileextension,
         required=False,
     )

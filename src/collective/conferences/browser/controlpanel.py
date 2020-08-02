@@ -76,6 +76,13 @@ class ICollectiveconferenceControlPanel(Interface):
         default=safe_unicode('odp|pdf'),
     )
 
+    allowed_workshop_slide_extensions = schema.TextLine(
+        title=_(safe_unicode('Allowed file extensions for slides of conference workshops')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of'
+                                   "conference workshops, seperated by a pipe '|'.")),
+        default=safe_unicode('odp|pdf'),
+    )
+
     allowed_workshop_material_extension = schema.TextLine(
         title=_(safe_unicode('Allowed workshop material / presentation file extensions')),
         description=_(safe_unicode('Fill in the allowed file extensions for the material of or'

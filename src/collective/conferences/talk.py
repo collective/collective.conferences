@@ -198,7 +198,8 @@ class ITalk(model.Schema):
     slidefileextension = schema.TextLine(
         title=_(safe_unicode(
             'The following file extensions are allowed for the upload of '
-            'slides of conference talks (upper case and lower case and mix of both):')),
+            'slides of conference talks as well as for linked slides '
+            '(upper case and lower case and mix of both):')),
         defaultFactory=allowedconferencetalkslideextensions,
     )
 

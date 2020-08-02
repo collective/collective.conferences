@@ -111,7 +111,7 @@ def validatelinkedtalkmaterialfileextension(value):
     result = str(api.portal.get_registry_record('collectiveconference.allowed_talk_material_extension'))
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
-    if not matches(value.):
+    if not matches(value):
         raise Invalid(safe_unicode(
             'You could only link to files with an allowed file extension. '
             'Please try again with a link to a file with the correct file'

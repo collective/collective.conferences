@@ -4,9 +4,12 @@ from Acquisition import aq_parent
 from collective import dexteritytextindexer
 from collective.conferences import _
 from collective.conferences.common import allowedconferenceworkshopmaterialextensions
+from collective.conferences.common import allowedconferenceworkshopslideextensions
 from collective.conferences.common import endDefaultValue
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validatelinkedworkshopslidefileextension
 from collective.conferences.common import validateworkshopmaterialfileextension
+from collective.conferences.common import validateworshopslidefileextension
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -174,9 +177,54 @@ class IWorkshop(model.Schema):
 
     model.fieldset('slides',
                    label=_(safe_unicode('Slides')),
-                   fields=['materialfileextension',
-                           'slides'],
+                   fields=['slidefileextension',
+                           'slides',
+                           'slides2',
+                           'slides3',
+                           'slides4',
+                           'material'
+                           ],
                    )
+
+    directives.mode(slidefileextension='display')
+    slidefileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the upload of '
+            'slides of conference workshop as well as for linked slides '
+            '(upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferenceworkshopslideextensions,
+    )
+
+    slides = NamedBlobFile(
+        title=_(safe_unicode('Presentation slides')),
+        description=_(safe_unicode(
+            'If you used slides during your workshop, please upload your '
+            'slides shortly after you have given your workshop.')),
+        constraint=validateworshopslidefileextension
+    )
+
+    slides2 = NamedBlobFile(
+        title=_(safe_unicode(
+            'Presentation Slides In Further File Format')),
+        description=_(safe_unicode(
+            'If you used slides during your workshop, please upload your '
+            'slides shortly after you have given your workshop.')),
+        conferencetrack=validateworshopslidefileextension,
+        required=False,
+    )
+
+    slides3 = schema.URI(
+        title=_(safe_unicode('Link To The Presentation Slides')),
+        constraint=validatelinkedworkshopslidefileextension,
+        required=False,
+    )
+
+    slides4 = schema.URI(
+        title=_(safe_unicode(
+            'Link To The Presentation Slides In Further File Format')),
+        constraint=validatelinkedworkshopslidefileextension,
+        required=False,
+    )
 
     directives.mode(materialfileextension='display')
     materialfileextension = schema.TextLine(
@@ -186,7 +234,7 @@ class IWorkshop(model.Schema):
         defaultFactory=allowedconferenceworkshopmaterialextensions,
     )
 
-    slides = NamedBlobFile(
+    material = NamedBlobFile(
         title=_(safe_unicode('Workshop slides / material')),
         description=_(safe_unicode(
             'Please upload your workshop presentation or material about the content of the workshop '

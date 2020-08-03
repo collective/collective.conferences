@@ -217,6 +217,10 @@
         factory="collective.conferences.talk.ValidateTalkUniqueness"
     />
 
+    <adapter
+        factory="collective.conferences.workshop.ValidateWorkshopUniqueness"
+    />
+
 
     <adapter
       factory=".createnewtalk.ReCaptcha"

@@ -6,6 +6,7 @@ from collective.conferences import _
 from collective.conferences.common import allowedconferenceworkshopmaterialextensions
 from collective.conferences.common import allowedconferenceworkshopslideextensions
 from collective.conferences.common import endDefaultValue
+from collective.conferences.common import quote_chars
 from collective.conferences.common import startDefaultValue
 from collective.conferences.common import validatelinkedworkshopslidefileextension
 from collective.conferences.common import validateworkshopmaterialfileextension
@@ -22,6 +23,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from z3c.form import validator
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -302,6 +304,30 @@ def newworkshopadded(self, event):
                 self.title, self.description, details,
                 length, cfp, self.messagetocommittee),
         )
+
+
+class ValidateWorkshopUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of project titles.
+
+    def validate(self, value):
+        # Perform the standard validation first
+
+        super(ValidateWorkshopUniqueness, self).validate(value)
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': quote_chars(value),
+                               'object_provides':
+                                   IWorkshop.__identifier__})
+            contextUUID = api.content.get_uuid(self.context)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u'The talk title is already in use.'))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateWorkshopUniqueness,
+    field=IWorkshop['title'],
+)
 
 
 class WorkshopView(BrowserView):

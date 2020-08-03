@@ -209,7 +209,7 @@ class IWorkshop(model.Schema):
         description=_(safe_unicode(
             'If you used slides during your workshop, please upload your '
             'slides shortly after you have given your workshop.')),
-        conferencetrack=validateworshopslidefileextension,
+        constraint=validateworshopslidefileextension,
         required=False,
     )
 

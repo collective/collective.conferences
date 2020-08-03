@@ -176,3 +176,17 @@ def validatePhoneNumber(value):
         raise Invalid(_(
             safe_unicode('Invalid phone number')))
     return True
+
+
+MULTISPACE = u'\u3000'
+
+
+def quote_chars(value):
+    # We need to quote parentheses when searching text indices
+    if '(' in value:
+        value = value.replace('(', '"("')
+    if ')' in value:
+        value = value.replace(')', '")"')
+    if MULTISPACE in value:
+        value = value.replace(MULTISPACE, ' ')
+    return value

@@ -62,6 +62,48 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
+    allowed_conferenceimageextension = schema.TextLine(
+        title=_(safe_unicode('Allowed image file extension')),
+        description=_(safe_unicode('Fill in the allowed image file extensions, seperated '
+                                   "by a pipe '|'.")),
+        default=safe_unicode('jpg|jpeg|png|gif'),
+    )
+
+    allowed_talk_slide_extensions = schema.TextLine(
+        title=_(safe_unicode('Allowed file extensions for slides of conference talks')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of'
+                                   "conference talks, seperated by a pipe '|'.")),
+        default=safe_unicode('odp|pdf'),
+    )
+
+    allowed_workshop_slide_extensions = schema.TextLine(
+        title=_(safe_unicode('Allowed file extensions for slides of conference workshops')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of'
+                                   "conference workshops, seperated by a pipe '|'.")),
+        default=safe_unicode('odp|pdf'),
+    )
+
+    allowed_talk_material_extension = schema.TextLine(
+        title=_(safe_unicode('Allowed File Extensions For Talk Material / Additonal Files')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the material or'
+                                   "additional files of a conference talk, seperated by a pipe '|'.")),
+        default=safe_unicode('otp|pdf|zip'),
+    )
+
+    allowed_workshop_material_extension = schema.TextLine(
+        title=_(safe_unicode('Allowed workshop material file extensions')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the material, '
+                                   "seperated by a pipe '|'.")),
+        default=safe_unicode('otp|pdf|zip'),
+    )
+
+    allowed_video_file_extensions = schema.TextLine(
+        title=_(safe_unicode('Allowed file exensions for conference videos.')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the videos of '
+                                   "conference talks / workshops, separated by a pipe '|'.")),
+        default=safe_unicode('mp4|mpg'),
+    )
+
 
 class CollectiveconferenceControlPanelForm(RegistryEditForm):
     schema = ICollectiveconferenceControlPanel

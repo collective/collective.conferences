@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferencetalkmaterialextensions
+from collective.conferences.common import allowedconferencetalkslideextensions
+from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import endDefaultValue
+from collective.conferences.common import quote_chars
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validatelinkedtalkmaterialfileextension
+from collective.conferences.common import validatelinkedtalkslidefileextension
+from collective.conferences.common import validatetalkmaterialfileextension
+from collective.conferences.common import validatetalkslidefileextension
+from collective.conferences.common import validatevideofileextension
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -15,6 +24,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from z3c.form import validator
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -48,6 +58,16 @@ directlyProvides(vocabCfPTopics, IContextSourceBinder)
 class ChooseLicense(Invalid):
     __doc__ = _(safe_unicode(
         'Please choose a license for your talk.'))
+
+
+class ChooseCfpTopic(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a call for paper topic for your talk.'))
+
+
+class ChoosePlanedLength(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a planed length for your talk.'))
 
 
 class ITalk(model.Schema):
@@ -164,7 +184,7 @@ class ITalk(model.Schema):
 
     model.fieldset('slides',
                    label=_(safe_unicode('Slides')),
-                   fields=['slides', 'slides2', 'slides3', 'slides4'],
+                   fields=['slidefileextension', 'slides', 'slides2', 'slides3', 'slides4'],
                    )
 
     model.fieldset('files',
@@ -174,33 +194,57 @@ class ITalk(model.Schema):
 
     model.fieldset('video',
                    label=_(safe_unicode('Video')),
-                   fields=['video'],
+                   fields=['videofileextension',
+                           'video'],
                    )
 
+    directives.mode(slidefileextension='display')
+    slidefileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the upload of '
+            'slides of conference talks as well as for linked slides '
+            '(upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencetalkslideextensions,
+    )
+
     slides = NamedBlobFile(
-        title=_(safe_unicode('Presentation slides in ODT-File-Format')),
+        title=_(safe_unicode('Presentation slides')),
         description=_(safe_unicode(
             'Please upload your presentation shortly after you have given your talk.')),
+        constraint=validatetalkslidefileextension,
         required=False,
     )
 
     slides2 = NamedBlobFile(
         title=_(safe_unicode(
-            'Presentation slides in PDF-File-Format or PDF-Hybrid-File-Format')),
+            'Presentation Slides In Further File Format')),
         description=_(safe_unicode(
             'Please upload your presentation shortly after you have given your talk.')),
+        constraint=validatetalkslidefileextension,
         required=False,
     )
 
     slides3 = schema.URI(
-        title=_(safe_unicode('Link to the presentation slides in ODT-File-Format')),
+        title=_(safe_unicode('Link To The Presentation Slides')),
+        constraint=validatelinkedtalkslidefileextension,
         required=False,
     )
 
     slides4 = schema.URI(
         title=_(safe_unicode(
-            'Link to the presentation slides in PDF-File-Format or PDF-Hybrid-File-Format')),
+            'Link To The Presentation Slides In Further File Format')),
+        constraint=validatelinkedtalkslidefileextension,
         required=False,
+    )
+
+    directives.mode(fileextension='display')
+    fileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the upload of '
+            'material or additional files for conference talks as well as '
+            'for linked material/ additional files '
+            '(upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencetalkmaterialextensions,
     )
 
     files = NamedBlobFile(
@@ -208,17 +252,28 @@ class ITalk(model.Schema):
         description=_(safe_unicode(
             'Please upload the additional files of your presentation (in archive format) '
             'shortly after you have given your talk.')),
+        constraint=validatetalkmaterialfileextension,
         required=False,
     )
 
     files2 = schema.URI(
         title=_(safe_unicode(
-            'Link to additional Files of your presentation in archive file format (e.g. zip-file-format).')),
+            'Link to additional Files of your presentation in the correct file format (see for it above).')),
+        constraint=validatelinkedtalkmaterialfileextension,
         required=False,
+    )
+
+    directives.mode(videofileextension='display')
+    videofileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for conference '
+            'video uploads (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencevideoextensions,
     )
 
     video = schema.URI(
         title=_(safe_unicode('Link to the Video of the talk')),
+        constraint=validatevideofileextension,
         required=False,
     )
 
@@ -234,6 +289,22 @@ class ITalk(model.Schema):
         if not data.license:
             raise ChooseLicense(
                 _(safe_unicode('Please choose a license for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validatecfptopicchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChooseCfpTopic(
+                _(safe_unicode('Please choose a call for paper topic for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validateplanedlengthchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChoosePlanedLength(
+                _(safe_unicode('Please choose a planed length for your talk.'),
                   ),
             )
 
@@ -265,6 +336,30 @@ def newtalkadded(self, event):
                 self.title, self.description, details,
                 length, cfp, self.messagetocommittee),
         )
+
+
+class ValidateTalkUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of project titles.
+
+    def validate(self, value):
+        # Perform the standard validation first
+
+        super(ValidateTalkUniqueness, self).validate(value)
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': quote_chars(value),
+                               'object_provides':
+                                   ITalk.__identifier__})
+            contextUUID = api.content.get_uuid(self.context)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u'The talk title is already in use.'))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateTalkUniqueness,
+    field=ITalk['title'],
+)
 
 
 class TalkView(BrowserView):

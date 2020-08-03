@@ -3,8 +3,14 @@ from Acquisition import aq_inner
 from Acquisition import aq_parent
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferenceworkshopmaterialextensions
+from collective.conferences.common import allowedconferenceworkshopslideextensions
 from collective.conferences.common import endDefaultValue
+from collective.conferences.common import quote_chars
 from collective.conferences.common import startDefaultValue
+from collective.conferences.common import validatelinkedworkshopslidefileextension
+from collective.conferences.common import validateworkshopmaterialfileextension
+from collective.conferences.common import validateworshopslidefileextension
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -17,6 +23,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from z3c.form import validator
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -45,7 +52,17 @@ directlyProvides(vocabCfPTopics, IContextSourceBinder)
 
 class ChooseLicense(Invalid):
     __doc__ = _(safe_unicode(
-        'Please choose a license for your talk.'))
+        'Please choose a license for your workshop.'))
+
+
+class ChooseCfpTopic(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a call for paper topic for your workshop.'))
+
+
+class ChoosePlanedLength(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a planed length for your workshop.'))
 
 
 class IWorkshop(model.Schema):
@@ -162,14 +179,69 @@ class IWorkshop(model.Schema):
 
     model.fieldset('slides',
                    label=_(safe_unicode('Slides')),
-                   fields=['slides'],
+                   fields=['slidefileextension',
+                           'slides',
+                           'slides2',
+                           'slides3',
+                           'slides4',
+                           'material',
+                           ],
                    )
 
+    directives.mode(slidefileextension='display')
+    slidefileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for the upload of '
+            'slides of conference workshop as well as for linked slides '
+            '(upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferenceworkshopslideextensions,
+    )
+
     slides = NamedBlobFile(
+        title=_(safe_unicode('Presentation slides')),
+        description=_(safe_unicode(
+            'If you used slides during your workshop, please upload your '
+            'slides shortly after you have given your workshop.')),
+        constraint=validateworshopslidefileextension,
+    )
+
+    slides2 = NamedBlobFile(
+        title=_(safe_unicode(
+            'Presentation Slides In Further File Format')),
+        description=_(safe_unicode(
+            'If you used slides during your workshop, please upload your '
+            'slides shortly after you have given your workshop.')),
+        constraint=validateworshopslidefileextension,
+        required=False,
+    )
+
+    slides3 = schema.URI(
+        title=_(safe_unicode('Link To The Presentation Slides')),
+        constraint=validatelinkedworkshopslidefileextension,
+        required=False,
+    )
+
+    slides4 = schema.URI(
+        title=_(safe_unicode(
+            'Link To The Presentation Slides In Further File Format')),
+        constraint=validatelinkedworkshopslidefileextension,
+        required=False,
+    )
+
+    directives.mode(materialfileextension='display')
+    materialfileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for workshop '
+            'material uploads (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferenceworkshopmaterialextensions,
+    )
+
+    material = NamedBlobFile(
         title=_(safe_unicode('Workshop slides / material')),
         description=_(safe_unicode(
             'Please upload your workshop presentation or material about the content of the workshop '
             'in front or short after you have given the workshop.')),
+        constraint=validateworkshopmaterialfileextension,
         required=False,
     )
 
@@ -185,6 +257,22 @@ class IWorkshop(model.Schema):
         if not data.license:
             raise ChooseLicense(
                 _(safe_unicode('Please choose a license for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validatecfptopicchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChooseCfpTopic(
+                _(safe_unicode('Please choose a call for paper topic for your workshop.'),
+                  ),
+            )
+
+    @invariant
+    def validateplanedlengthchoosen(data):
+        if not data.call_for_paper_topic:
+            raise ChoosePlanedLength(
+                _(safe_unicode('Please choose a planed length for your workshop.'),
                   ),
             )
 
@@ -216,6 +304,30 @@ def newworkshopadded(self, event):
                 self.title, self.description, details,
                 length, cfp, self.messagetocommittee),
         )
+
+
+class ValidateWorkshopUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of project titles.
+
+    def validate(self, value):
+        # Perform the standard validation first
+
+        super(ValidateWorkshopUniqueness, self).validate(value)
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': quote_chars(value),
+                               'object_provides':
+                                   IWorkshop.__identifier__})
+            contextUUID = api.content.get_uuid(self.context)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u'The talk title is already in use.'))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateWorkshopUniqueness,
+    field=IWorkshop['title'],
+)
 
 
 class WorkshopView(BrowserView):

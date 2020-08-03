@@ -213,6 +213,10 @@
         permission="zope2.View"
         />
 
+    <adapter
+        factory="collective.conferences.talk.ValidateTalkUniqueness"
+    />
+
 
     <adapter
       factory=".createnewtalk.ReCaptcha"

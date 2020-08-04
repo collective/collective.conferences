@@ -203,15 +203,6 @@
         permission="zope2.View"
         />
 
-    <adapter factory="collective.conferences.createnewtalk.NewTalkSchemaAdapter"/>
-
-
-    <browser:page
-        for="collective.conferences.callforpaper.ICallforpaper"
-        name="new-talk"
-        class="collective.conferences.createnewtalk.ReCaptchaForm"
-        permission="zope2.View"
-        />
 
     <adapter
         factory="collective.conferences.talk.ValidateTalkUniqueness"
@@ -220,32 +211,6 @@
     <adapter
         factory="collective.conferences.workshop.ValidateWorkshopUniqueness"
     />
-
-
-    <adapter
-      factory=".createnewtalk.ReCaptcha"
-      for="collective.conferences.callforpaper.ICallforpaper"
-      provides=".createnewtalk.IReCaptchaForm"
-      />
-
-
-    <adapter factory="collective.conferences.createnewworkshop.NewWorkshopSchemaAdapter"/>
-
-
-    <browser:page
-        for="collective.conferences.callforpaper.ICallforpaper"
-        name="new-workshop"
-        class="collective.conferences.createnewworkshop.ReCaptchaForm"
-        permission="zope2.View"
-        />
-
-
-    <adapter
-      factory=".createnewworkshop.ReCaptcha"
-      for="collective.conferences.callforpaper.ICallforpaper"
-      provides=".createnewworkshop.IReCaptchaForm"
-      />
-
 
     <adapter for="collective.conferences.conferencespeaker.IConferenceSpeaker"
       factory="collective.conferences.customspeakerurl.CustomSpeakerURL"

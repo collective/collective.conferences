@@ -189,7 +189,9 @@ class ITalk(model.Schema):
 
     model.fieldset('files',
                    label=_(safe_unicode('Files')),
-                   fields=['files', 'files2'],
+                   fields=['fileextension',
+                           'files',
+                           'files2'],
                    )
 
     model.fieldset('video',

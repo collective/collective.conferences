@@ -9,7 +9,9 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                    alltalks view/allconferencetalks;
+                    allworkshops view/allconferenceworkshops">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
@@ -26,13 +28,24 @@
 
         <p class="documentDescription" tal:content="context/description" />
 
-        <ul class="talkslist" tal:repeat="talk context/objectValues">
-        <li>
-        <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
-        </li>
-        </ul>
+        <h2 i18n:translate="">Talks</h2>
+         <tal:loop repeat="talk alltalks">
+         <ul>
+         <li>
+         <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
+         </li>
+         </ul>
+         </tal:loop>
 
+         <h2 i18n:translate="">Workshops</h2>
 
+         <tal:loop repeat="workshop allworkshops">
+         <ul>
+         <li>
+         <a tal:attributes="href workshop/absolute_url" tal:content="workshop/Title" />
+         </li>
+         </ul>
+         </tal:loop>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

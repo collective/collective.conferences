@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from plone import api
 from plone.autoform import directives
 from plone.supermodel import model
 from Products.CMFPlone.utils import safe_unicode
@@ -21,4 +22,20 @@ class ITWFolder(model.Schema):
 
 
 class TWFolderView(BrowserView):
-    pass
+    def allconferencetalks(self):
+        current_path = '/'.join(self.context.getPhysicalPath())
+        res = api.content.find(
+            portal_type=('collective.conferences.talk'),
+            path=current_path,
+            sort_on='Date',
+            sort_order='reverse')
+        return [r.getObject() for r in res]
+
+    def allconferenceworkshops(self):
+        current_path = '/'.join(self.context.getPhysicalPath())
+        res = api.content.find(
+            portal_type=('collective.conferences.workshop'),
+            path=current_path,
+            sort_on='Date',
+            sort_order='reverse')
+        return [r.getObject() for r in res]

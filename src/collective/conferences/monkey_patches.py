@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from z3c.relationfield.schema import RelationList
-from z3c.relationfield.relation import RelationValue
 from DateTime import DateTime
+from z3c.relationfield.relation import RelationValue
+from z3c.relationfield.schema import RelationList
+
 import datetime
 import Missing
 

@@ -12,7 +12,7 @@ class ITWFolder(model.Schema):
     title = schema.TextLine(
         title=_(safe_unicode('Title')),
         description=_(safe_unicode('Talk workshop folder title')),
-        default=_(safe_unicode('Talks Workshops')),
+        default=_(safe_unicode('Talks / Workshops')),
     )
 
     description = schema.Text(

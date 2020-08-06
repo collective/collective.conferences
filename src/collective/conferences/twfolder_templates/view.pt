@@ -5,6 +5,17 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="collective.conferences">
+
+
+<head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+    </metal:block>
+    <metal:block fill-slot="column_one_slot" />
+</head>
 <body>
 
 <metal:main fill-slot="main">
@@ -30,7 +41,7 @@
 
         <h2 i18n:translate="">Talks</h2>
 
-         <table>
+         <table class="conftable">
          <thead>
          <th>Talk</th>
          <th>Description</th>
@@ -48,9 +59,8 @@
 
          <h2 i18n:translate="">Workshops</h2>
 
-
-         <table>
-         <thead>
+         <table class="conftable">
+         <thead >
          <th>Workshop</th>
          <th>Description</th>
          </thead>
@@ -63,7 +73,6 @@
          </tal:loop>
          </tbody>
          </table>
-
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

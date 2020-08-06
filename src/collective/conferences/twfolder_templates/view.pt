@@ -29,23 +29,41 @@
         <p class="documentDescription" tal:content="context/description" />
 
         <h2 i18n:translate="">Talks</h2>
+
+         <table>
+         <thead>
+         <th>Talk</th>
+         <th>Description</th>
+         </thead>
+         <tbody>
          <tal:loop repeat="talk alltalks">
-         <ul>
-         <li>
-         <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
-         </li>
-         </ul>
-         </tal:loop>
+         <tr>
+         <td><a tal:attributes="href talk/absolute_url" tal:content="talk/Title" /></td>
+         <td><span tal:content="talk/description" /></td>
+         </tr>
+          </tal:loop>
+         </tbody>
+         </table>
+
 
          <h2 i18n:translate="">Workshops</h2>
 
+
+         <table>
+         <thead>
+         <th>Workshop</th>
+         <th>Description</th>
+         </thead>
+         <tbody>
          <tal:loop repeat="workshop allworkshops">
-         <ul>
-         <li>
-         <a tal:attributes="href workshop/absolute_url" tal:content="workshop/Title" />
-         </li>
-         </ul>
+         <tr>
+         <td><a tal:attributes="href workshop/absolute_url" tal:content="workshop/Title" /></td>
+         <td><span tal:content="workshop/description" /></td>
+         </tr>
          </tal:loop>
+         </tbody>
+         </table>
+
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

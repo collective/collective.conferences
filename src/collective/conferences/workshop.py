@@ -308,7 +308,7 @@ def newworkshopadded(self, event):
                     length, cfp, self.messagetocommittee),
             )
 
-        except:
+        except Exception:
             api.portal.send_email(
                 recipient=contactaddress,
                 sender=contactaddress,

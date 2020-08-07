@@ -114,6 +114,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.conferencebreakfolder.IConferencebreakFolder"
+        class="collective.conferences.conferencebreakfolder.ConferencebreakFolderView"
+        template="conferencebreakfolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
     <adapter
         for="Products.CMFCore.interfaces.IFolderish
             collective.conferences.interfaces.ICollectiveConferencesLayer

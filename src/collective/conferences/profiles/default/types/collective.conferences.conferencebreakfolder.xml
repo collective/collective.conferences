@@ -13,7 +13,7 @@
  </property>
 
  <!-- schema interface -->
- <property name="schema">collective.conferences.conferencebreakfolder.ICpmferemcebrealFolder</property>
+ <property name="schema">collective.conferences.conferencebreakfolder.IConferencebreakFolder</property>
 
  <!-- class used for content items -->
  <property name="klass">plone.dexterity.content.Container</property>

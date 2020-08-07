@@ -19,5 +19,5 @@ class IConferencebreakFolder(model.Schema):
     )
 
 
-class TConferencebreakFolderView(BrowserView):
+class ConferencebreakFolderView(BrowserView):
     pass

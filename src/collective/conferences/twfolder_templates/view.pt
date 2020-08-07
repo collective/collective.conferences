@@ -43,13 +43,24 @@
 
          <table class="conftable">
          <thead>
-         <th>Talk</th>
-         <th>Description</th>
+         <th i18n:translate="">Title</th>
+         <th i18n:translate="">Start</th>
+         <th i18n:translate="">Length</th>
+         <th i18n:translate="">Description</th>
          </thead>
          <tbody>
          <tal:loop repeat="talk alltalks">
          <tr>
          <td><a tal:attributes="href talk/absolute_url" tal:content="talk/Title" /></td>
+         <td>
+         <span tal:condition="talk/startitem">
+         <span tal:content="python:talk.startitem.strftime('%d. %b %Y %H:%M')" />
+         </span>
+         </td>
+         <td><span tal:condition="talk/talklength">
+         <span tal:content="python: talk.talklength[0]" /> Minutes
+         </span>
+         </td>
          <td><span tal:content="talk/description" /></td>
          </tr>
           </tal:loop>
@@ -61,13 +72,24 @@
 
          <table class="conftable">
          <thead >
-         <th>Workshop</th>
-         <th>Description</th>
+         <th i18n:translate="">Title</th>
+         <th i18n:translate="">Start</th>
+         <th i18n:translate="">Length</th>
+         <th i18n:translate="">Description</th>
          </thead>
          <tbody>
          <tal:loop repeat="workshop allworkshops">
          <tr>
          <td><a tal:attributes="href workshop/absolute_url" tal:content="workshop/Title" /></td>
+         <td>
+         <span tal:condition="workshop/startitem">
+         <span tal:content="python:workshop.startitem.strftime('%d. %b %Y %H:%M')" />
+         </span>
+         </td>
+         <td><span tal:condition="workshop/workshoplength">
+         <span tal:content="python: workshop.workshoplength[0]" /> Minutes
+         </span>
+         </td>
          <td><span tal:content="workshop/description" /></td>
          </tr>
          </tal:loop>

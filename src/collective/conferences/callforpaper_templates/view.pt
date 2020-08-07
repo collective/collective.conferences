@@ -62,12 +62,12 @@
         will open a form with the necessary entries to create a new conference talk or workshop proposal:</p>
         <ul>
         <li>
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/talks/++add++collective.conferences.talk">
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/talks-workshops/++add++collective.conferences.talk">
         <span i18n:translate="">Submit a conference talk</span>
         </a>
         </li>
         <li>
-        <a class="pointer" tal:attributes="href string:${context/absolute_url}/workshops/++add++collective.conferences.workshop">
+        <a class="pointer" tal:attributes="href string:${context/absolute_url}/talks-workshops/++add++collective.conferences.workshop">
         <span i18n:translate="">Submit a conference workshop</span>
         </a>
         </li>

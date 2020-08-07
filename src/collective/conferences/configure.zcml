@@ -4,6 +4,7 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
     i18n_domain="collective.conferences">
     
     
@@ -188,6 +189,14 @@
 
     <browser:page
         name="view"
+        for="collective.conferences.twfolder.ITWFolder"
+        class="collective.conferences.twfolder.TWFolderView"
+        template="twfolder_templates/view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
         for="collective.conferences.workshopfolder.IWorkshopfolder"
         class="collective.conferences.workshopfolder.WorkshopfolderView"
         template="workshopfolder_templates/view.pt"
@@ -203,15 +212,6 @@
         permission="zope2.View"
         />
 
-    <adapter factory="collective.conferences.createnewtalk.NewTalkSchemaAdapter"/>
-
-
-    <browser:page
-        for="collective.conferences.callforpaper.ICallforpaper"
-        name="new-talk"
-        class="collective.conferences.createnewtalk.ReCaptchaForm"
-        permission="zope2.View"
-        />
 
     <adapter
         factory="collective.conferences.talk.ValidateTalkUniqueness"
@@ -220,32 +220,6 @@
     <adapter
         factory="collective.conferences.workshop.ValidateWorkshopUniqueness"
     />
-
-
-    <adapter
-      factory=".createnewtalk.ReCaptcha"
-      for="collective.conferences.callforpaper.ICallforpaper"
-      provides=".createnewtalk.IReCaptchaForm"
-      />
-
-
-    <adapter factory="collective.conferences.createnewworkshop.NewWorkshopSchemaAdapter"/>
-
-
-    <browser:page
-        for="collective.conferences.callforpaper.ICallforpaper"
-        name="new-workshop"
-        class="collective.conferences.createnewworkshop.ReCaptchaForm"
-        permission="zope2.View"
-        />
-
-
-    <adapter
-      factory=".createnewworkshop.ReCaptcha"
-      for="collective.conferences.callforpaper.ICallforpaper"
-      provides=".createnewworkshop.IReCaptchaForm"
-      />
-
 
     <adapter for="collective.conferences.conferencespeaker.IConferenceSpeaker"
       factory="collective.conferences.customspeakerurl.CustomSpeakerURL"
@@ -313,5 +287,12 @@
     <utility
         name="ConferenceTrack"
         component=".vocabularies.ConferenceTrackVocabularyFactory" />
+
+    <monkey:patch
+        description="Fix circular reference when field is RelationValue"
+        class="plone.app.content.utils"
+        original="custom_json_handler"
+        replacement=".monkey_patches.conf_utils_custom_json_handler"
+        />
 
 </configure>

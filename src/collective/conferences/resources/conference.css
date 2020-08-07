@@ -2,3 +2,16 @@
     float: left;
     margin: 0 5px 5px 0;
 }
+
+.conftable thead{
+    background-color: #007bb1;
+}
+
+.conftable th{
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
+
+.conftable td {
+    padding: 5px 0px 5px 10px;
+}

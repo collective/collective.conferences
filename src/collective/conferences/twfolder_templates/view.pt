@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.conferences">
+
+
+<head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+    </metal:block>
+    <metal:block fill-slot="column_one_slot" />
+</head>
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                    alltalks view/allconferencetalks;
+                    allworkshops view/allconferenceworkshops">
+        <span tal:replace="structure context/@@authenticator/authenticator"/>
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <img style="float: left; margin-right: 2px; margin-top: 2px"
+             tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+             tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif"
+             />
+
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription" tal:content="context/description" />
+
+        <h2 i18n:translate="">Talks</h2>
+
+         <table class="conftable">
+         <thead>
+         <th i18n:translate="">Title</th>
+         <th i18n:translate="">Start</th>
+         <th i18n:translate="">Length</th>
+         <th i18n:translate="">Description</th>
+         </thead>
+         <tbody>
+         <tal:loop repeat="talk alltalks">
+         <tr>
+         <td><a tal:attributes="href talk/absolute_url" tal:content="talk/Title" /></td>
+         <td>
+         <span tal:condition="talk/startitem">
+         <span tal:content="python:talk.startitem.strftime('%d. %b %Y %H:%M')" />
+         </span>
+         </td>
+         <td><span tal:condition="talk/talklength">
+         <span tal:content="python: talk.talklength[0]" /> Minutes
+         </span>
+         </td>
+         <td><span tal:content="talk/description" /></td>
+         </tr>
+          </tal:loop>
+         </tbody>
+         </table>
+
+
+         <h2 i18n:translate="">Workshops</h2>
+
+         <table class="conftable">
+         <thead >
+         <th i18n:translate="">Title</th>
+         <th i18n:translate="">Start</th>
+         <th i18n:translate="">Length</th>
+         <th i18n:translate="">Description</th>
+         </thead>
+         <tbody>
+         <tal:loop repeat="workshop allworkshops">
+         <tr>
+         <td><a tal:attributes="href workshop/absolute_url" tal:content="workshop/Title" /></td>
+         <td>
+         <span tal:condition="workshop/startitem">
+         <span tal:content="python:workshop.startitem.strftime('%d. %b %Y %H:%M')" />
+         </span>
+         </td>
+         <td><span tal:condition="workshop/workshoplength">
+         <span tal:content="python: workshop.workshoplength[0]" /> Minutes
+         </span>
+         </td>
+         <td><span tal:content="workshop/description" /></td>
+         </tr>
+         </tal:loop>
+         </tbody>
+         </table>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

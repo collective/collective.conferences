@@ -189,7 +189,9 @@ class ITalk(model.Schema):
 
     model.fieldset('files',
                    label=_(safe_unicode('Files')),
-                   fields=['files', 'files2'],
+                   fields=['fileextension',
+                           'files',
+                           'files2'],
                    )
 
     model.fieldset('video',
@@ -320,22 +322,41 @@ def newtalkadded(self, event):
         cfp = self.call_for_paper_topic[0]
         details = self.details.output
 
-        api.portal.send_email(
-            recipient=current_user.getProperty('email'),
-            sender=contactaddress,
-            subject=safe_unicode('Your Talk Proposal'),
-            body=safe_unicode('You submitted a conference talk:\n'
-                              'title: {0},\n'
-                              'summary: {1},\n'
-                              'details: {2},\n'
-                              'proposed length: {3} minutes\nfor the call for papers '
-                              'topic: {4}\nwith the following message to the conference '
-                              'committee: {5}\n\n'
-                              'Best regards,\n'
-                              'The Conference Committee').format(
-                self.title, self.description, details,
-                length, cfp, self.messagetocommittee),
-        )
+        try:
+            api.portal.send_email(
+                recipient=current_user.getProperty('email'),
+                sender=contactaddress,
+                subject=safe_unicode('Your Talk Proposal'),
+                body=safe_unicode('You submitted a conference talk:\n'
+                                  'title: {0},\n'
+                                  'summary: {1},\n'
+                                  'details: {2},\n'
+                                  'proposed length: {3} minutes\nfor the call for papers '
+                                  'topic: {4}\nwith the following message to the conference '
+                                  'committee: {5}\n\n'
+                                  'Best regards,\n'
+                                  'The Conference Committee').format(
+                    self.title, self.description, details,
+                    length, cfp, self.messagetocommittee),
+            )
+
+        except Exception:
+            api.portal.send_email(
+                recipient=contactaddress,
+                sender=contactaddress,
+                subject=safe_unicode('Your Talk Proposal'),
+                body=safe_unicode('You submitted a conference talk:\n'
+                                  'title: {0},\n'
+                                  'summary: {1},\n'
+                                  'details: {2},\n'
+                                  'proposed length: {3} minutes\nfor the call for papers '
+                                  'topic: {4}\nwith the following message to the conference '
+                                  'committee: {5}\n\n'
+                                  'Best regards,\n'
+                                  'The Conference Committee').format(
+                    self.title, self.description, details,
+                    length, cfp, self.messagetocommittee),
+            )
 
 
 class ValidateTalkUniqueness(validator.SimpleFieldValidator):

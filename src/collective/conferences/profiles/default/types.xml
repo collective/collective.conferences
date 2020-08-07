@@ -14,4 +14,5 @@
  <object name="collective.conferences.attendee" meta_type="Dexterity FTI" />
  <object name="collective.conferences.conferencebreak" meta_type="Dexterity FTI" />
  <object name="collective.conferences.workshopfolder" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.twfolder" meta_type="Dexterity FTI" />
 </object>

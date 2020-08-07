@@ -7,12 +7,10 @@ from zope import schema
 
 
 class IConferencebreakFolder(model.Schema):
-
     title = schema.TextLine(
         title=_(safe_unicode('Title')),
         description=_(safe_unicode('Conference Break Folder Title')),
     )
-
 
     description = schema.Text(
         title=_(safe_unicode('Conference Break Summary')),

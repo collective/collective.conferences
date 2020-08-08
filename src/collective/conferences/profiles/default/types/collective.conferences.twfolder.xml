@@ -3,7 +3,7 @@
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Conference Talks/Workshop Folder</property>
+ <property name="title" i18n:translate="">Conference Talk/Workshop Folder</property>
  <property name="description" i18n:translate="">The talks and workshops of the conference</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>

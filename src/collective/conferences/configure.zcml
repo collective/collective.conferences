@@ -203,14 +203,6 @@
         permission="zope2.View"
         />
 
-    <browser:page
-        name="view"
-        for="collective.conferences.workshopfolder.IWorkshopfolder"
-        class="collective.conferences.workshopfolder.WorkshopfolderView"
-        template="workshopfolder_templates/view.pt"
-        permission="zope2.View"
-        />
-
 
     <browser:page
         name="view"

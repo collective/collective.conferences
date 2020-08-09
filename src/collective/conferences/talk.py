@@ -304,7 +304,7 @@ class ITalk(model.Schema):
 
     @invariant
     def validateplanedlengthchoosen(data):
-        if not data.call_for_paper_topic:
+        if not data.planedtalklength:
             raise ChoosePlanedLength(
                 _(safe_unicode('Please choose a planed length for your talk.'),
                   ),

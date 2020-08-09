@@ -203,16 +203,6 @@
         permission="zope2.View"
         />
 
-
-    <browser:page
-        name="view"
-        for="collective.conferences.talksfolder.ITalksfolder"
-        class="collective.conferences.talksfolder.TalksfolderView"
-        template="talksfolder_templates/view.pt"
-        permission="zope2.View"
-        />
-
-
     <adapter
         factory="collective.conferences.talk.ValidateTalkUniqueness"
     />

@@ -263,6 +263,12 @@ class IWorkshop(model.Schema):
             )
 
     @invariant
+    def trackpositionset(value):
+        if value.conferencetrack and not value.positionintrack:
+            raise Invalid(_(safe_unicode('You need to choose a position in the track. Please '
+                                         "add this position to the field 'Position in Track'.")))
+
+    @invariant
     def validatecfptopicchoosen(data):
         if not data.call_for_paper_topic:
             raise ChooseCfpTopic(

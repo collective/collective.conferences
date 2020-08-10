@@ -1,20 +1,19 @@
 <?xml version="1.0"?>
-<object name="collective.conferences.talksfolder" meta_type="Dexterity FTI"
+<object name="collective.conferences.conferencebreakfolder" meta_type="Dexterity FTI"
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Conference Talks Folder</property>
- <property name="description" i18n:translate="">The talks of the conference</property>
+ <property name="title" i18n:translate="">Conference Breaks Folder</property>
+ <property name="description" i18n:translate="">The breaks of the conference</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-  <element value="collective.conferences.talk" />
-  <element value="collective.conferences.conferencebreak" />
+     <element value="collective.conferences.conferencebreak" />
  </property>
 
  <!-- schema interface -->
- <property name="schema">collective.conferences.talksfolder.ITalksfolder</property>
+ <property name="schema">collective.conferences.conferencebreakfolder.IConferencebreakFolder</property>
 
  <!-- class used for content items -->
  <property name="klass">plone.dexterity.content.Container</property>

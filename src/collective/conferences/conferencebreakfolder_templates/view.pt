@@ -5,31 +5,35 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="collective.conferences">
+
+
+<head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+    </metal:block>
+    <metal:block fill-slot="column_one_slot" />
+</head>
 <body>
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <span tal:replace="structure context/@@authenticator/authenticator"/>
+
+     <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
-
-        <img style="float: left; margin-right: 2px; margin-top: 2px"
-             tal:define="navroot context/@@plone_portal_state/navigation_root_url"
-             tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif"
-             />
-
-        <h1 class="documentFirstHeading" tal:content="context/title" />
-
+ <h1 class="documentFirstHeading" tal:content="context/title" />
 
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
-
-        <ul class="talkslist" tal:repeat="talk context/objectValues">
+        <ul class="breaklist" tal:repeat="confbreak context/objectValues">
         <li>
-        <a tal:attributes="href talk/absolute_url" tal:content="talk/Title" />
+        <a tal:attributes="href confbreak/absolute_url" tal:content="confbreak/Title" />
         </li>
         </ul>
 

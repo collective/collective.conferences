@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<object name="collective.conferences.twolder" meta_type="Dexterity FTI"
+<object name="collective.conferences.twfolder" meta_type="Dexterity FTI"
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Conference Talks/Workshop Folder</property>
+ <property name="title" i18n:translate="">Conference Talk/Workshop Folder</property>
  <property name="description" i18n:translate="">The talks and workshops of the conference</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">True</property>
@@ -11,7 +11,6 @@
  <property name="allowed_content_types">
      <element value="collective.conferences.talk" />
      <element value="collective.conferences.workshop" />
-     <element value="collective.conferences.conferencebreak" />
  </property>
 
  <!-- schema interface -->

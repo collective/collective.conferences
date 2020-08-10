@@ -287,12 +287,18 @@ class ITalk(model.Schema):
     )
 
     @invariant
-    def validateLicensechoosen(data):
-        if not data.license:
+    def validateLicensechoosen(value):
+        if not value.license:
             raise ChooseLicense(
                 _(safe_unicode('Please choose a license for your talk.'),
                   ),
             )
+
+    @invariant
+    def trackpositionset(value):
+        if value.conferencetrack and not value.positionintrack:
+            raise Invalid(_(safe_unicode('You need to choose a position in the track. Please '
+                                         "add this position to the field 'Position in Track'.")))
 
     @invariant
     def validatecfptopicchoosen(data):
@@ -304,7 +310,7 @@ class ITalk(model.Schema):
 
     @invariant
     def validateplanedlengthchoosen(data):
-        if not data.call_for_paper_topic:
+        if not data.planedtalklength:
             raise ChoosePlanedLength(
                 _(safe_unicode('Please choose a planed length for your talk.'),
                   ),

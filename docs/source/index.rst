@@ -11,6 +11,7 @@ Welcome to collective.conferences's documentation!
    :caption: Contents:
 
    installation.rst
+   configuration.rst
 
 
 

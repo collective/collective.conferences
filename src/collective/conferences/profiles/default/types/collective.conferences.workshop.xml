@@ -3,7 +3,7 @@
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Workshop</property>
+ <property name="title" i18n:translate="">Conference Workshop</property>
  <property name="description" i18n:translate="">A Workshop in a track of the program</property>
  <property name="content_icon">++resource++collective.conferences/session.gif</property>
  <property name="allow_discussion">True</property>

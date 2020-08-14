@@ -2,6 +2,7 @@
 from collective.conferences import _
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
+from plone.supermodel import model
 from plone.z3cform import layout
 from Products.CMFPlone.utils import safe_unicode
 from zope import schema
@@ -43,6 +44,11 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
+    model.fieldset('legal',
+                   label=_(safe_unicode('Legal')),
+                   fields=['license'],
+                   )
+
     license = schema.Tuple(
         title=_(safe_unicode('Licenses Of Talks / Workshops')),
         description=_(
@@ -61,6 +67,17 @@ class ICollectiveconferenceControlPanel(Interface):
         value_type=schema.TextLine(),
         required=True,
     )
+
+    model.fieldset('fileextensions',
+                   label=_(safe_unicode('File Extensions')),
+                   fields=['allowed_conferenceimageextension',
+                           'allowed_talk_slide_extensions',
+                           'allowed_workshop_slide_extensions',
+                           'allowed_talk_material_extension',
+                           'allowed_workshop_material_extension',
+                           'allowed_video_file_extensions'],
+
+                   )
 
     allowed_conferenceimageextension = schema.TextLine(
         title=_(safe_unicode('Allowed image file extension')),

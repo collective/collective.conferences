@@ -3,7 +3,7 @@
    i18n:domain="collective.conferences" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
  <!-- Basic metadata -->
- <property name="title" i18n:translate="">Track</property>
+ <property name="title" i18n:translate="">Conference Track</property>
  <property name="description" i18n:translate="">A conference track</property>
  <property name="allow_discussion">True</property>
  <property name="global_allow">False</property>

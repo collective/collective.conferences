@@ -14,6 +14,7 @@ Welcome to collective.conferences's documentation!
    configuration.rst
    addconferencepage.rst
    addcallforpaper.rst
+   addnewtalksworkshopfolder.rst
 
 
 

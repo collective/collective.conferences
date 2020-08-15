@@ -4,7 +4,9 @@ include *.yml
 include tox.ini
 
 graft src/collective
-graft docs/html docs/source docs/source/images
+graft docs/html
+graft docs/source
+graft docs/source/images
 include *.rst
 include *.py
 global-exclude *.pyc

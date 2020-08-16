@@ -17,7 +17,7 @@ class ITWFolder(model.Schema):
     )
 
     description = schema.Text(
-        title=_(safe_unicode('Workshop summary')),
+        title=_(safe_unicode('Summary For Talks And Workshops')),
     )
 
 

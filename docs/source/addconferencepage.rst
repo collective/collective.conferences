@@ -3,7 +3,7 @@ Add A New Conference Page
 
 I assume you want to add new conference page to the Plone site root ('Home') and
 inform the site visitors about your conference, when it will take place etc.
-Therefor go to the Plone site root ('Home') and choose from the Plone menu on
+Therefore go to the Plone site root ('Home') and choose from the Plone menu on
 the left 'Add new'. You get in this menu an entry to create a new 'Conference'
 (see the screenshot below).
 

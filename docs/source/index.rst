@@ -13,6 +13,8 @@ Welcome to collective.conferences's documentation!
    installation.rst
    configuration.rst
    addconferencepage.rst
+   addcallforpaper.rst
+   addnewtalksworkshopfolder.rst
 
 
 

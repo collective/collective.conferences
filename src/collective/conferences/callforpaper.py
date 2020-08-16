@@ -29,6 +29,9 @@ class ICallforpaper(model.Schema):
     )
 
     cfp_topics = schema.List(title=_(safe_unicode('Topics for the Call for Papers')),
+                             description=_(
+                                 safe_unicode('Fill in the topics for conference talks and workshops. '
+                                              'Use a new line for every value / topic.')),
                              default=['Development',
                                       'Documentation',
                                       'Project-Administration'],

@@ -1,9 +1,15 @@
 <?xml version="1.0"?>
 <object name="portal_workflow">
-        <object name="collective_conferences_talk_workflow" meta_type="Workflow" />
+    <object name="collective_conferences_talk_workflow" meta_type="Workflow" />
     <bindings>
         <type type_id="collective.conferences.talk">
             <bound-workflow workflow_id="collective_conferences_talk_workflow" />
+        </type>
+    </bindings>
+    <object name="collective_conferences_workshop_workflow" meta_type="Workflow" />
+    <bindings>
+        <type type_id="collective.conferences.workshop">
+            <bound-workflow workflow_id="collective_conferences_workshop_workflow" />
         </type>
     </bindings>
 </object>

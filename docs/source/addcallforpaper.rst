@@ -40,3 +40,20 @@ papers and also the date, when it should disappear from the public (see screensh
 
 .. image:: images/call_for_paper_advanced_publish.png
    :width: 600
+
+
+Call for Paper View
+*******************
+
+The call for papers view adds different information and links to the page. If a anonymous user (not logged
+in user) views the page she/he get information about how to log in or how to create a new account on the
+site (see screenshot below).
+
+.. image:: images/call_for_paper_view1.png
+   :width: 600
+
+Once a user is logged in the content of the site changed and the user get information about creating a new
+speaker and about submitting a talk or workshop proposal (see screenshot below).
+
+.. image:: images/call_for_paper_view2.png
+   :width: 600

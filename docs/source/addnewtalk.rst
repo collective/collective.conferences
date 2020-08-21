@@ -1,4 +1,4 @@
-Add New Talk
+Add A New Talk
 ============
 
 Once the call for papers was published and the folder for talks and workshop was created

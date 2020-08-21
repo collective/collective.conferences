@@ -192,7 +192,8 @@ class IWorkshop(model.Schema):
     model.fieldset('files',
                    label=_(safe_unicode('Files / Material')),
                    fields=['materialfileextension',
-                           'material',],
+                           'material',
+                           ],
                    )
 
     model.fieldset('video',
@@ -272,7 +273,6 @@ class IWorkshop(model.Schema):
         constraint=validatevideofileextension,
         required=False,
     )
-
 
     read_permission(reviewNotes='cmf.ReviewPortalContent')
     write_permission(reviewNotes='cmf.ReviewPortalContent')

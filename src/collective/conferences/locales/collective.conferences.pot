@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-08-20 20:17+0000\n"
+"POT-Creation-Date: 2020-08-22 18:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,13 +139,13 @@ msgid "Capacity of the room"
 msgstr ""
 
 #: ./talk.py:124
-#: ./workshop.py:119
+#: ./workshop.py:121
 msgid "Choose a license for your talk"
 msgstr ""
 
 #: ./conferencebreak.py:74
 #: ./talk.py:165
-#: ./workshop.py:160
+#: ./workshop.py:162
 msgid "Choose a number for the order in the track"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Choose the topic for your talk"
 msgstr ""
 
-#: ./workshop.py:102
+#: ./workshop.py:104
 msgid "Choose the topic for your workshop"
 msgstr ""
 
@@ -166,7 +166,7 @@ msgid "Choose the track for this break"
 msgstr ""
 
 #: ./talk.py:140
-#: ./workshop.py:127
+#: ./workshop.py:129
 msgid "Choose the track for this talk"
 msgstr ""
 
@@ -317,6 +317,10 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
+#: ./workshop.py:193
+msgid "Files / Material"
+msgstr ""
+
 #: ./attendeefolder.py:43
 msgid "Fill in one payment option per line."
 msgstr ""
@@ -391,7 +395,7 @@ msgstr ""
 msgid "Give an estimation about the time you'd plan for your talk."
 msgstr ""
 
-#: ./workshop.py:110
+#: ./workshop.py:112
 msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr ""
 
@@ -424,7 +428,7 @@ msgstr ""
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr ""
 
-#: ./workshop.py:203
+#: ./workshop.py:216
 msgid "If you used slides during your workshop, please upload your slides shortly after you have given your workshop."
 msgstr ""
 
@@ -487,7 +491,7 @@ msgid "Length of the Break:"
 msgstr ""
 
 #: ./talk.py:123
-#: ./workshop.py:118
+#: ./workshop.py:120
 msgid "License Of Your Talk"
 msgstr ""
 
@@ -496,12 +500,12 @@ msgid "Licenses Of Talks / Workshops"
 msgstr ""
 
 #: ./talk.py:230
-#: ./workshop.py:221
+#: ./workshop.py:234
 msgid "Link To The Presentation Slides"
 msgstr ""
 
 #: ./talk.py:236
-#: ./workshop.py:227
+#: ./workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
 msgstr ""
 
@@ -522,6 +526,7 @@ msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
 #: ./talk.py:277
+#: ./workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr ""
 
@@ -540,7 +545,7 @@ msgid "Member submits content for publication"
 msgstr ""
 
 #: ./talk.py:130
-#: ./workshop.py:139
+#: ./workshop.py:141
 msgid "Messages to the Program Committee"
 msgstr ""
 
@@ -605,7 +610,7 @@ msgid "Picture"
 msgstr ""
 
 #: ./talk.py:114
-#: ./workshop.py:109
+#: ./workshop.py:111
 msgid "Planed Length"
 msgstr ""
 
@@ -613,16 +618,16 @@ msgstr ""
 msgid "Please choose a call for paper topic for your talk."
 msgstr ""
 
-#: ./workshop.py:59
+#: ./workshop.py:61
 msgid "Please choose a call for paper topic for your workshop."
 msgstr ""
 
 #: ./talk.py:59
-#: ./workshop.py:261
+#: ./workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr ""
 
-#: ./workshop.py:54
+#: ./workshop.py:56
 msgid "Please choose a license for your workshop."
 msgstr ""
 
@@ -630,7 +635,7 @@ msgstr ""
 msgid "Please choose a planed length for your talk."
 msgstr ""
 
-#: ./workshop.py:64
+#: ./workshop.py:66
 msgid "Please choose a planed length for your workshop."
 msgstr ""
 
@@ -664,13 +669,13 @@ msgstr ""
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./workshop.py:243
+#: ./workshop.py:256
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
 
 #: ./conferencebreak.py:73
 #: ./talk.py:164
-#: ./workshop.py:159
+#: ./workshop.py:161
 msgid "Position In The Track"
 msgstr ""
 
@@ -684,12 +689,12 @@ msgid "Presentation Slides"
 msgstr ""
 
 #: ./talk.py:221
-#: ./workshop.py:211
+#: ./workshop.py:224
 msgid "Presentation Slides In Further File Format"
 msgstr ""
 
 #: ./talk.py:213
-#: ./workshop.py:202
+#: ./workshop.py:215
 msgid "Presentation slides"
 msgstr ""
 
@@ -745,7 +750,7 @@ msgid "Retract"
 msgstr ""
 
 #: ./talk.py:285
-#: ./workshop.py:253
+#: ./workshop.py:280
 msgid "Review notes"
 msgstr ""
 
@@ -779,12 +784,12 @@ msgstr ""
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
-#: ./workshop.py:151
+#: ./workshop.py:153
 msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
 #: ./talk.py:186
-#: ./workshop.py:181
+#: ./workshop.py:183
 #: ./workshop_templates/view.pt:67
 msgid "Slides"
 msgstr ""
@@ -901,6 +906,7 @@ msgid "The end of the track could not be set after the conference program."
 msgstr ""
 
 #: ./talk.py:270
+#: ./workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
 msgstr ""
 
@@ -916,11 +922,11 @@ msgstr ""
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./workshop.py:194
+#: ./workshop.py:207
 msgid "The following file extensions are allowed for the upload of slides of conference workshop as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./workshop.py:235
+#: ./workshop.py:248
 msgid "The following file extensions are allowed for workshop material uploads (upper case and lower case and mix of both):"
 msgstr ""
 
@@ -959,7 +965,7 @@ msgid "The start or end date is invalid"
 msgstr ""
 
 #: ./talk.py:383
-#: ./workshop.py:351
+#: ./workshop.py:378
 msgid "The talk title is already in use."
 msgstr ""
 
@@ -1034,6 +1040,7 @@ msgid "Used Bank Account"
 msgstr ""
 
 #: ./talk.py:198
+#: ./workshop.py:200
 msgid "Video"
 msgstr ""
 
@@ -1057,29 +1064,29 @@ msgid "We need this mandatory data to get in contact with you, if we have any qu
 msgstr ""
 
 #: ./twfolder_templates/view.pt:91
-#: ./workshop.py:88
+#: ./workshop.py:90
 #: ./workshop_templates/view.pt:29
 msgid "Workshop Leader"
 msgstr ""
 
-#: ./workshop.py:150
+#: ./workshop.py:152
 #: ./workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr ""
 
-#: ./workshop.py:83
+#: ./workshop.py:85
 msgid "Workshop details"
 msgstr ""
 
-#: ./workshop.py:242
+#: ./workshop.py:255
 msgid "Workshop slides / material"
 msgstr ""
 
-#: ./workshop.py:78
+#: ./workshop.py:80
 msgid "Workshop summary"
 msgstr ""
 
-#: ./workshop.py:74
+#: ./workshop.py:76
 msgid "Workshop title"
 msgstr ""
 
@@ -1099,7 +1106,7 @@ msgstr ""
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
 msgstr ""
 
-#: ./workshop.py:140
+#: ./workshop.py:142
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr ""
 
@@ -1108,7 +1115,7 @@ msgid "You can submit a new talk or workshop by following one of the following l
 msgstr ""
 
 #: ./talk.py:300
-#: ./workshop.py:268
+#: ./workshop.py:295
 msgid "You need to choose a position in the track. Please add this position to the field 'Position in Track'."
 msgstr ""
 

@@ -3,12 +3,14 @@ from Acquisition import aq_inner
 from Acquisition import aq_parent
 from collective import dexteritytextindexer
 from collective.conferences import _
+from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import allowedconferenceworkshopmaterialextensions
 from collective.conferences.common import allowedconferenceworkshopslideextensions
 from collective.conferences.common import endDefaultValue
 from collective.conferences.common import quote_chars
 from collective.conferences.common import startDefaultValue
 from collective.conferences.common import validatelinkedworkshopslidefileextension
+from collective.conferences.common import validatevideofileextension
 from collective.conferences.common import validateworkshopmaterialfileextension
 from collective.conferences.common import validateworshopslidefileextension
 from plone import api
@@ -184,9 +186,20 @@ class IWorkshop(model.Schema):
                            'slides2',
                            'slides3',
                            'slides4',
-                           'materialfileextension',
+                           ],
+                   )
+
+    model.fieldset('files',
+                   label=_(safe_unicode('Files / Material')),
+                   fields=['materialfileextension',
                            'material',
                            ],
+                   )
+
+    model.fieldset('video',
+                   label=_(safe_unicode('Video')),
+                   fields=['videofileextension',
+                           'video'],
                    )
 
     directives.mode(slidefileextension='display')
@@ -244,6 +257,20 @@ class IWorkshop(model.Schema):
             'Please upload your workshop presentation or material about the content of the workshop '
             'in front or short after you have given the workshop.')),
         constraint=validateworkshopmaterialfileextension,
+        required=False,
+    )
+
+    directives.mode(videofileextension='display')
+    videofileextension = schema.TextLine(
+        title=_(safe_unicode(
+            'The following file extensions are allowed for conference '
+            'video uploads (upper case and lower case and mix of both):')),
+        defaultFactory=allowedconferencevideoextensions,
+    )
+
+    video = schema.URI(
+        title=_(safe_unicode('Link to the Video of the talk')),
+        constraint=validatevideofileextension,
         required=False,
     )
 

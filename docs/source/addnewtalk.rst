@@ -13,7 +13,7 @@ below).
 
 Once the user clicks on this link the edit form for a new talk pops up.
 
-The logged-in user could use instead of using this link go to the folder for talks
+Instead of using this link the logged-in user could go  to the folder for talks
 and workshops (click on the appropriate link in the navigation menu bar) and click
 inside the menu bar on the left side 'Add new'. Then choose from the opening submenu
 the entry 'Conference Talk' (see screenshot below).

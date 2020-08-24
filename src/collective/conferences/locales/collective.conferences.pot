@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-08-22 18:18+0000\n"
+"POT-Creation-Date: 2020-08-24 17:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -326,7 +326,7 @@ msgid "Fill in one payment option per line."
 msgstr ""
 
 #: ./browser/controlpanel.py:105
-msgid "Fill in the allowed file extensions for the material oradditional files of a conference talk, seperated by a pipe '|'."
+msgid "Fill in the allowed file extensions for the material or additional files of a conference talk, seperated by a pipe '|'."
 msgstr ""
 
 #: ./browser/controlpanel.py:112
@@ -334,11 +334,11 @@ msgid "Fill in the allowed file extensions for the material, seperated by a pipe
 msgstr ""
 
 #: ./browser/controlpanel.py:91
-msgid "Fill in the allowed file extensions for the slides ofconference talks, seperated by a pipe '|'."
+msgid "Fill in the allowed file extensions for the slides of conference talks, seperated by a pipe '|'."
 msgstr ""
 
 #: ./browser/controlpanel.py:98
-msgid "Fill in the allowed file extensions for the slides ofconference workshops, seperated by a pipe '|'."
+msgid "Fill in the allowed file extensions for the slides of conference workshops, seperated by a pipe '|'."
 msgstr ""
 
 #: ./browser/controlpanel.py:119

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-08-07 14:29+0000\n"
-"PO-Revision-Date: 2020-07-28 14:35+0200\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 2020-08-24 20:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,1021 +16,1077 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: ./profiles/default/types/collective.conferences.callforpaper.xml
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "- A simple workflow for Conference Talk objects."
+msgstr "Ein einfacher Workflow für Konferenz-Talk-Objekte."
+
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "- A simple workflow for Conference Workshop objects."
+msgstr "Ein einfacher Workflow für Konferenz-Workshop-Objekte."
+
+#: profiles/default/types/collective.conferences.callforpaper.xml
 msgid "A Call for Paper"
 msgstr "Ein Call for Paper"
 
-#: ./profiles/default/types/collective.conferences.conferencebreak.xml
+#: profiles/default/types/collective.conferences.conferencebreak.xml
 msgid "A Conference Break in a track of the program"
 msgstr "Eine Konferenz-Unterbrechung im einem Track des Programms"
 
-#: ./profiles/default/types/collective.conferences.talk.xml
+#: profiles/default/types/collective.conferences.talk.xml
 msgid "A Talk in a track of the program"
 msgstr "Ein Talk in einem Track des Programms"
 
-#: ./profiles/default/types/collective.conferences.workshop.xml
+#: profiles/default/types/collective.conferences.workshop.xml
 msgid "A Workshop in a track of the program"
 msgstr "Ein Workshop in einem Track des Programms"
 
-#: ./profiles/default/types/collective.conferences.conference.xml
+#: profiles/default/types/collective.conferences.conference.xml
 msgid "A conference"
 msgstr "Eine Konferenz"
 
-#: ./profiles/default/types/collective.conferences.program.xml
+#: profiles/default/types/collective.conferences.program.xml
 msgid "A conference program"
 msgstr "Ein Konferenzprogramm"
 
-#: ./profiles/default/types/collective.conferences.track.xml
+#: profiles/default/types/collective.conferences.track.xml
 msgid "A conference track"
 msgstr "Ein Konferenztrack"
 
-#: ./room.py:21
+#: room.py:21
 msgid "A description of the room and its location"
 msgstr "Eine Beschreibung des Raums und seiner Lage"
 
-#: ./room.py:32
+#: room.py:32
 msgid "A full description of the room, it's location and the way to get there"
 msgstr "Eine komplette Beschreibung des Raums, seiner Lage und der Wegbeschreibung zu ihm"
 
-#: ./profiles/default/types/collective.conferences.attendee.xml
+#: profiles/default/types/collective.conferences.attendee.xml
 msgid "A person attending talk or a workshop"
 msgstr "Eine Person, die einen Talk oder Workshop besucht"
 
-#: ./profiles/default/types/collective.conferences.conferencespeaker.xml
+#: profiles/default/types/collective.conferences.conferencespeaker.xml
 msgid "A person speaking at the conference or leading a workshop"
 msgstr "Eine Person, die auf der Konferenz spricht oder einen Workshop leitet"
 
-#: ./room.py:25
+#: room.py:25
 msgid "A picture of the room"
 msgstr "Ein Bild des Raums"
 
-#: ./profiles/default/types/collective.conferences.room.xml
+#: profiles/default/types/collective.conferences.room.xml
 msgid "A room that is used for the conference"
 msgstr "Ein Raum, der für die Konferenz genutzt wird"
 
-#: ./conferencespeaker.py:87
+#: conferencespeaker.py:87
 msgid "A short bio"
 msgstr "Ein kurzer Lebenslauf"
 
-#: ./callforpaper_templates/view.pt:57
+#: callforpaper_templates/view.pt:57
 msgid "Add your speaker profile"
 msgstr "Fügen Sie Ihr Sprecher-Profil hinzu"
 
-#: ./talk.py:253
+#: talk.py:253
 msgid "Additional Files of your presentation."
 msgstr "Ergänzende Dateien für Ihre Präsentation."
 
-#: ./browser/controlpanel.py:87
+#: browser/controlpanel.py:104
 msgid "Allowed File Extensions For Talk Material / Additonal Files"
-msgstr ""
+msgstr "Erlaubte Dateierweiterungen für Talk-Material / ergänzende Dateien"
 
-#: ./browser/controlpanel.py:101
+#: browser/controlpanel.py:118
 msgid "Allowed file exensions for conference videos."
-msgstr ""
+msgstr "Erlaubte Dateierweiterungen für Konferenzvideos."
 
-#: ./browser/controlpanel.py:73
+#: browser/controlpanel.py:90
 msgid "Allowed file extensions for slides of conference talks"
-msgstr ""
+msgstr "Erlaubte Dateierweiterungen für Folien von Konferenztalks"
 
-#: ./browser/controlpanel.py:80
+#: browser/controlpanel.py:97
 msgid "Allowed file extensions for slides of conference workshops"
-msgstr ""
+msgstr "Erlaubte Dateierweiterungen für Folien von Konferenzworkshops"
 
-#: ./browser/controlpanel.py:66
+#: browser/controlpanel.py:83
 msgid "Allowed image file extension"
-msgstr ""
+msgstr "Erlaubte Grafik-Dateierweiterungen"
 
-#: ./browser/controlpanel.py:94
+#: browser/controlpanel.py:111
 msgid "Allowed workshop material file extensions"
-msgstr ""
+msgstr "Erlaubte Dateierweiterungen für Workshopmaterial"
 
-#: ./profiles/default/types/collective.conferences.attendee.xml
+#: profiles/default/types/collective.conferences.attendee.xml
 msgid "Attendee"
 msgstr "Besucher"
 
-#: ./attendee_templates/view.pt:38
+#: attendee_templates/view.pt:38
 msgid "Bank used for the payment:"
 msgstr "Für die Zahlung verwendete Bank:"
 
-#: ./conferencespeaker.py:92
+#: conferencespeaker.py:92
 msgid "Bio"
 msgstr "Lebenslauf"
 
-#: ./profiles/default/types/collective.conferences.callforpaper.xml
-msgid "Call for Paper"
-msgstr "Call for Paper"
-
-#: ./callforpaper.py:20
+#: callforpaper.py:20
 msgid "Call for paper summary"
 msgstr "Call for Paper Zusammenfassung"
 
-#: ./callforpaper.py:16
+#: callforpaper.py:16
 msgid "Call for paper title"
 msgstr "Call for Paper Titel"
 
-#: ./room.py:38
-#: ./room_templates/view.pt:46
+#: room.py:38 room_templates/view.pt:46
 msgid "Capacity of the room"
 msgstr "Raumkapazität"
 
-#: ./talk.py:124
-#: ./workshop.py:119
+#: talk.py:124 workshop.py:121
 msgid "Choose a license for your talk"
 msgstr "Wählen Sie eine Lizenz für Ihren Talk"
 
-#: ./conferencebreak.py:74
-#: ./talk.py:165
-#: ./workshop.py:160
+#: conferencebreak.py:74 talk.py:165 workshop.py:162
 msgid "Choose a number for the order in the track"
 msgstr "Wählen Sie eine Nummer für Sortierung im Track"
 
-#: ./track.py:64
+#: track.py:64
 msgid "Choose the room for the track"
 msgstr "Wählen Sie den Raum für den Track"
 
-#: ./talk.py:107
+#: talk.py:107
 msgid "Choose the topic for your talk"
 msgstr "Wählen Sie eine Thematik für Ihren Talk"
 
-#: ./workshop.py:102
+#: workshop.py:104
 msgid "Choose the topic for your workshop"
 msgstr "Wählen Sie eine Thematik für Ihren Workshop"
 
-#: ./conferencebreak.py:61
+#: conferencebreak.py:61
 msgid "Choose the track for this break"
 msgstr "Wählen Sie den Track für diese Unterbrechung"
 
-#: ./talk.py:140
-#: ./workshop.py:127
+#: talk.py:140 workshop.py:129
 msgid "Choose the track for this talk"
 msgstr "Wählen Sie den Track für diesen Talk"
 
-#: ./attendee.py:55
-#: ./conferencespeaker.py:39
+#: attendee.py:55 conferencespeaker.py:39
 msgid "City"
 msgstr "Stadt"
 
-#: ./profiles/default/types/collective.conferences.conference.xml
+#: profiles/default/types/collective.conferences.conference.xml
 msgid "Conference"
 msgstr "Konferenz"
 
-#: ./profiles/default/types/collective.conferences.conferencebreak.xml
+#: profiles/default/types/collective.conferences.conferencebreak.xml
 msgid "Conference Break"
 msgstr "Konferenzunterbrechung"
 
-#: ./profiles/default/types/collective.conferences.room.xml
+#: conferencebreakfolder.py:12
+msgid "Conference Break Folder Title"
+msgstr "Konferenz-Unterbrechungs-Ordner-Titel"
+
+#: conferencebreakfolder.py:16
+msgid "Conference Break Summary"
+msgstr "Konferenz-Break-Überblick"
+
+#: profiles/default/types/collective.conferences.conferencebreakfolder.xml
+msgid "Conference Breaks Folder"
+msgstr "Konferenz-Break-Ordner"
+
+#: profiles/default/types/collective.conferences.callforpaper.xml
+msgid "Conference Call for Paper"
+msgstr "Konferenz-Call-for-Paper"
+
+#: profiles/default/types/collective.conferences.program.xml
+msgid "Conference Program"
+msgstr "Konferenzprogramm"
+
+#: profiles/default/types/collective.conferences.attendeefolder.xml
+msgid "Conference Registration Folder"
+msgstr "Konferenz-Registierungs-Ordner"
+
+#: profiles/default/types/collective.conferences.room.xml
 msgid "Conference Room"
 msgstr "Konferenzraum"
 
-#: ./profiles/default/types/collective.conferences.roomfolder.xml
+#: profiles/default/types/collective.conferences.roomfolder.xml
 msgid "Conference Rooms Folder"
 msgstr "Ordner für Konferenzräume"
 
-#: ./profiles/default/types/collective.conferences.speakerfolder.xml
-msgid "Conference Speakers"
-msgstr "Konferenzsprecher"
+#: profiles/default/types/collective.conferences.speakerfolder.xml
+msgid "Conference Speaker Folder"
+msgstr "Konferenzsprecher-Ordner"
 
-#: ./profiles/default/types/collective.conferences.talksfolder.xml
-msgid "Conference Talks Folder"
-msgstr "Ordner für Konferenztalks"
+#: profiles/default/types/collective.conferences.talk.xml
+msgid "Conference Talk"
+msgstr "Konferenztalk"
 
-#: ./profiles/default/types/collective.conferences.twfolder.xml
-msgid "Conference Talks/Workshop Folder"
-msgstr ""
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "Conference Talk Publication Workflow"
+msgstr "Workflow für die Veröffentlichung von Konferenztalks"
 
-#: ./conference.py:13
+#: profiles/default/types/collective.conferences.twfolder.xml
+msgid "Conference Talk/Workshop Folder"
+msgstr "Konferenz-Talk /-Workshop-Ordner"
+
+#: conference.py:13
 msgid "Conference Title"
 msgstr "Konferenztitel"
 
-#: ./profiles/default/types/collective.conferences.workshopfolder.xml
-msgid "Conference Workshop Folder"
-msgstr "Ordner für Konferenzworkshops"
+#: profiles/default/types/collective.conferences.track.xml
+#: twfolder_templates/view.pt:51
+msgid "Conference Track"
+msgstr "Konferenztrack"
 
-#: ./conferencebreak.py:32
+#: profiles/default/types/collective.conferences.workshop.xml
+msgid "Conference Workshop"
+msgstr "Konferenzworkshop"
+
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Conference Workshop Publication Workflow"
+msgstr "Workflow für die Veröffentlichung von Konferenzworkshops"
+
+#: conferencebreak.py:32
 msgid "Conference break details"
 msgstr "Konferenzunterbrechung-Details"
 
-#: ./conferencebreak.py:26
+#: conferencebreak.py:26
 msgid "Conference break summary"
 msgstr "Konferenzunterbrechung-Zusammenfassung"
 
-#: ./conferencebreak.py:22
+#: conferencebreak.py:22
 msgid "Conference break title"
 msgstr "Konferenzunterbrechung-Titel"
 
-#: ./conference.py:17
+#: conference.py:17
 msgid "Conference summary"
 msgstr "Konferenz-Zusammenfassung"
 
-#: ./attendee.py:67
-#: ./conferencespeaker.py:53
+#: attendee.py:67 conferencespeaker.py:53
 msgid "Country"
 msgstr "Land"
 
-#: ./program_templates/view.pt:51
-#: ./twfolder_templates/view.pt:49
+#: program_templates/view.pt:51 twfolder_templates/view.pt:49
 msgid "Description"
 msgstr "Beschreibung"
 
-#: ./callforpaper.py:26
-#: ./conference.py:23
-#: ./program.py:50
+#: callforpaper.py:26 conference.py:23 program.py:50
 msgid "Details"
 msgstr "Details"
 
-#: ./callforpaper.py:27
-#: ./program.py:51
+#: callforpaper.py:27 program.py:51
 msgid "Details about the program"
 msgstr "Programmdetails"
 
-#: ./conferencebreak_templates/view.pt:33
+#: conferencebreak_templates/view.pt:33
 msgid "Details of the Break"
 msgstr "Unterbrechungsdetails"
 
-#: ./workshop_templates/view.pt:60
+#: workshop_templates/view.pt:60
 msgid "Details of the Workshop"
 msgstr "Workshopdetails"
 
-#: ./attendee.py:73
+#: attendee.py:73
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: ./conferencebreak.py:47
-#: ./program.py:43
-#: ./talk.py:180
+#: conferencebreak.py:47 program.py:43 talk.py:180
 msgid "End date"
 msgstr "Endedatum"
 
-#: ./conferencebreak.py:46
-#: ./talk.py:179
-#: ./track.py:58
+#: conferencebreak.py:46 talk.py:179 track.py:58
 msgid "Enddate"
 msgstr "Endedatum"
 
-#: ./talk.py:191
+#: browser/controlpanel.py:72
+msgid "File Extensions"
+msgstr "Dateierweiterung"
+
+#: talk.py:191
 msgid "Files"
 msgstr "Dateien"
 
-#: ./attendeefolder.py:43
+#: workshop.py:193
+msgid "Files / Material"
+msgstr "Dateien / Material"
+
+#: attendeefolder.py:43
 msgid "Fill in one payment option per line."
 msgstr "Tragen Sie eine Bezahlmöglichkeit pro Zeile ein."
 
-#: ./browser/controlpanel.py:88
-msgid "Fill in the allowed file extensions for the material oradditional files of a conference talk, seperated by a pipe '|'."
-msgstr ""
+#: browser/controlpanel.py:105
+msgid "Fill in the allowed file extensions for the material or additional files of a conference talk, seperated by a pipe '|'."
+msgstr "Tragen Sie die erlaubten Datei-Erweiterungen für Material- oder ergänzende Dateien eines Konferenz-Talk ein, getrennt durch einen senkrechten Trennstrich '|'."
 
-#: ./browser/controlpanel.py:95
+#: browser/controlpanel.py:112
 msgid "Fill in the allowed file extensions for the material, seperated by a pipe '|'."
-msgstr ""
+msgstr "Tragen Sie die erlaubten Datei-Erweiterungen für das Material ein, getrennt durch einen senkrechten Trennstrich '|'."
 
-#: ./browser/controlpanel.py:74
-msgid "Fill in the allowed file extensions for the slides ofconference talks, seperated by a pipe '|'."
-msgstr ""
+#: browser/controlpanel.py:91
+msgid "Fill in the allowed file extensions for the slides of conference talks, seperated by a pipe '|'."
+msgstr "Tragen Sie die erlaubten Dateierweiterungen für Folien von Konferenz-Talks ein, getrennt durch ein senkrechten Trennstrich '|'."
 
-#: ./browser/controlpanel.py:81
-msgid "Fill in the allowed file extensions for the slides ofconference workshops, seperated by a pipe '|'."
-msgstr ""
+#: browser/controlpanel.py:98
+msgid "Fill in the allowed file extensions for the slides of conference workshops, seperated by a pipe '|'."
+msgstr "Tragen Sie die erlaubten Dateierweiterungen für Folien von Konferenz-Workshops ein, getrennt durch ein senkrechten Trennstrich '|'."
 
-#: ./browser/controlpanel.py:102
+#: browser/controlpanel.py:119
 msgid "Fill in the allowed file extensions for the videos of conference talks / workshops, separated by a pipe '|'."
-msgstr ""
+msgstr "Tragen Sie die erlaubten Datei-Erweiterungen für Videos von Konferenz-Talks / -Workshops ein, getrennt durch einen senkrechten Strich '|'."
 
-#: ./browser/controlpanel.py:67
+#: browser/controlpanel.py:84
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
-msgstr ""
+msgstr "Tragen Sie die erlaubten Bilddatei-Erweiterungen ein, getrennt durch einen senkrechten Strich '|'."
 
-#: ./browser/controlpanel.py:48
+#: browser/controlpanel.py:54
 msgid "Fill in the names of the licenses for conference talks and workshops. Use a new line for every value / license name."
 msgstr "Tragen Sie die Lizenznamen für Konferenz-Talks und -Workshops ein. Verwenden Sie eine neue Zeile für jeden Wert / Lizenznamen."
 
-#: ./browser/controlpanel.py:14
+#: browser/controlpanel.py:15
 msgid "Fill in the time slots for conference breaks in minutes. Use a new line for every value / break length. Write only the numbers without the addition 'minutes'."
 msgstr "Tragen Sie die Zeitdauer für Konferenz-Pausen in Minuten ein. Verwenden Sie eine neue Zeile für jeden Wert / jede Pausendauer. Schreiben Sie nur Zahlen ohne den Zusatz 'Minuten'."
 
-#: ./browser/controlpanel.py:25
+#: browser/controlpanel.py:26
 msgid "Fill in the time slots for conference talks in minutes. Use a new line for every value / talk length. Write only the numbers without the addition 'minutes'."
 msgstr "Tragen Sie die Zeitdauer für Konferenz-Talks in Minuten ein. Verwenden Sie eine neue Zeile für jeden Wert / jede Talk-Dauer. Schreiben Sie nur Zahlen ohne den Zusatz 'Minuten'."
 
-#: ./browser/controlpanel.py:36
+#: browser/controlpanel.py:37
 msgid "Fill in the time slots for workshops at the conference in minutes. Use a new line for every value / workshop length. Write only the numbers without the addition 'minutes'."
 msgstr "Tragen Sie die Zeitdauer für Konferenz-Workshops in Minuten ein. Verwenden Sie eine neue Zeile für jeden Wert / jede Workshop-Dauer. Schreiben Sie nur Zahlen ohne den Zusatz 'Minuten'."
 
-#: ./conferencespeaker.py:27
+#: callforpaper.py:32
+msgid "Fill in the topics for conference talks and workshops. Use a new line for every value / topic."
+msgstr "Tragen Sie die Themen von Konferenz-Talks und Workshops ein. Verwenden Sie für jeden Wert / jedes Thema eine neue Zeile."
+
+#: conferencespeaker.py:27
 msgid "First name"
 msgstr "Vorname"
 
-#: ./attendee.py:45
+#: attendee.py:45
 msgid "Firstname Lastname"
 msgstr "Vorname Nachname"
 
-#: ./profiles/default/types/collective.conferences.attendeefolder.xml
-msgid "Folder for Registration of the Conference Attendees"
-msgstr "Ordner für die Registrierung von Konferenz-Besuchern"
-
-#: ./conferencespeaker.py:33
+#: conferencespeaker.py:33
 msgid "For those requiring visa, please add your full postal address details"
 msgstr "Für diejenigen, die Visa benötigen, bitte tragen Sie Ihre vollständige Postadresse ein"
 
-#: ./program_templates/view.pt:57
+#: program_templates/view.pt:57
 msgid "From"
 msgstr "Von"
 
-#: ./program_templates/programfullview.pt:26
-#: ./program_templates/view.pt:26
-#: ./talk_templates/view.pt:59
+#: program_templates/programfullview.pt:26 program_templates/view.pt:26
+#: talk_templates/view.pt:59
 msgid "From:"
 msgstr "Von:"
 
-#: ./talk.py:115
+#: talk.py:115
 msgid "Give an estimation about the time you'd plan for your talk."
 msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplante Talk planen."
 
-#: ./workshop.py:110
+#: workshop.py:112
 msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplante Workshop planen."
 
-#: ./attendeefolder.py:36
+#: attendeefolder.py:36
 msgid "Have one to pay a registration fee?"
 msgstr "Ist eine Registrierungsgebühr zu zahlen?"
 
-#: ./attendee.py:86
+#: attendee.py:86
 msgid "Have you already paid the registration fee?"
 msgstr "Haben Sie die Registrierungsgebühr bereits gezahlt?"
 
-#: ./callforpaper_templates/view.pt:37
+#: callforpaper_templates/view.pt:37
 msgid "If you already have an account on this site,"
 msgstr "Falls Sie bereits einen Account auf dieser Seite haben,"
 
-#: ./attendee.py:94
+#: attendee.py:94
 msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
 msgstr "Falls Sie die Registrierungsgebühr bereits gezahlt haben, teilen Sie uns bitte mit, welchen Weg Sie für den Geldtransfer verwendet haben."
 
-#: ./callforpaper_templates/view.pt:51
+#: callforpaper_templates/view.pt:51
 msgid "If you not already registered a conference speaker for you, please follow the following link and add a speaker profile to this site:"
 msgstr "Falls Sie noch nicht als Konferenz-Sprecher registriert sind, folgen Sie bitte dem folgenden Link und erstellen ein Sprecher-Profil auf dieser Seite:"
 
-#: ./attendee.py:102
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
+msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergänzungen vornehmen wollen, führt Sie dies zurück."
+
+#: attendee.py:102
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr "Falls Sie die Registrierungsgebühr per Banküberweisung gezahlt haben, teilen Sie uns bitte den Namen und die Filiale der Bank mit, die Sie verwendet haben. Wir benötigen diese Information, um Ihre Zahlung schneller festzustellen."
 
-#: ./workshop.py:203
+#: workshop.py:216
 msgid "If you used slides during your workshop, please upload your slides shortly after you have given your workshop."
-msgstr ""
+msgstr "Falls Sie Folien während Ihres Workshops verwendet haben, laden Sie diese Folien bitte hoch, kurz nachdem Sie Ihren Workshop gegeben haben."
 
-#: ./callforpaper_templates/view.pt:35
+#: callforpaper_templates/view.pt:35
 msgid "If you want to give a talk or a workshop at the conference, please login to the site. There will be a link on this site to submit a new talk or workshop available once you are logged in."
 msgstr "Falls Sie einen Talk oder Workshop auf der Konferenz geben wollen, loggen Sie sich bitte in die Webseite ein. Sie werden nach dem Einloggen einen Link auf dieser Seite vorfinden, um einen neuen Talk oder Workshop zu übermitteln."
 
-#: ./callforpaper_templates/view.pt:43
+#: callforpaper_templates/view.pt:43
 msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
 msgstr "Andernfalls müssen Sie sich zuerst auf der Seite registrieren. Sie können hierzu das Registrierungsformular aufrufen"
 
-#: ./attendeefolder.py:30
+#: attendeefolder.py:30
 msgid "Information about registration process"
 msgstr "Information zum Registrierungsprozess"
 
-#: ./roomfolder.py:26
-#: ./roomfolder_templates/view.pt:33
+#: roomfolder.py:26 roomfolder_templates/view.pt:33
 msgid "Information about the Conference Rooms"
 msgstr "Information zu den Konferenzräumen"
 
-#: ./configure.zcml:27
+#: configure.zcml:27
 msgid "Installs the collective.conferences add-on."
 msgstr "Installiert das collective.conferences Addon."
 
-#: ./common.py:33
+#: common.py:33
 msgid "Invalid email address"
 msgstr "Ungültige Email-Adresse"
 
-#: ./common.py:176
+#: common.py:176
 msgid "Invalid phone number"
-msgstr ""
+msgstr "Ungültige Telefonnummer"
 
-#: ./conferencespeaker.py:22
+#: conferencespeaker.py:22
 msgid "Last name"
 msgstr "Nachname"
 
-#: ./conferencebreak.py:54
-#: ./twfolder_templates/view.pt:48
+#: browser/controlpanel.py:48
+msgid "Legal"
+msgstr "Rechtliches"
+
+#: conferencebreak.py:54 twfolder_templates/view.pt:48
 msgid "Length"
 msgstr "Länge"
 
-#: ./browser/controlpanel.py:13
+#: browser/controlpanel.py:14
 msgid "Length Of Conference Breaks"
 msgstr "Dauer der Konferenzpause"
 
-#: ./browser/controlpanel.py:24
+#: browser/controlpanel.py:25
 msgid "Length Of Talks"
 msgstr "Dauer des Talks"
 
-#: ./browser/controlpanel.py:35
+#: browser/controlpanel.py:36
 msgid "Length Of Workshops"
 msgstr "Dauer des Workshops"
 
-#: ./conferencebreak_templates/view.pt:26
+#: conferencebreak_templates/view.pt:26
 msgid "Length of the Break:"
 msgstr "Länge der Unterbrechung:"
 
-#: ./talk.py:123
-#: ./workshop.py:118
+#: talk.py:123 workshop.py:120
 msgid "License Of Your Talk"
 msgstr "Lizenz des Talks"
 
-#: ./browser/controlpanel.py:47
+#: browser/controlpanel.py:53
 msgid "Licenses Of Talks / Workshops"
 msgstr "Lizenz des Talks / Workshops"
 
-#: ./talk.py:230
-#: ./workshop.py:221
+#: talk.py:230 workshop.py:234
 msgid "Link To The Presentation Slides"
-msgstr ""
+msgstr "Link zu den Präsentationsfolien"
 
-#: ./talk.py:236
-#: ./workshop.py:227
+#: talk.py:236 workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
-msgstr ""
+msgstr "Link zu den Präsentationsfolien in weiterem Dateiformat"
 
-#: ./talk.py:262
+#: talk.py:262
 msgid "Link to additional Files of your presentation in the correct file format (see for it above)."
-msgstr ""
+msgstr "Link zu den ergänzenden Dateien Ihrer Präsentation in dem korrekten Dateiformat (sehen Sie dieses oben)."
 
-#: ./talk_templates/view.pt:107
+#: talk_templates/view.pt:107
 msgid "Link to additional files:"
 msgstr "Link zu ergänzenden Dateien:"
 
-#: ./talk_templates/view.pt:91
+#: talk_templates/view.pt:91
 msgid "Link to slides in ODT-File-Format:"
 msgstr "Link zu den Folien im ODT-Dateiformat:"
 
-#: ./talk_templates/view.pt:97
+#: talk_templates/view.pt:97
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr "Link zu den Folien im PDF- oder PDF-Hybrid-Dateiformat:"
 
-#: ./talk.py:277
+#: talk.py:277 workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr "Link zum Video des Talk"
 
-#: ./talk_templates/view.pt:112
+#: talk_templates/view.pt:112
 msgid "Link to video:"
 msgstr "Link zum Video:"
 
-#: ./talk.py:130
-#: ./workshop.py:139
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr "Mitglied zieht Einreichung zurück"
+
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr "Mitglied reicht Inhalt zur Veröffentlichung ein"
+
+#: talk.py:130 workshop.py:141
 msgid "Messages to the Program Committee"
 msgstr "Mitteilung an das Programm-Kommittee"
 
-#: ./conferencebreak_templates/view.pt:28
-#: ./talk_templates/view.pt:55
-#: ./workshop_templates/view.pt:55
+#: conferencebreak_templates/view.pt:28 talk_templates/view.pt:55
+#: workshop_templates/view.pt:55
 msgid "Minutes"
 msgstr "Minuten"
 
-#: ./conferencespeaker.py:73
+#: conferencespeaker.py:73
 msgid "Mobile Telephone Number"
 msgstr "Mobil-Telefonnummer"
 
-#: ./talksfolder.py:13
-msgid "Name Of The Folder For Talks"
-msgstr "Name des Ordners für Talks"
-
-#: ./workshopfolder.py:13
-msgid "Name Of The Workshopfolder"
-msgstr "Name des Workshopordners"
-
-#: ./room.py:17
+#: room.py:17
 msgid "Name of the Room"
 msgstr "Raumname"
 
-#: ./attendeefolder.py:20
+#: attendeefolder.py:20
 msgid "Name of the attendee folder"
 msgstr "Name des Besucherordners"
 
-#: ./roomfolder.py:17
+#: roomfolder.py:17
 msgid "Name of the room folder"
 msgstr "Name des Raumordners"
 
-#: ./speakerfolder.py:15
+#: speakerfolder.py:15
 msgid "Name of the speaker folder"
 msgstr "Name des Sprecherordners"
 
-#: ./common.py:14
+#: common.py:14
 msgid "No"
 msgstr "Nein"
 
-#: ./attendee.py:80
-#: ./conferencespeaker.py:82
+#: attendee.py:80 conferencespeaker.py:82
 msgid "Organisation"
 msgstr "Organisation"
 
-#: ./program.py:57
+#: program.py:57
 msgid "Organiser"
 msgstr "Organisator"
 
-#: ./attendeefolder.py:42
+#: attendeefolder.py:42
 msgid "Payment Options"
 msgstr "Bezahlmöglichkeiten"
 
-#: ./attendee.py:85
+#: attendee.py:85
 msgid "Payment of the Registration Fee"
 msgstr "Zahlung der Registrierungsgebühr"
 
-#: ./room_templates/view.pt:48
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Pending"
+msgstr "Schwebend"
+
+#: room_templates/view.pt:48
 msgid "Person"
 msgstr "Person"
 
-#: ./conferencespeaker.py:105
+#: conferencespeaker.py:105
 msgid "Picture"
 msgstr "Bild"
 
-#: ./talk.py:114
-#: ./workshop.py:109
+#: talk.py:114 workshop.py:111
 msgid "Planed Length"
 msgstr "Geplante Länge"
 
-#: ./talk.py:64
+#: talk.py:64
 msgid "Please choose a call for paper topic for your talk."
-msgstr ""
+msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Talk."
 
-#: ./workshop.py:59
+#: workshop.py:61
 msgid "Please choose a call for paper topic for your workshop."
-msgstr ""
+msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Workshop."
 
-#: ./talk.py:59
-#: ./workshop.py:261
+#: talk.py:59 workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr "Bitte wählen Sie eine Lizenz für Ihren Talk."
 
-#: ./workshop.py:54
+#: workshop.py:56
 msgid "Please choose a license for your workshop."
-msgstr ""
+msgstr "Bitte wählen Sie eine Lizenz für Ihren Workshop."
 
-#: ./talk.py:69
+#: talk.py:69
 msgid "Please choose a planed length for your talk."
-msgstr ""
+msgstr "Bitte wählen Sie eine geplante Länge für Ihren Talk aus."
 
-#: ./workshop.py:64
+#: workshop.py:66
 msgid "Please choose a planed length for your workshop."
-msgstr ""
+msgstr "Bitte wählen Sie eine geplante Länge für Ihren Workshop."
 
-#: ./room.py:39
+#: room.py:39
 msgid "Please fill in the maximum number of attendees"
 msgstr "Bitte tragen Sie die maximale Besucherzahl ein"
 
-#: ./conferencespeaker.py:74
+#: conferencespeaker.py:74
 msgid "Please fill in your mobile telephone number so that we could get in contact with you during the conference."
 msgstr "Bitte tragen Sie Ihre Mobilfunknummer ein, so dass wir Sie  während der Konferenz kontaktieren können."
 
-#: ./conferencespeaker.py:67
+#: conferencespeaker.py:67
 msgid "Please fill in your telephone number so that we could get in contact with you by phone if necessary."
 msgstr "Bitte tragen Sie Ihre Telefonnummer ein, so dass wir Sie erforderlichenfalls anrufen können."
 
-#: ./talk_templates/view.pt:21
-#: ./workshop_templates/view.pt:21
+#: talk_templates/view.pt:21 workshop_templates/view.pt:21
 msgid "Please submit this for review."
 msgstr "Bitte übermitteln Sie dies zum Review."
 
-#: ./conferencespeaker.py:106
-#: ./room.py:26
+#: conferencespeaker.py:106 room.py:26
 msgid "Please upload an image"
 msgstr "Bitte laden Sie Ihre Bilddatei hoch"
 
-#: ./talk.py:254
+#: talk.py:254
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr "Bitte laden Sie die ergänzenden Dateien zu Ihrer Präsentation (im Archiv-Format) hoch, kurz nachdem Sie Ihren Talk gegeben haben."
 
-#: ./talk.py:214
+#: talk.py:214
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr "Bitte laden Sie ihre Präsentation hoch kurz nachdem Sie ihren Talk gegeben haben."
 
-#: ./workshop.py:243
+#: workshop.py:256
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr "Bitte laden Sie Ihre Workshop-Präsentation oder Material zu dem Inhalt des Workshops hoch, vor oder kurz nachdem Sie den Workshop gegeben haben."
 
-#: ./conferencebreak.py:73
-#: ./talk.py:164
-#: ./workshop.py:159
+#: conferencebreak.py:73 talk.py:164 workshop.py:161
 msgid "Position In The Track"
 msgstr "Position im Track"
 
-#: ./attendee.py:61
-#: ./conferencespeaker.py:46
+#: attendee.py:61 conferencespeaker.py:46
 msgid "Postal Code"
 msgstr "Postleitzahl"
 
-#: ./workshop_templates/view.pt:65
+#: workshop_templates/view.pt:65
 msgid "Presentation Slides"
 msgstr "Präsentationsfolien"
 
-#: ./talk.py:221
-#: ./workshop.py:211
+#: talk.py:221 workshop.py:224
 msgid "Presentation Slides In Further File Format"
-msgstr ""
+msgstr "Präsentationsfolien in einem weiteren Dateiformat"
 
-#: ./talk.py:213
-#: ./workshop.py:202
+#: talk.py:213 workshop.py:215
 msgid "Presentation slides"
-msgstr ""
+msgstr "Präsentationsfolien"
 
-#: ./talk.py:93
+#: talk.py:93
 msgid "Presenter"
 msgstr "Präsentierender"
 
-#: ./profiles/default/types/collective.conferences.program.xml
-msgid "Program"
-msgstr "Programm"
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Private"
+msgstr "Privat"
 
-#: ./program.py:29
+#: program.py:29
 msgid "Program name"
 msgstr "Programmname"
 
-#: ./program.py:33
+#: program.py:33
 msgid "Program summary"
 msgstr "Programm-Zusammenfassung"
 
-#: ./attendeefolder.py:35
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
+msgstr "Packt Ihre Objekte in eine Review-Schlange, so dass sie auf der Seite veröffentlicht werden können."
+
+#: attendeefolder.py:35
 msgid "Registration Fee?"
 msgstr "Registrierungsgebühr?"
 
-#: ./attendee_templates/view.pt:35
+#: attendee_templates/view.pt:35
 msgid "Registration fee paid:"
 msgstr "Registrierungsgebühr gezahlt:"
 
-#: ./talk.py:285
-#: ./workshop.py:253
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Retract"
+msgstr "Zurückziehen"
+
+#: talk.py:285 workshop.py:280
 msgid "Review notes"
 msgstr "Reviewnotizen"
 
-#: ./program_templates/view.pt:54
-#: ./track_templates/view.pt:43
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr "Reviewer veröffentlicht den Inhalt"
+
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Reviewer sends content back for re-drafting"
+msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
+
+#: program_templates/view.pt:54 track_templates/view.pt:43
 msgid "Room"
 msgstr "Raum"
 
-#: ./talk.py:156
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Send back"
+msgstr "Zurück senden"
+
+#: talk.py:156
 msgid "Set a time frame for the talk in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Talk in Minuten."
 
-#: ./workshop.py:151
+#: workshop.py:153
 msgid "Set a time frame for the workshop in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Workshop in Minuten."
 
-#: ./talk.py:186
-#: ./workshop.py:181
-#: ./workshop_templates/view.pt:67
+#: talk.py:186 workshop.py:183 workshop_templates/view.pt:67
 msgid "Slides"
 msgstr "Folien"
 
-#: ./profiles/default/types/collective.conferences.conferencespeaker.xml
+#: twfolder_templates/view.pt:50
+msgid "Speaker"
+msgstr "Sprecher"
+
+#: profiles/default/types/collective.conferences.conferencespeaker.xml
 msgid "Speaker/Workshop Leader"
 msgstr "Sprecher/Workshopleiter"
 
-#: ./twfolder_templates/view.pt:47
+#: twfolder_templates/view.pt:47
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
-#: ./conferencebreak.py:39
-#: ./program.py:37
-#: ./talk.py:172
+#: conferencebreak.py:39 program.py:37 talk.py:172
 msgid "Start date"
 msgstr "Startdatum"
 
-#: ./conferencebreak.py:38
-#: ./talk.py:171
-#: ./track.py:52
+#: conferencebreak.py:38 talk.py:171 track.py:52
 msgid "Startdate"
 msgstr "Startdatum"
 
-#: ./attendee.py:49
-#: ./conferencespeaker.py:32
+#: attendee.py:49 conferencespeaker.py:32
 msgid "Street"
 msgstr "Straße"
 
-#: ./track_templates/view.pt:59
+#: track_templates/view.pt:59
 msgid "Subject of the talk"
 msgstr "Gegenstand des Talks"
 
-#: ./callforpaper_templates/view.pt:66
+#: callforpaper_templates/view.pt:66
 msgid "Submit a conference talk"
 msgstr "Reichen Sie einen Konferenz-Talk ein"
 
-#: ./callforpaper_templates/view.pt:71
+#: callforpaper_templates/view.pt:71
 msgid "Submit a conference workshop"
 msgstr "Reichen Sie einen Konferenz-Workshop ein"
 
-#: ./profiles/default/types/collective.conferences.talk.xml
-msgid "Talk"
-msgstr "Talk"
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Submit for publication"
+msgstr "Zur Veröffentlichung einreichen"
 
-#: ./talksfolder.py:18
-msgid "Talk Folder Description"
-msgstr "Talkordner-Beschreibung"
+#: twfolder.py:20
+msgid "Summary For Talks And Workshops"
+msgstr "Überblick zu Talks und Workshops"
 
-#: ./talk.py:155
-#: ./talk_templates/view.pt:51
+#: talk.py:155 talk_templates/view.pt:51
 msgid "Talk Length"
 msgstr "Talk-Länge"
 
-#: ./talk.py:88
+#: talk.py:88
 msgid "Talk details"
 msgstr "Talk-Details"
 
-#: ./talk.py:83
+#: talk.py:83
 msgid "Talk summary"
 msgstr "Talk-Zusammenfassung"
 
-#: ./talk.py:79
+#: talk.py:79
 msgid "Talk title"
 msgstr "Talk-Titel"
 
-#: ./twfolder.py:15
+#: twfolder.py:15
 msgid "Talk workshop folder title"
-msgstr ""
+msgstr "Talk-Workshop-Ordner-Titel"
 
-#: ./track_templates/view.pt:57
+#: track_templates/view.pt:57
 msgid "Talk/Workshop"
 msgstr "Talk/Workshop"
 
-#: ./talksfolder.py:14
-#: ./twfolder_templates/view.pt:42
+#: twfolder_templates/view.pt:42
 msgid "Talks"
 msgstr "Talks"
 
-#: ./twfolder.py:16
+#: twfolder.py:16
 msgid "Talks / Workshops"
-msgstr ""
+msgstr "Talks / Workshops"
 
-#: ./conferencespeaker.py:66
+#: conferencespeaker.py:66
 msgid "Telephone Number"
 msgstr "Telefonnummer"
 
-#: ./track_templates/view.pt:22
+#: track_templates/view.pt:22
 msgid "The"
 msgstr "Die"
 
-#: ./conferencespeaker_templates/view.pt:46
+#: conferencespeaker_templates/view.pt:46
 msgid "The Speaker has submitted the following talks:"
 msgstr "Der Sprecher hat die folgende Talks eingereicht:"
 
-#: ./profiles/default/types/collective.conferences.attendeefolder.xml
+#: profiles/default/types/collective.conferences.attendeefolder.xml
 msgid "The attendee of the conference"
 msgstr "Der Besucher der Konferenz"
 
-#: ./track.py:102
+#: profiles/default/types/collective.conferences.conferencebreakfolder.xml
+msgid "The breaks of the conference"
+msgstr "Die Konferenzunterbrechungen"
+
+#: track.py:102
 msgid "The end date couldn't be set after the end of the conference program."
 msgstr "Das Enddatum kann nicht nach dem Ende des Konferenzprogramms gesetzt werden."
 
-#: ./track.py:29
+#: track.py:29
 msgid "The end of the track could not be set after the conference program."
 msgstr "Das Enddatum des Tracks kann nicht nach dem Ende des Konferenzprogramms gesetzt werden."
 
-#: ./talk.py:270
+#: talk.py:270 workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
-msgstr ""
+msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Videos erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: ./conferencespeaker.py:98
+#: conferencespeaker.py:98
 msgid "The following file extensions are allowed for the picture files (upper case and lower case and mix of both):"
-msgstr ""
+msgstr "Die folgenden Datei-Erweiterungen sind für Bild-Dateien erlaubt (Groß- und Kleinschreibung und ein Mix aus beiden):"
 
-#: ./talk.py:244
+#: talk.py:244
 msgid "The following file extensions are allowed for the upload of material or additional files for conference talks as well as for linked material/ additional files (upper case and lower case and mix of both):"
-msgstr ""
+msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Material oder ergänzenden Dateien zu Konferenz-Talks wie auch für verlinktes Material / ergänzende Dateien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: ./talk.py:205
+#: talk.py:205
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
-msgstr ""
+msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Talk-Folien wie auch für verlinkte Folien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: ./workshop.py:194
+#: workshop.py:207
 msgid "The following file extensions are allowed for the upload of slides of conference workshop as well as for linked slides (upper case and lower case and mix of both):"
-msgstr ""
+msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Workshop-Folien wie auch für verlinkte Folien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: ./workshop.py:235
+#: workshop.py:248
 msgid "The following file extensions are allowed for workshop material uploads (upper case and lower case and mix of both):"
-msgstr ""
+msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Workshop-Material erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: ./profiles/default/types/collective.conferences.roomfolder.xml
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+msgid "The owner can edit the talk"
+msgstr "Der Besitzer kann den Talk bearbeiten"
+
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "The owner can edit the workshop"
+msgstr "Der Besitzer kann den Workshop bearbeiten"
+
+#: profiles/default/types/collective.conferences.roomfolder.xml
 msgid "The rooms of the conference"
 msgstr "Die Konferenzräume"
 
-#: ./profiles/default/types/collective.conferences.speakerfolder.xml
+#: profiles/default/types/collective.conferences.speakerfolder.xml
 msgid "The speaker of the conference"
 msgstr "Die Konferenzsprecher"
 
-#: ./track.py:91
+#: track.py:91
 msgid "The start date could not be set before the begin of the conference program."
 msgstr "Das Startdatum kann nicht vor dem Beginn des Konferenzprogramms gesetzt werden."
 
-#: ./program.py:66
-#: ./track.py:79
+#: program.py:66 track.py:79
 msgid "The start date must be before the end date."
 msgstr "Das Startdatum muss vor dem Enddatum liegen."
 
-#: ./track.py:25
+#: track.py:25
 msgid "The start of the track could not be set before the conference program."
 msgstr "Das Startdatum des Tracks kann nicht vor dem Konferenzprogramm gesetzt werden."
 
-#: ./program.py:21
-#: ./track.py:21
+#: program.py:21 track.py:21
 msgid "The start or end date is invalid"
 msgstr "Das Start- oder Enddatum ist ungültig"
 
-#: ./talk.py:377
-#: ./workshop.py:345
+#: talk.py:383 workshop.py:378
 msgid "The talk title is already in use."
-msgstr ""
+msgstr "Der Talk-Titel wird bereits verwendet."
 
-#: ./profiles/default/types/collective.conferences.twfolder.xml
+#: profiles/default/types/collective.conferences.twfolder.xml
 msgid "The talks and workshops of the conference"
-msgstr ""
+msgstr "Die Konferenz-Talks und -Workshops"
 
-#: ./profiles/default/types/collective.conferences.talksfolder.xml
-msgid "The talks of the conference"
-msgstr "Die Konferenztalks"
-
-#: ./profiles/default/types/collective.conferences.workshopfolder.xml
-msgid "The workshops of the conference"
-msgstr "Die Konferenz-Workshops"
-
-#: ./attendee.py:50
+#: attendee.py:50
 msgid "This data is mandatory and required for our internal procedures"
 msgstr "Diese Daten  sind verpflichtend und werden für unsere internen Abläufe benötigt"
 
-#: ./attendee.py:56
+#: attendee.py:56
 msgid "This data is mandatory and required for our internal procidures"
 msgstr "Diese Daten  sind verpflichtend und werden für unsere internen Abläufe benötigt"
 
-#: ./track_templates/view.pt:58
+#: track_templates/view.pt:58
 msgid "Time"
 msgstr "Zeit"
 
-#: ./conferencebreak_templates/view.pt:20
+#: conferencebreak_templates/view.pt:20
 msgid "Time:"
 msgstr "Zeit:"
 
-#: ./conferencebreak.py:21
-#: ./talk.py:78
-#: ./track.py:37
+#: conferencebreak.py:21 conferencebreakfolder.py:11 talk.py:78
 msgid "Title"
 msgstr "Titel"
 
-#: ./program_templates/view.pt:60
+#: program_templates/view.pt:60
 msgid "To"
 msgstr "Bis"
 
-#: ./program_templates/programfullview.pt:30
-#: ./program_templates/view.pt:30
-#: ./talk_templates/view.pt:64
+#: program_templates/programfullview.pt:30 program_templates/view.pt:30
+#: talk_templates/view.pt:64
 msgid "To:"
 msgstr "Bis:"
 
-#: ./callforpaper.py:31
+#: callforpaper.py:31
 msgid "Topics for the Call for Papers"
 msgstr "Themen des Call for Papers"
 
-#: ./profiles/default/types/collective.conferences.track.xml
-#: ./program_templates/view.pt:48
-#: ./talk_templates/view.pt:40
+#: program_templates/view.pt:48 talk_templates/view.pt:40
+#: workshop_templates/view.pt:40
 msgid "Track"
 msgstr "Track"
 
-#: ./track.py:47
+#: track.py:47
 msgid "Track details"
 msgstr "Track-Details"
 
-#: ./track.py:42
+#: track.py:42
 msgid "Track summary"
 msgstr "Track-Zusammenfassung"
 
-#: ./track.py:38
+#: track.py:38
 msgid "Track title"
 msgstr "Track-Titel"
 
-#: ./program_templates/view.pt:43
+#: program_templates/view.pt:43
 msgid "Tracks"
 msgstr "Tracks"
 
-#: ./configure.zcml:36
+#: configure.zcml:36
 msgid "Uninstalls the collective.conferences add-on."
 msgstr "Deinstallieren des collective.conferences Addon."
 
-#: ./attendee.py:101
+#: attendee.py:101
 msgid "Used Bank Account"
 msgstr "Verwendetes Bankkonto"
 
-#: ./talk.py:198
+#: talk.py:198 workshop.py:200
 msgid "Video"
 msgstr "Video"
 
-#: ./attendee.py:93
+#: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
+msgid "Visible to everyone, editable by the owner."
+msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
+
+#: attendee.py:93
 msgid "Way of Registration Fee Payment"
 msgstr "Zahlungweg der Registrierungsgebühr"
 
-#: ./attendee.py:74
+#: attendee.py:74
 msgid "We need this mandatory data to get in contact with you, if we have any questions"
 msgstr "Wir benötigen diese verpflichtenden Daten, um Sie zu kontaktieren, falls wir irgendwelche Fragen haben"
 
-#: ./profiles/default/types/collective.conferences.workshop.xml
-msgid "Workshop"
-msgstr "Workshop"
-
-#: ./workshopfolder.py:18
-msgid "Workshop Folder Description"
-msgstr "Workshop-Ordner-Beschreibung"
-
-#: ./workshop.py:88
-#: ./workshop_templates/view.pt:29
+#: twfolder_templates/view.pt:91 workshop.py:90 workshop_templates/view.pt:29
 msgid "Workshop Leader"
 msgstr "Workshopleiter"
 
-#: ./workshop.py:150
-#: ./workshop_templates/view.pt:51
+#: workshop.py:152 workshop_templates/view.pt:51
 msgid "Workshop Length"
 msgstr "Workshoplänge"
 
-#: ./workshop.py:83
+#: workshop.py:85
 msgid "Workshop details"
 msgstr "Workshopdetails"
 
-#: ./workshop.py:242
+#: workshop.py:255
 msgid "Workshop slides / material"
 msgstr "Workshop-Folien/-Material"
 
-#: ./twfolder.py:20
-#: ./workshop.py:78
+#: workshop.py:80
 msgid "Workshop summary"
 msgstr "Workshop-Zusammenfassung"
 
-#: ./workshop.py:74
+#: workshop.py:76
 msgid "Workshop title"
 msgstr "Workshop-Title"
 
-#: ./twfolder_templates/view.pt:71
-#: ./workshopfolder.py:14
+#: twfolder_templates/view.pt:83
 msgid "Workshops"
 msgstr "Workshops"
 
-#: ./conference.py:24
+#: conference.py:24
 msgid "Write information about the conference"
 msgstr "Schreiben Sie Informationen zur Konferenz"
 
-#: ./common.py:15
+#: common.py:15
 msgid "Yes"
 msgstr "Ja"
 
-#: ./talk.py:131
+#: talk.py:131
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
 msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. zu den Tagen, an denen Sie (nicht) verfügbar sind, um den Talk zu geben"
 
-#: ./workshop.py:140
+#: workshop.py:142
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. zu den Tagen, an denen Sie (nicht) verfügbar sind, um den Workshop zu halten"
 
-#: ./callforpaper_templates/view.pt:61
+#: callforpaper_templates/view.pt:61
 msgid "You can submit a new talk or workshop by following one of the following links. They will open a form with the necessary entries to create a new conference talk or workshop proposal:"
 msgstr "Sie können einen neuen Talk oder Workshop über einen der folgenden Links übermitteln. Die Links öffnen ein Formular mit den notwendigen Einträgen und erstellen einen neuen Konferenz-Talk- oder -Workshop-Vorschlag:"
 
-#: ./conferencespeaker.py:60
+#: talk.py:300 workshop.py:295
+msgid "You need to choose a position in the track. Please add this position to the field 'Position in Track'."
+msgstr "Sie müssen eine Position im Track wählen. Bitte fügen Sie diese Position im Feld 'Position in Track' ein."
+
+#: conferencespeaker.py:60
 msgid "Your email address"
 msgstr "Ihre Email-Adresse"
 
-#: ./track_templates/view.pt:29
+#: track_templates/view.pt:29
 msgid "and ends at"
 msgstr "endet um"
 
-#: ./callforpaper_templates/view.pt:41
+#: callforpaper_templates/view.pt:41
 msgid "and log into the site."
 msgstr "und in die Seite einloggen."
 
-#: ./conferencespeaker_templates/view.pt:59
+#: conferencespeaker_templates/view.pt:59
 msgid "and the following workshops:"
 msgstr "und die folgenden Workshops:"
 
-#: ./attendeefolder.py:24
+#: attendeefolder.py:24
 msgid "attendee folder description"
 msgstr "Beschreibung des Besucherordners"
 
-#: ./track_templates/view.pt:25
+#: track_templates/view.pt:25
 msgid "begins at"
 msgstr "beginnt um"
 
-#: ./configure.zcml:27
+#: configure.zcml:27
 msgid "collective.conferences"
 msgstr "collective.conferences"
 
-#: ./configure.zcml:36
+#: configure.zcml:36
 msgid "collective.conferences (uninstall)"
 msgstr "collective.conferences (deinstallierenl)"
 
-#: ./roomfolder.py:21
+#: roomfolder.py:21
 msgid "roomfolder description"
 msgstr "Beschreibung des Raumordners"
 
-#: ./speakerfolder.py:19
+#: speakerfolder.py:19
 msgid "speakerfolder description"
 msgstr "Beschreibung des Sprecherordners"
 
-#: ./callforpaper_templates/view.pt:46
+#: callforpaper_templates/view.pt:46
 msgid "with this link"
 msgstr "mit diesem Link"
 
-#: ./callforpaper_templates/view.pt:39
+#: callforpaper_templates/view.pt:39
 msgid "you could follow this link"
 msgstr "Sie können diesem Link folgen"

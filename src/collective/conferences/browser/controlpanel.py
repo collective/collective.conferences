@@ -88,21 +88,21 @@ class ICollectiveconferenceControlPanel(Interface):
 
     allowed_talk_slide_extensions = schema.TextLine(
         title=_(safe_unicode('Allowed file extensions for slides of conference talks')),
-        description=_(safe_unicode('Fill in the allowed file extensions for the slides of'
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of '
                                    "conference talks, seperated by a pipe '|'.")),
         default=safe_unicode('odp|pdf'),
     )
 
     allowed_workshop_slide_extensions = schema.TextLine(
         title=_(safe_unicode('Allowed file extensions for slides of conference workshops')),
-        description=_(safe_unicode('Fill in the allowed file extensions for the slides of'
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of '
                                    "conference workshops, seperated by a pipe '|'.")),
         default=safe_unicode('odp|pdf'),
     )
 
     allowed_talk_material_extension = schema.TextLine(
         title=_(safe_unicode('Allowed File Extensions For Talk Material / Additonal Files')),
-        description=_(safe_unicode('Fill in the allowed file extensions for the material or'
+        description=_(safe_unicode('Fill in the allowed file extensions for the material or '
                                    "additional files of a conference talk, seperated by a pipe '|'.")),
         default=safe_unicode('otp|pdf|zip'),
     )

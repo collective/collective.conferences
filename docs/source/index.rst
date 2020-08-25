@@ -15,6 +15,12 @@ Welcome to collective.conferences's documentation!
    addconferencepage.rst
    addcallforpaper.rst
    addnewtalksworkshopfolder.rst
+   addnewtalk.rst
+   addnewworkshop.rst
+   addconferencebreaksfolder.rst
+   addconferencebreak.rst
+   addnewroomfolder.rst
+   addnewroom.rst
 
 
 

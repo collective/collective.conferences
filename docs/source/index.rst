@@ -21,6 +21,8 @@ Welcome to collective.conferences's documentation!
    addconferencebreak.rst
    addnewroomfolder.rst
    addnewroom.rst
+   addconferenceprogram.rst
+   addconferencetrack.rst
 
 
 

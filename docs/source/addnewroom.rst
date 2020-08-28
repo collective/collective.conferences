@@ -1,5 +1,5 @@
-Add A New Conference Room
-=========================
+Conference Room
+===============
 
 It's easy to add a new conference room to the Plone site. Just go to the
 conference rooms folder of the site and click on 'Add new' inside the menu

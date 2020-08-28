@@ -1,5 +1,5 @@
-Add A New Conference Track
-==========================
+Conference Track
+================
 
 It's easy to add a new conference track to the conference program. Once you
 created a conference program object, go to this folder object by using its

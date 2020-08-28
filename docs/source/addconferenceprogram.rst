@@ -1,5 +1,5 @@
-Add A Conference Program
-========================
+Conference Program
+==================
 
 The conference program with tracks will be created inside the conference
 program folder. To create this program folder go to the root of the Plone

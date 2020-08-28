@@ -10,6 +10,8 @@ Changelog
   files and video [Andreas Mantke]
 - Add Barceloneta theme class to table on the program and track view [Andreas Mantke]
 - Update localization files and German localization [Andreas Mantke]
+- Add first version of user documentation, source, HTML and PDF file format [Andreas Mantke]
+
 
 0.1 (2020-07-10)
 ----------------

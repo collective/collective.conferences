@@ -1,5 +1,5 @@
-Add A New Conference Break
-==========================
+Conference Break
+================
 
 The conference breaks could be created only inside the conference breaks folder.
 Thus you need to go to this folder inside the Plone site and click 'Add new' on

@@ -1,5 +1,5 @@
-Add A New Conference Page
-=========================
+Conference Page
+===============
 
 I assume you want to add new conference page to the Plone site root ('Home') and
 inform the site visitors about your conference, when it will take place etc.

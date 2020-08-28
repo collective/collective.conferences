@@ -1,5 +1,5 @@
-Add A Folder For Conference Breaks
-==================================
+Folder For Conference Breaks
+============================
 
 The breaks of a conference are created and collected inside a folder. It is
 very easy to create this folder within the root of the Plone site. Thus go

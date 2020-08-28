@@ -1,5 +1,5 @@
-Add A New Workshop
-==================
+Workshop
+========
 
 Once the call for papers was published and the folder for talks and workshop was created
 registered users of the site could add proposals for workshops. There are different ways to

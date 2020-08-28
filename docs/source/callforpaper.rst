@@ -1,5 +1,5 @@
-Add A Call For Paper Page
-=========================
+Call For Paper Page
+===================
 
 A page for the usual call for papers could be added to the root of the Plone site. Thus click on the
 'Home' entry in the menu and choose from the menu on the left side the 'Add new' entry. This opens a

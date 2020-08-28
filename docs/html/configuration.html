@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration &#8212; collective.conferences 0.2 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Conference Page" href="conferencepage.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>The configuration of the add-on could be done from the Plone controlpanel ‘Site Setup’.
+You already used this panel during the installation of the add-on. There are entries
+for different configuration tasks.</p>
+<div class="section" id="navigation-configuration">
+<h2>Navigation configuration<a class="headerlink" href="#navigation-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Next you need to go to the ‘Navigation’ configuration inside the ‘Site Setup’.
+Thus click on the corresponding button and you get to the configuration menu
+in the screenshot below.</p>
+<a class="reference internal image-reference" href="_images/navigation_collective_conferences_site.png"><img alt="_images/navigation_collective_conferences_site.png" src="_images/navigation_collective_conferences_site.png" style="width: 600px;" /></a>
+<p>Tick the checkboxes in front of the entries ‘Conference’, ‘Conference Call for Paper’, ‘Conference Program’,
+‘Conference Registration Folder’, ‘Conference Room’, ‘Conference Rooms Folder’, ‘Conference Speaker Folder’,
+‘Conference Talk/Workshop Folder’ and ‘Conference Track’. Then save your changes. The necessary steps to
+setup the navigation of your conference site are done. You should continue with the settings of the add-on
+(see the following chapter).</p>
+</div>
+<div class="section" id="collective-conferences-settings">
+<h2>Collective Conferences Settings<a class="headerlink" href="#collective-conferences-settings" title="Permalink to this headline">¶</a></h2>
+<p>Once you finished the modification of navigation settings you could scroll down a bit
+on the Site Settings page to the section for ‘Add-on Configuration’. There you find a
+new entry for this add-on with the title ‘Collective Conference Settings’. Click on this
+entry and you get a form with fields to configure the add-on.</p>
+<a class="reference internal image-reference" href="_images/configuration_collective_conferences_form1.png"><img alt="_images/configuration_collective_conferences_form1.png" src="_images/configuration_collective_conferences_form1.png" style="width: 600px;" /></a>
+<p>The fields on the first register ‘Default’ collect the values for the length of conference breaks,
+talks and workshops. This fields comes already with some default value. You could replace this values
+with your own choice. Every single value needs a new line.</p>
+<p>The entries of the fields for talk and workshop length will be used to configure the available options
+for the talk and workshop proposal submitters to suggest a time slot. The values of the fields are also
+used by the conference organization committee to set the length of talks, workshops and conference breaks
+in the conference program and its tracks.</p>
+<p>The second register ‘Legal’ currently holds only one field to list the licenses, talks and workshops could be
+submitted. This field came with some default values too. The default values could be replaced by new entries.
+Every value needs a new line.</p>
+<a class="reference internal image-reference" href="_images/configuration_collective_conferences_form2.png"><img alt="_images/configuration_collective_conferences_form2.png" src="_images/configuration_collective_conferences_form2.png" style="width: 600px;" /></a>
+<p>The third register ‘’File Extensions’ need your input about the allowed file extensions for images (e.g.
+pictures), for talk and workshop slides, for additional talk and workshop material and conference videos.
+If there are different file extensions allowed for this file categories you could enter this file extensions
+seperated by a pipe into the form fields, e.g.: ‘odp|pdf’ for slides.</p>
+<a class="reference internal image-reference" href="_images/configuration_collective_conferences_form3.png"><img alt="_images/configuration_collective_conferences_form3.png" src="_images/configuration_collective_conferences_form3.png" style="width: 600px;" /></a>
+<p>Once you finished the configuration within the fields of all three register save your changes.
+This will write some new entries to the ‘Configuration Registry’ of the Plone site. This new Configuration
+Registry entries will be used for the dynamic content of the edit forms of talks and workshops.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">collective.conferences</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#navigation-configuration">Navigation configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#collective-conferences-settings">Collective Conferences Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="conferencepage.html">Conference Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callforpaper.html">Call For Paper Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talksworkshopfolder.html">Folder For Talks And Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talk.html">Talk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workshop.html">Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="breaksfolder.html">Folder For Conference Breaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="break.html">Conference Break</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roomfolder.html">Folder For Conference Rooms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="room.html">Conference Room</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program.html">Conference Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="track.html">Conference Track</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="conferencepage.html" title="next chapter">Conference Page</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Andreas Mantke.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/configuration.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

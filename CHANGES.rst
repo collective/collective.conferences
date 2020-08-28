@@ -12,6 +12,13 @@ Changelog
 - Update localization files and German localization [Andreas Mantke]
 - Add first version of user documentation, source, HTML and PDF file format [Andreas Mantke]
 - Add a new workflow for conference talks and workshops. [Andreas Mantke]
+- Add registry.xml, controlpanel.xml to unistall profile [Andreas Mantke]
+- Renaming of the controlpanel [Andreas Mantke]
+- Use safe_unicode instead of unicode for strings. [Andreas Mantke]
+- Add fields to configure allowed file extensions for images, videos, slides and additional
+  material and corresponding validators [Andreas Mantke]
+- Add unique title validators for talks and workshops [Andreas Mantke]
+- Add content types for conferencebreakfolder and talksworkshopfolder [Andreas Mantke]
 
 
 0.1 (2020-07-10)

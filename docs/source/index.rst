@@ -23,6 +23,7 @@ Welcome to collective.conferences's documentation!
    addnewroom.rst
    addconferenceprogram.rst
    addconferencetrack.rst
+   workflow.rst
 
 
 

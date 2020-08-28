@@ -12,17 +12,17 @@ Welcome to collective.conferences's documentation!
 
    installation.rst
    configuration.rst
-   addconferencepage.rst
-   addcallforpaper.rst
-   addnewtalksworkshopfolder.rst
-   addnewtalk.rst
-   addnewworkshop.rst
-   addconferencebreaksfolder.rst
-   addconferencebreak.rst
-   addnewroomfolder.rst
-   addnewroom.rst
-   addconferenceprogram.rst
-   addconferencetrack.rst
+   conferencepage.rst
+   callforpaper.rst
+   talksworkshopfolder.rst
+   talk.rst
+   workshop.rst
+   breaksfolder.rst
+   break.rst
+   roomfolder.rst
+   room.rst
+   program.rst
+   track.rst
    workflow.rst
 
 

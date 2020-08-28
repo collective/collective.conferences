@@ -1,5 +1,5 @@
-Add A Folder For Talks And Workshops
-====================================
+Folder For Talks And Workshops
+==============================
 
 Once a call for papers has been published contributors should be able to submit
 talk or workshop proposals for the conference. Thus there is the need to create

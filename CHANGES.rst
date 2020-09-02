@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.3 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+0.2 (2020-08-29)
 ----------------
 
 - Move functions for validation of email to the common module [Andreas Mantke]

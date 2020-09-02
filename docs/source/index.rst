@@ -23,6 +23,7 @@ Welcome to collective.conferences's documentation!
    room.rst
    program.rst
    track.rst
+   registration.rst
    workflow.rst
 
 

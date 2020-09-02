@@ -40,7 +40,7 @@ need to publish the folder later.
 
 
 Conference Attendee Registration
-================================
+********************************
 
 People, who want to register for the conference, first need to get an
 account on the site and log-in. Thus they had first to register on

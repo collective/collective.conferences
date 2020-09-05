@@ -238,6 +238,22 @@
 
     <adapter name="programend" factory=".indexers.programEndIndexer" />
 
+    <adapter factory=".registrationform.RegistrationAdapter"/>
+
+
+  <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="conference-registration"
+        class=".registrationform.RegistrationForm"
+        permission="zope2.View"
+        />
+
+  <adapter
+      factory=".registrationform.ReCaptcha"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      provides=".registrationform.IReCaptchaForm"
+   />
+
 
     <subscriber
         for=".conferencespeaker.IConferenceSpeaker

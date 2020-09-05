@@ -203,6 +203,14 @@
         permission="zope2.View"
         />
 
+    <browser:page
+        name="view"
+        for="collective.conferences.registration.IRegistration"
+        class="collective.conferences.registration.RegistrationView"
+        template="registration_templates/view.pt"
+        permission="zope2.View"
+        />
+
     <adapter
         factory="collective.conferences.talk.ValidateTalkUniqueness"
     />

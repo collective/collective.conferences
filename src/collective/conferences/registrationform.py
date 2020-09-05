@@ -1,27 +1,27 @@
 # -*- coding: utf-8 -*-
+from Acquisition import aq_inner
 from collective.conferences import _
 from collective.conferences.common import validateEmail
-from zope import interface
-from zope import schema
-from Products.CMFPlone.utils import safe_unicode
-from zope.interface import implementer
-from zope.component import adapter
-from z3c.form import form
+from plone import api
 from plone.autoform.form import AutoExtensibleForm
 from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
-from z3c.form import field
-from Acquisition import aq_inner
-from plone import api
-from zope.component import getMultiAdapter
+from Products.CMFPlone.utils import safe_unicode
 from z3c.form import button
+from z3c.form import field
+from z3c.form import form
+from zope import interface
+from zope import schema
+from zope.component import adapter
+from zope.component import getMultiAdapter
+from zope.interface import implementer
 
 import logging
+
 
 logger = logging.getLogger(__name__)
 
 
 class IReCaptchaForm(interface.Interface):
-
     captcha = schema.TextLine(
         title=safe_unicode('ReCaptcha'),
         description=safe_unicode(''),
@@ -37,7 +37,6 @@ class ReCaptcha(object):
 
 
 class RegistrationMailSchema(interface.Interface):
-
     title = schema.TextLine(
         title=_(safe_unicode('Firstname Lastname')),
     )
@@ -79,7 +78,6 @@ class RegistrationMailSchema(interface.Interface):
     )
 
 
-
 @implementer(RegistrationMailSchema)
 @adapter(interface.Interface)
 class RegistrationAdapter(object):
@@ -92,7 +90,6 @@ class RegistrationAdapter(object):
         self.country = None
         self.email = None
         self.organisation = None
-
 
 
 class RegistrationForm(AutoExtensibleForm, form.Form):
@@ -155,7 +152,7 @@ class RegistrationForm(AutoExtensibleForm, form.Form):
                                'city: {2}\n'
                                'country: {3}\n'
                                'organization: {4}')).format
-                  (data['title']. data['street'], data['city'], data['country'], data['organization']),
+            (data['title'].data['street'], data['city'], data['country'], data['organization']),
         )
 
         # Redirect back to the front page with a status message

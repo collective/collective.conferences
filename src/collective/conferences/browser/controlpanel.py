@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from collective.conferences.common import yesnochoice
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.supermodel import model
@@ -119,6 +120,22 @@ class ICollectiveconferenceControlPanel(Interface):
         description=_(safe_unicode('Fill in the allowed file extensions for the videos of '
                                    "conference talks / workshops, separated by a pipe '|'.")),
         default=safe_unicode('mp4|mpg'),
+    )
+
+    conferencefee = schema.Choice(
+        title=_(safe_unicode('Registration Fee?')),
+        description=_(safe_unicode('Have one to pay a registration fee?')),
+        vocabulary=yesnochoice,
+        required=True,
+    )
+
+    paymentoptions = schema.Tuple(
+        title=_(safe_unicode('Payment Options')),
+        description=_(safe_unicode('Fill in one payment option per line.')),
+        default=('Bank one',
+                 'Bank two'),
+        value_type=schema.TextLine(),
+        required=True,
     )
 
 

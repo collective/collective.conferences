@@ -33,6 +33,12 @@ def LicenseVocabularyFactory(context):
     return safe_simplevocabulary_from_values(values)
 
 
+@provider(IVocabularyFactory)
+def PaymentOptionsVocabularyFactory(context):
+    values = api.portal.get_registry_record('collectiveconference.paymentoptions')
+    return safe_simplevocabulary_from_values(values)
+
+
 @implementer(IVocabularyFactory)
 class ConferenceSpeakerVocabulary(object):
 

@@ -302,6 +302,10 @@
         name="ConferenceTrack"
         component=".vocabularies.ConferenceTrackVocabularyFactory" />
 
+    <utility
+        name="PaymentOptions"
+        component=".vocabularies.PaymentOptionsVocabularyFactory" />
+
     <monkey:patch
         description="Fix circular reference when field is RelationValue"
         class="plone.app.content.utils"

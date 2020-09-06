@@ -178,7 +178,6 @@ class RegistrationForm(AutoExtensibleForm, form.Form):
         else:
             pmw = (data['paymentway'])[0]
 
-
         api.portal.send_email(
             recipient=contactaddress,
             sender=(safe_unicode('{0} <{1}>')).format(

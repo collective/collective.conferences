@@ -173,7 +173,11 @@ class RegistrationForm(AutoExtensibleForm, form.Form):
         else:
             rgp = 'Yes'
 
-        pmw = (data['paymentway'])[0]
+        if not (data['paymentway']):
+            pmw = None
+        else:
+            pmw = (data['paymentway'])[0]
+
 
         api.portal.send_email(
             recipient=contactaddress,

@@ -53,19 +53,19 @@ class IAttendee(model.Schema):
 
     city = schema.TextLine(
         title=_(safe_unicode('City')),
-        description=_(safe_unicode('This data is mandatory and required for our internal procidures')),
+        description=_(safe_unicode('This data is mandatory and required for our internal procedures')),
         required=True,
     )
 
     postalcode = schema.TextLine(
         title=_(safe_unicode('Postal Code')),
-        description=_(safe_unicode('This data is mandatory and required for our internal procidures')),
+        description=_(safe_unicode('This data is mandatory and required for our internal procedures')),
         required=True,
     )
 
     country = schema.TextLine(
         title=_(safe_unicode('Country')),
-        description=_(safe_unicode('This data is mandatory and required for our internal procidures')),
+        description=_(safe_unicode('This data is mandatory and required for our internal procedures')),
         required=True,
     )
 

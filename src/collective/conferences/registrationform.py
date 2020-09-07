@@ -83,7 +83,7 @@ class RegistrationMailSchema(interface.Interface):
         title=_(safe_unicode('Payment of the Registration Fee')),
         description=_(safe_unicode('Have you already paid the registration fee?')),
         vocabulary=yesnochoice,
-        required=True,
+        required=False,
     )
 
     paymentway = schema.List(
@@ -134,9 +134,19 @@ class RegistrationForm(AutoExtensibleForm, form.Form):
     def update(self):
         # disable Plone's editable border
         self.request.set('disable_border', True)
+        if api.portal.get_registry_record('collectiveconference.conferencefee') == 0:
+            RegistrationForm.fields['registrationpayed'].mode = 'hidden'
+            RegistrationForm.fields['paymentway'].mode = 'hidden'
+            RegistrationForm.fields['usedbank'].mode = 'hidden'
+        super(RegistrationForm, self).updateWidgets()
 
         # call the base class version - this is very important!
         super(RegistrationForm, self).update()
+        if api.portal.get_registry_record('collectiveconference.conferencefee') == 0:
+            RegistrationForm.fields['registrationpayed'].mode = 'hidden'
+            RegistrationForm.fields['paymentway'].mode = 'hidden'
+            RegistrationForm.fields['usedbank'].mode = 'hidden'
+        super(RegistrationForm, self).updateWidgets()
 
     @button.buttonAndHandler(_(u'Send Email'))
     def handleApply(self, action):

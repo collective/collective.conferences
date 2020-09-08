@@ -14,6 +14,7 @@ from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+from plone import api
 
 
 def vocabpaymentoptions(context):
@@ -111,7 +112,7 @@ class AttendeeAddForm(add.DefaultAddForm):
 
     def updateWidgets(self):
         super(AttendeeAddForm, self).updateWidgets()
-        if getattr(self.context, 'conferencefee', None) == 0:
+        if api.portal.get_registry_record('collectiveconference.conferencefee') == 0:
             self.widgets['registrationpayed'].mode = 'hidden'
             self.widgets['paymentway'].mode = 'hidden'
             self.widgets['usedbank'].mode = 'hidden'
@@ -125,8 +126,7 @@ class AttendeeEditForm(edit.DefaultEditForm):
 
     def updateWidgets(self):
         super(AttendeeEditForm, self).updateWidgets()
-        parent = self.context.__parent__
-        if getattr(parent, 'conferencefee', None) == 0:
+        if api.portal.get_registry_record('collectiveconference.conferencefee') == 0:
             self.widgets['registrationpayed'].mode = 'hidden'
             self.widgets['paymentway'].mode = 'hidden'
             self.widgets['usedbank'].mode = 'hidden'

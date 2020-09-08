@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2020-08-24 20:01+0200\n"
+"PO-Revision-Date: 2020-09-07 18:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -88,27 +88,27 @@ msgstr "Fügen Sie Ihr Sprecher-Profil hinzu"
 msgid "Additional Files of your presentation."
 msgstr "Ergänzende Dateien für Ihre Präsentation."
 
-#: browser/controlpanel.py:104
+#: browser/controlpanel.py:105
 msgid "Allowed File Extensions For Talk Material / Additonal Files"
 msgstr "Erlaubte Dateierweiterungen für Talk-Material / ergänzende Dateien"
 
-#: browser/controlpanel.py:118
+#: browser/controlpanel.py:119
 msgid "Allowed file exensions for conference videos."
 msgstr "Erlaubte Dateierweiterungen für Konferenzvideos."
 
-#: browser/controlpanel.py:90
+#: browser/controlpanel.py:91
 msgid "Allowed file extensions for slides of conference talks"
 msgstr "Erlaubte Dateierweiterungen für Folien von Konferenztalks"
 
-#: browser/controlpanel.py:97
+#: browser/controlpanel.py:98
 msgid "Allowed file extensions for slides of conference workshops"
 msgstr "Erlaubte Dateierweiterungen für Folien von Konferenzworkshops"
 
-#: browser/controlpanel.py:83
+#: browser/controlpanel.py:84
 msgid "Allowed image file extension"
 msgstr "Erlaubte Grafik-Dateierweiterungen"
 
-#: browser/controlpanel.py:111
+#: browser/controlpanel.py:112
 msgid "Allowed workshop material file extensions"
 msgstr "Erlaubte Dateierweiterungen für Workshopmaterial"
 
@@ -131,6 +131,10 @@ msgstr "Call for Paper Zusammenfassung"
 #: callforpaper.py:16
 msgid "Call for paper title"
 msgstr "Call for Paper Titel"
+
+#: registrationform.py:225
+msgid "Cancel"
+msgstr "Abbrechen"
 
 #: room.py:38 room_templates/view.pt:46
 msgid "Capacity of the room"
@@ -164,7 +168,7 @@ msgstr "Wählen Sie den Track für diese Unterbrechung"
 msgid "Choose the track for this talk"
 msgstr "Wählen Sie den Track für diesen Talk"
 
-#: attendee.py:55 conferencespeaker.py:39
+#: attendee.py:55 conferencespeaker.py:39 registrationform.py:53
 msgid "City"
 msgstr "Stadt"
 
@@ -199,6 +203,10 @@ msgstr "Konferenzprogramm"
 #: profiles/default/types/collective.conferences.attendeefolder.xml
 msgid "Conference Registration Folder"
 msgstr "Konferenz-Registierungs-Ordner"
+
+#: profiles/default/types/collective.conferences.registration.xml
+msgid "Conference Registration Page"
+msgstr "Konferenz Registrierungsseite"
 
 #: profiles/default/types/collective.conferences.room.xml
 msgid "Conference Room"
@@ -257,7 +265,7 @@ msgstr "Konferenzunterbrechung-Titel"
 msgid "Conference summary"
 msgstr "Konferenz-Zusammenfassung"
 
-#: attendee.py:67 conferencespeaker.py:53
+#: attendee.py:67 conferencespeaker.py:53 registrationform.py:65
 msgid "Country"
 msgstr "Land"
 
@@ -281,7 +289,7 @@ msgstr "Unterbrechungsdetails"
 msgid "Details of the Workshop"
 msgstr "Workshopdetails"
 
-#: attendee.py:73
+#: attendee.py:73 registrationform.py:71
 msgid "E-Mail"
 msgstr "E-Mail"
 
@@ -293,7 +301,7 @@ msgstr "Endedatum"
 msgid "Enddate"
 msgstr "Endedatum"
 
-#: browser/controlpanel.py:72
+#: browser/controlpanel.py:73
 msgid "File Extensions"
 msgstr "Dateierweiterung"
 
@@ -305,47 +313,47 @@ msgstr "Dateien"
 msgid "Files / Material"
 msgstr "Dateien / Material"
 
-#: attendeefolder.py:43
+#: attendeefolder.py:43 browser/controlpanel.py:134
 msgid "Fill in one payment option per line."
 msgstr "Tragen Sie eine Bezahlmöglichkeit pro Zeile ein."
 
-#: browser/controlpanel.py:105
+#: browser/controlpanel.py:106
 msgid "Fill in the allowed file extensions for the material or additional files of a conference talk, seperated by a pipe '|'."
 msgstr "Tragen Sie die erlaubten Datei-Erweiterungen für Material- oder ergänzende Dateien eines Konferenz-Talk ein, getrennt durch einen senkrechten Trennstrich '|'."
 
-#: browser/controlpanel.py:112
+#: browser/controlpanel.py:113
 msgid "Fill in the allowed file extensions for the material, seperated by a pipe '|'."
 msgstr "Tragen Sie die erlaubten Datei-Erweiterungen für das Material ein, getrennt durch einen senkrechten Trennstrich '|'."
 
-#: browser/controlpanel.py:91
+#: browser/controlpanel.py:92
 msgid "Fill in the allowed file extensions for the slides of conference talks, seperated by a pipe '|'."
 msgstr "Tragen Sie die erlaubten Dateierweiterungen für Folien von Konferenz-Talks ein, getrennt durch ein senkrechten Trennstrich '|'."
 
-#: browser/controlpanel.py:98
+#: browser/controlpanel.py:99
 msgid "Fill in the allowed file extensions for the slides of conference workshops, seperated by a pipe '|'."
 msgstr "Tragen Sie die erlaubten Dateierweiterungen für Folien von Konferenz-Workshops ein, getrennt durch ein senkrechten Trennstrich '|'."
 
-#: browser/controlpanel.py:119
+#: browser/controlpanel.py:120
 msgid "Fill in the allowed file extensions for the videos of conference talks / workshops, separated by a pipe '|'."
 msgstr "Tragen Sie die erlaubten Datei-Erweiterungen für Videos von Konferenz-Talks / -Workshops ein, getrennt durch einen senkrechten Strich '|'."
 
-#: browser/controlpanel.py:84
+#: browser/controlpanel.py:85
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr "Tragen Sie die erlaubten Bilddatei-Erweiterungen ein, getrennt durch einen senkrechten Strich '|'."
 
-#: browser/controlpanel.py:54
+#: browser/controlpanel.py:55
 msgid "Fill in the names of the licenses for conference talks and workshops. Use a new line for every value / license name."
 msgstr "Tragen Sie die Lizenznamen für Konferenz-Talks und -Workshops ein. Verwenden Sie eine neue Zeile für jeden Wert / Lizenznamen."
 
-#: browser/controlpanel.py:15
+#: browser/controlpanel.py:16
 msgid "Fill in the time slots for conference breaks in minutes. Use a new line for every value / break length. Write only the numbers without the addition 'minutes'."
 msgstr "Tragen Sie die Zeitdauer für Konferenz-Pausen in Minuten ein. Verwenden Sie eine neue Zeile für jeden Wert / jede Pausendauer. Schreiben Sie nur Zahlen ohne den Zusatz 'Minuten'."
 
-#: browser/controlpanel.py:26
+#: browser/controlpanel.py:27
 msgid "Fill in the time slots for conference talks in minutes. Use a new line for every value / talk length. Write only the numbers without the addition 'minutes'."
 msgstr "Tragen Sie die Zeitdauer für Konferenz-Talks in Minuten ein. Verwenden Sie eine neue Zeile für jeden Wert / jede Talk-Dauer. Schreiben Sie nur Zahlen ohne den Zusatz 'Minuten'."
 
-#: browser/controlpanel.py:37
+#: browser/controlpanel.py:38
 msgid "Fill in the time slots for workshops at the conference in minutes. Use a new line for every value / workshop length. Write only the numbers without the addition 'minutes'."
 msgstr "Tragen Sie die Zeitdauer für Konferenz-Workshops in Minuten ein. Verwenden Sie eine neue Zeile für jeden Wert / jede Workshop-Dauer. Schreiben Sie nur Zahlen ohne den Zusatz 'Minuten'."
 
@@ -357,7 +365,7 @@ msgstr "Tragen Sie die Themen von Konferenz-Talks und Workshops ein. Verwenden S
 msgid "First name"
 msgstr "Vorname"
 
-#: attendee.py:45
+#: attendee.py:45 registrationform.py:43
 msgid "Firstname Lastname"
 msgstr "Vorname Nachname"
 
@@ -382,11 +390,11 @@ msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplan
 msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplante Workshop planen."
 
-#: attendeefolder.py:36
+#: attendeefolder.py:36 browser/controlpanel.py:127
 msgid "Have one to pay a registration fee?"
 msgstr "Ist eine Registrierungsgebühr zu zahlen?"
 
-#: attendee.py:86
+#: attendee.py:86 registrationform.py:84
 msgid "Have you already paid the registration fee?"
 msgstr "Haben Sie die Registrierungsgebühr bereits gezahlt?"
 
@@ -394,7 +402,7 @@ msgstr "Haben Sie die Registrierungsgebühr bereits gezahlt?"
 msgid "If you already have an account on this site,"
 msgstr "Falls Sie bereits einen Account auf dieser Seite haben,"
 
-#: attendee.py:94
+#: attendee.py:94 registrationform.py:91
 msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
 msgstr "Falls Sie die Registrierungsgebühr bereits gezahlt haben, teilen Sie uns bitte mit, welchen Weg Sie für den Geldtransfer verwendet haben."
 
@@ -407,7 +415,7 @@ msgstr "Falls Sie noch nicht als Konferenz-Sprecher registriert sind, folgen Sie
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergänzungen vornehmen wollen, führt Sie dies zurück."
 
-#: attendee.py:102
+#: attendee.py:102 registrationform.py:99
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr "Falls Sie die Registrierungsgebühr per Banküberweisung gezahlt haben, teilen Sie uns bitte den Namen und die Filiale der Bank mit, die Sie verwendet haben. Wir benötigen diese Information, um Ihre Zahlung schneller festzustellen."
 
@@ -422,6 +430,10 @@ msgstr "Falls Sie einen Talk oder Workshop auf der Konferenz geben wollen, logge
 #: callforpaper_templates/view.pt:43
 msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
 msgstr "Andernfalls müssen Sie sich zuerst auf der Seite registrieren. Sie können hierzu das Registrierungsformular aufrufen"
+
+#: registration.py:23
+msgid "Information About The Registration Process"
+msgstr "Information zum Registrierungsprozess"
 
 #: attendeefolder.py:30
 msgid "Information about registration process"
@@ -447,7 +459,7 @@ msgstr "Ungültige Telefonnummer"
 msgid "Last name"
 msgstr "Nachname"
 
-#: browser/controlpanel.py:48
+#: browser/controlpanel.py:49
 msgid "Legal"
 msgstr "Rechtliches"
 
@@ -455,15 +467,15 @@ msgstr "Rechtliches"
 msgid "Length"
 msgstr "Länge"
 
-#: browser/controlpanel.py:14
+#: browser/controlpanel.py:15
 msgid "Length Of Conference Breaks"
 msgstr "Dauer der Konferenzpause"
 
-#: browser/controlpanel.py:25
+#: browser/controlpanel.py:26
 msgid "Length Of Talks"
 msgstr "Dauer des Talks"
 
-#: browser/controlpanel.py:36
+#: browser/controlpanel.py:37
 msgid "Length Of Workshops"
 msgstr "Dauer des Workshops"
 
@@ -475,7 +487,7 @@ msgstr "Länge der Unterbrechung:"
 msgid "License Of Your Talk"
 msgstr "Lizenz des Talks"
 
-#: browser/controlpanel.py:53
+#: browser/controlpanel.py:54
 msgid "Licenses Of Talks / Workshops"
 msgstr "Lizenz des Talks / Workshops"
 
@@ -510,6 +522,10 @@ msgstr "Link zum Video des Talk"
 #: talk_templates/view.pt:112
 msgid "Link to video:"
 msgstr "Link zum Video:"
+
+#: registrationform.py:127
+msgid "Mail To The Conference Organizer"
+msgstr "E-Mail an die Konferenzorganisierer"
 
 #: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
 #: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
@@ -554,7 +570,7 @@ msgstr "Name des Sprecherordners"
 msgid "No"
 msgstr "Nein"
 
-#: attendee.py:80 conferencespeaker.py:82
+#: attendee.py:80 conferencespeaker.py:82 registrationform.py:78
 msgid "Organisation"
 msgstr "Organisation"
 
@@ -562,11 +578,11 @@ msgstr "Organisation"
 msgid "Organiser"
 msgstr "Organisator"
 
-#: attendeefolder.py:42
+#: attendeefolder.py:42 browser/controlpanel.py:133
 msgid "Payment Options"
 msgstr "Bezahlmöglichkeiten"
 
-#: attendee.py:85
+#: attendee.py:85 registrationform.py:83
 msgid "Payment of the Registration Fee"
 msgstr "Zahlung der Registrierungsgebühr"
 
@@ -643,11 +659,15 @@ msgstr "Bitte laden Sie ihre Präsentation hoch kurz nachdem Sie ihren Talk gege
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr "Bitte laden Sie Ihre Workshop-Präsentation oder Material zu dem Inhalt des Workshops hoch, vor oder kurz nachdem Sie den Workshop gegeben haben."
 
+#: registrationform.py:169
+msgid "Please validate the recaptcha field before sending the form."
+msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden."
+
 #: conferencebreak.py:73 talk.py:164 workshop.py:161
 msgid "Position In The Track"
 msgstr "Position im Track"
 
-#: attendee.py:61 conferencespeaker.py:46
+#: attendee.py:61 conferencespeaker.py:46 registrationform.py:59
 msgid "Postal Code"
 msgstr "Postleitzahl"
 
@@ -695,7 +715,15 @@ msgstr "Veröffentlicht"
 msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr "Packt Ihre Objekte in eine Review-Schlange, so dass sie auf der Seite veröffentlicht werden können."
 
-#: attendeefolder.py:35
+#: registrationform.py:128
+msgid "Register for the conference."
+msgstr "Registrieren für die Konferenz."
+
+#: registration.py:17
+msgid "Registration Description"
+msgstr "Beschreibung der Registrierung"
+
+#: attendeefolder.py:35 browser/controlpanel.py:126
 msgid "Registration Fee?"
 msgstr "Registrierungsgebühr?"
 
@@ -725,6 +753,10 @@ msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
 #: program_templates/view.pt:54 track_templates/view.pt:43
 msgid "Room"
 msgstr "Raum"
+
+#: registrationform.py:151
+msgid "Send Email"
+msgstr "E-Mail senden"
 
 #: profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
 #: profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
@@ -763,7 +795,7 @@ msgstr "Startdatum"
 msgid "Startdate"
 msgstr "Startdatum"
 
-#: attendee.py:49 conferencespeaker.py:32
+#: attendee.py:49 conferencespeaker.py:32 registrationform.py:47
 msgid "Street"
 msgstr "Straße"
 
@@ -840,6 +872,10 @@ msgstr "Der Besucher der Konferenz"
 msgid "The breaks of the conference"
 msgstr "Die Konferenzunterbrechungen"
 
+#: profiles/default/types/collective.conferences.registration.xml
+msgid "The conference registration page"
+msgstr "Die Konferenz-Registrierungsseite"
+
 #: track.py:102
 msgid "The end date couldn't be set after the end of the conference program."
 msgstr "Das Enddatum kann nicht nach dem Ende des Konferenzprogramms gesetzt werden."
@@ -912,12 +948,8 @@ msgstr "Der Talk-Titel wird bereits verwendet."
 msgid "The talks and workshops of the conference"
 msgstr "Die Konferenz-Talks und -Workshops"
 
-#: attendee.py:50
+#: attendee.py:50 registrationform.py:48
 msgid "This data is mandatory and required for our internal procedures"
-msgstr "Diese Daten  sind verpflichtend und werden für unsere internen Abläufe benötigt"
-
-#: attendee.py:56
-msgid "This data is mandatory and required for our internal procidures"
 msgstr "Diese Daten  sind verpflichtend und werden für unsere internen Abläufe benötigt"
 
 #: track_templates/view.pt:58
@@ -931,6 +963,10 @@ msgstr "Zeit:"
 #: conferencebreak.py:21 conferencebreakfolder.py:11 talk.py:78
 msgid "Title"
 msgstr "Titel"
+
+#: registration.py:13
+msgid "Title of the Registration Page"
+msgstr "Titel der Registrierungsseite"
 
 #: program_templates/view.pt:60
 msgid "To"
@@ -970,7 +1006,7 @@ msgstr "Tracks"
 msgid "Uninstalls the collective.conferences add-on."
 msgstr "Deinstallieren des collective.conferences Addon."
 
-#: attendee.py:101
+#: attendee.py:101 registrationform.py:98
 msgid "Used Bank Account"
 msgstr "Verwendetes Bankkonto"
 
@@ -983,13 +1019,17 @@ msgstr "Video"
 msgid "Visible to everyone, editable by the owner."
 msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
 
-#: attendee.py:93
+#: attendee.py:93 registrationform.py:90
 msgid "Way of Registration Fee Payment"
 msgstr "Zahlungweg der Registrierungsgebühr"
 
-#: attendee.py:74
+#: attendee.py:74 registrationform.py:72
 msgid "We need this mandatory data to get in contact with you, if we have any questions"
 msgstr "Wir benötigen diese verpflichtenden Daten, um Sie zu kontaktieren, falls wir irgendwelche Fragen haben"
+
+#: registrationform.py:218
+msgid "We send your message to the conference organizers."
+msgstr "Wir senden Ihre Mitteilung an die Konferenzorganisierer."
 
 #: twfolder_templates/view.pt:91 workshop.py:90 workshop_templates/view.pt:29
 msgid "Workshop Leader"

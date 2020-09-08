@@ -2,6 +2,7 @@
 from collective.conferences import _
 from collective.conferences.common import validateEmail
 from collective.conferences.common import yesnochoice
+from plone import api
 from plone.autoform import directives
 from plone.dexterity.browser import add
 from plone.dexterity.browser import edit
@@ -14,7 +15,6 @@ from zope.interface import directlyProvides
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-from plone import api
 
 
 def vocabpaymentoptions(context):

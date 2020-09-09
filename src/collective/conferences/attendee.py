@@ -11,7 +11,6 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
-from zope.interface import directlyProvides
 
 
 class IAttendee(model.Schema):

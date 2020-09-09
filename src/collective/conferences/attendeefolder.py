@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from collective.conferences.common import yesnochoice
 from plone import api
 from plone.app.textfield import RichText
 from plone.supermodel import model

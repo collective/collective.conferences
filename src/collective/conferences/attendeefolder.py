@@ -31,21 +31,6 @@ class IAttendeefolder(model.Schema):
         required=False,
     )
 
-    conferencefee = schema.Choice(
-        title=_(safe_unicode('Registration Fee?')),
-        description=_(safe_unicode('Have one to pay a registration fee?')),
-        vocabulary=yesnochoice,
-        required=True,
-    )
-
-    paymentoptions = schema.List(
-        title=_(safe_unicode('Payment Options')),
-        description=_(safe_unicode('Fill in one payment option per line.')),
-        default=['Bank one',
-                 'Bank two'],
-        value_type=schema.TextLine(),
-    )
-
 
 class AttendeefolderView(BrowserView):
 

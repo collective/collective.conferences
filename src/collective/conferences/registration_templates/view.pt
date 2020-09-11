@@ -22,6 +22,14 @@
         <p class="documentDescription" tal:condition="context/moreinformation"
                   tal:content="structure context/moreinformation/output | nothing" />
 
+        <p class="documentDescription" i18n:translate="">You could register for the conference by
+        by following the link and fill in your information into the form:<br />
+                    <a class="pointer" tal:attributes="href
+                            string:${context/portal_url}/@@conference-registration">
+                        Register for the conference
+                    </a>.
+                  </p>
+
         <div tal:replace="structure provider:plone.belowcontentbody" />
 
     </tal:main-macro>

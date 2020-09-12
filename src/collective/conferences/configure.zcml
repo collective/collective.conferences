@@ -53,7 +53,7 @@
         name="view"
         for="collective.conferences.conference.IConference"
         class="collective.conferences.conference.ConferenceView"
-        template="conference_templates/view.pt"
+        template="view_templates/conference_view.pt"
         permission="zope2.View"
         />
 

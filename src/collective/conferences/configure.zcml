@@ -62,7 +62,7 @@
         name="view"
         for="collective.conferences.speakerfolder.ISpeakerfolder"
         class="collective.conferences.speakerfolder.SpeakerfolderView"
-        template="speakerfolder_templates/view.pt"
+        template="view_templates/speakerfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -70,7 +70,7 @@
         name="view"
         for="collective.conferences.conferencespeaker.IConferenceSpeaker"
         class="collective.conferences.conferencespeaker.ConferenceSpeakerView"
-        template="conferencespeaker_templates/view.pt"
+        template="view_templates/speaker_view.pt"
         permission="zope2.View"
         />
 

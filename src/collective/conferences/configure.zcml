@@ -94,7 +94,7 @@
         name="view"
         for="collective.conferences.track.ITrack"
         class="collective.conferences.track.TrackView"
-        template="track_templates/view.pt"
+        template="view_templates/track_view.pt"
         permission="zope2.View"
         />
 
@@ -102,7 +102,7 @@
         name="view"
         for="collective.conferences.attendeefolder.IAttendeefolder"
         class="collective.conferences.attendeefolder.AttendeefolderView"
-        template="attendeefolder_templates/view.pt"
+        template="view_templates/attendeefolder_view.pt"
         permission="zope2.View"
         />
 
@@ -110,7 +110,7 @@
         name="view"
         for="collective.conferences.attendee.IAttendee"
         class="collective.conferences.attendee.AttendeeView"
-        template="attendee_templates/view.pt"
+        template="view_templates/attendee_view.pt"
         permission="zope2.View"
         />
 

@@ -53,7 +53,7 @@
         name="view"
         for="collective.conferences.conference.IConference"
         class="collective.conferences.conference.ConferenceView"
-        template="conference_templates/view.pt"
+        template="view_templates/conference_view.pt"
         permission="zope2.View"
         />
 
@@ -62,7 +62,7 @@
         name="view"
         for="collective.conferences.speakerfolder.ISpeakerfolder"
         class="collective.conferences.speakerfolder.SpeakerfolderView"
-        template="speakerfolder_templates/view.pt"
+        template="view_templates/speakerfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -70,7 +70,7 @@
         name="view"
         for="collective.conferences.conferencespeaker.IConferenceSpeaker"
         class="collective.conferences.conferencespeaker.ConferenceSpeakerView"
-        template="conferencespeaker_templates/view.pt"
+        template="view_templates/speaker_view.pt"
         permission="zope2.View"
         />
 
@@ -78,7 +78,7 @@
         name="view"
         for="collective.conferences.roomfolder.IRoomfolder"
         class="collective.conferences.roomfolder.RoomfolderView"
-        template="roomfolder_templates/view.pt"
+        template="view_templates/roomfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -86,7 +86,7 @@
         name="view"
         for="collective.conferences.room.IRoom"
         class="collective.conferences.room.RoomView"
-        template="room_templates/view.pt"
+        template="view_templates/room_view.pt"
         permission="zope2.View"
         />
 
@@ -94,7 +94,7 @@
         name="view"
         for="collective.conferences.track.ITrack"
         class="collective.conferences.track.TrackView"
-        template="track_templates/view.pt"
+        template="view_templates/track_view.pt"
         permission="zope2.View"
         />
 
@@ -102,7 +102,7 @@
         name="view"
         for="collective.conferences.attendeefolder.IAttendeefolder"
         class="collective.conferences.attendeefolder.AttendeefolderView"
-        template="attendeefolder_templates/view.pt"
+        template="view_templates/attendeefolder_view.pt"
         permission="zope2.View"
         />
 
@@ -110,7 +110,7 @@
         name="view"
         for="collective.conferences.attendee.IAttendee"
         class="collective.conferences.attendee.AttendeeView"
-        template="attendee_templates/view.pt"
+        template="view_templates/attendee_view.pt"
         permission="zope2.View"
         />
 
@@ -118,7 +118,7 @@
         name="view"
         for="collective.conferences.conferencebreakfolder.IConferencebreakFolder"
         class="collective.conferences.conferencebreakfolder.ConferencebreakFolderView"
-        template="conferencebreakfolder_templates/view.pt"
+        template="view_templates/conferencebreakfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -151,7 +151,7 @@
         name="view"
         for="collective.conferences.program.IProgram"
         class="collective.conferences.program.ProgramView"
-        template="program_templates/view.pt"
+        template="view_templates/program_view.pt"
         permission="zope2.View"
         />
 
@@ -159,7 +159,7 @@
         name="programfullview"
         for="collective.conferences.program.IProgram"
         class="collective.conferences.program.FullprogramView"
-        template="program_templates/programfullview.pt"
+        template="view_templates/programfullview.pt"
         permission="zope2.View"
         />
 
@@ -167,7 +167,7 @@
         name="view"
         for="collective.conferences.callforpaper.ICallforpaper"
         class="collective.conferences.callforpaper.CallforpaperView"
-        template="callforpaper_templates/view.pt"
+        template="view_templates/callforpaper_view.pt"
         permission="zope2.View"
         />
 
@@ -175,7 +175,7 @@
         name="view"
         for="collective.conferences.conferencebreak.IConferencebreak"
         class="collective.conferences.conferencebreak.ConferencebreakView"
-        template="conferencebreak_templates/view.pt"
+        template="view_templates/conferencebreak_view.pt"
         permission="zope2.View"
         />
 
@@ -183,7 +183,7 @@
         name="view"
         for="collective.conferences.workshop.IWorkshop"
         class="collective.conferences.workshop.WorkshopView"
-        template="workshop_templates/view.pt"
+        template="view_templates/workshop_view.pt"
         permission="zope2.View"
         />
 
@@ -191,7 +191,7 @@
         name="view"
         for="collective.conferences.talk.ITalk"
         class="collective.conferences.talk.TalkView"
-        template="talk_templates/view.pt"
+        template="view_templates/talk_view.pt"
         permission="zope2.View"
         />
 
@@ -199,7 +199,15 @@
         name="view"
         for="collective.conferences.twfolder.ITWFolder"
         class="collective.conferences.twfolder.TWFolderView"
-        template="twfolder_templates/view.pt"
+        template="view_templates/twfolder_view.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        name="view"
+        for="collective.conferences.registration.IRegistration"
+        class="collective.conferences.registration.RegistrationView"
+        template="view_templates/registration_view.pt"
         permission="zope2.View"
         />
 
@@ -229,6 +237,22 @@
     <adapter name="programstart" factory=".indexers.programStartIndexer" />
 
     <adapter name="programend" factory=".indexers.programEndIndexer" />
+
+    <adapter factory=".registrationform.RegistrationAdapter"/>
+
+
+  <browser:page
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        name="conference-registration"
+        class=".registrationform.RegistrationForm"
+        permission="zope2.View"
+        />
+
+  <adapter
+      factory=".registrationform.ReCaptcha"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      provides=".registrationform.IReCaptchaForm"
+   />
 
 
     <subscriber
@@ -277,6 +301,10 @@
     <utility
         name="ConferenceTrack"
         component=".vocabularies.ConferenceTrackVocabularyFactory" />
+
+    <utility
+        name="PaymentOptions"
+        component=".vocabularies.PaymentOptionsVocabularyFactory" />
 
     <monkey:patch
         description="Fix circular reference when field is RelationValue"

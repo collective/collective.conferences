@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-08-24 17:41+0000\n"
+"POT-Creation-Date: 2020-09-07 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,27 +89,27 @@ msgstr ""
 msgid "Additional Files of your presentation."
 msgstr ""
 
-#: ./browser/controlpanel.py:104
+#: ./browser/controlpanel.py:105
 msgid "Allowed File Extensions For Talk Material / Additonal Files"
 msgstr ""
 
-#: ./browser/controlpanel.py:118
+#: ./browser/controlpanel.py:119
 msgid "Allowed file exensions for conference videos."
 msgstr ""
 
-#: ./browser/controlpanel.py:90
+#: ./browser/controlpanel.py:91
 msgid "Allowed file extensions for slides of conference talks"
 msgstr ""
 
-#: ./browser/controlpanel.py:97
+#: ./browser/controlpanel.py:98
 msgid "Allowed file extensions for slides of conference workshops"
 msgstr ""
 
-#: ./browser/controlpanel.py:83
+#: ./browser/controlpanel.py:84
 msgid "Allowed image file extension"
 msgstr ""
 
-#: ./browser/controlpanel.py:111
+#: ./browser/controlpanel.py:112
 msgid "Allowed workshop material file extensions"
 msgstr ""
 
@@ -131,6 +131,10 @@ msgstr ""
 
 #: ./callforpaper.py:16
 msgid "Call for paper title"
+msgstr ""
+
+#: ./registrationform.py:225
+msgid "Cancel"
 msgstr ""
 
 #: ./room.py:38
@@ -172,6 +176,7 @@ msgstr ""
 
 #: ./attendee.py:55
 #: ./conferencespeaker.py:39
+#: ./registrationform.py:53
 msgid "City"
 msgstr ""
 
@@ -205,6 +210,10 @@ msgstr ""
 
 #: ./profiles/default/types/collective.conferences.attendeefolder.xml
 msgid "Conference Registration Folder"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.registration.xml
+msgid "Conference Registration Page"
 msgstr ""
 
 #: ./profiles/default/types/collective.conferences.room.xml
@@ -266,6 +275,7 @@ msgstr ""
 
 #: ./attendee.py:67
 #: ./conferencespeaker.py:53
+#: ./registrationform.py:65
 msgid "Country"
 msgstr ""
 
@@ -294,6 +304,7 @@ msgid "Details of the Workshop"
 msgstr ""
 
 #: ./attendee.py:73
+#: ./registrationform.py:71
 msgid "E-Mail"
 msgstr ""
 
@@ -309,7 +320,7 @@ msgstr ""
 msgid "Enddate"
 msgstr ""
 
-#: ./browser/controlpanel.py:72
+#: ./browser/controlpanel.py:73
 msgid "File Extensions"
 msgstr ""
 
@@ -322,46 +333,47 @@ msgid "Files / Material"
 msgstr ""
 
 #: ./attendeefolder.py:43
+#: ./browser/controlpanel.py:134
 msgid "Fill in one payment option per line."
 msgstr ""
 
-#: ./browser/controlpanel.py:105
+#: ./browser/controlpanel.py:106
 msgid "Fill in the allowed file extensions for the material or additional files of a conference talk, seperated by a pipe '|'."
 msgstr ""
 
-#: ./browser/controlpanel.py:112
+#: ./browser/controlpanel.py:113
 msgid "Fill in the allowed file extensions for the material, seperated by a pipe '|'."
 msgstr ""
 
-#: ./browser/controlpanel.py:91
+#: ./browser/controlpanel.py:92
 msgid "Fill in the allowed file extensions for the slides of conference talks, seperated by a pipe '|'."
 msgstr ""
 
-#: ./browser/controlpanel.py:98
+#: ./browser/controlpanel.py:99
 msgid "Fill in the allowed file extensions for the slides of conference workshops, seperated by a pipe '|'."
 msgstr ""
 
-#: ./browser/controlpanel.py:119
+#: ./browser/controlpanel.py:120
 msgid "Fill in the allowed file extensions for the videos of conference talks / workshops, separated by a pipe '|'."
 msgstr ""
 
-#: ./browser/controlpanel.py:84
+#: ./browser/controlpanel.py:85
 msgid "Fill in the allowed image file extensions, seperated by a pipe '|'."
 msgstr ""
 
-#: ./browser/controlpanel.py:54
+#: ./browser/controlpanel.py:55
 msgid "Fill in the names of the licenses for conference talks and workshops. Use a new line for every value / license name."
 msgstr ""
 
-#: ./browser/controlpanel.py:15
+#: ./browser/controlpanel.py:16
 msgid "Fill in the time slots for conference breaks in minutes. Use a new line for every value / break length. Write only the numbers without the addition 'minutes'."
 msgstr ""
 
-#: ./browser/controlpanel.py:26
+#: ./browser/controlpanel.py:27
 msgid "Fill in the time slots for conference talks in minutes. Use a new line for every value / talk length. Write only the numbers without the addition 'minutes'."
 msgstr ""
 
-#: ./browser/controlpanel.py:37
+#: ./browser/controlpanel.py:38
 msgid "Fill in the time slots for workshops at the conference in minutes. Use a new line for every value / workshop length. Write only the numbers without the addition 'minutes'."
 msgstr ""
 
@@ -374,6 +386,7 @@ msgid "First name"
 msgstr ""
 
 #: ./attendee.py:45
+#: ./registrationform.py:43
 msgid "Firstname Lastname"
 msgstr ""
 
@@ -400,10 +413,12 @@ msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr ""
 
 #: ./attendeefolder.py:36
+#: ./browser/controlpanel.py:127
 msgid "Have one to pay a registration fee?"
 msgstr ""
 
 #: ./attendee.py:86
+#: ./registrationform.py:84
 msgid "Have you already paid the registration fee?"
 msgstr ""
 
@@ -412,6 +427,7 @@ msgid "If you already have an account on this site,"
 msgstr ""
 
 #: ./attendee.py:94
+#: ./registrationform.py:91
 msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
 msgstr ""
 
@@ -425,6 +441,7 @@ msgid "If you submitted the item by mistake or want to perform additional edits,
 msgstr ""
 
 #: ./attendee.py:102
+#: ./registrationform.py:99
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr ""
 
@@ -438,6 +455,10 @@ msgstr ""
 
 #: ./callforpaper_templates/view.pt:43
 msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
+msgstr ""
+
+#: ./registration.py:23
+msgid "Information About The Registration Process"
 msgstr ""
 
 #: ./attendeefolder.py:30
@@ -465,7 +486,7 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: ./browser/controlpanel.py:48
+#: ./browser/controlpanel.py:49
 msgid "Legal"
 msgstr ""
 
@@ -474,15 +495,15 @@ msgstr ""
 msgid "Length"
 msgstr ""
 
-#: ./browser/controlpanel.py:14
+#: ./browser/controlpanel.py:15
 msgid "Length Of Conference Breaks"
 msgstr ""
 
-#: ./browser/controlpanel.py:25
+#: ./browser/controlpanel.py:26
 msgid "Length Of Talks"
 msgstr ""
 
-#: ./browser/controlpanel.py:36
+#: ./browser/controlpanel.py:37
 msgid "Length Of Workshops"
 msgstr ""
 
@@ -495,7 +516,7 @@ msgstr ""
 msgid "License Of Your Talk"
 msgstr ""
 
-#: ./browser/controlpanel.py:53
+#: ./browser/controlpanel.py:54
 msgid "Licenses Of Talks / Workshops"
 msgstr ""
 
@@ -532,6 +553,10 @@ msgstr ""
 
 #: ./talk_templates/view.pt:112
 msgid "Link to video:"
+msgstr ""
+
+#: ./registrationform.py:127
+msgid "Mail To The Conference Organizer"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
@@ -581,6 +606,7 @@ msgstr ""
 
 #: ./attendee.py:80
 #: ./conferencespeaker.py:82
+#: ./registrationform.py:78
 msgid "Organisation"
 msgstr ""
 
@@ -589,10 +615,12 @@ msgid "Organiser"
 msgstr ""
 
 #: ./attendeefolder.py:42
+#: ./browser/controlpanel.py:133
 msgid "Payment Options"
 msgstr ""
 
 #: ./attendee.py:85
+#: ./registrationform.py:83
 msgid "Payment of the Registration Fee"
 msgstr ""
 
@@ -673,6 +701,10 @@ msgstr ""
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
 
+#: ./registrationform.py:169
+msgid "Please validate the recaptcha field before sending the form."
+msgstr ""
+
 #: ./conferencebreak.py:73
 #: ./talk.py:164
 #: ./workshop.py:161
@@ -681,6 +713,7 @@ msgstr ""
 
 #: ./attendee.py:61
 #: ./conferencespeaker.py:46
+#: ./registrationform.py:59
 msgid "Postal Code"
 msgstr ""
 
@@ -736,7 +769,16 @@ msgstr ""
 msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr ""
 
+#: ./registrationform.py:128
+msgid "Register for the conference."
+msgstr ""
+
+#: ./registration.py:17
+msgid "Registration Description"
+msgstr ""
+
 #: ./attendeefolder.py:35
+#: ./browser/controlpanel.py:126
 msgid "Registration Fee?"
 msgstr ""
 
@@ -767,6 +809,10 @@ msgstr ""
 #: ./program_templates/view.pt:54
 #: ./track_templates/view.pt:43
 msgid "Room"
+msgstr ""
+
+#: ./registrationform.py:151
+msgid "Send Email"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
@@ -820,6 +866,7 @@ msgstr ""
 
 #: ./attendee.py:49
 #: ./conferencespeaker.py:32
+#: ./registrationform.py:47
 msgid "Street"
 msgstr ""
 
@@ -895,6 +942,10 @@ msgstr ""
 
 #: ./profiles/default/types/collective.conferences.conferencebreakfolder.xml
 msgid "The breaks of the conference"
+msgstr ""
+
+#: ./profiles/default/types/collective.conferences.registration.xml
+msgid "The conference registration page"
 msgstr ""
 
 #: ./track.py:102
@@ -974,11 +1025,8 @@ msgid "The talks and workshops of the conference"
 msgstr ""
 
 #: ./attendee.py:50
+#: ./registrationform.py:48
 msgid "This data is mandatory and required for our internal procedures"
-msgstr ""
-
-#: ./attendee.py:56
-msgid "This data is mandatory and required for our internal procidures"
 msgstr ""
 
 #: ./track_templates/view.pt:58
@@ -993,6 +1041,10 @@ msgstr ""
 #: ./conferencebreakfolder.py:11
 #: ./talk.py:78
 msgid "Title"
+msgstr ""
+
+#: ./registration.py:13
+msgid "Title of the Registration Page"
 msgstr ""
 
 #: ./program_templates/view.pt:60
@@ -1036,6 +1088,7 @@ msgid "Uninstalls the collective.conferences add-on."
 msgstr ""
 
 #: ./attendee.py:101
+#: ./registrationform.py:98
 msgid "Used Bank Account"
 msgstr ""
 
@@ -1056,11 +1109,17 @@ msgid "Waiting for the Review, further editable by
 msgstr ""
 
 #: ./attendee.py:93
+#: ./registrationform.py:90
 msgid "Way of Registration Fee Payment"
 msgstr ""
 
 #: ./attendee.py:74
+#: ./registrationform.py:72
 msgid "We need this mandatory data to get in contact with you, if we have any questions"
+msgstr ""
+
+#: ./registrationform.py:218
+msgid "We send your message to the conference organizers."
 msgstr ""
 
 #: ./twfolder_templates/view.pt:91

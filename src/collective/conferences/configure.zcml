@@ -118,7 +118,7 @@
         name="view"
         for="collective.conferences.conferencebreakfolder.IConferencebreakFolder"
         class="collective.conferences.conferencebreakfolder.ConferencebreakFolderView"
-        template="conferencebreakfolder_templates/view.pt"
+        template="view_templates/conferencebreakfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -151,7 +151,7 @@
         name="view"
         for="collective.conferences.program.IProgram"
         class="collective.conferences.program.ProgramView"
-        template="program_templates/view.pt"
+        template="view_templates/program_view.pt"
         permission="zope2.View"
         />
 
@@ -159,7 +159,7 @@
         name="programfullview"
         for="collective.conferences.program.IProgram"
         class="collective.conferences.program.FullprogramView"
-        template="program_templates/programfullview.pt"
+        template="view_templates/programfullview.pt"
         permission="zope2.View"
         />
 
@@ -167,7 +167,7 @@
         name="view"
         for="collective.conferences.callforpaper.ICallforpaper"
         class="collective.conferences.callforpaper.CallforpaperView"
-        template="callforpaper_templates/view.pt"
+        template="view_templates/callforpaper_view.pt"
         permission="zope2.View"
         />
 
@@ -175,7 +175,7 @@
         name="view"
         for="collective.conferences.conferencebreak.IConferencebreak"
         class="collective.conferences.conferencebreak.ConferencebreakView"
-        template="conferencebreak_templates/view.pt"
+        template="view_templates/conferencebreak_view.pt"
         permission="zope2.View"
         />
 
@@ -183,7 +183,7 @@
         name="view"
         for="collective.conferences.workshop.IWorkshop"
         class="collective.conferences.workshop.WorkshopView"
-        template="workshop_templates/view.pt"
+        template="view_templates/workshop_view.pt"
         permission="zope2.View"
         />
 
@@ -199,7 +199,7 @@
         name="view"
         for="collective.conferences.twfolder.ITWFolder"
         class="collective.conferences.twfolder.TWFolderView"
-        template="twfolder_templates/view.pt"
+        template="view_templates/twfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -207,7 +207,7 @@
         name="view"
         for="collective.conferences.registration.IRegistration"
         class="collective.conferences.registration.RegistrationView"
-        template="registration_templates/view.pt"
+        template="view_templates/registration_view.pt"
         permission="zope2.View"
         />
 

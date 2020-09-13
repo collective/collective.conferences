@@ -78,7 +78,7 @@
         name="view"
         for="collective.conferences.roomfolder.IRoomfolder"
         class="collective.conferences.roomfolder.RoomfolderView"
-        template="roomfolder_templates/view.pt"
+        template="view_templates/roomfolder_view.pt"
         permission="zope2.View"
         />
 
@@ -86,7 +86,7 @@
         name="view"
         for="collective.conferences.room.IRoom"
         class="collective.conferences.room.RoomView"
-        template="room_templates/view.pt"
+        template="view_templates/room_view.pt"
         permission="zope2.View"
         />
 
@@ -191,7 +191,7 @@
         name="view"
         for="collective.conferences.talk.ITalk"
         class="collective.conferences.talk.TalkView"
-        template="talk_templates/view.pt"
+        template="view_templates/talk_view.pt"
         permission="zope2.View"
         />
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2020-09-07 18:41+0200\n"
+"PO-Revision-Date: 2020-09-17 20:15+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Ein Raum, der für die Konferenz genutzt wird"
 msgid "A short bio"
 msgstr "Ein kurzer Lebenslauf"
 
-#: callforpaper_templates/view.pt:57
+#: view_templates/callforpaper_view.pt:57
 msgid "Add your speaker profile"
 msgstr "Fügen Sie Ihr Sprecher-Profil hinzu"
 
@@ -116,7 +116,7 @@ msgstr "Erlaubte Dateierweiterungen für Workshopmaterial"
 msgid "Attendee"
 msgstr "Besucher"
 
-#: attendee_templates/view.pt:38
+#: view_templates/attendee_view.pt:38
 msgid "Bank used for the payment:"
 msgstr "Für die Zahlung verwendete Bank:"
 
@@ -136,7 +136,7 @@ msgstr "Call for Paper Titel"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: room.py:38 room_templates/view.pt:46
+#: room.py:38 view_templates/room_view.pt:46
 msgid "Capacity of the room"
 msgstr "Raumkapazität"
 
@@ -168,7 +168,7 @@ msgstr "Wählen Sie den Track für diese Unterbrechung"
 msgid "Choose the track for this talk"
 msgstr "Wählen Sie den Track für diesen Talk"
 
-#: attendee.py:55 conferencespeaker.py:39 registrationform.py:53
+#: attendee.py:31 conferencespeaker.py:39 registrationform.py:53
 msgid "City"
 msgstr "Stadt"
 
@@ -237,7 +237,7 @@ msgid "Conference Title"
 msgstr "Konferenztitel"
 
 #: profiles/default/types/collective.conferences.track.xml
-#: twfolder_templates/view.pt:51
+#: view_templates/twfolder_view.pt:51
 msgid "Conference Track"
 msgstr "Konferenztrack"
 
@@ -265,11 +265,11 @@ msgstr "Konferenzunterbrechung-Titel"
 msgid "Conference summary"
 msgstr "Konferenz-Zusammenfassung"
 
-#: attendee.py:67 conferencespeaker.py:53 registrationform.py:65
+#: attendee.py:43 conferencespeaker.py:53 registrationform.py:65
 msgid "Country"
 msgstr "Land"
 
-#: program_templates/view.pt:51 twfolder_templates/view.pt:49
+#: view_templates/program_view.pt:51 view_templates/twfolder_view.pt:49
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -281,15 +281,15 @@ msgstr "Details"
 msgid "Details about the program"
 msgstr "Programmdetails"
 
-#: conferencebreak_templates/view.pt:33
+#: view_templates/conferencebreak_view.pt:33
 msgid "Details of the Break"
 msgstr "Unterbrechungsdetails"
 
-#: workshop_templates/view.pt:60
+#: view_templates/workshop_view.pt:60
 msgid "Details of the Workshop"
 msgstr "Workshopdetails"
 
-#: attendee.py:73 registrationform.py:71
+#: attendee.py:49 registrationform.py:71
 msgid "E-Mail"
 msgstr "E-Mail"
 
@@ -313,7 +313,7 @@ msgstr "Dateien"
 msgid "Files / Material"
 msgstr "Dateien / Material"
 
-#: attendeefolder.py:43 browser/controlpanel.py:134
+#: browser/controlpanel.py:134
 msgid "Fill in one payment option per line."
 msgstr "Tragen Sie eine Bezahlmöglichkeit pro Zeile ein."
 
@@ -365,7 +365,7 @@ msgstr "Tragen Sie die Themen von Konferenz-Talks und Workshops ein. Verwenden S
 msgid "First name"
 msgstr "Vorname"
 
-#: attendee.py:45 registrationform.py:43
+#: attendee.py:21 registrationform.py:43
 msgid "Firstname Lastname"
 msgstr "Vorname Nachname"
 
@@ -373,12 +373,12 @@ msgstr "Vorname Nachname"
 msgid "For those requiring visa, please add your full postal address details"
 msgstr "Für diejenigen, die Visa benötigen, bitte tragen Sie Ihre vollständige Postadresse ein"
 
-#: program_templates/view.pt:57
+#: view_templates/program_view.pt:57
 msgid "From"
 msgstr "Von"
 
-#: program_templates/programfullview.pt:26 program_templates/view.pt:26
-#: talk_templates/view.pt:59
+#: view_templates/program_view.pt:26 view_templates/programfullview.pt:26
+#: view_templates/talk_view.pt:59
 msgid "From:"
 msgstr "Von:"
 
@@ -390,23 +390,23 @@ msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplan
 msgid "Give an estimation about the time you'd plan for your workshop."
 msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplante Workshop planen."
 
-#: attendeefolder.py:36 browser/controlpanel.py:127
+#: browser/controlpanel.py:127
 msgid "Have one to pay a registration fee?"
 msgstr "Ist eine Registrierungsgebühr zu zahlen?"
 
-#: attendee.py:86 registrationform.py:84
+#: attendee.py:62 registrationform.py:84
 msgid "Have you already paid the registration fee?"
 msgstr "Haben Sie die Registrierungsgebühr bereits gezahlt?"
 
-#: callforpaper_templates/view.pt:37
+#: view_templates/callforpaper_view.pt:37
 msgid "If you already have an account on this site,"
 msgstr "Falls Sie bereits einen Account auf dieser Seite haben,"
 
-#: attendee.py:94 registrationform.py:91
+#: attendee.py:70 registrationform.py:91
 msgid "If you already payed the registration fee, please tell us, which way you used to transfer the money."
 msgstr "Falls Sie die Registrierungsgebühr bereits gezahlt haben, teilen Sie uns bitte mit, welchen Weg Sie für den Geldtransfer verwendet haben."
 
-#: callforpaper_templates/view.pt:51
+#: view_templates/callforpaper_view.pt:51
 msgid "If you not already registered a conference speaker for you, please follow the following link and add a speaker profile to this site:"
 msgstr "Falls Sie noch nicht als Konferenz-Sprecher registriert sind, folgen Sie bitte dem folgenden Link und erstellen ein Sprecher-Profil auf dieser Seite:"
 
@@ -415,7 +415,7 @@ msgstr "Falls Sie noch nicht als Konferenz-Sprecher registriert sind, folgen Sie
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergänzungen vornehmen wollen, führt Sie dies zurück."
 
-#: attendee.py:102 registrationform.py:99
+#: attendee.py:78 registrationform.py:99
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr "Falls Sie die Registrierungsgebühr per Banküberweisung gezahlt haben, teilen Sie uns bitte den Namen und die Filiale der Bank mit, die Sie verwendet haben. Wir benötigen diese Information, um Ihre Zahlung schneller festzustellen."
 
@@ -423,11 +423,11 @@ msgstr "Falls Sie die Registrierungsgebühr per Banküberweisung gezahlt haben, 
 msgid "If you used slides during your workshop, please upload your slides shortly after you have given your workshop."
 msgstr "Falls Sie Folien während Ihres Workshops verwendet haben, laden Sie diese Folien bitte hoch, kurz nachdem Sie Ihren Workshop gegeben haben."
 
-#: callforpaper_templates/view.pt:35
+#: view_templates/callforpaper_view.pt:35
 msgid "If you want to give a talk or a workshop at the conference, please login to the site. There will be a link on this site to submit a new talk or workshop available once you are logged in."
 msgstr "Falls Sie einen Talk oder Workshop auf der Konferenz geben wollen, loggen Sie sich bitte in die Webseite ein. Sie werden nach dem Einloggen einen Link auf dieser Seite vorfinden, um einen neuen Talk oder Workshop zu übermitteln."
 
-#: callforpaper_templates/view.pt:43
+#: view_templates/callforpaper_view.pt:43
 msgid "In the oposite you have first to register on the site. You could do this by calling the registration form"
 msgstr "Andernfalls müssen Sie sich zuerst auf der Seite registrieren. Sie können hierzu das Registrierungsformular aufrufen"
 
@@ -435,11 +435,11 @@ msgstr "Andernfalls müssen Sie sich zuerst auf der Seite registrieren. Sie kön
 msgid "Information About The Registration Process"
 msgstr "Information zum Registrierungsprozess"
 
-#: attendeefolder.py:30
+#: attendeefolder.py:29
 msgid "Information about registration process"
 msgstr "Information zum Registrierungsprozess"
 
-#: roomfolder.py:26 roomfolder_templates/view.pt:33
+#: roomfolder.py:26 view_templates/roomfolder_view.pt:33
 msgid "Information about the Conference Rooms"
 msgstr "Information zu den Konferenzräumen"
 
@@ -463,7 +463,7 @@ msgstr "Nachname"
 msgid "Legal"
 msgstr "Rechtliches"
 
-#: conferencebreak.py:54 twfolder_templates/view.pt:48
+#: conferencebreak.py:54 view_templates/twfolder_view.pt:48
 msgid "Length"
 msgstr "Länge"
 
@@ -479,7 +479,7 @@ msgstr "Dauer des Talks"
 msgid "Length Of Workshops"
 msgstr "Dauer des Workshops"
 
-#: conferencebreak_templates/view.pt:26
+#: view_templates/conferencebreak_view.pt:26
 msgid "Length of the Break:"
 msgstr "Länge der Unterbrechung:"
 
@@ -503,15 +503,15 @@ msgstr "Link zu den Präsentationsfolien in weiterem Dateiformat"
 msgid "Link to additional Files of your presentation in the correct file format (see for it above)."
 msgstr "Link zu den ergänzenden Dateien Ihrer Präsentation in dem korrekten Dateiformat (sehen Sie dieses oben)."
 
-#: talk_templates/view.pt:107
+#: view_templates/talk_view.pt:107
 msgid "Link to additional files:"
 msgstr "Link zu ergänzenden Dateien:"
 
-#: talk_templates/view.pt:91
+#: view_templates/talk_view.pt:91
 msgid "Link to slides in ODT-File-Format:"
 msgstr "Link zu den Folien im ODT-Dateiformat:"
 
-#: talk_templates/view.pt:97
+#: view_templates/talk_view.pt:97
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr "Link zu den Folien im PDF- oder PDF-Hybrid-Dateiformat:"
 
@@ -519,7 +519,7 @@ msgstr "Link zu den Folien im PDF- oder PDF-Hybrid-Dateiformat:"
 msgid "Link to the Video of the talk"
 msgstr "Link zum Video des Talk"
 
-#: talk_templates/view.pt:112
+#: view_templates/talk_view.pt:112
 msgid "Link to video:"
 msgstr "Link zum Video:"
 
@@ -541,8 +541,8 @@ msgstr "Mitglied reicht Inhalt zur Veröffentlichung ein"
 msgid "Messages to the Program Committee"
 msgstr "Mitteilung an das Programm-Kommittee"
 
-#: conferencebreak_templates/view.pt:28 talk_templates/view.pt:55
-#: workshop_templates/view.pt:55
+#: view_templates/conferencebreak_view.pt:28 view_templates/talk_view.pt:55
+#: view_templates/workshop_view.pt:55
 msgid "Minutes"
 msgstr "Minuten"
 
@@ -554,7 +554,7 @@ msgstr "Mobil-Telefonnummer"
 msgid "Name of the Room"
 msgstr "Raumname"
 
-#: attendeefolder.py:20
+#: attendeefolder.py:19
 msgid "Name of the attendee folder"
 msgstr "Name des Besucherordners"
 
@@ -570,7 +570,11 @@ msgstr "Name des Sprecherordners"
 msgid "No"
 msgstr "Nein"
 
-#: attendee.py:80 conferencespeaker.py:82 registrationform.py:78
+#: view_templates/attendeefolder_view.pt:33
+msgid "Once you got an account on this site you could login and there will a link on this page to register for the conference."
+msgstr "Sobald Sie einen Account auf dieser Seite haben, können Sie sich einloggen und Sie werden einen Link auf dieser Seite angezeigt bekommen, mit dem Sie sich für die Konferenz registrieren können."
+
+#: attendee.py:56 conferencespeaker.py:82 registrationform.py:78
 msgid "Organisation"
 msgstr "Organisation"
 
@@ -578,11 +582,11 @@ msgstr "Organisation"
 msgid "Organiser"
 msgstr "Organisator"
 
-#: attendeefolder.py:42 browser/controlpanel.py:133
+#: browser/controlpanel.py:133
 msgid "Payment Options"
 msgstr "Bezahlmöglichkeiten"
 
-#: attendee.py:85 registrationform.py:83
+#: attendee.py:61 registrationform.py:83
 msgid "Payment of the Registration Fee"
 msgstr "Zahlung der Registrierungsgebühr"
 
@@ -591,7 +595,7 @@ msgstr "Zahlung der Registrierungsgebühr"
 msgid "Pending"
 msgstr "Schwebend"
 
-#: room_templates/view.pt:48
+#: view_templates/room_view.pt:48
 msgid "Person"
 msgstr "Person"
 
@@ -639,7 +643,7 @@ msgstr "Bitte tragen Sie Ihre Mobilfunknummer ein, so dass wir Sie  während der
 msgid "Please fill in your telephone number so that we could get in contact with you by phone if necessary."
 msgstr "Bitte tragen Sie Ihre Telefonnummer ein, so dass wir Sie erforderlichenfalls anrufen können."
 
-#: talk_templates/view.pt:21 workshop_templates/view.pt:21
+#: view_templates/talk_view.pt:21 view_templates/workshop_view.pt:21
 msgid "Please submit this for review."
 msgstr "Bitte übermitteln Sie dies zum Review."
 
@@ -667,11 +671,11 @@ msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden
 msgid "Position In The Track"
 msgstr "Position im Track"
 
-#: attendee.py:61 conferencespeaker.py:46 registrationform.py:59
+#: attendee.py:37 conferencespeaker.py:46 registrationform.py:59
 msgid "Postal Code"
 msgstr "Postleitzahl"
 
-#: workshop_templates/view.pt:65
+#: view_templates/workshop_view.pt:65
 msgid "Presentation Slides"
 msgstr "Präsentationsfolien"
 
@@ -715,6 +719,10 @@ msgstr "Veröffentlicht"
 msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr "Packt Ihre Objekte in eine Review-Schlange, so dass sie auf der Seite veröffentlicht werden können."
 
+#: view_templates/attendeefolder_view.pt:43
+msgid "Register for the conference"
+msgstr "Registrieren für die Konferenz"
+
 #: registrationform.py:128
 msgid "Register for the conference."
 msgstr "Registrieren für die Konferenz."
@@ -723,11 +731,11 @@ msgstr "Registrieren für die Konferenz."
 msgid "Registration Description"
 msgstr "Beschreibung der Registrierung"
 
-#: attendeefolder.py:35 browser/controlpanel.py:126
+#: browser/controlpanel.py:126
 msgid "Registration Fee?"
 msgstr "Registrierungsgebühr?"
 
-#: attendee_templates/view.pt:35
+#: view_templates/attendee_view.pt:35
 msgid "Registration fee paid:"
 msgstr "Registrierungsgebühr gezahlt:"
 
@@ -750,7 +758,7 @@ msgstr "Reviewer veröffentlicht den Inhalt"
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
 
-#: program_templates/view.pt:54 track_templates/view.pt:43
+#: view_templates/program_view.pt:54 view_templates/track_view.pt:43
 msgid "Room"
 msgstr "Raum"
 
@@ -771,11 +779,11 @@ msgstr "Setzen Sie einen Zeitrahmen für den Talk in Minuten."
 msgid "Set a time frame for the workshop in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Workshop in Minuten."
 
-#: talk.py:186 workshop.py:183 workshop_templates/view.pt:67
+#: talk.py:186 view_templates/workshop_view.pt:67 workshop.py:183
 msgid "Slides"
 msgstr "Folien"
 
-#: twfolder_templates/view.pt:50
+#: view_templates/twfolder_view.pt:50
 msgid "Speaker"
 msgstr "Sprecher"
 
@@ -783,7 +791,7 @@ msgstr "Sprecher"
 msgid "Speaker/Workshop Leader"
 msgstr "Sprecher/Workshopleiter"
 
-#: twfolder_templates/view.pt:47
+#: view_templates/twfolder_view.pt:47
 msgid "Start"
 msgstr "Start"
 
@@ -795,19 +803,19 @@ msgstr "Startdatum"
 msgid "Startdate"
 msgstr "Startdatum"
 
-#: attendee.py:49 conferencespeaker.py:32 registrationform.py:47
+#: attendee.py:25 conferencespeaker.py:32 registrationform.py:47
 msgid "Street"
 msgstr "Straße"
 
-#: track_templates/view.pt:59
+#: view_templates/track_view.pt:59
 msgid "Subject of the talk"
 msgstr "Gegenstand des Talks"
 
-#: callforpaper_templates/view.pt:66
+#: view_templates/callforpaper_view.pt:66
 msgid "Submit a conference talk"
 msgstr "Reichen Sie einen Konferenz-Talk ein"
 
-#: callforpaper_templates/view.pt:71
+#: view_templates/callforpaper_view.pt:71
 msgid "Submit a conference workshop"
 msgstr "Reichen Sie einen Konferenz-Workshop ein"
 
@@ -820,7 +828,7 @@ msgstr "Zur Veröffentlichung einreichen"
 msgid "Summary For Talks And Workshops"
 msgstr "Überblick zu Talks und Workshops"
 
-#: talk.py:155 talk_templates/view.pt:51
+#: talk.py:155 view_templates/talk_view.pt:51
 msgid "Talk Length"
 msgstr "Talk-Länge"
 
@@ -840,11 +848,11 @@ msgstr "Talk-Titel"
 msgid "Talk workshop folder title"
 msgstr "Talk-Workshop-Ordner-Titel"
 
-#: track_templates/view.pt:57
+#: view_templates/track_view.pt:57
 msgid "Talk/Workshop"
 msgstr "Talk/Workshop"
 
-#: twfolder_templates/view.pt:42
+#: view_templates/twfolder_view.pt:42
 msgid "Talks"
 msgstr "Talks"
 
@@ -856,11 +864,11 @@ msgstr "Talks / Workshops"
 msgid "Telephone Number"
 msgstr "Telefonnummer"
 
-#: track_templates/view.pt:22
+#: view_templates/track_view.pt:22
 msgid "The"
 msgstr "Die"
 
-#: conferencespeaker_templates/view.pt:46
+#: view_templates/speaker_view.pt:46
 msgid "The Speaker has submitted the following talks:"
 msgstr "Der Sprecher hat die folgende Talks eingereicht:"
 
@@ -948,15 +956,15 @@ msgstr "Der Talk-Titel wird bereits verwendet."
 msgid "The talks and workshops of the conference"
 msgstr "Die Konferenz-Talks und -Workshops"
 
-#: attendee.py:50 registrationform.py:48
+#: attendee.py:26 registrationform.py:48
 msgid "This data is mandatory and required for our internal procedures"
 msgstr "Diese Daten  sind verpflichtend und werden für unsere internen Abläufe benötigt"
 
-#: track_templates/view.pt:58
+#: view_templates/track_view.pt:58
 msgid "Time"
 msgstr "Zeit"
 
-#: conferencebreak_templates/view.pt:20
+#: view_templates/conferencebreak_view.pt:20
 msgid "Time:"
 msgstr "Zeit:"
 
@@ -968,12 +976,12 @@ msgstr "Titel"
 msgid "Title of the Registration Page"
 msgstr "Titel der Registrierungsseite"
 
-#: program_templates/view.pt:60
+#: view_templates/program_view.pt:60
 msgid "To"
 msgstr "Bis"
 
-#: program_templates/programfullview.pt:30 program_templates/view.pt:30
-#: talk_templates/view.pt:64
+#: view_templates/program_view.pt:30 view_templates/programfullview.pt:30
+#: view_templates/talk_view.pt:64
 msgid "To:"
 msgstr "Bis:"
 
@@ -981,8 +989,8 @@ msgstr "Bis:"
 msgid "Topics for the Call for Papers"
 msgstr "Themen des Call for Papers"
 
-#: program_templates/view.pt:48 talk_templates/view.pt:40
-#: workshop_templates/view.pt:40
+#: view_templates/program_view.pt:48 view_templates/talk_view.pt:40
+#: view_templates/workshop_view.pt:40
 msgid "Track"
 msgstr "Track"
 
@@ -998,7 +1006,7 @@ msgstr "Track-Zusammenfassung"
 msgid "Track title"
 msgstr "Track-Titel"
 
-#: program_templates/view.pt:43
+#: view_templates/program_view.pt:43
 msgid "Tracks"
 msgstr "Tracks"
 
@@ -1006,7 +1014,7 @@ msgstr "Tracks"
 msgid "Uninstalls the collective.conferences add-on."
 msgstr "Deinstallieren des collective.conferences Addon."
 
-#: attendee.py:101 registrationform.py:98
+#: attendee.py:77 registrationform.py:98
 msgid "Used Bank Account"
 msgstr "Verwendetes Bankkonto"
 
@@ -1019,11 +1027,11 @@ msgstr "Video"
 msgid "Visible to everyone, editable by the owner."
 msgstr "Für Jedermann sichtbar, durch den Besitzer bearbeitbar."
 
-#: attendee.py:93 registrationform.py:90
+#: attendee.py:69 registrationform.py:90
 msgid "Way of Registration Fee Payment"
 msgstr "Zahlungweg der Registrierungsgebühr"
 
-#: attendee.py:74 registrationform.py:72
+#: attendee.py:50 registrationform.py:72
 msgid "We need this mandatory data to get in contact with you, if we have any questions"
 msgstr "Wir benötigen diese verpflichtenden Daten, um Sie zu kontaktieren, falls wir irgendwelche Fragen haben"
 
@@ -1031,11 +1039,12 @@ msgstr "Wir benötigen diese verpflichtenden Daten, um Sie zu kontaktieren, fall
 msgid "We send your message to the conference organizers."
 msgstr "Wir senden Ihre Mitteilung an die Konferenzorganisierer."
 
-#: twfolder_templates/view.pt:91 workshop.py:90 workshop_templates/view.pt:29
+#: view_templates/twfolder_view.pt:91 view_templates/workshop_view.pt:29
+#: workshop.py:90
 msgid "Workshop Leader"
 msgstr "Workshopleiter"
 
-#: workshop.py:152 workshop_templates/view.pt:51
+#: view_templates/workshop_view.pt:51 workshop.py:152
 msgid "Workshop Length"
 msgstr "Workshoplänge"
 
@@ -1055,7 +1064,7 @@ msgstr "Workshop-Zusammenfassung"
 msgid "Workshop title"
 msgstr "Workshop-Title"
 
-#: twfolder_templates/view.pt:83
+#: view_templates/twfolder_view.pt:83
 msgid "Workshops"
 msgstr "Workshops"
 
@@ -1075,9 +1084,21 @@ msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. z
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. zu den Tagen, an denen Sie (nicht) verfügbar sind, um den Workshop zu halten"
 
-#: callforpaper_templates/view.pt:61
+#: view_templates/callforpaper_view.pt:61
 msgid "You can submit a new talk or workshop by following one of the following links. They will open a form with the necessary entries to create a new conference talk or workshop proposal:"
 msgstr "Sie können einen neuen Talk oder Workshop über einen der folgenden Links übermitteln. Die Links öffnen ein Formular mit den notwendigen Einträgen und erstellen einen neuen Konferenz-Talk- oder -Workshop-Vorschlag:"
+
+#: view_templates/registration_view.pt:27
+msgid "You could register for the conference by following the link and fill in your information into the form:<br /> <a class=\"pointer\" href=\"${DYNAMIC_CONTENT}\"> Register for the conference </a>."
+msgstr "Sie können sich für die Konferenz registrieren indem Sie dem Link folgen und Ihre Informationen in das Formular eintragen::<br /> <a class=\"pointer\" href=\"${DYNAMIC_CONTENT}\"> Registrieren für die Konferenz </a>."
+
+#: view_templates/attendeefolder_view.pt:31
+msgid "You could register for the conference on this site once you are logged in. If you not already have an account on this site, please follow this link to the <a href=\"${DYNAMIC_CONTENT}\"> <span>x</span> </a> to create an account."
+msgstr "Sie können sich für die Konferenz registrieren, sobald Sie auf sie eingeloggt sind. Falls Sie nicht bereits einen Account auf dieser Seite haben, folgend Sie diesem Link, um"
+
+#: view_templates/attendeefolder_view.pt:38
+msgid "You could register for the conference using the following link:"
+msgstr "Sie können sich für die Konferenz registrieren unter Verwendung des folgenden Links:"
 
 #: talk.py:300 workshop.py:295
 msgid "You need to choose a position in the track. Please add this position to the field 'Position in Track'."
@@ -1087,23 +1108,23 @@ msgstr "Sie müssen eine Position im Track wählen. Bitte fügen Sie diese Posit
 msgid "Your email address"
 msgstr "Ihre Email-Adresse"
 
-#: track_templates/view.pt:29
+#: view_templates/track_view.pt:29
 msgid "and ends at"
 msgstr "endet um"
 
-#: callforpaper_templates/view.pt:41
+#: view_templates/callforpaper_view.pt:41
 msgid "and log into the site."
 msgstr "und in die Seite einloggen."
 
-#: conferencespeaker_templates/view.pt:59
+#: view_templates/speaker_view.pt:59
 msgid "and the following workshops:"
 msgstr "und die folgenden Workshops:"
 
-#: attendeefolder.py:24
+#: attendeefolder.py:23
 msgid "attendee folder description"
 msgstr "Beschreibung des Besucherordners"
 
-#: track_templates/view.pt:25
+#: view_templates/track_view.pt:25
 msgid "begins at"
 msgstr "beginnt um"
 
@@ -1119,14 +1140,18 @@ msgstr "collective.conferences (deinstallierenl)"
 msgid "roomfolder description"
 msgstr "Beschreibung des Raumordners"
 
+#: view_templates/attendeefolder_view.pt:31
+msgid "site registration form"
+msgstr "Seiten-Registrierungsformular"
+
 #: speakerfolder.py:19
 msgid "speakerfolder description"
 msgstr "Beschreibung des Sprecherordners"
 
-#: callforpaper_templates/view.pt:46
+#: view_templates/callforpaper_view.pt:46
 msgid "with this link"
 msgstr "mit diesem Link"
 
-#: callforpaper_templates/view.pt:39
+#: view_templates/callforpaper_view.pt:39
 msgid "you could follow this link"
 msgstr "Sie können diesem Link folgen"

@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Registration &#8212; collective.conferences 0.3 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Workflow" href="workflow.html" />
+    <link rel="prev" title="Conference Track" href="track.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="conference-registration">
+<h1>Conference Registration<a class="headerlink" href="#conference-registration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="two-options-to-do-the-conference-registration">
+<h2>Two Options To Do The Conference Registration<a class="headerlink" href="#two-options-to-do-the-conference-registration" title="Permalink to this headline">¶</a></h2>
+<p>The collective.conferences Plone add-on provides two ways to process
+the registration for a conference. The first option is done within
+a folder of the site. If you choose this option everyone, who registers
+for the conference, had to get an account on the site and create a
+content object inside the registration folder.</p>
+<p>The second option works with a page about the conference registration
+process and use a mail form for the registration itself. If you choose
+this option there is no need for an account and no content
+object will be created on the site.</p>
+</div>
+<div class="section" id="option-1-registration-done-inside-a-folder">
+<h2>Option 1: Registration Done Inside A Folder<a class="headerlink" href="#option-1-registration-done-inside-a-folder" title="Permalink to this headline">¶</a></h2>
+<p>The registration of conference attendees will be done inside a folder
+object within this option 1. This folder could be created inside the
+root of the Plone site. Therefore go to the root of the Plone site and
+click in the menu bar on the left side on the entry ‘Add new’ and choose
+from the opening submenu ‘Conference Registration Folder’. This opens the
+edit form to create the folder for conference registrations (see
+screenshot below).</p>
+<a class="reference internal image-reference" href="_images/conference_registration_folder_form01.png"><img alt="_images/conference_registration_folder_form01.png" src="_images/conference_registration_folder_form01.png" style="width: 600px;" /></a>
+<p>The form starts with a field for the title of the registration folder. This
+could be e.g. ‘Registration’. This field is mandatory. It is followed by a
+field for a description of the registration folder, which is optional.</p>
+<p>The field with main information about the registration process follows.
+This field is not mandatory, but it could and should be used to describe
+the registration process, including e.g. a conference fee.</p>
+<p>The following field needs an answer to the question about a conference fee.
+If this field is set to ‘yes’ you need to carefully edit the field ‘Payment
+Options’. The strings in that field will be displayed in and used for the
+registration form which a conference attendee has to fill out (see below).</p>
+<p>Once the fields were completed save the edit form and the conference
+registration folder will be created inside the Plone site root.</p>
+<div class="section" id="publishing-the-registration-folder">
+<h3>Publishing the registration (folder)<a class="headerlink" href="#publishing-the-registration-folder" title="Permalink to this headline">¶</a></h3>
+<p>The default state of the created folder will be ‘private’. If you want to
+change this state, click inside the menu bar on the left site on the entry
+with this state and choose from the opening submenu ‘Submit for Publication’
+or if available ‘Publish’. If you could only submit the conference
+registration folder for publication a user with the appropriate permission
+need to publish the folder later.</p>
+</div>
+<div class="section" id="conference-attendee-registration">
+<h3>Conference Attendee Registration<a class="headerlink" href="#conference-attendee-registration" title="Permalink to this headline">¶</a></h3>
+<p>People, who want to register for the conference, first need to get an
+account on the site and log-in. Thus they had first to register on
+the site.</p>
+<p>Once they logged-in they could click on the folder / page  for
+conference registration, that was already created and published. There
+they choose from the menu bar on the left the entry ‘Add new’ and click
+in the opening submenu on the item ‘Attendee’. This opens a form to add
+a new conference attendee (see the screenshot below).</p>
+<a class="reference internal image-reference" href="_images/conference_attendee_form01.png"><img alt="_images/conference_attendee_form01.png" src="_images/conference_attendee_form01.png" style="width: 600px;" /></a>
+<p>The attendee has to fill in his full name, his address and his e-mail
+address into the form. If he is member of an organization he could
+provide this information in the last field of the form.</p>
+<p>If a conference attendee has to pay a conference fee (the appropriate
+field in the registration folder edit form is set to yes; see above),
+the registration form for the attendee contains three further fields
+(see screenshot below).</p>
+<a class="reference internal image-reference" href="_images/conference_attendee_form02.png"><img alt="_images/conference_attendee_form02.png" src="_images/conference_attendee_form02.png" style="width: 600px;" /></a>
+<p>The first field asks, if the conference fee has already been payed.
+The next question is about the used bank account out of a list of
+available accounts (they are added on the registration folder edit
+form). The last field is about the users bank account, which was
+used for the payment.</p>
+<p>Once the attendee has filled in the necessary information she/he could
+save the form and the registration finished. A new attendee will be
+created. The default state is ‘private’.</p>
+</div>
+</div>
+<div class="section" id="option-2-page-about-registration-and-mail-form">
+<h2>Option 2: Page About Registration And Mail Form<a class="headerlink" href="#option-2-page-about-registration-and-mail-form" title="Permalink to this headline">¶</a></h2>
+<p>If you prefer to do the conference registration process within a
+mailing to the conference committee (and its e-mail address) instead,
+you can create in your Plone instance a conference registration page with
+information about the conference registration process. The view of this
+registration page will contain a link to a mail form.</p>
+<p>You could add this registration page inside the root of your Plone site by
+clicking on the entry ‘Add new’ in the menu on the left side. Then choose
+the entry ‘Conference Registration Page’ from the opening sub-menu. You will
+get a form to create the registration page (see screenshot below).</p>
+<a class="reference internal image-reference" href="_images/registration_page_form01.png"><img alt="_images/registration_page_form01.png" src="_images/registration_page_form01.png" style="width: 600px;" /></a>
+<p>The form contains a mandatory field for the title of the registration page. The
+further fields for a summary (‘Registration Description’) and detailed information
+about the registration process (‘Information About The Registration Process’) are
+optional fields. But it is necessary to add here the necessary information about
+the registration proceding for the people which want to take part in the conference.
+Thus this fields are only techinically optional.</p>
+<div class="section" id="publishing-the-registration-page">
+<h3>Publishing the registration page<a class="headerlink" href="#publishing-the-registration-page" title="Permalink to this headline">¶</a></h3>
+<p>The default state of the created registration page will be ‘private’. If you want to
+change this state, click inside the menu bar on the left site on the entry
+with this state and choose from the opening submenu ‘Submit for Publication’
+or if available ‘Publish’. If you could only submit the conference
+registration page for publication a user with the appropriate permission
+need to publish the page later.</p>
+</div>
+<div class="section" id="conference-registration-by-email">
+<h3>Conference Registration by Email<a class="headerlink" href="#conference-registration-by-email" title="Permalink to this headline">¶</a></h3>
+<p>Once the conference registration is published every visitor of the site will find a
+link to an email form on this page. If the user clicks on this link a form opens
+with fields for the necessary user data for the conference registration process (see
+the screenshot below).</p>
+<a class="reference internal image-reference" href="_images/registration_mail_form.png"><img alt="_images/registration_mail_form.png" src="_images/registration_mail_form.png" style="width: 600px;" /></a>
+<p>The attendee needs to submit his name and contact address. He had also to fill in a
+valid email address. If the attendee has to pay a conference fee the form contains
+(like in the screenshot above) field to inform the organization committee, if the
+fee was already payed, on which bank account and from which bank account. This makes
+it easier for the organization committee to find the payment data of the conference
+attendee.</p>
+<p>The form is secured with a recaptcha field. Once the user filled the necessary data
+into the fields and got the recaptcha challenge solved she/he could press the ‘Send
+Email’ button and an email will be send to the default email address of the Plone
+instance. This email address has been configured inside the administration page of
+the Plone instance by the administrator.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">collective.conferences</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conferencepage.html">Conference Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="callforpaper.html">Call For Paper Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talksworkshopfolder.html">Folder For Talks And Workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="talk.html">Talk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workshop.html">Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="breaksfolder.html">Folder For Conference Breaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="break.html">Conference Break</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roomfolder.html">Folder For Conference Rooms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="room.html">Conference Room</a></li>
+<li class="toctree-l1"><a class="reference internal" href="program.html">Conference Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="track.html">Conference Track</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Conference Registration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#two-options-to-do-the-conference-registration">Two Options To Do The Conference Registration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-1-registration-done-inside-a-folder">Option 1: Registration Done Inside A Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#option-2-page-about-registration-and-mail-form">Option 2: Page About Registration And Mail Form</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Workflow</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="track.html" title="previous chapter">Conference Track</a></li>
+      <li>Next: <a href="workflow.html" title="next chapter">Workflow</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Andreas Mantke.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/registration.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -4,7 +4,14 @@ Changelog
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add documentation about the conference registration [Andreas Mantke]
+- Add new page for conference registration [Andreas Mantke]
+- Add new mail form for conference registration [Andreas Mantke]
+- Move options for conference fee and bank accounts to the controlpanes, make a
+  vocabulary from this accounts and register it as utility [Andreas Mantke]
+- Move view templates to a common folder [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
+- Add Python versions 3.6 and 3.8 to the test matrix of Travis CI [Andreas Mantke]
 
 
 0.2 (2020-08-29)

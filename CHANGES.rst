@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.3 (unreleased)
+0.4 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+0.3 (2020-09-22)
 ----------------
 
 - Add documentation about the conference registration [Andreas Mantke]

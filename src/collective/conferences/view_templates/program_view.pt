@@ -91,7 +91,7 @@
        <td tal:content="item/Description">Description</td>  
        <td><span tal:condition="item/room">
        <tal:loop tal:repeat="room item/room">
-           <span tal:content="structure room/to_object/Title" />
+           <span tal:content="structure room/to_object/Title|nothing" />
        </tal:loop>
        </span>
        </td>

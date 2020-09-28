@@ -4,7 +4,8 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix view templates of twfolder, track and program if speaker, track or
+  conference room is not set [Andreas Mantke]
 
 
 0.3 (2020-09-22)

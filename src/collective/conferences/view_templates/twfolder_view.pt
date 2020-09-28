@@ -66,12 +66,12 @@
          <td><span tal:content="talk/description" /></td>
          <td>
          <tal:loop tal:repeat="speaker talk/speaker">
-             <span tal:content="structure speaker/to_object/Title" />
+             <span tal:content="structure speaker/to_object/Title|nothing" />
          </tal:loop>
          </td>
          <td>
          <tal:loop tal:repeat="track talk/conferencetrack">
-           <span tal:content="structure track/to_object/Title" />
+           <span tal:content="structure track/to_object/Title|nothing" />
        </tal:loop>
          </td>
          </tr>
@@ -107,12 +107,12 @@
          <td><span tal:content="workshop/description" /></td>
          <td>
          <tal:loop tal:repeat="speaker workshop/speaker">
-             <span tal:content="structure speaker/to_object/Title" />
+             <span tal:content="structure speaker/to_object/Title|nothing" />
          </tal:loop>
          </td>
          <td>
          <tal:loop tal:repeat="track workshop/conferencetrack">
-           <span tal:content="structure track/to_object/Title" />
+           <span tal:content="structure track/to_object/Title|nothing" />
        </tal:loop>
          </td>
          </tr>

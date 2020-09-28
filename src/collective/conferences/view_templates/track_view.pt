@@ -45,7 +45,7 @@
         <tal:loop repeat="trackroom trackroom">
         <h4>
         <a tal:attributes="href python: trackroom.getURL()">
-                            <span tal:content="trackroom/Title" />
+                            <span tal:content="trackroom/Title|nothing" />
          </a>
          </h4>
          </tal:loop>

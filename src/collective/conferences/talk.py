@@ -37,10 +37,6 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-# class StartBeforeEnd(Invalid):
-#   __doc__ = _(u"The start or end date is invalid")
-
-
 def vocabCfPTopics(context):
     # For add forms
     catalog = api.portal.get_tool(name='portal_catalog')

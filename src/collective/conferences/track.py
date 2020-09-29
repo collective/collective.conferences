@@ -104,6 +104,7 @@ class ITrack(model.Schema):
                 raise EndAfterConferenceProgram(
                     _(safe_unicode("The end date couldn't be set after the end of the conference program.")))
 
+
 class TrackView(BrowserView):
 
     def canRequestReview(self):
@@ -119,10 +120,9 @@ class TrackView(BrowserView):
                                            review_state='published',
                                            sort_on='orderintrack')
         start = self.context.trackstart
-        print (start)
         for x in talks_workshops:
             x.getObject().startitem = start
-            talklength= x.getObject().talklength[0]
+            talklength = x.getObject().talklength[0]
             delta = timedelta(minutes=int(talklength))
             x.getObject().enditem = start + delta
             transaction.commit()

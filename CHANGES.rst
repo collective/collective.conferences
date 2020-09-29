@@ -6,7 +6,10 @@ Changelog
 
 - Fix view templates of twfolder, track and program if speaker, track or
   conference room is not set [Andreas Mantke]
-
+- Fix textes on the attendeefolder view template [Andreas Mantke]
+- Add function to set start and end time of talks, tracks and
+  conference breaks [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
 
 0.3 (2020-09-22)
 ----------------

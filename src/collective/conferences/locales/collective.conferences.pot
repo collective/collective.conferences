@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-17 18:11+0000\n"
+"POT-Creation-Date: 2020-09-29 16:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Add your speaker profile"
 msgstr ""
 
-#: ./talk.py:253
+#: ./talk.py:249
 msgid "Additional Files of your presentation."
 msgstr ""
 
@@ -142,22 +142,22 @@ msgstr ""
 msgid "Capacity of the room"
 msgstr ""
 
-#: ./talk.py:124
+#: ./talk.py:120
 #: ./workshop.py:121
 msgid "Choose a license for your talk"
 msgstr ""
 
 #: ./conferencebreak.py:74
-#: ./talk.py:165
+#: ./talk.py:161
 #: ./workshop.py:162
 msgid "Choose a number for the order in the track"
 msgstr ""
 
-#: ./track.py:64
+#: ./track.py:67
 msgid "Choose the room for the track"
 msgstr ""
 
-#: ./talk.py:107
+#: ./talk.py:103
 msgid "Choose the topic for your talk"
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr ""
 msgid "Choose the track for this break"
 msgstr ""
 
-#: ./talk.py:140
+#: ./talk.py:136
 #: ./workshop.py:129
 msgid "Choose the track for this talk"
 msgstr ""
@@ -310,13 +310,13 @@ msgstr ""
 
 #: ./conferencebreak.py:47
 #: ./program.py:43
-#: ./talk.py:180
+#: ./talk.py:176
 msgid "End date"
 msgstr ""
 
 #: ./conferencebreak.py:46
-#: ./talk.py:179
-#: ./track.py:58
+#: ./talk.py:175
+#: ./track.py:61
 msgid "Enddate"
 msgstr ""
 
@@ -324,7 +324,7 @@ msgstr ""
 msgid "File Extensions"
 msgstr ""
 
-#: ./talk.py:191
+#: ./talk.py:187
 msgid "Files"
 msgstr ""
 
@@ -403,7 +403,7 @@ msgstr ""
 msgid "From:"
 msgstr ""
 
-#: ./talk.py:115
+#: ./talk.py:111
 msgid "Give an estimation about the time you'd plan for your talk."
 msgstr ""
 
@@ -509,7 +509,7 @@ msgstr ""
 msgid "Length of the Break:"
 msgstr ""
 
-#: ./talk.py:123
+#: ./talk.py:119
 #: ./workshop.py:120
 msgid "License Of Your Talk"
 msgstr ""
@@ -518,17 +518,17 @@ msgstr ""
 msgid "Licenses Of Talks / Workshops"
 msgstr ""
 
-#: ./talk.py:230
+#: ./talk.py:226
 #: ./workshop.py:234
 msgid "Link To The Presentation Slides"
 msgstr ""
 
-#: ./talk.py:236
+#: ./talk.py:232
 #: ./workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
 msgstr ""
 
-#: ./talk.py:262
+#: ./talk.py:258
 msgid "Link to additional Files of your presentation in the correct file format (see for it above)."
 msgstr ""
 
@@ -544,7 +544,7 @@ msgstr ""
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
-#: ./talk.py:277
+#: ./talk.py:273
 #: ./workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr ""
@@ -567,7 +567,7 @@ msgstr ""
 msgid "Member submits content for publication"
 msgstr ""
 
-#: ./talk.py:130
+#: ./talk.py:126
 #: ./workshop.py:141
 msgid "Messages to the Program Committee"
 msgstr ""
@@ -602,7 +602,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: ./view_templates/attendeefolder_view.pt:33
+#: ./view_templates/attendeefolder_view.pt:34
 msgid "Once you got an account on this site you could login and there will a link on this page to register for the conference."
 msgstr ""
 
@@ -638,12 +638,12 @@ msgstr ""
 msgid "Picture"
 msgstr ""
 
-#: ./talk.py:114
+#: ./talk.py:110
 #: ./workshop.py:111
 msgid "Planed Length"
 msgstr ""
 
-#: ./talk.py:64
+#: ./talk.py:60
 msgid "Please choose a call for paper topic for your talk."
 msgstr ""
 
@@ -651,7 +651,7 @@ msgstr ""
 msgid "Please choose a call for paper topic for your workshop."
 msgstr ""
 
-#: ./talk.py:59
+#: ./talk.py:55
 #: ./workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr ""
@@ -660,7 +660,7 @@ msgstr ""
 msgid "Please choose a license for your workshop."
 msgstr ""
 
-#: ./talk.py:69
+#: ./talk.py:65
 msgid "Please choose a planed length for your talk."
 msgstr ""
 
@@ -690,11 +690,11 @@ msgstr ""
 msgid "Please upload an image"
 msgstr ""
 
-#: ./talk.py:254
+#: ./talk.py:250
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr ""
 
-#: ./talk.py:214
+#: ./talk.py:210
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
@@ -707,7 +707,7 @@ msgid "Please validate the recaptcha field before sending the form."
 msgstr ""
 
 #: ./conferencebreak.py:73
-#: ./talk.py:164
+#: ./talk.py:160
 #: ./workshop.py:161
 msgid "Position In The Track"
 msgstr ""
@@ -722,17 +722,17 @@ msgstr ""
 msgid "Presentation Slides"
 msgstr ""
 
-#: ./talk.py:221
+#: ./talk.py:217
 #: ./workshop.py:224
 msgid "Presentation Slides In Further File Format"
 msgstr ""
 
-#: ./talk.py:213
+#: ./talk.py:209
 #: ./workshop.py:215
 msgid "Presentation slides"
 msgstr ""
 
-#: ./talk.py:93
+#: ./talk.py:89
 msgid "Presenter"
 msgstr ""
 
@@ -770,7 +770,7 @@ msgstr ""
 msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr ""
 
-#: ./view_templates/attendeefolder_view.pt:43
+#: ./view_templates/attendeefolder_view.pt:44
 msgid "Register for the conference"
 msgstr ""
 
@@ -795,7 +795,7 @@ msgstr ""
 msgid "Retract"
 msgstr ""
 
-#: ./talk.py:285
+#: ./talk.py:281
 #: ./workshop.py:280
 msgid "Review notes"
 msgstr ""
@@ -830,7 +830,7 @@ msgid "Sending the item back will return the item to the original author instead
           You should preferably provide a reason to the author why it was not published."
 msgstr ""
 
-#: ./talk.py:156
+#: ./talk.py:152
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
@@ -838,7 +838,7 @@ msgstr ""
 msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
-#: ./talk.py:186
+#: ./talk.py:182
 #: ./view_templates/workshop_view.pt:67
 #: ./workshop.py:183
 msgid "Slides"
@@ -858,13 +858,13 @@ msgstr ""
 
 #: ./conferencebreak.py:39
 #: ./program.py:37
-#: ./talk.py:172
+#: ./talk.py:168
 msgid "Start date"
 msgstr ""
 
 #: ./conferencebreak.py:38
-#: ./talk.py:171
-#: ./track.py:52
+#: ./talk.py:167
+#: ./track.py:55
 msgid "Startdate"
 msgstr ""
 
@@ -895,20 +895,20 @@ msgstr ""
 msgid "Summary For Talks And Workshops"
 msgstr ""
 
-#: ./talk.py:155
+#: ./talk.py:151
 #: ./view_templates/talk_view.pt:51
 msgid "Talk Length"
 msgstr ""
 
-#: ./talk.py:88
+#: ./talk.py:84
 msgid "Talk details"
 msgstr ""
 
-#: ./talk.py:83
+#: ./talk.py:79
 msgid "Talk summary"
 msgstr ""
 
-#: ./talk.py:79
+#: ./talk.py:75
 msgid "Talk title"
 msgstr ""
 
@@ -952,15 +952,15 @@ msgstr ""
 msgid "The conference registration page"
 msgstr ""
 
-#: ./track.py:102
+#: ./track.py:105
 msgid "The end date couldn't be set after the end of the conference program."
 msgstr ""
 
-#: ./track.py:29
+#: ./track.py:32
 msgid "The end of the track could not be set after the conference program."
 msgstr ""
 
-#: ./talk.py:270
+#: ./talk.py:266
 #: ./workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
 msgstr ""
@@ -969,11 +969,11 @@ msgstr ""
 msgid "The following file extensions are allowed for the picture files (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./talk.py:244
+#: ./talk.py:240
 msgid "The following file extensions are allowed for the upload of material or additional files for conference talks as well as for linked material/ additional files (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./talk.py:205
+#: ./talk.py:201
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
@@ -1001,25 +1001,25 @@ msgstr ""
 msgid "The speaker of the conference"
 msgstr ""
 
-#: ./track.py:91
+#: ./track.py:94
 msgid "The start date could not be set before the begin of the conference program."
 msgstr ""
 
 #: ./program.py:66
-#: ./track.py:79
+#: ./track.py:82
 msgid "The start date must be before the end date."
 msgstr ""
 
-#: ./track.py:25
+#: ./track.py:28
 msgid "The start of the track could not be set before the conference program."
 msgstr ""
 
 #: ./program.py:21
-#: ./track.py:21
+#: ./track.py:24
 msgid "The start or end date is invalid"
 msgstr ""
 
-#: ./talk.py:383
+#: ./talk.py:379
 #: ./workshop.py:378
 msgid "The talk title is already in use."
 msgstr ""
@@ -1043,7 +1043,7 @@ msgstr ""
 
 #: ./conferencebreak.py:21
 #: ./conferencebreakfolder.py:11
-#: ./talk.py:78
+#: ./talk.py:74
 msgid "Title"
 msgstr ""
 
@@ -1071,15 +1071,15 @@ msgstr ""
 msgid "Track"
 msgstr ""
 
-#: ./track.py:47
+#: ./track.py:50
 msgid "Track details"
 msgstr ""
 
-#: ./track.py:42
+#: ./track.py:45
 msgid "Track summary"
 msgstr ""
 
-#: ./track.py:38
+#: ./track.py:41
 msgid "Track title"
 msgstr ""
 
@@ -1096,7 +1096,7 @@ msgstr ""
 msgid "Used Bank Account"
 msgstr ""
 
-#: ./talk.py:198
+#: ./talk.py:194
 #: ./workshop.py:200
 msgid "Video"
 msgstr ""
@@ -1165,7 +1165,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: ./talk.py:131
+#: ./talk.py:127
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
 msgstr ""
 
@@ -1181,15 +1181,15 @@ msgstr ""
 msgid "You could register for the conference by following the link and fill in your information into the form:<br /> <a class=\"pointer\" href=\"${DYNAMIC_CONTENT}\"> Register for the conference </a>."
 msgstr ""
 
-#: ./view_templates/attendeefolder_view.pt:31
-msgid "You could register for the conference on this site once you are logged in. If you not already have an account on this site, please follow this link to the <a href=\"${DYNAMIC_CONTENT}\"> <span>x</span> </a> to create an account."
+#: ./view_templates/attendeefolder_view.pt:28
+msgid "You could register for the conference on this site once you are logged in. If you not already have an account on this site, please follow this link to the"
 msgstr ""
 
-#: ./view_templates/attendeefolder_view.pt:38
+#: ./view_templates/attendeefolder_view.pt:39
 msgid "You could register for the conference using the following link:"
 msgstr ""
 
-#: ./talk.py:300
+#: ./talk.py:296
 #: ./workshop.py:295
 msgid "You need to choose a position in the track. Please add this position to the field 'Position in Track'."
 msgstr ""
@@ -1230,7 +1230,7 @@ msgstr ""
 msgid "roomfolder description"
 msgstr ""
 
-#: ./view_templates/attendeefolder_view.pt:31
+#: ./view_templates/attendeefolder_view.pt:32
 msgid "site registration form"
 msgstr ""
 

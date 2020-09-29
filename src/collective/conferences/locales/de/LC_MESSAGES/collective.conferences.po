@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2020-09-17 20:15+0200\n"
+"PO-Revision-Date: 2020-09-29 18:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgstr "Ein kurzer Lebenslauf"
 msgid "Add your speaker profile"
 msgstr "Fügen Sie Ihr Sprecher-Profil hinzu"
 
-#: talk.py:253
+#: talk.py:249
 msgid "Additional Files of your presentation."
 msgstr "Ergänzende Dateien für Ihre Präsentation."
 
@@ -140,19 +140,19 @@ msgstr "Abbrechen"
 msgid "Capacity of the room"
 msgstr "Raumkapazität"
 
-#: talk.py:124 workshop.py:121
+#: talk.py:120 workshop.py:121
 msgid "Choose a license for your talk"
 msgstr "Wählen Sie eine Lizenz für Ihren Talk"
 
-#: conferencebreak.py:74 talk.py:165 workshop.py:162
+#: conferencebreak.py:74 talk.py:161 workshop.py:162
 msgid "Choose a number for the order in the track"
 msgstr "Wählen Sie eine Nummer für Sortierung im Track"
 
-#: track.py:64
+#: track.py:67
 msgid "Choose the room for the track"
 msgstr "Wählen Sie den Raum für den Track"
 
-#: talk.py:107
+#: talk.py:103
 msgid "Choose the topic for your talk"
 msgstr "Wählen Sie eine Thematik für Ihren Talk"
 
@@ -164,7 +164,7 @@ msgstr "Wählen Sie eine Thematik für Ihren Workshop"
 msgid "Choose the track for this break"
 msgstr "Wählen Sie den Track für diese Unterbrechung"
 
-#: talk.py:140 workshop.py:129
+#: talk.py:136 workshop.py:129
 msgid "Choose the track for this talk"
 msgstr "Wählen Sie den Track für diesen Talk"
 
@@ -293,11 +293,11 @@ msgstr "Workshopdetails"
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: conferencebreak.py:47 program.py:43 talk.py:180
+#: conferencebreak.py:47 program.py:43 talk.py:176
 msgid "End date"
 msgstr "Endedatum"
 
-#: conferencebreak.py:46 talk.py:179 track.py:58
+#: conferencebreak.py:46 talk.py:175 track.py:61
 msgid "Enddate"
 msgstr "Endedatum"
 
@@ -305,7 +305,7 @@ msgstr "Endedatum"
 msgid "File Extensions"
 msgstr "Dateierweiterung"
 
-#: talk.py:191
+#: talk.py:187
 msgid "Files"
 msgstr "Dateien"
 
@@ -382,7 +382,7 @@ msgstr "Von"
 msgid "From:"
 msgstr "Von:"
 
-#: talk.py:115
+#: talk.py:111
 msgid "Give an estimation about the time you'd plan for your talk."
 msgstr "Geben Sie eine Einschätzung zu der Zeit ein,  die Sie für Ihren geplante Talk planen."
 
@@ -483,7 +483,7 @@ msgstr "Dauer des Workshops"
 msgid "Length of the Break:"
 msgstr "Länge der Unterbrechung:"
 
-#: talk.py:123 workshop.py:120
+#: talk.py:119 workshop.py:120
 msgid "License Of Your Talk"
 msgstr "Lizenz des Talks"
 
@@ -491,15 +491,15 @@ msgstr "Lizenz des Talks"
 msgid "Licenses Of Talks / Workshops"
 msgstr "Lizenz des Talks / Workshops"
 
-#: talk.py:230 workshop.py:234
+#: talk.py:226 workshop.py:234
 msgid "Link To The Presentation Slides"
 msgstr "Link zu den Präsentationsfolien"
 
-#: talk.py:236 workshop.py:240
+#: talk.py:232 workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
 msgstr "Link zu den Präsentationsfolien in weiterem Dateiformat"
 
-#: talk.py:262
+#: talk.py:258
 msgid "Link to additional Files of your presentation in the correct file format (see for it above)."
 msgstr "Link zu den ergänzenden Dateien Ihrer Präsentation in dem korrekten Dateiformat (sehen Sie dieses oben)."
 
@@ -515,7 +515,7 @@ msgstr "Link zu den Folien im ODT-Dateiformat:"
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr "Link zu den Folien im PDF- oder PDF-Hybrid-Dateiformat:"
 
-#: talk.py:277 workshop.py:272
+#: talk.py:273 workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr "Link zum Video des Talk"
 
@@ -537,7 +537,7 @@ msgstr "Mitglied zieht Einreichung zurück"
 msgid "Member submits content for publication"
 msgstr "Mitglied reicht Inhalt zur Veröffentlichung ein"
 
-#: talk.py:130 workshop.py:141
+#: talk.py:126 workshop.py:141
 msgid "Messages to the Program Committee"
 msgstr "Mitteilung an das Programm-Kommittee"
 
@@ -570,7 +570,7 @@ msgstr "Name des Sprecherordners"
 msgid "No"
 msgstr "Nein"
 
-#: view_templates/attendeefolder_view.pt:33
+#: view_templates/attendeefolder_view.pt:34
 msgid "Once you got an account on this site you could login and there will a link on this page to register for the conference."
 msgstr "Sobald Sie einen Account auf dieser Seite haben, können Sie sich einloggen und Sie werden einen Link auf dieser Seite angezeigt bekommen, mit dem Sie sich für die Konferenz registrieren können."
 
@@ -603,11 +603,11 @@ msgstr "Person"
 msgid "Picture"
 msgstr "Bild"
 
-#: talk.py:114 workshop.py:111
+#: talk.py:110 workshop.py:111
 msgid "Planed Length"
 msgstr "Geplante Länge"
 
-#: talk.py:64
+#: talk.py:60
 msgid "Please choose a call for paper topic for your talk."
 msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Talk."
 
@@ -615,7 +615,7 @@ msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Talk."
 msgid "Please choose a call for paper topic for your workshop."
 msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Workshop."
 
-#: talk.py:59 workshop.py:288
+#: talk.py:55 workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr "Bitte wählen Sie eine Lizenz für Ihren Talk."
 
@@ -623,7 +623,7 @@ msgstr "Bitte wählen Sie eine Lizenz für Ihren Talk."
 msgid "Please choose a license for your workshop."
 msgstr "Bitte wählen Sie eine Lizenz für Ihren Workshop."
 
-#: talk.py:69
+#: talk.py:65
 msgid "Please choose a planed length for your talk."
 msgstr "Bitte wählen Sie eine geplante Länge für Ihren Talk aus."
 
@@ -651,11 +651,11 @@ msgstr "Bitte übermitteln Sie dies zum Review."
 msgid "Please upload an image"
 msgstr "Bitte laden Sie Ihre Bilddatei hoch"
 
-#: talk.py:254
+#: talk.py:250
 msgid "Please upload the additional files of your presentation (in archive format) shortly after you have given your talk."
 msgstr "Bitte laden Sie die ergänzenden Dateien zu Ihrer Präsentation (im Archiv-Format) hoch, kurz nachdem Sie Ihren Talk gegeben haben."
 
-#: talk.py:214
+#: talk.py:210
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr "Bitte laden Sie ihre Präsentation hoch kurz nachdem Sie ihren Talk gegeben haben."
 
@@ -667,7 +667,7 @@ msgstr "Bitte laden Sie Ihre Workshop-Präsentation oder Material zu dem Inhalt 
 msgid "Please validate the recaptcha field before sending the form."
 msgstr "Bitte validieren Sie das Recaptcha-Feld, bevor Sie das Formular absenden."
 
-#: conferencebreak.py:73 talk.py:164 workshop.py:161
+#: conferencebreak.py:73 talk.py:160 workshop.py:161
 msgid "Position In The Track"
 msgstr "Position im Track"
 
@@ -679,15 +679,15 @@ msgstr "Postleitzahl"
 msgid "Presentation Slides"
 msgstr "Präsentationsfolien"
 
-#: talk.py:221 workshop.py:224
+#: talk.py:217 workshop.py:224
 msgid "Presentation Slides In Further File Format"
 msgstr "Präsentationsfolien in einem weiteren Dateiformat"
 
-#: talk.py:213 workshop.py:215
+#: talk.py:209 workshop.py:215
 msgid "Presentation slides"
 msgstr "Präsentationsfolien"
 
-#: talk.py:93
+#: talk.py:89
 msgid "Presenter"
 msgstr "Präsentierender"
 
@@ -719,7 +719,7 @@ msgstr "Veröffentlicht"
 msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr "Packt Ihre Objekte in eine Review-Schlange, so dass sie auf der Seite veröffentlicht werden können."
 
-#: view_templates/attendeefolder_view.pt:43
+#: view_templates/attendeefolder_view.pt:44
 msgid "Register for the conference"
 msgstr "Registrieren für die Konferenz"
 
@@ -744,7 +744,7 @@ msgstr "Registrierungsgebühr gezahlt:"
 msgid "Retract"
 msgstr "Zurückziehen"
 
-#: talk.py:285 workshop.py:280
+#: talk.py:281 workshop.py:280
 msgid "Review notes"
 msgstr "Reviewnotizen"
 
@@ -771,7 +771,7 @@ msgstr "E-Mail senden"
 msgid "Send back"
 msgstr "Zurück senden"
 
-#: talk.py:156
+#: talk.py:152
 msgid "Set a time frame for the talk in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Talk in Minuten."
 
@@ -779,7 +779,7 @@ msgstr "Setzen Sie einen Zeitrahmen für den Talk in Minuten."
 msgid "Set a time frame for the workshop in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Workshop in Minuten."
 
-#: talk.py:186 view_templates/workshop_view.pt:67 workshop.py:183
+#: talk.py:182 view_templates/workshop_view.pt:67 workshop.py:183
 msgid "Slides"
 msgstr "Folien"
 
@@ -795,11 +795,11 @@ msgstr "Sprecher/Workshopleiter"
 msgid "Start"
 msgstr "Start"
 
-#: conferencebreak.py:39 program.py:37 talk.py:172
+#: conferencebreak.py:39 program.py:37 talk.py:168
 msgid "Start date"
 msgstr "Startdatum"
 
-#: conferencebreak.py:38 talk.py:171 track.py:52
+#: conferencebreak.py:38 talk.py:167 track.py:55
 msgid "Startdate"
 msgstr "Startdatum"
 
@@ -828,19 +828,19 @@ msgstr "Zur Veröffentlichung einreichen"
 msgid "Summary For Talks And Workshops"
 msgstr "Überblick zu Talks und Workshops"
 
-#: talk.py:155 view_templates/talk_view.pt:51
+#: talk.py:151 view_templates/talk_view.pt:51
 msgid "Talk Length"
 msgstr "Talk-Länge"
 
-#: talk.py:88
+#: talk.py:84
 msgid "Talk details"
 msgstr "Talk-Details"
 
-#: talk.py:83
+#: talk.py:79
 msgid "Talk summary"
 msgstr "Talk-Zusammenfassung"
 
-#: talk.py:79
+#: talk.py:75
 msgid "Talk title"
 msgstr "Talk-Titel"
 
@@ -884,15 +884,15 @@ msgstr "Die Konferenzunterbrechungen"
 msgid "The conference registration page"
 msgstr "Die Konferenz-Registrierungsseite"
 
-#: track.py:102
+#: track.py:105
 msgid "The end date couldn't be set after the end of the conference program."
 msgstr "Das Enddatum kann nicht nach dem Ende des Konferenzprogramms gesetzt werden."
 
-#: track.py:29
+#: track.py:32
 msgid "The end of the track could not be set after the conference program."
 msgstr "Das Enddatum des Tracks kann nicht nach dem Ende des Konferenzprogramms gesetzt werden."
 
-#: talk.py:270 workshop.py:265
+#: talk.py:266 workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Videos erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
@@ -900,11 +900,11 @@ msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-
 msgid "The following file extensions are allowed for the picture files (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für Bild-Dateien erlaubt (Groß- und Kleinschreibung und ein Mix aus beiden):"
 
-#: talk.py:244
+#: talk.py:240
 msgid "The following file extensions are allowed for the upload of material or additional files for conference talks as well as for linked material/ additional files (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Material oder ergänzenden Dateien zu Konferenz-Talks wie auch für verlinktes Material / ergänzende Dateien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: talk.py:205
+#: talk.py:201
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Talk-Folien wie auch für verlinkte Folien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
@@ -932,23 +932,23 @@ msgstr "Die Konferenzräume"
 msgid "The speaker of the conference"
 msgstr "Die Konferenzsprecher"
 
-#: track.py:91
+#: track.py:94
 msgid "The start date could not be set before the begin of the conference program."
 msgstr "Das Startdatum kann nicht vor dem Beginn des Konferenzprogramms gesetzt werden."
 
-#: program.py:66 track.py:79
+#: program.py:66 track.py:82
 msgid "The start date must be before the end date."
 msgstr "Das Startdatum muss vor dem Enddatum liegen."
 
-#: track.py:25
+#: track.py:28
 msgid "The start of the track could not be set before the conference program."
 msgstr "Das Startdatum des Tracks kann nicht vor dem Konferenzprogramm gesetzt werden."
 
-#: program.py:21 track.py:21
+#: program.py:21 track.py:24
 msgid "The start or end date is invalid"
 msgstr "Das Start- oder Enddatum ist ungültig"
 
-#: talk.py:383 workshop.py:378
+#: talk.py:379 workshop.py:378
 msgid "The talk title is already in use."
 msgstr "Der Talk-Titel wird bereits verwendet."
 
@@ -968,7 +968,7 @@ msgstr "Zeit"
 msgid "Time:"
 msgstr "Zeit:"
 
-#: conferencebreak.py:21 conferencebreakfolder.py:11 talk.py:78
+#: conferencebreak.py:21 conferencebreakfolder.py:11 talk.py:74
 msgid "Title"
 msgstr "Titel"
 
@@ -994,15 +994,15 @@ msgstr "Themen des Call for Papers"
 msgid "Track"
 msgstr "Track"
 
-#: track.py:47
+#: track.py:50
 msgid "Track details"
 msgstr "Track-Details"
 
-#: track.py:42
+#: track.py:45
 msgid "Track summary"
 msgstr "Track-Zusammenfassung"
 
-#: track.py:38
+#: track.py:41
 msgid "Track title"
 msgstr "Track-Titel"
 
@@ -1018,7 +1018,7 @@ msgstr "Deinstallieren des collective.conferences Addon."
 msgid "Used Bank Account"
 msgstr "Verwendetes Bankkonto"
 
-#: talk.py:198 workshop.py:200
+#: talk.py:194 workshop.py:200
 msgid "Video"
 msgstr "Video"
 
@@ -1076,7 +1076,7 @@ msgstr "Schreiben Sie Informationen zur Konferenz"
 msgid "Yes"
 msgstr "Ja"
 
-#: talk.py:131
+#: talk.py:127
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
 msgstr "Sie können dem Komitee hier ein paar Informationen übermitteln, z.B. zu den Tagen, an denen Sie (nicht) verfügbar sind, um den Talk zu geben"
 
@@ -1092,15 +1092,15 @@ msgstr "Sie können einen neuen Talk oder Workshop über einen der folgenden Lin
 msgid "You could register for the conference by following the link and fill in your information into the form:<br /> <a class=\"pointer\" href=\"${DYNAMIC_CONTENT}\"> Register for the conference </a>."
 msgstr "Sie können sich für die Konferenz registrieren indem Sie dem Link folgen und Ihre Informationen in das Formular eintragen::<br /> <a class=\"pointer\" href=\"${DYNAMIC_CONTENT}\"> Registrieren für die Konferenz </a>."
 
-#: view_templates/attendeefolder_view.pt:31
-msgid "You could register for the conference on this site once you are logged in. If you not already have an account on this site, please follow this link to the <a href=\"${DYNAMIC_CONTENT}\"> <span>x</span> </a> to create an account."
-msgstr "Sie können sich für die Konferenz registrieren, sobald Sie auf sie eingeloggt sind. Falls Sie nicht bereits einen Account auf dieser Seite haben, folgend Sie diesem Link, um"
+#: view_templates/attendeefolder_view.pt:28
+msgid "You could register for the conference on this site once you are logged in. If you not already have an account on this site, please follow this link to the"
+msgstr "Sie können sich für die Konferenz registrieren, sobald Sie auf sie eingeloggt sind. Falls Sie nicht bereits einen Account auf dieser Seite haben, folgen Sie diesem Link zu der"
 
-#: view_templates/attendeefolder_view.pt:38
+#: view_templates/attendeefolder_view.pt:39
 msgid "You could register for the conference using the following link:"
 msgstr "Sie können sich für die Konferenz registrieren unter Verwendung des folgenden Links:"
 
-#: talk.py:300 workshop.py:295
+#: talk.py:296 workshop.py:295
 msgid "You need to choose a position in the track. Please add this position to the field 'Position in Track'."
 msgstr "Sie müssen eine Position im Track wählen. Bitte fügen Sie diese Position im Feld 'Position in Track' ein."
 
@@ -1140,7 +1140,7 @@ msgstr "collective.conferences (deinstallierenl)"
 msgid "roomfolder description"
 msgstr "Beschreibung des Raumordners"
 
-#: view_templates/attendeefolder_view.pt:31
+#: view_templates/attendeefolder_view.pt:32
 msgid "site registration form"
 msgstr "Seiten-Registrierungsformular"
 

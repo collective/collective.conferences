@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
+from datetime import timedelta
 from DateTime import DateTime
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
@@ -15,6 +16,8 @@ from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import Invalid
 from zope.interface import invariant
+
+import transaction
 
 
 class StartBeforeEnd(Invalid):
@@ -102,21 +105,6 @@ class ITrack(model.Schema):
                     _(safe_unicode("The end date couldn't be set after the end of the conference program.")))
 
 
-# def setdates(item):
-#    if not item.track:
-#        return
-#    catalog = component.getUtility(ICatalog)
-#    intids = component.getUtility(IIntIds)
-#    items = [intids.queryObject(rel.from_id) for rel in catalog.findRelations({'to_id': intids.getId(item.track.to_object),
-#                                                                                #'from_interfaces_flattened': ITalk
-#                                                                                })]
-#    start = item.track.to_object.start
-#    for t in items:
-#        t.startitem=start
-#        t.enditem=t.startitem + datetime.timedelta(minutes=int(t.length))
-#        start = t.enditem
-
-
 class TrackView(BrowserView):
 
     def canRequestReview(self):
@@ -131,6 +119,14 @@ class TrackView(BrowserView):
                                            conferencetrack=tracktitle,
                                            review_state='published',
                                            sort_on='orderintrack')
+        start = self.context.trackstart
+        for x in talks_workshops:
+            x.getObject().startitem = start
+            talklength = x.getObject().talklength[0]
+            delta = timedelta(minutes=int(talklength))
+            x.getObject().enditem = start + delta
+            transaction.commit()
+            start += delta
         return [x.getObject() for x in talks_workshops]
 
     def trackRoom(self):

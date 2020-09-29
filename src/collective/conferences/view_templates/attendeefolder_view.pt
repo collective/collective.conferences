@@ -25,11 +25,12 @@
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
         <div tal:condition="python: isAnonymous">
-        <p class="documentDescription" i18n:translate="">You could register for the conference on this site once you are
-        logged in. If you not already have an account on this site, please follow this link to the
+        <p class="documentDescription"><span i18n:translate="">You could register for the conference on this
+        site once you are logged in. If you not already have an account on this site, please follow this
+        link to the </span>
         <a tal:attributes="href string:${portal_url}/@@register">
         <span i18n:translate="">site registration form</span>
-        </a> to create an account.</p>
+        </a><span> to create an account.</span></p>
         <p class="documentDescription" i18n:translate="">Once you got an account on this site you could
         login and there will a link on this page to register for the conference.
         </p>

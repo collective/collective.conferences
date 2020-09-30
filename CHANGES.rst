@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4 (unreleased)
+0.4 (2020-09-30)
 ----------------
 
 - Fix view templates of twfolder, track and program if speaker, track or

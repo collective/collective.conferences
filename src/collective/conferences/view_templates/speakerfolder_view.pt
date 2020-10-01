@@ -29,10 +29,34 @@
 
 
 <ul class="speakerlist" tal:repeat="speaker context/objectValues">
+<div class="row">
     <li>
+    <div tal:define="picture nocall:speaker/picture">
+    <div tal:condition="not:nocall:picture">
+    <div class="col-md-2">
+    <img tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+             tal:attributes="src string:${navroot}/++resource++collective.conferences/defaultUser.png"
+             />
+    </div>
+    </div>
+    <div tal:condition="nocall:picture">
+    <span class="discreet" tal:attributes="href string:${speaker/absolute_url}/@@images/picture/thumb">
+    <div class="col-md-2">
+    <img tal:define="scales speaker/@@images"
+    tal:replace="structure python: scales.tag('picture', width=80, height=80, direction='down')" />
+    </div>
+    </span>
+    </div>
+    </div>
+    <div class="col-md-2">
+    <h3>
     <a tal:attributes="href speaker/absolute_url"
        tal:content="speaker/Title" />
+       </h3>
+       </div>
     </li>
+    <p class="col-md-3" tal:content="speaker/description" />
+    </div>
   </ul>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />

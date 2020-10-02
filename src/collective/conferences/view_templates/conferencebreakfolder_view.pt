@@ -31,7 +31,7 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
-        <ul class="breaklist" tal:repeat="confbreak context/objectValues">
+        <ul class="breaklist" tal:repeat="confbreak context/values">
         <li>
         <a tal:attributes="href confbreak/absolute_url" tal:content="confbreak/Title" />
         </li>

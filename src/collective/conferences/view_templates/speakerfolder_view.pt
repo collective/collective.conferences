@@ -28,7 +28,7 @@
         <p class="documentDescription" tal:content="context/description" />
 
 
-<ul class="speakerlist" tal:repeat="speaker context/objectValues">
+<ul class="speakerlist" tal:repeat="speaker context/values">
 <div class="row">
     <li>
     <div tal:define="picture nocall:speaker/picture">

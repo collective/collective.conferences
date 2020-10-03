@@ -1,65 +1,57 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      lang="en"
-      metal:use-macro="context/main_template/macros/master"
-      i18n:domain="collective.conferences">
-<body>
+xmlns:tal="http://xml.zope.org/namespaces/tal"
+xmlns:metal="http://xml.zope.org/namespaces/metal"
+xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en"
+metal:use-macro="context/main_template/macros/master"
+i18n:domain="collective.conferences">
+  <body>
+    <metal:main fill-slot="main">
+      <tal:main-macro metal:define-macro="main"
+      tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
-<metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main"
-        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <span tal:replace="structure context/@@authenticator/authenticator"/>
-
+        <span tal:replace="structure context/@@authenticator/authenticator" />
         <div tal:replace="structure provider:plone.abovecontenttitle" />
-
         <img style="float: left; margin-right: 2px; margin-top: 2px"
-             tal:define="navroot context/@@plone_portal_state/navigation_root_url"
-             tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif"
-             />
-
-        <h1 class="documentFirstHeading" tal:content="context/title" />
-
-
-
+        tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+        tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif"
+        alt="Group icon" />
+        <h1 class="documentFirstHeading"
+        tal:content="context/title" />
         <div tal:replace="structure provider:plone.belowcontenttitle" />
-
-        <p class="documentDescription" tal:content="context/description" />
-        
-        
+        <p class="documentDescription"
+        tal:content="context/description" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
         <div tal:condition="context/details">
-        <h4 i18n:translate="">Information about the Conference Rooms</h4>
-
-        <div tal:content="structure view/w/details/render" />
+          <h4 i18n:translate="">Information about the Conference
+          Rooms</h4>
+          <div tal:content="structure view/w/details/render" />
         </div>
-
         <div tal:replace="structure provider:plone.belowcontentbody" />
-  
+        <ul class="roomlist" tal:repeat="room context/values">
+          <div class="row">
+            <li>
+              <div class="col-md-2">
+                <div tal:define="picture nocall:room/picture"
+                tal:condition="nocall:picture">
+                  <span class="discreet"
+                  tal:attributes="href string:${room/absolute_url}/@@images/picture/thumb">
 
-
-<ul class="roomlist" tal:repeat="room context/values">
-    <li>
-    <h3>
-    <a tal:attributes="href room/absolute_url"
-       tal:content="room/Title" />
-    </h3>
-    <div tal:define="picture nocall:room/picture" tal:condition="nocall:picture">
-    <span class="discreet" tal:attributes="href string:${room/absolute_url}/@@images/picture/thumb">
-    <img tal:define="scales room/@@images"
-    tal:replace="structure python: scales.tag('picture', width=150, height=100, direction='down')" />
-    </span>
-    </div>
-
-
-    </li>
-  </ul>
-
+                    <img tal:define="scales room/@@images"
+                    tal:replace="structure python: scales.tag('picture', width=150, height=100, direction='down')" />
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <h3>
+                  <a tal:attributes="href room/absolute_url"
+                  tal:content="room/Title" />
+                </h3>
+              </div>
+            </li>
+          </div>
+        </ul>
         <div tal:replace="structure provider:plone.belowcontentbody" />
-
-    </tal:main-macro>
-</metal:main>
-
-</body>
+      </tal:main-macro>
+    </metal:main>
+  </body>
 </html>

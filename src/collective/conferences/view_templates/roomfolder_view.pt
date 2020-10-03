@@ -4,6 +4,17 @@ xmlns:metal="http://xml.zope.org/namespaces/metal"
 xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en"
 metal:use-macro="context/main_template/macros/master"
 i18n:domain="collective.conferences">
+<head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
   <body>
     <metal:main fill-slot="main">
       <tal:main-macro metal:define-macro="main"
@@ -30,7 +41,7 @@ i18n:domain="collective.conferences">
         <ul class="roomlist" tal:repeat="room context/values">
           <div class="row">
             <li>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div tal:define="picture nocall:room/picture"
                 tal:condition="nocall:picture">
                   <span class="discreet"

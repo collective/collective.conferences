@@ -110,23 +110,30 @@ class IConferenceSpeaker(model.Schema):
 
 
 def notifyUser(self, event):
-    user = api.user.get_current()
-    sender = api.portal.get_registry_record(
-        'plone.email_from_address')
-    email = user.getProperty('email')
-
-    if not sender:
-        return
-
     subject = 'Is this you?'
     message = 'A speaker / leader of a workshop called {0} was added here {1}. If ' \
               'this is you, everything is fine.'.format(self.title, self.absolute_url())
+    try:
+        user = api.user.get_current()
+        sender = api.portal.get_registry_record(
+            'plone.email_from_address')
+        email = user.getProperty('email')
 
-    api.portal.send_email(
-        recipient='{0}'.format(email),
-        sender='{0}'.format(sender),
-        subject='{0}'.format(subject),
-        body='{0}'.format(message))
+        api.portal.send_email(
+            recipient='{0}'.format(email),
+            sender='{0}'.format(sender),
+            subject='{0}'.format(subject),
+            body='{0}'.format(message))
+
+    except Exception:
+        sender = self.title
+        email = self.email
+
+        api.portal.send_email(
+            recipient='{0}'.format(email),
+            sender='{0}'.format(sender),
+            subject='{0}'.format(subject),
+            body='{0}'.format(message))
 
 
 class ConferenceSpeakerView(BrowserView):

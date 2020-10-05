@@ -306,6 +306,10 @@
         name="PaymentOptions"
         component=".vocabularies.PaymentOptionsVocabularyFactory" />
 
+    <utility
+        name="TrainingLevel"
+        component=".vocabularies.TraningLevelVocabularyFactory" />
+
     <monkey:patch
         description="Fix circular reference when field is RelationValue"
         class="plone.app.content.utils"

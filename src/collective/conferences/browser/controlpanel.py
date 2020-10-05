@@ -45,9 +45,8 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
-
     traininglevel = schema.Tuple(
-        title=_(safe_unicode('Traing Level')),
+        title=_(safe_unicode('Training Level')),
         description=_(safe_unicode('Fill in definitions for the conference training levels, one option per line.')),
         default=('Beginner',
                  'Expert',
@@ -55,7 +54,6 @@ class ICollectiveconferenceControlPanel(Interface):
         value_type=schema.TextLine(),
         required=True,
     )
-
 
     model.fieldset('legal',
                    label=_(safe_unicode('Legal')),

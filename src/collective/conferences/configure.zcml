@@ -307,8 +307,8 @@
         component=".vocabularies.PaymentOptionsVocabularyFactory" />
 
     <utility
-        name="AudienceTypes"
-        component=".vocabularies.AudienceTypesVocabularyFactory" />
+        name="TrainingLevel"
+        component=".vocabularies.TraningLevelVocabularyFactory" />
 
     <monkey:patch
         description="Fix circular reference when field is RelationValue"

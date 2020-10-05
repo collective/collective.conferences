@@ -45,9 +45,9 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
-    audiencetypes = schema.Tuple(
-        title=_(safe_unicode('Audience Types')),
-        description=_(safe_unicode('Fill in definitions for the conference audience types, one option per line.')),
+    traininglevel = schema.Tuple(
+        title=_(safe_unicode('Training Level')),
+        description=_(safe_unicode('Fill in definitions for the conference training levels, one option per line.')),
         default=('Beginner',
                  'Expert',
                  'Intermediate'),

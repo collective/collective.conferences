@@ -34,6 +34,12 @@ def TraningLevelVocabularyFactory(context):
 
 
 @provider(IVocabularyFactory)
+def TrainingAudienceVocabularyFactory(context):
+    values = api.portal.get_registry_record('collectiveconference.trainingsaudience')
+    return safe_simplevocabulary_from_values(values)
+
+
+@provider(IVocabularyFactory)
 def LicenseVocabularyFactory(context):
     values = api.portal.get_registry_record('collectiveconference.license')
     return safe_simplevocabulary_from_values(values)

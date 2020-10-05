@@ -310,6 +310,10 @@
         name="TrainingLevel"
         component=".vocabularies.TraningLevelVocabularyFactory" />
 
+    <utility
+        name="TrainingAudience"
+        component=".vocabularies.TrainingAudienceVocabularyFactory" />
+
     <monkey:patch
         description="Fix circular reference when field is RelationValue"
         class="plone.app.content.utils"

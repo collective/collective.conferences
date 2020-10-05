@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from collective.conferences import _
-from plone.autoform import directives
 from plone.supermodel import model
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView

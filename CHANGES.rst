@@ -4,7 +4,10 @@ Changelog
 0.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Improve speakers and rooms folder listing {Andreas Mantke]
+- Fix notify speaker issue, if admin creates a new speaker
+  profile [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 0.4 (2020-09-30)

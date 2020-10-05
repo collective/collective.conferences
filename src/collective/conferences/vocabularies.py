@@ -28,8 +28,8 @@ def WorkshopLengthVocabularyFactory(context):
 
 
 @provider(IVocabularyFactory)
-def TraningLevelVocabularyFactory(context):
-    values = api.portal.get_registry_record('collectiveconference.traininglevel')
+def AudienceTypesVocabularyFactory(context):
+    values = api.portal.get_registry_record('collectiveconference.audiencetypes')
     return safe_simplevocabulary_from_values(values)
 
 

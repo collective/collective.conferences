@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5 (unreleased)
+0.5 (2020-10-05)
 ----------------
 
 - Improve speakers and rooms folder listing {Andreas Mantke]

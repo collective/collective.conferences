@@ -461,7 +461,7 @@ msgid "Information about registration process"
 msgstr ""
 
 #: ./roomfolder.py:26
-#: ./view_templates/roomfolder_view.pt:33
+#: ./view_templates/roomfolder_view.pt:36
 msgid "Information about the Conference Rooms"
 msgstr ""
 

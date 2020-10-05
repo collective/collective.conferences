@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-09-29 16:38+0000\n"
+"POT-Creation-Date: 2020-10-05 08:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -464,7 +464,7 @@ msgid "Information about registration process"
 msgstr ""
 
 #: ./roomfolder.py:26
-#: ./view_templates/roomfolder_view.pt:33
+#: ./view_templates/roomfolder_view.pt:36
 msgid "Information about the Conference Rooms"
 msgstr ""
 

@@ -1,68 +1,70 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      lang="en"
-      metal:use-macro="context/main_template/macros/master"
-      i18n:domain="collective.conferences">
-<body>
+xmlns:tal="http://xml.zope.org/namespaces/tal"
+xmlns:metal="http://xml.zope.org/namespaces/metal"
+xmlns:i18n="http://xml.zope.org/namespaces/i18n" lang="en"
+metal:use-macro="context/main_template/macros/master"
+i18n:domain="collective.conferences">
+<head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
+  <body>
+    <metal:main fill-slot="main">
+      <tal:main-macro metal:define-macro="main"
+      tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
 
-<metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main"
-        tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-        <span tal:replace="structure context/@@authenticator/authenticator"/>
-
+        <span tal:replace="structure context/@@authenticator/authenticator" />
         <div tal:replace="structure provider:plone.abovecontenttitle" />
-
         <img style="float: left; margin-right: 2px; margin-top: 2px"
-             tal:define="navroot context/@@plone_portal_state/navigation_root_url"
-             tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif"
-             />
-
-        <h1 class="documentFirstHeading" tal:content="context/title" />
-
-
-
+        tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+        tal:attributes="src string:${navroot}/++resource++collective.conferences/group.gif" />
+        <h1 class="documentFirstHeading"
+        tal:content="context/title" />
         <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <p class="documentDescription"
+        tal:content="context/description" />
+        <ul class="speakerlist"
+        tal:repeat="speaker context/values">
+          <div class="row">
+            <li>
+              <div tal:define="picture nocall:speaker/picture">
+                <div tal:condition="not:nocall:picture">
+                  <div class="col-md-2">
+                    <img tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+                    tal:attributes="src string:${navroot}/++resource++collective.conferences/defaultUser.png" />
+                  </div>
+                </div>
+                <div tal:condition="nocall:picture">
+                  <span class="discreet"
+                  tal:attributes="href string:${speaker/absolute_url}/@@images/picture/thumb">
 
-        <p class="documentDescription" tal:content="context/description" />
-
-
-<ul class="speakerlist" tal:repeat="speaker context/values">
-<div class="row">
-    <li>
-    <div tal:define="picture nocall:speaker/picture">
-    <div tal:condition="not:nocall:picture">
-    <div class="col-md-2">
-    <img tal:define="navroot context/@@plone_portal_state/navigation_root_url"
-             tal:attributes="src string:${navroot}/++resource++collective.conferences/defaultUser.png"
-             />
-    </div>
-    </div>
-    <div tal:condition="nocall:picture">
-    <span class="discreet" tal:attributes="href string:${speaker/absolute_url}/@@images/picture/thumb">
-    <div class="col-md-2">
-    <img tal:define="scales speaker/@@images"
-    tal:replace="structure python: scales.tag('picture', width=80, height=80, direction='down')" />
-    </div>
-    </span>
-    </div>
-    </div>
-    <div class="col-md-2">
-    <h3>
-    <a tal:attributes="href speaker/absolute_url"
-       tal:content="speaker/Title" />
-       </h3>
-       </div>
-    </li>
-    <p class="col-md-3" tal:content="speaker/description" />
-    </div>
-  </ul>
-
+                    <div class="col-md-2">
+                      <img tal:define="scales speaker/@@images"
+                      tal:replace="structure python: scales.tag('picture', width=80, height=80, direction='down')" />
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <h3>
+                  <a tal:attributes="href speaker/absolute_url"
+                  tal:content="speaker/Title" />
+                </h3>
+              </div>
+            </li>
+            <p class="col-md-3"
+            tal:content="speaker/description" />
+          </div>
+        </ul>
         <div tal:replace="structure provider:plone.belowcontentbody" />
-
-    </tal:main-macro>
-</metal:main>
-
-</body>
+      </tal:main-macro>
+    </metal:main>
+  </body>
 </html>

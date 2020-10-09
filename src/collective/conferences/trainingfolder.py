@@ -18,5 +18,5 @@ class ITrainingFolder(model.Schema):
     )
 
 
-class TTrainingFolderView(BrowserView):
+class TrainingFolderView(BrowserView):
     pass

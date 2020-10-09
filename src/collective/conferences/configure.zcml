@@ -219,6 +219,14 @@
        permission="zope2.View"
        />
 
+   <browser:page
+       name="view"
+       for="collective.conferences.training.ITraining"
+       class="collective.conferences.training.TrainingView"
+       template="view_templates/training_view.pt"
+       permission="zope2.View"
+       />
+
     <adapter
         factory="collective.conferences.talk.ValidateTalkUniqueness"
     />

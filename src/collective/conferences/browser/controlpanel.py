@@ -164,7 +164,6 @@ class ICollectiveconferenceControlPanel(Interface):
         default=safe_unicode('otp|pdf|zip'),
     )
 
-
     allowed_video_file_extensions = schema.TextLine(
         title=_(safe_unicode('Allowed file exensions for conference videos.')),
         description=_(safe_unicode('Fill in the allowed file extensions for the videos of '

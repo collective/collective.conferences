@@ -24,6 +24,18 @@ from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
+from zope.interface import Invalid
+from zope.interface import invariant
+
+
+class ChooseLicense(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a license for your training.'))
+
+
+class ChoosePlanedLength(Invalid):
+    __doc__ = _(safe_unicode(
+        'Please choose a planed length for your training.'))
 
 
 class ITraining(model.Schema):
@@ -193,6 +205,22 @@ class ITraining(model.Schema):
         constraint=validatevideofileextension,
         required=False,
     )
+
+    @invariant
+    def validateLicensechoosen(data):
+        if not data.license:
+            raise ChooseLicense(
+                _(safe_unicode('Please choose a license for your talk.'),
+                  ),
+            )
+
+    @invariant
+    def validateplanedlengthchoosen(data):
+        if not data.planedtraininglength:
+            raise ChoosePlanedLength(
+                _(safe_unicode('Please choose a planed length for your training.'),
+                  ),
+            )
 
 
 class TrainingView(BrowserView):

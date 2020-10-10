@@ -4,6 +4,8 @@ from plone import api
 from plone.app.textfield import RichText
 from plone.app.z3cform.widget import SelectFieldWidget
 from plone.autoform import directives
+from plone.autoform.directives import read_permission
+from plone.autoform.directives import write_permission
 from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
@@ -59,7 +61,7 @@ class ITraining(model.Schema):
         value_type=schema.Choice(source='TrainingAudience'),
     )
 
-    directives.widget(planedworkshoplength=RadioFieldWidget)
+    directives.widget(planedtraininglength=RadioFieldWidget)
     planedtraininglength = schema.List(
         title=_(safe_unicode('Planed Length')),
         description=_(safe_unicode(
@@ -76,6 +78,15 @@ class ITraining(model.Schema):
         required=True,
     )
 
+    read_permission(traininglength='cmf.ReviewPortalContent')
+    write_permission(traininglength='cmf.ReviewPortalContent')
+    directives.widget(traininglength=RadioFieldWidget)
+    traininglength = schema.List(
+        title=_(safe_unicode('Training Length')),
+        description=_(safe_unicode('Set a time frame for the training in minutes.')),
+        value_type=schema.Choice(source='TrainingLength'),
+        required=False,
+    )
 
     messagetocommittee = schema.Text(
         title=_(safe_unicode('Messages to the Program Committee')),

@@ -8,6 +8,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
@@ -57,6 +58,24 @@ class ITraining(model.Schema):
         required=True,
         value_type=schema.Choice(source='TrainingAudience'),
     )
+
+    directives.widget(planedworkshoplength=RadioFieldWidget)
+    planedtraininglength = schema.List(
+        title=_(safe_unicode('Planed Length')),
+        description=_(safe_unicode(
+            "Give an estimation about the time you'd plan for the training.")),
+        value_type=schema.Choice(source='TrainingsLength'),
+        required=True,
+    )
+
+    directives.widget(license=RadioFieldWidget)
+    license = schema.List(
+        title=_(safe_unicode('License Of Your Training')),
+        description=_(safe_unicode('Choose a license for the training')),
+        value_type=schema.Choice(source='ContentLicense'),
+        required=True,
+    )
+
 
     messagetocommittee = schema.Text(
         title=_(safe_unicode('Messages to the Program Committee')),

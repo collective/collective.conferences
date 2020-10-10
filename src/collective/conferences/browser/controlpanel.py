@@ -45,6 +45,18 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
+    training_length = schema.Tuple(
+        title=_(safe_unicode('Length Of Trainings')),
+        description=_(
+            safe_unicode('Fill in the time slots for trainings at the conference in minutes. Use a new line for every '
+                         "value / training length. Write only the numbers without the addition 'minutes'.")),
+        default=(60,
+                 120,
+                 180),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
     traininglevel = schema.Tuple(
         title=_(safe_unicode('Training Level')),
         description=_(safe_unicode('Please fill in definitions for the conference training levels, '

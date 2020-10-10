@@ -297,7 +297,7 @@ class IWorkshop(model.Schema):
 
     @invariant
     def validatecfptopicchoosen(data):
-        if not data.planedworkshoplength:
+        if not data.call_for_paper_topic:
             raise ChooseCfpTopic(
                 _(safe_unicode('Please choose a call for paper topic for your workshop.'),
                   ),
@@ -305,7 +305,7 @@ class IWorkshop(model.Schema):
 
     @invariant
     def validateplanedlengthchoosen(data):
-        if not data.call_for_paper_topic:
+        if not data.planedworkshoplength:
             raise ChoosePlanedLength(
                 _(safe_unicode('Please choose a planed length for your workshop.'),
                   ),

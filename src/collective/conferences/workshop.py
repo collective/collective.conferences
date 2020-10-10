@@ -297,7 +297,7 @@ class IWorkshop(model.Schema):
 
     @invariant
     def validatecfptopicchoosen(data):
-        if not data.call_for_paper_topic:
+        if not data.planedworkshoplength:
             raise ChooseCfpTopic(
                 _(safe_unicode('Please choose a call for paper topic for your workshop.'),
                   ),

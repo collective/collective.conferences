@@ -136,6 +136,12 @@ class ICollectiveconferenceControlPanel(Interface):
                                    "conference workshops, seperated by a pipe '|'.")),
         default=safe_unicode('odp|pdf'),
     )
+    allowed_training_slide_extensions = schema.TextLine(
+        title=_(safe_unicode('Allowed file extensions for slides of conference trainings')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of '
+                                   "conference trainings, seperated by a pipe '|'.")),
+        default=safe_unicode('odp|pdf'),
+    )
 
     allowed_talk_material_extension = schema.TextLine(
         title=_(safe_unicode('Allowed File Extensions For Talk Material / Additonal Files')),
@@ -150,6 +156,14 @@ class ICollectiveconferenceControlPanel(Interface):
                                    "seperated by a pipe '|'.")),
         default=safe_unicode('otp|pdf|zip'),
     )
+
+    allowed_training_material_extension = schema.TextLine(
+        title=_(safe_unicode('Allowed training material file extensions')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the material, '
+                                   "seperated by a pipe '|'.")),
+        default=safe_unicode('otp|pdf|zip'),
+    )
+
 
     allowed_video_file_extensions = schema.TextLine(
         title=_(safe_unicode('Allowed file exensions for conference videos.')),

@@ -55,6 +55,14 @@ def allowedconferenceworkshopmaterialextensions():
     return api.portal.get_registry_record('collectiveconference.allowed_workshop_material_extension').replace('|', ', ')
 
 
+def allowedconferencetrainingslideextensions():
+    return api.portal.get_registry_record('collectiveconference.allowed_training_slide_extensions').replace('|', ', ')
+
+
+def allowedconferencetrainingmaterialextensions():
+    return api.portal.get_registry_record('collectiveconference.allowed_training_material_extension').replace('|', ', ')
+
+
 def allowedconferencevideoextensions():
     return api.portal.get_registry_record('collectiveconference.allowed_video_file_extensions').replace('|', ', ')
 
@@ -145,6 +153,42 @@ def validatelinkedworkshopslidefileextension(value):
 
 def validateworkshopmaterialfileextension(value):
     result = str(api.portal.get_registry_record('collectiveconference.allowed_workshop_material_extension'))
+    pattern = r'^.*\.({0})'.format(result[0])
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(safe_unicode(
+            'You could only upload files with an allowed file extension. '
+            'Please try again to upload a file with the correct file'
+            'extension.'))
+    return True
+
+
+def validatetrainingslidefileextension(value):
+    result = str(api.portal.get_registry_record('collectiveconference.allowed_training_slide_extensions'))
+    pattern = r'^.*\.({0})'.format(result[0])
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value.filename):
+        raise Invalid(safe_unicode(
+            'You could only upload files with an allowed file extension. '
+            'Please try again to upload a file with the correct file'
+            'extension.'))
+    return True
+
+
+def validatelinkedtrainingslidefileextension(value):
+    result = str(api.portal.get_registry_record('collectiveconference.allowed_training_slide_extensions'))
+    pattern = r'^.*\.({0})'.format(result[0])
+    matches = re.compile(pattern, re.IGNORECASE).match
+    if not matches(value):
+        raise Invalid(safe_unicode(
+            'You could only link files with an allowed file extension. '
+            'Please try again to link a file with the correct file'
+            'extension.'))
+    return True
+
+
+def validatetrainingmaterialfileextension(value):
+    result = str(api.portal.get_registry_record('collectiveconference.allowed_training_material_extension'))
     pattern = r'^.*\.({0})'.format(result[0])
     matches = re.compile(pattern, re.IGNORECASE).match
     if not matches(value.filename):

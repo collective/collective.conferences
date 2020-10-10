@@ -118,7 +118,7 @@ class IWorkshop(model.Schema):
     directives.widget(license=RadioFieldWidget)
     license = schema.List(
         title=_(safe_unicode('License Of Your Talk')),
-        description=_(safe_unicode('Choose a license for your talk')),
+        description=_(safe_unicode('Choose a license for your workshop')),
         value_type=schema.Choice(source='ContentLicense'),
         required=True,
     )
@@ -126,7 +126,7 @@ class IWorkshop(model.Schema):
     read_permission(conferencetrack='cmf.ReviewPortalContent')
     write_permission(conferencetrack='cmf.ReviewPortalContent')
     conferencetrack = RelationList(
-        title=_(safe_unicode('Choose the track for this talk')),
+        title=_(safe_unicode('Choose the track for this workshop')),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceTrack'),
         required=False,

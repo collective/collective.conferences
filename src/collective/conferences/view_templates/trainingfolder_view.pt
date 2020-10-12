@@ -21,7 +21,7 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
-                    ">
+                    alltrainings view/allconferencetrainings;">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
@@ -37,6 +37,48 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
+
+        <table class="conftable">
+         <thead>
+         <th i18n:translate="">Title</th>
+         <th i18n:translate="">Start</th>
+         <th i18n:translate="">Length</th>
+         <th i18n:translate="">Description</th>
+         <th i18n:translate="">Instructor</th>
+         <th i18n:translate="">Audience</th>
+         <th i18n:translate="">Target Level</th>
+         <th i18n:translate="">Room</th>
+         </thead>
+         <tbody>
+         <tal:loop repeat="training alltrainings">
+          <tr>
+         <td><a tal:attributes="href training/absolute_url" tal:content="training/Title" /></td>
+          <td>
+         <span tal:condition="training/startitem">
+         <span tal:content="python:training.startitem.strftime('%d. %b %Y %H:%M')" />
+         </span>
+         </td>
+         <td><span tal:condition="training/traininglength">
+         <span tal:content="python: training.traininglength[0]" /> Minutes
+         </span>
+         </td>
+         <td><span tal:content="training/description" /></td>
+         <td>
+         <tal:loop tal:repeat="speaker training/speaker">
+             <span tal:content="structure speaker/to_object/Title|nothing" />
+         </tal:loop>
+         </td>
+         <td>
+         <tal:loop tal:repeat="audience training/audience">
+           <span tal:content="audience" /><br />
+       </tal:loop>
+         </td>
+         <td><span tal:content="training/level" /></td>
+
+         </tr>
+         </tal:loop>
+         </tbody>
+         </table>
 
 
 

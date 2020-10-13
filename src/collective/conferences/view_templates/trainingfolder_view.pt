@@ -45,9 +45,9 @@
          <th i18n:translate="">Length</th>
          <th i18n:translate="">Description</th>
          <th i18n:translate="">Instructor</th>
+         <th i18n:translate="">Room</th>
          <th i18n:translate="">Audience</th>
          <th i18n:translate="">Target Level</th>
-         <th i18n:translate="">Room</th>
          </thead>
          <tbody>
          <tal:loop repeat="training alltrainings">
@@ -69,18 +69,20 @@
          </tal:loop>
          </td>
          <td>
+         <tal:loop tal:repeat="room training/room">
+             <span tal:content="structure room/to_object/Title|nothing" />
+         </tal:loop>
+         </td>
+         <td>
          <tal:loop tal:repeat="audience training/audience">
            <span tal:content="audience" /><br />
        </tal:loop>
          </td>
          <td><span tal:content="training/level" /></td>
-
          </tr>
          </tal:loop>
          </tbody>
          </table>
-
-
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
 

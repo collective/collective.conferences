@@ -29,4 +29,3 @@ class TrainingFolderView(BrowserView):
             sort_on='Date',
             sort_order='reverse')
         return [r.getObject() for r in res]
-

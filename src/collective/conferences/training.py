@@ -134,6 +134,19 @@ class ITraining(model.Schema):
         required=False,
     )
 
+    room = RelationList(
+        title=_(safe_unicode('Room')),
+        description=_(safe_unicode('Choose the room for the training')),
+        default=[],
+        value_type=RelationChoice(vocabulary='ConferenceRoom'),
+        required=False,
+        missing_value=[],
+    )
+    directives.widget(
+        'room',
+        RadioFieldWidget,
+    )
+
     directives.mode(slidefileextension='display')
     slidefileextension = schema.TextLine(
         title=_(safe_unicode(

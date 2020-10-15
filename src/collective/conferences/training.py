@@ -10,6 +10,7 @@ from collective.conferences.common import validatetrainingmaterialfileextension
 from collective.conferences.common import validatetrainingslidefileextension
 from collective.conferences.common import validatevideofileextension
 from plone import api
+from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
 from plone.app.z3cform.widget import SelectFieldWidget
 from plone.autoform import directives
@@ -240,3 +241,25 @@ class TrainingView(BrowserView):
 
     def canRequestReview(self):
         return api.user.has_permission('cmf.RequestReview', obj=self.context)
+
+    def trainingInstructors(self):
+        results = []
+        for rel in self.context.speaker:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)
+
+    def trainingRoom(self):
+        results = []
+        for rel in self.context.room:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+        return IContentListing(results)

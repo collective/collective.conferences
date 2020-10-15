@@ -27,6 +27,9 @@
     <index name="programend" meta_type="FieldIndex">
         <indexed_attr value="programend" />
     </index>
+    <index name="trainingaudience" meta_type="KeywordIndex">
+        <indexed_attr value="audience" />
+    </index>
     <column value="track"/>
     <column value="speaker" />
 </object>

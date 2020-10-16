@@ -263,3 +263,10 @@ class TrainingView(BrowserView):
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
         return IContentListing(results)
+
+    def trainingAudience(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+        path = '/'.join(self.context.getPhysicalPath())
+        idx_data = catalog.getIndexDataForUID(path)
+        audience = idx_data.get('trainingaudience')
+        return (r for r in audience)

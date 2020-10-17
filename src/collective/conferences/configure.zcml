@@ -290,6 +290,12 @@
         handler="collective.conferences.workshop.newworkshopadded"
         />
 
+    <subscriber
+        for="collective.conferences.training.ITraining
+               zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler="collective.conferences.training.newtrainingadded"
+        />
+
     <utility
         name="BreakLength"
         component=".vocabularies.BreakLengthVocabularyFactory" />

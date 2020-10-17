@@ -237,6 +237,56 @@ class ITraining(model.Schema):
             )
 
 
+def newtrainingadded(self, event):
+    if api.portal.get_registry_record(
+            'plone.email_from_address') is not None:
+        contactaddress = api.portal.get_registry_record(
+            'plone.email_from_address')
+        current_user = api.user.get_current()
+        level = self.level
+        audience = (str(self.audience)).strip('{' '}')
+        length = self.planedtraininglength[0]
+        details = self.details.output
+
+        try:
+            api.portal.send_email(
+                recipient=current_user.getProperty('email'),
+                sender=contactaddress,
+                subject=safe_unicode('Your Training Proposal'),
+                body=safe_unicode('You submitted a conference training:\n'
+                                  'title: {0},\n'
+                                  'summary: {1},\n'
+                                  'details: {2},\n'
+                                  'proposed length: {3} minutes\n'
+                                  'level: {4}\n'
+                                  'audience: {5}\n'
+                                  'committee: {6}\n\n'
+                                  'Best regards,\n'
+                                  'The Conference Committee').format(
+                    self.title, self.description, details,
+                    length, level, audience, self.messagetocommittee),
+            )
+
+        except Exception:
+            api.portal.send_email(
+                recipient=contactaddress,
+                sender=contactaddress,
+                subject=safe_unicode('Your Training Proposal'),
+                body=safe_unicode('You submitted a conference training:\n'
+                                  'title: {0},\n'
+                                  'summary: {1},\n'
+                                  'details: {2},\n'
+                                  'proposed length: {3} minutes\n'
+                                  'level: {4}\n'
+                                  'audience: {5}\n'
+                                  'committee: {6}\n\n'
+                                  'Best regards,\n'
+                                  'The Conference Committee').format(
+                    self.title, self.description, details,
+                    length, level, audience, self.messagetocommittee),
+            )
+
+
 class TrainingView(BrowserView):
 
     def canRequestReview(self):

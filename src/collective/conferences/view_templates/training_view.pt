@@ -6,12 +6,27 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="collective.conferences">
 
+      <head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
+
 <body>
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-        >
-        <span tal:replace="structure context/@@authenticator/authenticator"/>
+        tal:define="traininginstructor view/trainingInstructors;
+                    trainingroom view/trainingRoom;
+                    trainingaudience view/trainingAudience;">
+
+        <span tal:replace="structure context/@@authenticator/authenticator" />
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -25,6 +40,58 @@
 
         <p class="documentDescription" tal:content="context/description" />
 
+        <div class="col-sm-6">
+        <span tal:content="structure context/details/output|nothing" />
+        </div>
+                <div class="column training-right">
+        <div class="col-sm-6">
+        <span tal:condition="context/speaker">
+        <h3 i18n:translate="">Instructor</h3>
+        <tal:loop repeat="instructor traininginstructor">
+        <a tal:attributes="href python: instructor.getURL()">
+                            <span tal:content="instructor/Title" />,
+                            </a>
+
+                        </tal:loop>
+
+        </span>
+        <h3 i18n:translate="">Length</h3>
+        <tal:loop repeat="length context/traininglength">
+         <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
+         </tal:loop>
+         <h3 i18n:translate="">When</h3>
+           <span tal:condition="context/startitem">
+
+        <span tal:content="python:context.startitem.strftime('%d. %b %Y %H:%M')" />
+
+        </span>
+        <span tal:condition="context/enditem">
+         <span i18n:translate="">To: </span>
+        <span tal:content="python:context.enditem.strftime('%d. %b %Y %H:%M')" />
+
+        </span>
+        <h3 i18n:translate="">Target audience</h3>
+        <p>
+            <tal:loop repeat="audience trainingaudience">
+                <span tal:content="audience" />,
+            </tal:loop>
+        </p>
+
+        <h3 i18n:translate="">Target level</h3>
+        <p tal:content="context/level" />
+
+        <h3 i18n:translate="">Room</h3>
+        <span tal:condition="context/room">
+        <tal:loop repeat="room trainingroom">
+        <h4>
+        <a tal:attributes="href python: room.getURL()">
+                            <span tal:content="room/Title|nothing" />
+         </a>
+         </h4>
+         </tal:loop>
+        </span>
+        </div>
+        </div>
 
     </tal:main-macro>
 </metal:main>

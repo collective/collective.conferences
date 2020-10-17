@@ -15,4 +15,6 @@
  <object name="collective.conferences.twfolder" meta_type="Dexterity FTI" />
  <object name="collective.conferences.conferencebreakfolder" meta_type="Dexterity FTI" />
  <object name="collective.conferences.registration" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.trainingfolder" meta_type="Dexterity FTI" />
+ <object name="collective.conferences.training" meta_type="Dexterity FTI" />
 </object>

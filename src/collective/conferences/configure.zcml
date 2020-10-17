@@ -211,6 +211,22 @@
         permission="zope2.View"
         />
 
+   <browser:page
+       name="view"
+       for="collective.conferences.trainingfolder.ITrainingFolder"
+       class="collective.conferences.trainingfolder.TrainingFolderView"
+       template="view_templates/trainingfolder_view.pt"
+       permission="zope2.View"
+       />
+
+   <browser:page
+       name="view"
+       for="collective.conferences.training.ITraining"
+       class="collective.conferences.training.TrainingView"
+       template="view_templates/training_view.pt"
+       permission="zope2.View"
+       />
+
     <adapter
         factory="collective.conferences.talk.ValidateTalkUniqueness"
     />
@@ -305,6 +321,18 @@
     <utility
         name="PaymentOptions"
         component=".vocabularies.PaymentOptionsVocabularyFactory" />
+
+    <utility
+        name="TrainingLevel"
+        component=".vocabularies.TraningLevelVocabularyFactory" />
+
+    <utility
+        name="TrainingAudience"
+        component=".vocabularies.TrainingAudienceVocabularyFactory" />
+
+    <utility
+        name="TrainingLength"
+        component=".vocabularies.TrainingLengthVocabularyFactory" />
 
     <monkey:patch
         description="Fix circular reference when field is RelationValue"

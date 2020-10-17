@@ -45,6 +45,42 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
+    training_length = schema.Tuple(
+        title=_(safe_unicode('Length Of Trainings')),
+        description=_(
+            safe_unicode('Fill in the time slots for trainings at the conference in minutes. Use a new line for every '
+                         "value / training length. Write only the numbers without the addition 'minutes'.")),
+        default=(60,
+                 120,
+                 180),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
+    traininglevel = schema.Tuple(
+        title=_(safe_unicode('Training Level')),
+        description=_(safe_unicode('Please fill in definitions for the conference training levels, '
+                                   'one option per line.')),
+        default=('Beginner',
+                 'Expert',
+                 'Intermediate'),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
+    trainingsaudience = schema.Tuple(
+        title=_(safe_unicode('Training Audience Types')),
+        description=_(safe_unicode('Please fill in definitions for the conference training audiences, '
+                                   'one option per line.')),
+        default=('Designer',
+                 'Developer',
+                 'Integrator',
+                 'Operator',
+                 'User'),
+        value_type=schema.TextLine(),
+        required=True,
+    )
+
     model.fieldset('legal',
                    label=_(safe_unicode('Legal')),
                    fields=['license'],
@@ -100,6 +136,12 @@ class ICollectiveconferenceControlPanel(Interface):
                                    "conference workshops, seperated by a pipe '|'.")),
         default=safe_unicode('odp|pdf'),
     )
+    allowed_training_slide_extensions = schema.TextLine(
+        title=_(safe_unicode('Allowed file extensions for slides of conference trainings')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the slides of '
+                                   "conference trainings, seperated by a pipe '|'.")),
+        default=safe_unicode('odp|pdf'),
+    )
 
     allowed_talk_material_extension = schema.TextLine(
         title=_(safe_unicode('Allowed File Extensions For Talk Material / Additonal Files')),
@@ -110,6 +152,13 @@ class ICollectiveconferenceControlPanel(Interface):
 
     allowed_workshop_material_extension = schema.TextLine(
         title=_(safe_unicode('Allowed workshop material file extensions')),
+        description=_(safe_unicode('Fill in the allowed file extensions for the material, '
+                                   "seperated by a pipe '|'.")),
+        default=safe_unicode('otp|pdf|zip'),
+    )
+
+    allowed_training_material_extension = schema.TextLine(
+        title=_(safe_unicode('Allowed training material file extensions')),
         description=_(safe_unicode('Fill in the allowed file extensions for the material, '
                                    "seperated by a pipe '|'.")),
         default=safe_unicode('otp|pdf|zip'),

@@ -244,7 +244,7 @@ def newtrainingadded(self, event):
             'plone.email_from_address')
         current_user = api.user.get_current()
         level = self.level
-        audience = (str(self.audience)).strip('{' '}')
+        audience = (str(self.audience)).strip('{}')
         length = self.planedtraininglength[0]
         details = self.details.output
 

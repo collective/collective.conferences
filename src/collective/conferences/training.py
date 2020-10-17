@@ -148,6 +148,23 @@ class ITraining(model.Schema):
         RadioFieldWidget,
     )
 
+    model.fieldset('slides',
+                   label=_(safe_unicode('Slides')),
+                   fields=['slidefileextension', 'slides', 'slides2', 'slides3', 'slides4'],
+                   )
+
+    model.fieldset('material',
+                   label=_(safe_unicode('Material')),
+                   fields=['materialfileextension',
+                           'material'],
+                   )
+
+    model.fieldset('video',
+                   label=_(safe_unicode('Video')),
+                   fields=['videofileextension',
+                           'video'],
+                   )
+
     directives.mode(slidefileextension='display')
     slidefileextension = schema.TextLine(
         title=_(safe_unicode(

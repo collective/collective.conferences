@@ -110,8 +110,10 @@ class ICollectiveconferenceControlPanel(Interface):
                    fields=['allowed_conferenceimageextension',
                            'allowed_talk_slide_extensions',
                            'allowed_workshop_slide_extensions',
+                           'allowed_training_slide_extensions',
                            'allowed_talk_material_extension',
                            'allowed_workshop_material_extension',
+                           'allowed_training_material_extension',
                            'allowed_video_file_extensions'],
 
                    )
@@ -170,6 +172,12 @@ class ICollectiveconferenceControlPanel(Interface):
                                    "conference talks / workshops, separated by a pipe '|'.")),
         default=safe_unicode('mp4|mpg'),
     )
+
+    model.fieldset('fee',
+                   label=_(safe_unicode('Conference Fee')),
+                   fields=['conferencefee',
+                           'paymentoptions'],
+                   )
 
     conferencefee = schema.Choice(
         title=_(safe_unicode('Registration Fee?')),

@@ -371,8 +371,8 @@ class ValidateTalkUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({'Title': quote_chars(value),
-                               'object_provides':
-                                   ITalk.__identifier__})
+                               'portal_type': ('collective.conferences.talk',
+                                               'collective.conferences.workshop')})
             contextUUID = api.content.get_uuid(self.context)
             for result in results:
                 if result.UID != contextUUID:

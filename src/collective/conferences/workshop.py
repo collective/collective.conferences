@@ -370,8 +370,8 @@ class ValidateWorkshopUniqueness(validator.SimpleFieldValidator):
         if value is not None:
             catalog = api.portal.get_tool(name='portal_catalog')
             results = catalog({'Title': quote_chars(value),
-                               'object_provides':
-                                   IWorkshop.__identifier__})
+                               'portal_type': ('collective.conferences.workshop',
+                                               'collective.conferences.talk')})
             contextUUID = api.content.get_uuid(self.context)
             for result in results:
                 if result.UID != contextUUID:

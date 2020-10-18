@@ -4,6 +4,7 @@ from collective.conferences.common import allowedconferencetrainingmaterialexten
 from collective.conferences.common import allowedconferencetrainingslideextensions
 from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import endDefaultValue
+from collective.conferences.common import quote_chars
 from collective.conferences.common import startDefaultValue
 from collective.conferences.common import validatelinkedtrainingslidefileextension
 from collective.conferences.common import validatetrainingmaterialfileextension
@@ -21,6 +22,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from z3c.form import validator
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -59,7 +61,9 @@ class ITraining(model.Schema):
     )
 
     speaker = RelationList(
-        title=_(safe_unicode('Trainer')),
+        title=_(safe_unicode('Instructor')),
+        description=_(safe_unicode('Click with the mouse pointer into the field and choose the '
+                                   'instructor(s) from the appearing list.')),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
         required=False,
@@ -148,6 +152,23 @@ class ITraining(model.Schema):
         RadioFieldWidget,
     )
 
+    model.fieldset('slides',
+                   label=_(safe_unicode('Slides')),
+                   fields=['slidefileextension', 'slides', 'slides2', 'slides3', 'slides4'],
+                   )
+
+    model.fieldset('material',
+                   label=_(safe_unicode('Material')),
+                   fields=['materialfileextension',
+                           'material'],
+                   )
+
+    model.fieldset('video',
+                   label=_(safe_unicode('Video')),
+                   fields=['videofileextension',
+                           'video'],
+                   )
+
     directives.mode(slidefileextension='display')
     slidefileextension = schema.TextLine(
         title=_(safe_unicode(
@@ -235,6 +256,80 @@ class ITraining(model.Schema):
                 _(safe_unicode('Please choose a planed length for your training.'),
                   ),
             )
+
+
+def newtrainingadded(self, event):
+    if api.portal.get_registry_record(
+            'plone.email_from_address') is not None:
+        contactaddress = api.portal.get_registry_record(
+            'plone.email_from_address')
+        current_user = api.user.get_current()
+        level = self.level
+        audience = self.audience
+        length = self.planedtraininglength[0]
+        details = self.details.output
+
+        try:
+            api.portal.send_email(
+                recipient=current_user.getProperty('email'),
+                sender=contactaddress,
+                subject=safe_unicode('Your Training Proposal'),
+                body=safe_unicode('You submitted a conference training:\n'
+                                  'title: {0},\n'
+                                  'summary: {1},\n'
+                                  'details: {2},\n'
+                                  'proposed length: {3} minutes\n'
+                                  'level: {4}\n'
+                                  'audience: {5}\n'
+                                  'committee: {6}\n\n'
+                                  'Best regards,\n'
+                                  'The Conference Committee').format(
+                    self.title, self.description, details,
+                    length, level, audience, self.messagetocommittee),
+            )
+
+        except Exception:
+            api.portal.send_email(
+                recipient=contactaddress,
+                sender=contactaddress,
+                subject=safe_unicode('Your Training Proposal'),
+                body=safe_unicode('You submitted a conference training:\n'
+                                  'title: {0},\n'
+                                  'summary: {1},\n'
+                                  'details: {2},\n'
+                                  'proposed length: {3} minutes\n'
+                                  'level: {4}\n'
+                                  'audience: {5}\n'
+                                  'committee: {6}\n\n'
+                                  'Best regards,\n'
+                                  'The Conference Committee').format(
+                    self.title, self.description, details,
+                    length, level, audience, self.messagetocommittee),
+            )
+
+
+class ValidateTrainingUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of training titles.
+
+    def validate(self, value):
+        # Perform the standard validation first
+
+        super(ValidateTrainingUniqueness, self).validate(value)
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': quote_chars(value),
+                               'object_provides':
+                                   ITraining.__identifier__})
+            contextUUID = api.content.get_uuid(self.context)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u'The training title is already in use.'))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateTrainingUniqueness,
+    field=ITraining['title'],
+)
 
 
 class TrainingView(BrowserView):

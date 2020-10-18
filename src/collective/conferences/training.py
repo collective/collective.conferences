@@ -4,6 +4,7 @@ from collective.conferences.common import allowedconferencetrainingmaterialexten
 from collective.conferences.common import allowedconferencetrainingslideextensions
 from collective.conferences.common import allowedconferencevideoextensions
 from collective.conferences.common import endDefaultValue
+from collective.conferences.common import quote_chars
 from collective.conferences.common import startDefaultValue
 from collective.conferences.common import validatelinkedtrainingslidefileextension
 from collective.conferences.common import validatetrainingmaterialfileextension
@@ -21,6 +22,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from z3c.form import validator
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
@@ -302,6 +304,30 @@ def newtrainingadded(self, event):
                     self.title, self.description, details,
                     length, level, audience, self.messagetocommittee),
             )
+
+
+class ValidateTrainingUniqueness(validator.SimpleFieldValidator):
+    # Validate site-wide uniqueness of training titles.
+
+    def validate(self, value):
+        # Perform the standard validation first
+
+        super(ValidateTrainingUniqueness, self).validate(value)
+        if value is not None:
+            catalog = api.portal.get_tool(name='portal_catalog')
+            results = catalog({'Title': quote_chars(value),
+                               'object_provides':
+                                   ITraining.__identifier__})
+            contextUUID = api.content.get_uuid(self.context)
+            for result in results:
+                if result.UID != contextUUID:
+                    raise Invalid(_(u'The training title is already in use.'))
+
+
+validator.WidgetValidatorDiscriminators(
+    ValidateTrainingUniqueness,
+    field=ITraining['title'],
+)
 
 
 class TrainingView(BrowserView):

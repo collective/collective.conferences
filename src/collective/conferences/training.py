@@ -61,7 +61,9 @@ class ITraining(model.Schema):
     )
 
     speaker = RelationList(
-        title=_(safe_unicode('Trainer')),
+        title=_(safe_unicode('Instructor')),
+        description=_(safe_unicode('Click with the mouse pointer into the field and choose the '
+                                   'instructor(s) from the appearing list.')),
         default=[],
         value_type=RelationChoice(vocabulary='ConferenceSpeaker'),
         required=False,

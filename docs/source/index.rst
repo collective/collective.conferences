@@ -25,6 +25,7 @@ Welcome to collective.conferences's documentation!
    track.rst
    registration.rst
    workflow.rst
+   training.rst
 
 
 

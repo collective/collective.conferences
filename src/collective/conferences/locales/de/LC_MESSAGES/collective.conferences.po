@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2020-10-19 11:16+0200\n"
+"PO-Revision-Date: 2020-10-19 21:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -184,7 +184,7 @@ msgstr "Wählen Sie das Level des Trainings."
 msgid "Choose the room for the track"
 msgstr "Wählen Sie den Raum für den Track"
 
-#: training.py:144
+#: training.py:146
 msgid "Choose the room for the training"
 msgstr "Wählen Sie den Raum für das Training"
 
@@ -488,7 +488,7 @@ msgstr "Falls Sie das Objekt irrtümlich eingereicht haben oder falls Sie Ergän
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr "Falls Sie die Registrierungsgebühr per Banküberweisung gezahlt haben, teilen Sie uns bitte den Namen und die Filiale der Bank mit, die Sie verwendet haben. Wir benötigen diese Information, um Ihre Zahlung schneller festzustellen."
 
-#: training.py:183 workshop.py:216
+#: training.py:185 workshop.py:216
 msgid "If you used slides during your workshop, please upload your slides shortly after you have given your workshop."
 msgstr "Falls Sie Folien während Ihres Workshops verwendet haben, laden Sie diese Folien bitte hoch, kurz nachdem Sie Ihren Workshop gegeben haben."
 
@@ -578,11 +578,11 @@ msgstr "Lizenz Ihres Trainings"
 msgid "Licenses Of Talks / Workshops"
 msgstr "Lizenz des Talks / Workshops"
 
-#: talk.py:226 training.py:201 workshop.py:234
+#: talk.py:226 training.py:203 workshop.py:234
 msgid "Link To The Presentation Slides"
 msgstr "Link zu den Präsentationsfolien"
 
-#: talk.py:232 training.py:207 workshop.py:240
+#: talk.py:232 training.py:209 workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
 msgstr "Link zu den Präsentationsfolien in weiterem Dateiformat"
 
@@ -602,7 +602,7 @@ msgstr "Link zu den Folien im ODT-Dateiformat:"
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr "Link zu den Folien im PDF- oder PDF-Hybrid-Dateiformat:"
 
-#: talk.py:273 training.py:239 workshop.py:272
+#: talk.py:273 training.py:241 workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr "Link zum Video des Talk"
 
@@ -614,7 +614,7 @@ msgstr "Link zum Video:"
 msgid "Mail To The Conference Organizer"
 msgstr "E-Mail an die Konferenzorganisierer"
 
-#: training.py:161
+#: training.py:163
 msgid "Material"
 msgstr "Material"
 
@@ -706,7 +706,7 @@ msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Talk."
 msgid "Please choose a call for paper topic for your workshop."
 msgstr "Bitte wählen Sie ein Call for Paper Thema für Ihren Workshop."
 
-#: talk.py:55 training.py:248 workshop.py:288
+#: talk.py:55 training.py:250 workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr "Bitte wählen Sie eine Lizenz für Ihren Talk."
 
@@ -767,7 +767,7 @@ msgstr "Bitte laden Sie die ergänzenden Dateien zu Ihrer Präsentation (im Arch
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr "Bitte laden Sie ihre Präsentation hoch kurz nachdem Sie ihren Talk gegeben haben."
 
-#: training.py:223 workshop.py:256
+#: training.py:225 workshop.py:256
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr "Bitte laden Sie Ihre Workshop-Präsentation oder Material zu dem Inhalt des Workshops hoch, vor oder kurz nachdem Sie den Workshop gegeben haben."
 
@@ -787,11 +787,11 @@ msgstr "Postleitzahl"
 msgid "Presentation Slides"
 msgstr "Präsentationsfolien"
 
-#: talk.py:217 training.py:191 workshop.py:224
+#: talk.py:217 training.py:193 workshop.py:224
 msgid "Presentation Slides In Further File Format"
 msgstr "Präsentationsfolien in einem weiteren Dateiformat"
 
-#: talk.py:209 training.py:182 workshop.py:215
+#: talk.py:209 training.py:184 workshop.py:215
 msgid "Presentation slides"
 msgstr "Präsentationsfolien"
 
@@ -866,7 +866,7 @@ msgstr "Reviewer veröffentlicht den Inhalt"
 msgid "Reviewer sends content back for re-drafting"
 msgstr "Reviewer sendet den Inhalt zurück zur Überarbeitung"
 
-#: training.py:143 view_templates/program_view.pt:54
+#: training.py:145 view_templates/program_view.pt:54
 #: view_templates/track_view.pt:43
 msgid "Room"
 msgstr "Raum"
@@ -892,7 +892,7 @@ msgstr "Setzen Sie einen Zeitrahmen für das Training in Minuten."
 msgid "Set a time frame for the workshop in minutes."
 msgstr "Setzen Sie einen Zeitrahmen für den Workshop in Minuten."
 
-#: talk.py:182 training.py:156 view_templates/workshop_view.pt:67
+#: talk.py:182 training.py:158 view_templates/workshop_view.pt:67
 msgid "Slides"
 msgstr "Folien"
 
@@ -1021,7 +1021,7 @@ msgstr "Das Enddatum kann nicht nach dem Ende des Konferenzprogramms gesetzt wer
 msgid "The end of the track could not be set after the conference program."
 msgstr "Das Enddatum des Tracks kann nicht nach dem Ende des Konferenzprogramms gesetzt werden."
 
-#: talk.py:266 training.py:232 workshop.py:265
+#: talk.py:266 training.py:234 workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Videos erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
@@ -1037,11 +1037,11 @@ msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Material o
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Talk-Folien wie auch für verlinkte Folien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: training.py:174 workshop.py:207
+#: training.py:176 workshop.py:207
 msgid "The following file extensions are allowed for the upload of slides of conference workshop as well as for linked slides (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Konferenz-Workshop-Folien wie auch für verlinkte Folien erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
-#: training.py:215 workshop.py:248
+#: training.py:217 workshop.py:248
 msgid "The following file extensions are allowed for workshop material uploads (upper case and lower case and mix of both):"
 msgstr "Die folgenden Datei-Erweiterungen sind für das Hochladen von Workshop-Material erlaubt (Groß- und Kleinschreibung und eine Mischung aus beidem):"
 
@@ -1085,7 +1085,7 @@ msgstr "Der Talk-Titel wird bereits verwendet."
 msgid "The talks and workshops of the conference"
 msgstr "Die Konferenz-Talks und -Workshops"
 
-#: training.py:326
+#: training.py:328
 msgid "The training title is already in use."
 msgstr "Der Training-Title wird bereits verwendet."
 
@@ -1151,6 +1151,10 @@ msgstr "Tracks"
 msgid "Training Audience Types"
 msgstr "Training-Zielgruppen-Typen"
 
+#: training.py:59
+msgid "Training Details"
+msgstr "Training-Details"
+
 #: training.py:120
 msgid "Training Length"
 msgstr "Training-Länge"
@@ -1183,7 +1187,7 @@ msgstr "Deinstallieren des collective.conferences Addon."
 msgid "Used Bank Account"
 msgstr "Verwendetes Bankkonto"
 
-#: talk.py:194 training.py:167 workshop.py:200
+#: talk.py:194 training.py:169 workshop.py:200
 msgid "Video"
 msgstr "Video"
 
@@ -1217,11 +1221,11 @@ msgstr "Workshopleiter"
 msgid "Workshop Length"
 msgstr "Workshoplänge"
 
-#: training.py:59 workshop.py:85
+#: workshop.py:85
 msgid "Workshop details"
 msgstr "Workshopdetails"
 
-#: training.py:222 workshop.py:255
+#: training.py:224 workshop.py:255
 msgid "Workshop slides / material"
 msgstr "Workshop-Folien/-Material"
 

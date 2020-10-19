@@ -186,7 +186,7 @@ msgstr ""
 msgid "Choose the room for the track"
 msgstr ""
 
-#: ./training.py:144
+#: ./training.py:146
 msgid "Choose the room for the training"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr ""
 
-#: ./training.py:183
+#: ./training.py:185
 #: ./workshop.py:216
 msgid "If you used slides during your workshop, please upload your slides shortly after you have given your workshop."
 msgstr ""
@@ -604,13 +604,13 @@ msgid "Licenses Of Talks / Workshops"
 msgstr ""
 
 #: ./talk.py:226
-#: ./training.py:201
+#: ./training.py:203
 #: ./workshop.py:234
 msgid "Link To The Presentation Slides"
 msgstr ""
 
 #: ./talk.py:232
-#: ./training.py:207
+#: ./training.py:209
 #: ./workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
 msgstr ""
@@ -632,7 +632,7 @@ msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
 #: ./talk.py:273
-#: ./training.py:239
+#: ./training.py:241
 #: ./workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr ""
@@ -645,7 +645,7 @@ msgstr ""
 msgid "Mail To The Conference Organizer"
 msgstr ""
 
-#: ./training.py:161
+#: ./training.py:163
 msgid "Material"
 msgstr ""
 
@@ -746,7 +746,7 @@ msgid "Please choose a call for paper topic for your workshop."
 msgstr ""
 
 #: ./talk.py:55
-#: ./training.py:248
+#: ./training.py:250
 #: ./workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr ""
@@ -810,7 +810,7 @@ msgstr ""
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./training.py:223
+#: ./training.py:225
 #: ./workshop.py:256
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
@@ -836,13 +836,13 @@ msgid "Presentation Slides"
 msgstr ""
 
 #: ./talk.py:217
-#: ./training.py:191
+#: ./training.py:193
 #: ./workshop.py:224
 msgid "Presentation Slides In Further File Format"
 msgstr ""
 
 #: ./talk.py:209
-#: ./training.py:182
+#: ./training.py:184
 #: ./workshop.py:215
 msgid "Presentation slides"
 msgstr ""
@@ -919,7 +919,7 @@ msgstr ""
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
-#: ./training.py:143
+#: ./training.py:145
 #: ./view_templates/program_view.pt:54
 #: ./view_templates/track_view.pt:43
 msgid "Room"
@@ -947,7 +947,7 @@ msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
 #: ./talk.py:182
-#: ./training.py:156
+#: ./training.py:158
 #: ./view_templates/workshop_view.pt:67
 msgid "Slides"
 msgstr ""
@@ -1086,7 +1086,7 @@ msgid "The end of the track could not be set after the conference program."
 msgstr ""
 
 #: ./talk.py:266
-#: ./training.py:232
+#: ./training.py:234
 #: ./workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
 msgstr ""
@@ -1103,12 +1103,12 @@ msgstr ""
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./training.py:174
+#: ./training.py:176
 #: ./workshop.py:207
 msgid "The following file extensions are allowed for the upload of slides of conference workshop as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./training.py:215
+#: ./training.py:217
 #: ./workshop.py:248
 msgid "The following file extensions are allowed for workshop material uploads (upper case and lower case and mix of both):"
 msgstr ""
@@ -1156,7 +1156,7 @@ msgstr ""
 msgid "The talks and workshops of the conference"
 msgstr ""
 
-#: ./training.py:326
+#: ./training.py:328
 msgid "The training title is already in use."
 msgstr ""
 
@@ -1227,6 +1227,10 @@ msgstr ""
 msgid "Training Audience Types"
 msgstr ""
 
+#: ./training.py:59
+msgid "Training Details"
+msgstr ""
+
 #: ./training.py:120
 msgid "Training Length"
 msgstr ""
@@ -1261,7 +1265,7 @@ msgid "Used Bank Account"
 msgstr ""
 
 #: ./talk.py:194
-#: ./training.py:167
+#: ./training.py:169
 #: ./workshop.py:200
 msgid "Video"
 msgstr ""
@@ -1300,12 +1304,11 @@ msgstr ""
 msgid "Workshop Length"
 msgstr ""
 
-#: ./training.py:59
 #: ./workshop.py:85
 msgid "Workshop details"
 msgstr ""
 
-#: ./training.py:222
+#: ./training.py:224
 #: ./workshop.py:255
 msgid "Workshop slides / material"
 msgstr ""

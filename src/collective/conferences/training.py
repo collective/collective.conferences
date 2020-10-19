@@ -56,7 +56,7 @@ class ITraining(model.Schema):
 
     primary('details')
     details = RichText(
-        title=_(safe_unicode('Workshop details')),
+        title=_(safe_unicode('Training Details')),
         required=False,
     )
 
@@ -139,6 +139,8 @@ class ITraining(model.Schema):
         required=False,
     )
 
+    read_permission(room='cmf.ReviewPortalContent')
+    write_permission(room='cmf.ReviewPortalContent')
     room = RelationList(
         title=_(safe_unicode('Room')),
         description=_(safe_unicode('Choose the room for the training')),

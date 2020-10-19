@@ -68,6 +68,9 @@ conference fee. If the conference visitors had to pay a fee the payment options 
 the appropriate field on this register. Every payment option needs to be written in a separate
 line.
 
+.. image:: images/configuration_collective_conferences_form4.png
+   :width: 600
+
 Once you finished the configuration within the fields of all three register save your changes.
 This will write some new entries to the 'Configuration Registry' of the Plone site. This new
 Configuration Registry entries will be used for the dynamic content of the edit forms of

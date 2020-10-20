@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.6 (unreleased)
+0.7 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+0.6 (2020-10-20)
 ----------------
 
 - Add training module with corresponding training folder module,

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-10-19 19:25+0000\n"
+"POT-Creation-Date: 2020-10-20 11:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,10 @@ msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
 msgid "- A simple workflow for Conference Talk objects."
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
+msgid "- A simple workflow for Conference Training objects."
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
@@ -304,6 +308,10 @@ msgstr ""
 msgid "Conference Training Folder"
 msgstr ""
 
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
+msgid "Conference Training Publication Workflow"
+msgstr ""
+
 #: ./profiles/default/types/collective.conferences.workshop.xml
 msgid "Conference Workshop"
 msgstr ""
@@ -502,6 +510,7 @@ msgid "If you not already registered a conference speaker for you, please follow
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
 msgstr ""
@@ -653,11 +662,13 @@ msgid "Material"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Member retracts submission"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Member submits content for publication"
 msgstr ""
@@ -722,6 +733,7 @@ msgid "Payment of the Registration Fee"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Pending"
 msgstr ""
@@ -855,6 +867,7 @@ msgid "Presenter"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Private"
 msgstr ""
@@ -868,22 +881,26 @@ msgid "Program summary"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Publish"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Published"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Publishing the item makes it visible to all
           users of the site."
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Puts your item in a review queue, so it can be published on the site."
 msgstr ""
@@ -909,6 +926,7 @@ msgid "Registration fee paid:"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Retract"
 msgstr ""
@@ -919,11 +937,13 @@ msgid "Review notes"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Reviewer publishes content"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
@@ -939,11 +959,13 @@ msgid "Send Email"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Send back"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Sending the item back will return the item to the original author instead of publishing it.
           You should preferably provide a reason to the author why it was not published."
@@ -1011,6 +1033,7 @@ msgid "Submit a conference workshop"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Submit for publication"
 msgstr ""
@@ -1130,6 +1153,10 @@ msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
 msgid "The owner can edit the talk"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
+msgid "The owner can edit the training"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
@@ -1286,11 +1313,13 @@ msgid "Video"
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Visible to everyone, editable by the owner."
 msgstr ""
 
 #: ./profiles/default/workflows/collective_conferences_talk_workflow/definition.xml
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "Waiting for the Review, further editable by
                                            the owner (contributor)."

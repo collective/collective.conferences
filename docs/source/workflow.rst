@@ -37,3 +37,10 @@ Conference Workshop Publication Workflow
 
 The conference workshop objects are assigned to the conference workshop publication workflow. There is
 currently no difference to the process of the conference talk publication workflow (see above).
+
+
+Conference Training Publication Workflow
+****************************************
+
+The conference training objects are assigned to the conference training publication workflow. There is
+currently no difference to the process of the conference talk publication workflow (see above).

@@ -22,7 +22,7 @@ copyright = '2020, Andreas Mantke'
 author = 'Andreas Mantke'
 
 # The full version, including alpha/beta/rc tags
-release = '0.3'
+release = '0.6'
 
 
 # -- General configuration ---------------------------------------------------

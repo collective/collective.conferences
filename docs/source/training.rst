@@ -63,3 +63,15 @@ for each upload / linking of files.
 Once the user has finished the non-optional fields of the first register ('Default')
 she/he could save the form. This creates a new training (proposal) and submit it to
 the program committee for review.
+
+
+Fields / Options For Reviewer / Program Owner
+*********************************************
+
+The edit form of a conference training covers some additonal fields for user with
+the permission to review trainings. This user group could edit the whole training
+edit form, but could also work on the additional fields, which are not even visible
+to the default user (owner of a training).
+
+This additional fields covers the setting of the training length, the start and end
+time of a training and the room where it will take place.

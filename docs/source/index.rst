@@ -17,6 +17,7 @@ Welcome to collective.conferences's documentation!
    talksworkshopfolder.rst
    talk.rst
    workshop.rst
+   training.rst
    breaksfolder.rst
    break.rst
    roomfolder.rst
@@ -25,7 +26,6 @@ Welcome to collective.conferences's documentation!
    track.rst
    registration.rst
    workflow.rst
-   training.rst
 
 
 

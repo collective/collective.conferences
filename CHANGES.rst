@@ -4,7 +4,14 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add training module with corresponding training folder module,
+  add further fields to the configuration control panel for this
+  new modules [Andreas Mantke]
+- Text fixes on workshop module [Andreas Mantke]
+- Fix uniqueness validators on talk and workshop modules [Andreas Mantke]
+- Update localization files and German localization [Andreas Mantke]
+- Add workflow for training objects [Andreas Mantke]
+- Add user documentation about new training module and [Andreas Mantke]
 
 
 0.5 (2020-10-05)

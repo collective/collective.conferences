@@ -12,4 +12,10 @@
             <bound-workflow workflow_id="collective_conferences_workshop_workflow" />
         </type>
     </bindings>
+    <object name="collective_conferences_training_workflow" meta_type="Workflow" />
+    <bindings>
+        <type type_id="collective.conferences.training">
+            <bound-workflow workflow_id="collective_conferences_training_workflow" />
+        </type>
+    </bindings>
 </object>

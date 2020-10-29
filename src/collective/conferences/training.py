@@ -31,6 +31,10 @@ from zope.interface import Invalid
 from zope.interface import invariant
 
 
+class StartBeforeEnd(Invalid):
+    __doc__ = _(safe_unicode('The start or end date is invalid'))
+
+
 class ChooseLicense(Invalid):
     __doc__ = _(safe_unicode(
         'Please choose a license for your training.'))
@@ -258,6 +262,14 @@ class ITraining(model.Schema):
                 _(safe_unicode('Please choose a planed length for your training.'),
                   ),
             )
+
+    @invariant
+    def validateStartEnd(data):
+        if data.startitem is not None and data.enditem is not None:
+            if data.startitem > data.enditem:
+                raise StartBeforeEnd(_(
+                    safe_unicode(
+                        'The start date must be before the end date.')))
 
 
 def newtrainingadded(self, event):

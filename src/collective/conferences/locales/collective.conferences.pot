@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-10-20 11:07+0000\n"
+"POT-Creation-Date: 2020-11-03 17:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Attendee"
 msgstr ""
 
-#: ./training.py:85
+#: ./training.py:92
 #: ./view_templates/trainingfolder_view.pt:49
 msgid "Audience"
 msgstr ""
@@ -163,7 +163,7 @@ msgstr ""
 msgid "Capacity of the room"
 msgstr ""
 
-#: ./training.py:103
+#: ./training.py:110
 msgid "Choose a license for the training"
 msgstr ""
 
@@ -181,11 +181,11 @@ msgstr ""
 msgid "Choose a number for the order in the track"
 msgstr ""
 
-#: ./training.py:86
+#: ./training.py:93
 msgid "Choose the audience of the training."
 msgstr ""
 
-#: ./training.py:79
+#: ./training.py:86
 msgid "Choose the level of the training."
 msgstr ""
 
@@ -193,7 +193,7 @@ msgstr ""
 msgid "Choose the room for the track"
 msgstr ""
 
-#: ./training.py:146
+#: ./training.py:153
 msgid "Choose the room for the training"
 msgstr ""
 
@@ -223,7 +223,7 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: ./training.py:65
+#: ./training.py:72
 msgid "Click with the mouse pointer into the field and choose the instructor(s) from the appearing list."
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 msgid "From:"
 msgstr ""
 
-#: ./training.py:94
+#: ./training.py:101
 msgid "Give an estimation about the time you'd plan for the training."
 msgstr ""
 
@@ -520,7 +520,7 @@ msgstr ""
 msgid "If you transfered the Registration Fee via a bank account, please tell us the name and branch of the bank you used. We need this information to identify your payment more quickly."
 msgstr ""
 
-#: ./training.py:185
+#: ./training.py:192
 #: ./workshop.py:216
 msgid "If you used slides during your workshop, please upload your slides shortly after you have given your workshop."
 msgstr ""
@@ -550,7 +550,7 @@ msgstr ""
 msgid "Installs the collective.conferences add-on."
 msgstr ""
 
-#: ./training.py:64
+#: ./training.py:71
 #: ./view_templates/training_view.pt:49
 #: ./view_templates/trainingfolder_view.pt:47
 msgid "Instructor"
@@ -598,7 +598,7 @@ msgstr ""
 msgid "Length of the Break:"
 msgstr ""
 
-#: ./training.py:78
+#: ./training.py:85
 msgid "Level"
 msgstr ""
 
@@ -607,7 +607,7 @@ msgstr ""
 msgid "License Of Your Talk"
 msgstr ""
 
-#: ./training.py:102
+#: ./training.py:109
 msgid "License Of Your Training"
 msgstr ""
 
@@ -616,13 +616,13 @@ msgid "Licenses Of Talks / Workshops"
 msgstr ""
 
 #: ./talk.py:226
-#: ./training.py:203
+#: ./training.py:210
 #: ./workshop.py:234
 msgid "Link To The Presentation Slides"
 msgstr ""
 
 #: ./talk.py:232
-#: ./training.py:209
+#: ./training.py:216
 #: ./workshop.py:240
 msgid "Link To The Presentation Slides In Further File Format"
 msgstr ""
@@ -644,7 +644,7 @@ msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
 #: ./talk.py:273
-#: ./training.py:241
+#: ./training.py:248
 #: ./workshop.py:272
 msgid "Link to the Video of the talk"
 msgstr ""
@@ -657,7 +657,7 @@ msgstr ""
 msgid "Mail To The Conference Organizer"
 msgstr ""
 
-#: ./training.py:163
+#: ./training.py:170
 msgid "Material"
 msgstr ""
 
@@ -674,7 +674,7 @@ msgid "Member submits content for publication"
 msgstr ""
 
 #: ./talk.py:126
-#: ./training.py:109
+#: ./training.py:116
 #: ./workshop.py:141
 msgid "Messages to the Program Committee"
 msgstr ""
@@ -747,7 +747,7 @@ msgid "Picture"
 msgstr ""
 
 #: ./talk.py:110
-#: ./training.py:93
+#: ./training.py:100
 #: ./workshop.py:111
 msgid "Planed Length"
 msgstr ""
@@ -761,12 +761,12 @@ msgid "Please choose a call for paper topic for your workshop."
 msgstr ""
 
 #: ./talk.py:55
-#: ./training.py:250
+#: ./training.py:257
 #: ./workshop.py:288
 msgid "Please choose a license for your talk."
 msgstr ""
 
-#: ./training.py:35
+#: ./training.py:42
 msgid "Please choose a license for your training."
 msgstr ""
 
@@ -778,7 +778,7 @@ msgstr ""
 msgid "Please choose a planed length for your talk."
 msgstr ""
 
-#: ./training.py:40
+#: ./training.py:47
 msgid "Please choose a planed length for your training."
 msgstr ""
 
@@ -825,7 +825,7 @@ msgstr ""
 msgid "Please upload your presentation shortly after you have given your talk."
 msgstr ""
 
-#: ./training.py:225
+#: ./training.py:232
 #: ./workshop.py:256
 msgid "Please upload your workshop presentation or material about the content of the workshop in front or short after you have given the workshop."
 msgstr ""
@@ -851,13 +851,13 @@ msgid "Presentation Slides"
 msgstr ""
 
 #: ./talk.py:217
-#: ./training.py:193
+#: ./training.py:200
 #: ./workshop.py:224
 msgid "Presentation Slides In Further File Format"
 msgstr ""
 
 #: ./talk.py:209
-#: ./training.py:184
+#: ./training.py:191
 #: ./workshop.py:215
 msgid "Presentation slides"
 msgstr ""
@@ -948,7 +948,7 @@ msgstr ""
 msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
-#: ./training.py:145
+#: ./training.py:152
 #: ./view_templates/program_view.pt:54
 #: ./view_templates/track_view.pt:43
 msgid "Room"
@@ -975,7 +975,7 @@ msgstr ""
 msgid "Set a time frame for the talk in minutes."
 msgstr ""
 
-#: ./training.py:121
+#: ./training.py:128
 msgid "Set a time frame for the training in minutes."
 msgstr ""
 
@@ -984,7 +984,7 @@ msgid "Set a time frame for the workshop in minutes."
 msgstr ""
 
 #: ./talk.py:182
-#: ./training.py:158
+#: ./training.py:165
 #: ./view_templates/workshop_view.pt:67
 msgid "Slides"
 msgstr ""
@@ -1124,7 +1124,7 @@ msgid "The end of the track could not be set after the conference program."
 msgstr ""
 
 #: ./talk.py:266
-#: ./training.py:234
+#: ./training.py:241
 #: ./workshop.py:265
 msgid "The following file extensions are allowed for conference video uploads (upper case and lower case and mix of both):"
 msgstr ""
@@ -1141,12 +1141,12 @@ msgstr ""
 msgid "The following file extensions are allowed for the upload of slides of conference talks as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./training.py:176
+#: ./training.py:183
 #: ./workshop.py:207
 msgid "The following file extensions are allowed for the upload of slides of conference workshop as well as for linked slides (upper case and lower case and mix of both):"
 msgstr ""
 
-#: ./training.py:217
+#: ./training.py:224
 #: ./workshop.py:248
 msgid "The following file extensions are allowed for workshop material uploads (upper case and lower case and mix of both):"
 msgstr ""
@@ -1177,6 +1177,7 @@ msgstr ""
 
 #: ./program.py:66
 #: ./track.py:82
+#: ./training.py:273
 msgid "The start date must be before the end date."
 msgstr ""
 
@@ -1186,6 +1187,7 @@ msgstr ""
 
 #: ./program.py:21
 #: ./track.py:24
+#: ./training.py:38
 msgid "The start or end date is invalid"
 msgstr ""
 
@@ -1198,7 +1200,7 @@ msgstr ""
 msgid "The talks and workshops of the conference"
 msgstr ""
 
-#: ./training.py:328
+#: ./training.py:356
 msgid "The training title is already in use."
 msgstr ""
 
@@ -1269,11 +1271,11 @@ msgstr ""
 msgid "Training Audience Types"
 msgstr ""
 
-#: ./training.py:59
+#: ./training.py:66
 msgid "Training Details"
 msgstr ""
 
-#: ./training.py:120
+#: ./training.py:127
 msgid "Training Length"
 msgstr ""
 
@@ -1281,11 +1283,11 @@ msgstr ""
 msgid "Training Level"
 msgstr ""
 
-#: ./training.py:54
+#: ./training.py:61
 msgid "Training Summary"
 msgstr ""
 
-#: ./training.py:50
+#: ./training.py:57
 msgid "Training title"
 msgstr ""
 
@@ -1307,7 +1309,7 @@ msgid "Used Bank Account"
 msgstr ""
 
 #: ./talk.py:194
-#: ./training.py:169
+#: ./training.py:176
 #: ./workshop.py:200
 msgid "Video"
 msgstr ""
@@ -1358,7 +1360,7 @@ msgstr ""
 msgid "Workshop details"
 msgstr ""
 
-#: ./training.py:224
+#: ./training.py:231
 #: ./workshop.py:255
 msgid "Workshop slides / material"
 msgstr ""
@@ -1387,7 +1389,7 @@ msgstr ""
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the talk"
 msgstr ""
 
-#: ./training.py:110
+#: ./training.py:117
 #: ./workshop.py:142
 msgid "You can give some information to the committee here, e.g. about days you are (not) available to give the workshop"
 msgstr ""

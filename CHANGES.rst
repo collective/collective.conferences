@@ -4,7 +4,10 @@ Changelog
 0.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add validation for the start and end of a training [Andreas Mantke]
+- Add function to calculate the end of a training from its start date
+  and its length [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 0.6 (2020-10-20)

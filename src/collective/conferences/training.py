@@ -10,6 +10,7 @@ from collective.conferences.common import validatelinkedtrainingslidefileextensi
 from collective.conferences.common import validatetrainingmaterialfileextension
 from collective.conferences.common import validatetrainingslidefileextension
 from collective.conferences.common import validatevideofileextension
+from datetime import timedelta
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListing
 from plone.app.textfield import RichText
@@ -29,6 +30,8 @@ from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import Invalid
 from zope.interface import invariant
+
+import transaction
 
 
 class StartBeforeEnd(Invalid):
@@ -270,6 +273,19 @@ class ITraining(model.Schema):
                 raise StartBeforeEnd(_(
                     safe_unicode(
                         'The start date must be before the end date.')))
+
+
+def settrainingend(self, event):
+    if self.startitem:
+        if self.traininglength:
+            start = self.startitem
+            delta = timedelta(minutes=int(self.traininglength[0]))
+            self.enditem = start + delta
+            transaction.commit()
+        else:
+            return
+    else:
+        return
 
 
 def newtrainingadded(self, event):

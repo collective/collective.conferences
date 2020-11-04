@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.7 (unreleased)
+0.8 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+0.7 (2020-11-04)
 ----------------
 
 - Add validation for the start and end of a training [Andreas Mantke]

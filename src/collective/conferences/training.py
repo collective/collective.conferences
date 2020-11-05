@@ -338,6 +338,34 @@ def newtrainingadded(self, event):
             )
 
 
+def notifyAboutWorkflowChange(self, event):
+    state = api.content.get_state(self)
+    if api.portal.get_registry_record(
+            'plone.email_from_address') is not None:
+        contactaddress = api.portal.get_registry_record(
+            'plone.email_from_address')
+        current_user = api.user.get_current()
+        try:
+            api.portal.send_email(
+                recipient=current_user.getProperty('email'),
+                sender=contactaddress,
+                subject=(safe_unicode('Your Training Proposal {0}')).format(self.title),
+                body=(safe_unicode(
+                    'The status of your changed. '
+                    'The new status is {0}')).format(state),
+            )
+
+        except Exception:
+            api.portal.send_email(
+                recipient=contactaddress,
+                sender=contactaddress,
+                subject=(safe_unicode('Your Training Proposal {0}')).format(self.title),
+                body=(safe_unicode(
+                    'The status of your changed. '
+                    'The new status is {0}')).format(state),
+            )
+
+
 class ValidateTrainingUniqueness(validator.SimpleFieldValidator):
     # Validate site-wide uniqueness of training titles.
 

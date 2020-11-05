@@ -302,6 +302,12 @@
 
     <subscriber
         for="collective.conferences.training.ITraining
+              Products.CMFCore.interfaces.IActionSucceededEvent"
+        handler="collective.conferences.training.notifyAboutWorkflowChange"
+        />
+
+    <subscriber
+        for="collective.conferences.training.ITraining
             zope.lifecycleevent.interfaces.IObjectModifiedEvent"
         handler="collective.conferences.training.settrainingend"
         />

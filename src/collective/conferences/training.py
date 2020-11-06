@@ -351,7 +351,7 @@ def notifyAboutWorkflowChange(self, event):
                 sender=contactaddress,
                 subject=(safe_unicode('Your Training Proposal {0}')).format(self.title),
                 body=(safe_unicode(
-                    'The status of your changed. '
+                    'The status of your proposed training changed. '
                     'The new status is {0}')).format(state),
             )
 
@@ -361,7 +361,7 @@ def notifyAboutWorkflowChange(self, event):
                 sender=contactaddress,
                 subject=(safe_unicode('Your Training Proposal {0}')).format(self.title),
                 body=(safe_unicode(
-                    'The status of your changed. '
+                    'The status of your proposed training changed. '
                     'The new status is {0}')).format(state),
             )
 

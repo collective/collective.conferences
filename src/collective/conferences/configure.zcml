@@ -287,6 +287,11 @@
         handler="collective.conferences.talk.newtalkadded"
         />
 
+    <subscriber
+        for="collective.conferences.talk.ITalk
+              Products.CMFCore.interfaces.IActionSucceededEvent"
+        handler="collective.conferences.talk.notifyAboutWorkflowChange"
+        />
 
     <subscriber
         for="collective.conferences.workshop.IWorkshop

@@ -299,6 +299,14 @@
         handler="collective.conferences.workshop.newworkshopadded"
         />
 
+
+    <subscriber
+        for="collective.conferences.workshop.IWorkshop
+              Products.CMFCore.interfaces.IActionSucceededEvent"
+        handler="collective.conferences.workshop.notifyAboutWorkflowChange"
+        />
+
+
     <subscriber
         for="collective.conferences.training.ITraining
                zope.lifecycleevent.interfaces.IObjectAddedEvent"

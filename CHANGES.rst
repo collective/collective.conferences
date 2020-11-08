@@ -4,7 +4,9 @@ Changelog
 0.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add mail notification about workflow state of talk, traininig and
+  workflow module [Andreas Mantke]
+- Update localization files [Andreas Mantke]
 
 
 0.7 (2020-11-04)

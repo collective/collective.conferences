@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-11-03 17:16+0000\n"
+"POT-Creation-Date: 2020-11-08 12:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1191,8 +1191,8 @@ msgstr ""
 msgid "The start or end date is invalid"
 msgstr ""
 
-#: ./talk.py:379
-#: ./workshop.py:378
+#: ./talk.py:407
+#: ./workshop.py:406
 msgid "The talk title is already in use."
 msgstr ""
 
@@ -1200,7 +1200,7 @@ msgstr ""
 msgid "The talks and workshops of the conference"
 msgstr ""
 
-#: ./training.py:356
+#: ./training.py:384
 msgid "The training title is already in use."
 msgstr ""
 

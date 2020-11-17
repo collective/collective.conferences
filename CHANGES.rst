@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.8 (unreleased)
+0.9 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+0.8 (2020-11-17)
 ----------------
 
 - Add mail notification about workflow state of talk, traininig and

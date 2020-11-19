@@ -44,6 +44,15 @@ class TestSpeakerfolderIntegration(unittest.TestCase):
         new_object = createObject(factory)
         self.assertTrue(ISpeakerfolder.providedBy(new_object))
 
+    def test_textedit(self):
+        portal = api.portal.get()
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        api.content.create(type='collective.conferences.speakerfolder', title='speakers', container=portal)
+        text = 'The list of the conference speakers'
+        context = portal['speakers']
+        context.description = text
+        self.assertEqual(context.description, text)
+
 
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)

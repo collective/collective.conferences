@@ -49,7 +49,7 @@ class TestRoomfolderIntegration(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         api.content.create(type='collective.conferences.roomfolder', title='Rooms', container=portal)
         text = 'The talks and workshops at the conference'
-        richtext='<h2>Conference Rooms</h2><p>A more detailed description of the rooms, the way to them etc.</p>'
+        richtext = '<h2>Conference Rooms</h2><p>A more detailed description of the rooms, the way to them etc.</p>'
         context = portal['rooms']
         context.description = text
         context.details = richtext

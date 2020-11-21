@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from collective.conferences.trainingfolder import ITrainingFolder
 from collective.conferences.testing import COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
+from collective.conferences.trainingfolder import ITrainingFolder
 from plone import api
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID

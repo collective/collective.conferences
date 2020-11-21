@@ -49,12 +49,9 @@ class TestRoomfolderIntegration(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         api.content.create(type='collective.conferences.trainingfolder', title='Trainings', container=portal)
         text = 'The trainings at the conference'
-        richtext = 'A more detailed description of the rooms, the way to them etc.'
         context = portal['trainings']
         context.description = text
-        context.details = richtext
         self.assertEqual(context.description, text)
-        self.assertEqual(context.details, richtext)
 
 
 def test_suite():

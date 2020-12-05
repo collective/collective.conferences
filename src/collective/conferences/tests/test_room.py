@@ -11,7 +11,7 @@ from zope.component import queryUtility
 import unittest
 
 
-class TestTrainingIntegration(unittest.TestCase):
+class TestRoomIntegration(unittest.TestCase):
     layer = COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 
     def setUp(self):

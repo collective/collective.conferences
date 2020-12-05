@@ -4,7 +4,7 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add integration tests for all content type modules [Andreas Mantke].
 
 
 0.8 (2020-11-17)

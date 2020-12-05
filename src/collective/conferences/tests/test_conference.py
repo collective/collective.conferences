@@ -11,7 +11,7 @@ from zope.component import queryUtility
 import unittest
 
 
-class TestCallforpaperIntegration(unittest.TestCase):
+class TestConferenceIntegration(unittest.TestCase):
     layer = COLLECTIVE_CONFERENCES_INTEGRATION_TESTING
 
     def setUp(self):

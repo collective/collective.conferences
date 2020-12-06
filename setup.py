@@ -11,7 +11,7 @@ long_description = '\n\n'.join([
     open('CHANGES.rst').read(),
 ])
 
-version = '0.9'
+version = '0.10.dev0'
 
 
 setup(

@@ -11,6 +11,7 @@ from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from Products.validation import V_REQUIRED  # noqa
 from zope import schema
 
 

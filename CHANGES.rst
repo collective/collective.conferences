@@ -4,7 +4,9 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Add integration tests for all content type modules [Andreas Mantke].
+- Add integration tests for all content type modules. [Andreas Mantke]
+- Add import for virus free validation with collective.clamav. [Andreas Mantke]
+- Update localization files. [Andreas Mantke]
 
 
 0.8 (2020-11-17)

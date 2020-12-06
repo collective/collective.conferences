@@ -25,6 +25,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from Products.validation import V_REQUIRED  # noqa
 from z3c.form import validator
 from z3c.form.browser.radio import RadioFieldWidget
 from z3c.relationfield.schema import RelationChoice

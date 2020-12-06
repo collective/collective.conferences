@@ -6,6 +6,7 @@ from plone.supermodel import model
 from plone.supermodel.directives import primary
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from Products.validation import V_REQUIRED  # noqa
 from zope import schema
 
 

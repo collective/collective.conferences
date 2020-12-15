@@ -86,4 +86,18 @@ class ProgramView(BrowserView):
 
 
 class FullprogramView(BrowserView):
-    pass
+
+    def track_list(self):
+        return api.content.find(depth=3, portal_type='collective.conferences.track')
+
+    def track_talks_workshops(self, track):
+        tracktitle = track.Title
+        talks_workshops = api.content.find(depth=3,
+                                           portal_type=('collective.conferences.talk',
+                                                        'collective.conferences.workshop',
+                                                        'collective.conferences.conferencebreak'),
+                                           conferencetrack=tracktitle,
+                                           review_state='published',
+                                           sort_on='orderintrack')
+
+        return [z.getObject() for z in talks_workshops]

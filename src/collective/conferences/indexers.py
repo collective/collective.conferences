@@ -2,6 +2,7 @@
 from collective.conferences.conferencebreak import IConferencebreak
 from collective.conferences.program import IProgram
 from collective.conferences.talk import ITalk
+from collective.conferences.track import ITrack
 from collective.conferences.workshop import IWorkshop
 from DateTime import DateTime
 from plone.indexer.decorator import indexer
@@ -76,3 +77,14 @@ def programEndIndexer(obj):
         return None
     programend = DateTime(obj.end).toZone('UTC')
     return DateTime(programend).ISO()
+
+
+@indexer(ITrack)
+def trackRoom(object, **kw):
+    results = []
+    for rel in object.room:
+        if rel.isBroken():
+            continue
+        obj = rel.to_object.title
+        results.append(obj)
+    return results

@@ -258,6 +258,8 @@
 
     <adapter name="programend" factory=".indexers.programEndIndexer" />
 
+    <adapter name="trackroom" factory=".indexers.trackRoom" />
+
     <adapter factory=".registrationform.RegistrationAdapter"/>
 
 

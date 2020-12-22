@@ -16,6 +16,7 @@ from Products.validation import V_REQUIRED  # noqa
 from zope import schema
 from zope.interface import Invalid
 from zope.interface import invariant
+from plone.app.contentlisting.interfaces import IContentListing
 
 
 class StartBeforeEnd(Invalid):
@@ -89,6 +90,15 @@ class FullprogramView(BrowserView):
 
     def track_list(self):
         return api.content.find(depth=3, portal_type='collective.conferences.track')
+
+
+    def trackRoom(self, track):
+        path = track.getPath()
+        catalog = api.portal.get_tool('portal_catalog')
+        return catalog.getIndexDataForUID(path).get('trackroom')[0]
+
+
+
 
     def track_talks_workshops(self, track):
         tracktitle = track.Title

@@ -2,8 +2,8 @@
 from collective.conferences.conferencebreak import IConferencebreak
 from collective.conferences.program import IProgram
 from collective.conferences.talk import ITalk
-from collective.conferences.workshop import IWorkshop
 from collective.conferences.track import ITrack
+from collective.conferences.workshop import IWorkshop
 from DateTime import DateTime
 from plone.indexer.decorator import indexer
 

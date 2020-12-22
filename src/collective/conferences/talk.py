@@ -440,3 +440,16 @@ class TalkView(BrowserView):
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
         return IContentListing(results)
+
+    def talkroom(self):
+        results = []
+        for rel in self.context.conferencetrack:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+            path = (str(results).strip(' []><Container at'))
+            catalog = api.portal.get_tool('portal_catalog')
+            return catalog.getIndexDataForUID(path).get('trackroom')[0]

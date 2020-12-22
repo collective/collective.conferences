@@ -37,40 +37,43 @@
         </ul>
         </div>
         <div tal:condition="context/conferencetrack">
-        <h3 i18n:translate="">Track</h3>
+        <h3 i18n:translate="">Track:
         <tal:loop repeat="Track conferencetrack">
-        <h4>
+
         <a tal:attributes="href python: Track.getURL()">
                             <span tal:content="Track/Title" />
          </a>
-         </h4>
+
          </tal:loop>
+         </h3>
          </div>
+         <h3 tal:define=" room python: view.talkroom">Room:
+         <span tal:content="room" /></h3>
 
          <div tal:condition="context/talklength">
-         <h3 i18n:translate="">Talk Length</h3>
+         <h4 i18n:translate="">Talk Length:
 
          <tal:loop repeat="length context/talklength">
 
-         <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
+         <span tal:content="length" /> <span i18n:translate="">Minutes</span>
          </tal:loop>
+         </h4>
         </div>
+        <h4>
         <div tal:condition="context/startitem">
-        <h3> <span i18n:translate="">From: </span>
+         <span i18n:translate="">From: </span>
         <span tal:content="python:context.startitem.strftime('%d. %b %Y %H:%M')" />
-        </h3>
+
         </div>
         <div tal:condition="context/enditem">
-        <h3> <span i18n:translate="">To: </span>
+        <span i18n:translate="">To: </span>
         <span tal:content="python:context.enditem.strftime('%d. %b %Y %H:%M')" />
-        </h3>
+
         </div>
-
-
-
+        </h4>
 
         <div tal:replace="structure provider:plone.abovecontentbody" />
-        <h4>Details of the Talk</h4>
+        <h3>Details of the Talk</h3>
 
         <div tal:content="structure context/details/output|nothing" />
 

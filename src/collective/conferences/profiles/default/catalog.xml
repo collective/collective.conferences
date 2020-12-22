@@ -30,6 +30,9 @@
     <index name="trainingaudience" meta_type="KeywordIndex">
         <indexed_attr value="audience" />
     </index>
+    <index name="trackroom" meta_type="KeywordIndex">
+        <indexed_attr value="trackroom" />
+    </index>
     <column value="track"/>
     <column value="speaker" />
 </object>

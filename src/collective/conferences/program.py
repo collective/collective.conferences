@@ -16,7 +16,6 @@ from Products.validation import V_REQUIRED  # noqa
 from zope import schema
 from zope.interface import Invalid
 from zope.interface import invariant
-from plone.app.contentlisting.interfaces import IContentListing
 
 
 class StartBeforeEnd(Invalid):

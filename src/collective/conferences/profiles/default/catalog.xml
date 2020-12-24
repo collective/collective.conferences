@@ -7,7 +7,7 @@
         <indexed_attr value="talklength" />
     </index>
     <index name="lengthofworkshop" meta_type="FieldIndex">
-        <indexed_attr value="workshoplength" />
+        <indexed_attr value="twclength" />
     </index>
     <index name="conferencetrack" meta_type="KeywordIndex">
         <indexed_attr value="programtrack" />

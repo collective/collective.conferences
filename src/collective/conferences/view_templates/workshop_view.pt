@@ -46,11 +46,13 @@
          </h4>
          </tal:loop>
          </div>
+         <h3 tal:define=" room python: view.workshoproom">Room:
+         <span tal:content="room" /></h3>
 
-         <div tal:condition="context/workshoplength">
+         <div tal:condition="context/twclength">
          <h3 i18n:translate="">Workshop Length</h3>
 
-         <tal:loop repeat="length context/workshoplength">
+         <tal:loop repeat="length context/twclength">
 
          <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
          </tal:loop>

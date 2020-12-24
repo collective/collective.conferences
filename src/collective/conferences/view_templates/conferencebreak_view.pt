@@ -22,9 +22,9 @@
              <span tal:condition="context/startitem" tal:content="python:context.startitem.strftime('%d.%m.%Y from %H:%M to ')" />
              <span tal:condition="context/enditem" tal:content="python:context.enditem.strftime('%H:%M  o\'Clock')" />
         </div>
-        <div tal:condition="context/breaklength">
+        <div tal:condition="context/twclength">
             <label i18n:translate="">Length of the Break:</label>
-            <tal:loop repeat="length context/breaklength">
+            <tal:loop repeat="length context/twclength">
             <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
          </tal:loop>
         </div>

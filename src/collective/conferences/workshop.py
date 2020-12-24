@@ -146,10 +146,10 @@ class IWorkshop(model.Schema):
         required=False,
     )
 
-    read_permission(workshoplength='cmf.ReviewPortalContent')
-    write_permission(workshoplength='cmf.ReviewPortalContent')
-    directives.widget(workshoplength=RadioFieldWidget)
-    workshoplength = schema.List(
+    read_permission(twclength='cmf.ReviewPortalContent')
+    write_permission(twclength='cmf.ReviewPortalContent')
+    directives.widget(twclength=RadioFieldWidget)
+    twclength = schema.List(
         title=_(safe_unicode('Workshop Length')),
         description=_(safe_unicode('Set a time frame for the workshop in minutes.')),
         value_type=schema.Choice(source='WorkshopLength'),
@@ -449,3 +449,16 @@ class WorkshopView(BrowserView):
         else:
             room = ''
         return room
+
+    def workshoproom(self):
+        results = []
+        for rel in self.context.conferencetrack:
+            if rel.isBroken():
+                # skip broken relations
+                continue
+            obj = rel.to_object
+            if api.user.has_permission('View', obj=obj):
+                results.append(obj)
+            path = (str(results).strip(' []><Container at'))
+            catalog = api.portal.get_tool('portal_catalog')
+            return catalog.getIndexDataForUID(path).get('trackroom')[0]

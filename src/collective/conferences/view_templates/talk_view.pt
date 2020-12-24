@@ -50,10 +50,10 @@
          <h3 tal:define=" room python: view.talkroom">Room:
          <span tal:content="room" /></h3>
 
-         <div tal:condition="context/talklength">
+         <div tal:condition="context/twclength">
          <h4 i18n:translate="">Talk Length:
 
-         <tal:loop repeat="length context/talklength">
+         <tal:loop repeat="length context/twclength">
 
          <span tal:content="length" /> <span i18n:translate="">Minutes</span>
          </tal:loop>

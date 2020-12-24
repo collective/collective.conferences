@@ -145,10 +145,10 @@ class ITalk(model.Schema):
         RadioFieldWidget,
     )
 
-    read_permission(talklength='cmf.ReviewPortalContent')
-    write_permission(talklength='cmf.ReviewPortalContent')
-    directives.widget(talklength=RadioFieldWidget)
-    talklength = schema.List(
+    read_permission(twclength='cmf.ReviewPortalContent')
+    write_permission(twclength='cmf.ReviewPortalContent')
+    directives.widget(twclength=RadioFieldWidget)
+    twclength = schema.List(
         title=_(safe_unicode('Talk Length')),
         description=_(safe_unicode('Set a time frame for the talk in minutes.')),
         value_type=schema.Choice(source='TalkLength'),

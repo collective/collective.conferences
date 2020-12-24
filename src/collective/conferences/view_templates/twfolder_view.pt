@@ -59,8 +59,8 @@
          <span tal:content="python:talk.startitem.strftime('%d. %b %Y %H:%M')" />
          </span>
          </td>
-         <td><span tal:condition="talk/talklength">
-         <span tal:content="python: talk.talklength[0]" /> Minutes
+         <td><span tal:condition="talk/twclength">
+         <span tal:content="python: talk.twclength[0]" /> Minutes
          </span>
          </td>
          <td><span tal:content="talk/description" /></td>

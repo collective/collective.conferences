@@ -123,7 +123,7 @@ class TrackView(BrowserView):
         start = self.context.trackstart
         for x in talks_workshops:
             x.getObject().startitem = start
-            talklength = x.getObject().talklength[0]
+            talklength = x.getObject().twclength[0]
             delta = timedelta(minutes=int(talklength))
             x.getObject().enditem = start + delta
             transaction.commit()

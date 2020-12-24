@@ -49,9 +49,9 @@ class IConferencebreak(model.Schema):
         defaultFactory=endDefaultValue,
         required=False,
     )
-    write_permission(breaklength='collective.conferences.ModifyTalktime')
-    directives.widget(breaklength=RadioFieldWidget)
-    breaklength = schema.List(
+    write_permission(twclength='collective.conferences.ModifyTalktime')
+    directives.widget(twclength=RadioFieldWidget)
+    twclength = schema.List(
         title=_(safe_unicode('Length')),
         value_type=schema.Choice(source='BreakLength'),
         required=True,

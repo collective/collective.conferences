@@ -18,10 +18,6 @@ msgstr ""
 msgid "- A simple workflow for Conference Talk objects."
 msgstr ""
 
-#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
-msgid "- A simple workflow for Conference Training objects."
-msgstr ""
-
 #: ./profiles/default/workflows/collective_conferences_workshop_workflow/definition.xml
 msgid "- A simple workflow for Conference Workshop objects."
 msgstr ""
@@ -84,6 +80,10 @@ msgstr ""
 
 #: ./conferencespeaker.py:88
 msgid "A short bio"
+msgstr ""
+
+#: ./profiles/default/workflows/collective_conferences_training_workflow/definition.xml
+msgid "A simple workflow for Conference Training objects."
 msgstr ""
 
 #: ./view_templates/callforpaper_view.pt:57
@@ -339,7 +339,7 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: ./view_templates/program_view.pt:51
+#: ./view_templates/program_view.pt:62
 #: ./view_templates/trainingfolder_view.pt:46
 #: ./view_templates/twfolder_view.pt:49
 msgid "Description"
@@ -360,7 +360,7 @@ msgstr ""
 msgid "Details of the Break"
 msgstr ""
 
-#: ./view_templates/workshop_view.pt:60
+#: ./view_templates/workshop_view.pt:41
 msgid "Details of the Workshop"
 msgstr ""
 
@@ -462,13 +462,13 @@ msgstr ""
 msgid "For those requiring visa, please add your full postal address details"
 msgstr ""
 
-#: ./view_templates/program_view.pt:57
+#: ./view_templates/program_view.pt:68
 msgid "From"
 msgstr ""
 
-#: ./view_templates/program_view.pt:26
-#: ./view_templates/programfullview.pt:26
-#: ./view_templates/talk_view.pt:59
+#: ./view_templates/program_view.pt:36
+#: ./view_templates/programfullview.pt:37
+#: ./view_templates/talk_view.pt:80
 msgid "From:"
 msgstr ""
 
@@ -628,15 +628,15 @@ msgstr ""
 msgid "Link to additional Files of your presentation in the correct file format (see for it above)."
 msgstr ""
 
-#: ./view_templates/talk_view.pt:107
+#: ./view_templates/talk_view.pt:122
 msgid "Link to additional files:"
 msgstr ""
 
-#: ./view_templates/talk_view.pt:91
+#: ./view_templates/talk_view.pt:106
 msgid "Link to slides in ODT-File-Format:"
 msgstr ""
 
-#: ./view_templates/talk_view.pt:97
+#: ./view_templates/talk_view.pt:112
 msgid "Link to slides in PDF- or PDF-Hybrid-File-Format:"
 msgstr ""
 
@@ -646,7 +646,7 @@ msgstr ""
 msgid "Link to the Video of the talk"
 msgstr ""
 
-#: ./view_templates/talk_view.pt:112
+#: ./view_templates/talk_view.pt:127
 msgid "Link to video:"
 msgstr ""
 
@@ -677,7 +677,7 @@ msgid "Messages to the Program Committee"
 msgstr ""
 
 #: ./view_templates/conferencebreak_view.pt:28
-#: ./view_templates/talk_view.pt:55
+#: ./view_templates/talk_view.pt:74
 #: ./view_templates/training_view.pt:60
 msgid "Minutes"
 msgstr ""
@@ -803,9 +803,9 @@ msgstr ""
 msgid "Please fill in your telephone number so that we could get in contact with you by phone if necessary."
 msgstr ""
 
-#: ./view_templates/talk_view.pt:21
+#: ./view_templates/talk_view.pt:34
 #: ./view_templates/training_view.pt:35
-#: ./view_templates/workshop_view.pt:21
+#: ./view_templates/workshop_view.pt:33
 msgid "Please submit this for review."
 msgstr ""
 
@@ -843,7 +843,7 @@ msgstr ""
 msgid "Postal Code"
 msgstr ""
 
-#: ./view_templates/workshop_view.pt:65
+#: ./view_templates/workshop_view.pt:99
 msgid "Presentation Slides"
 msgstr ""
 
@@ -939,7 +939,7 @@ msgid "Reviewer sends content back for re-drafting"
 msgstr ""
 
 #: ./training.py:153
-#: ./view_templates/program_view.pt:54
+#: ./view_templates/program_view.pt:65
 #: ./view_templates/track_view.pt:43
 msgid "Room"
 msgstr ""
@@ -968,7 +968,7 @@ msgstr ""
 
 #: ./talk.py:183
 #: ./training.py:166
-#: ./view_templates/workshop_view.pt:67
+#: ./view_templates/workshop_view.pt:101
 msgid "Slides"
 msgstr ""
 
@@ -1003,6 +1003,7 @@ msgstr ""
 msgid "Street"
 msgstr ""
 
+#: ./view_templates/programfullview.pt:60
 #: ./view_templates/track_view.pt:59
 msgid "Subject of the talk"
 msgstr ""
@@ -1030,8 +1031,11 @@ msgid "Summary For Trainings"
 msgstr ""
 
 #: ./talk.py:152
-#: ./view_templates/talk_view.pt:51
 msgid "Talk Length"
+msgstr ""
+
+#: ./view_templates/talk_view.pt:70
+msgid "Talk Length:"
 msgstr ""
 
 #: ./talk.py:85
@@ -1050,6 +1054,7 @@ msgstr ""
 msgid "Talk workshop folder title"
 msgstr ""
 
+#: ./view_templates/programfullview.pt:58
 #: ./view_templates/track_view.pt:57
 msgid "Talk/Workshop"
 msgstr ""
@@ -1196,6 +1201,7 @@ msgstr ""
 msgid "This data is mandatory and required for our internal procedures"
 msgstr ""
 
+#: ./view_templates/programfullview.pt:59
 #: ./view_templates/track_view.pt:58
 msgid "Time"
 msgstr ""
@@ -1214,13 +1220,13 @@ msgstr ""
 msgid "Title of the Registration Page"
 msgstr ""
 
-#: ./view_templates/program_view.pt:60
+#: ./view_templates/program_view.pt:71
 msgid "To"
 msgstr ""
 
-#: ./view_templates/program_view.pt:30
-#: ./view_templates/programfullview.pt:30
-#: ./view_templates/talk_view.pt:64
+#: ./view_templates/program_view.pt:40
+#: ./view_templates/programfullview.pt:41
+#: ./view_templates/talk_view.pt:85
 msgid "To:"
 msgstr ""
 
@@ -1228,9 +1234,7 @@ msgstr ""
 msgid "Topics for the Call for Papers"
 msgstr ""
 
-#: ./view_templates/program_view.pt:48
-#: ./view_templates/talk_view.pt:40
-#: ./view_templates/workshop_view.pt:40
+#: ./view_templates/program_view.pt:59
 msgid "Track"
 msgstr ""
 
@@ -1246,7 +1250,12 @@ msgstr ""
 msgid "Track title"
 msgstr ""
 
-#: ./view_templates/program_view.pt:43
+#: ./view_templates/talk_view.pt:58
+#: ./view_templates/workshop_view.pt:58
+msgid "Track:"
+msgstr ""
+
+#: ./view_templates/program_view.pt:53
 msgid "Tracks"
 msgstr ""
 
@@ -1322,14 +1331,17 @@ msgid "When"
 msgstr ""
 
 #: ./view_templates/twfolder_view.pt:91
-#: ./view_templates/workshop_view.pt:29
+#: ./view_templates/workshop_view.pt:47
 #: ./workshop.py:91
 msgid "Workshop Leader"
 msgstr ""
 
-#: ./view_templates/workshop_view.pt:51
 #: ./workshop.py:153
 msgid "Workshop Length"
+msgstr ""
+
+#: ./view_templates/workshop_view.pt:72
+msgid "Workshop Length:"
 msgstr ""
 
 #: ./workshop.py:86

@@ -16,6 +16,10 @@
     padding: 5px 0px 5px 10px;
 }
 
+.conftable tbody tr:nth-child(even) {
+    background-color:#EEEEEE;
+    }
+
 ul.roomlist {
     list-style-type: none;
     margin: 5;

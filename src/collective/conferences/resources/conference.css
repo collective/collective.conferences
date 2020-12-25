@@ -34,8 +34,13 @@ ul.speakerlist {
     padding-bottom: 1em;
     }
 
-
 .column.talk-right div {
+    border-left: 15px solid #fad03d;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    }
+
+.column.workshop-right div {
     border-left: 15px solid #fad03d;
     padding-left: 2em;
     padding-bottom: 1em;

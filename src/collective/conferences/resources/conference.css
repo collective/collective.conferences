@@ -16,6 +16,10 @@
     padding: 5px 0px 5px 10px;
 }
 
+.conftable tbody tr:nth-child(even) {
+    background-color:#EEEEEE;
+    }
+
 ul.roomlist {
     list-style-type: none;
     margin: 5;
@@ -29,6 +33,18 @@ ul.speakerlist {
 }
 
 .column.training-right div {
+    border-left: 15px solid #fad03d;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    }
+
+.column.talk-right div {
+    border-left: 15px solid #fad03d;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    }
+
+.column.workshop-right div {
     border-left: 15px solid #fad03d;
     padding-left: 2em;
     padding-bottom: 1em;

@@ -6,6 +6,18 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="collective.conferences">
 
+<head>
+    <metal:block fill-slot="top_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+        <tal:noborder condition="python:not user.has_permission('Modify portal content', context)">
+            <tal:noborderset tal:define="dummy python:request.set('disable_border', 1)" />
+        </tal:noborder>
+    </metal:block>
+</head>
+
 <body>
 
 <metal:main fill-slot="main">
@@ -25,7 +37,13 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
         <p class="documentDescription" tal:content="context/description" />
-        <div tal:condition="context/speaker">
+         <div class="col-sm-6">
+        <h4 i18n:translate="">Details of the Workshop</h4>
+        <div tal:content="structure context/details/output|nothing" />
+        </div>
+        <div class="column talk-right">
+        <div class="col-sm-6">
+        <span tal:condition="context/speaker">
         <h3 i18n:translate="">Workshop Leader</h3>
         <ul>
         <tal:loop repeat="workshopleader workshopleader">
@@ -35,33 +53,47 @@
                             </li>
                         </tal:loop>
         </ul>
-        </div>
-        <div tal:condition="context/conferencetrack">
-        <h3 i18n:translate="">Track</h3>
+        </span>
+        <span tal:condition="context/conferencetrack">
+        <h3 i18n:translate="">Track:
         <tal:loop repeat="Track conferencetrack">
-        <h4>
+
         <a tal:attributes="href python: Track.getURL()">
                             <span tal:content="Track/Title" />
          </a>
-         </h4>
+
          </tal:loop>
-         </div>
+          </h3>
+         </span>
          <h3 tal:define=" room python: view.workshoproom">Room:
          <span tal:content="room" /></h3>
 
-         <div tal:condition="context/twclength">
-         <h3 i18n:translate="">Workshop Length</h3>
+         <span tal:condition="context/twclength">
+         <h4 i18n:translate="">Workshop Length:
 
          <tal:loop repeat="length context/twclength">
-
-         <p><span tal:content="length" /> <span i18n:translate="">Minutes</span>
+         <span tal:content="length" /> <span i18n:translate="">Minutes</span>
          </tal:loop>
+         </h4>
+        </span>
+         <h4>
+        <span tal:condition="context/startitem">
+         <span i18n:translate="">From: </span>
+        <span tal:content="python:context.startitem.strftime('%d. %b %Y %H:%M')" />
+
+        </span><br />
+        <span tal:condition="context/enditem">
+        <span i18n:translate="">To: </span>
+        <span tal:content="python:context.enditem.strftime('%d. %b %Y %H:%M')" />
+
+        </span>
+        </h4>
+        </div>
         </div>
 
-        <div tal:replace="structure provider:plone.abovecontentbody" />
-        <h4 i18n:translate="">Details of the Workshop</h4>
 
-        <div tal:content="structure context/details/output|nothing" />
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <div tal:condition="context/slides">
         <h4 i18n:translate="">Presentation Slides</h4>

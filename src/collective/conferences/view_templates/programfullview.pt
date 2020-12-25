@@ -50,12 +50,11 @@
                 tal:content="track/Title" /></h3></caption>
             <thead>
                 <tr tal:define="room python:view.trackRoom(track)">
-                    <th>Room</th>
-                    <th><span tal:content="room" />
+                    <th>Room:</th>
+                    <th colspan="2"><span tal:content="room" />
        </th>
-                    <th></th>
                 </tr>
-                <tr bgcolor="#18A303">
+                <tr>
                     <th><label i18n:translate="">Talk/Workshop</label></th>
                     <th><label i18n:translate="">Time</label></th>
                     <th><label i18n:translate="">Subject of the talk</label></th>

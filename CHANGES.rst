@@ -4,7 +4,21 @@ Changelog
 0.10 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add functions to the program module for searching and displaying tracks,
+  talks, workshops and conference breaks in appropriate listing. [Andreas Mantke]
+- Add new index for the room of a track. [Andreas Mantke]
+- Add function to the program module to get the room of a track. [Andreas Mantke]
+- Add functions to get the room of a talk or a workshop and display it in
+  the view of talks and workshops. [Andreas Mantke]
+- Renaming the field for the length of talks, workshops and conference
+  breaks. [Andreas Mantke]
+- Improve the structure of the talk and workshop view templates and add
+  some css styles for this templates. [Andreas Mantke]
+- Add the improved version of a full program view template. [Andreas Mantke]
+- Improve the tables of the full program view template for readability with
+  some background color. [Andreas Mantke]
+- Fis the description of the workflow. [Andreas Mantke]
+- Update localization files and German localization. [Andreas Mantke]
 
 
 0.9 (2020-12-06)

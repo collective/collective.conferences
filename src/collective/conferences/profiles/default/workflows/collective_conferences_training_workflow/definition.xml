@@ -3,7 +3,7 @@
              i18n:domain="collective.conferences"
              workflow_id="conferences_training_workflow"
              title="Conference Training Publication Workflow"
-             description=" - A simple workflow for Conference Training objects."
+             description="A simple workflow for Conference Training objects."
              state_variable="review_state"
              initial_state="pending"
              manager_bypass="False"

@@ -62,7 +62,7 @@
             </thead>
             <tbody>
                 <tr  tal:repeat="talk python: view.track_talks_workshops(track)">
-                    <td><h4><a tal:attributes="href talk/absolute_url" tal:content="talk/Title"></h4></td>
+                    <td><h4><a tal:attributes="href talk/absolute_url" tal:content="talk/Title" /></h4></td>
                     <td><span tal:content="python:talk.startitem.strftime('%d. %b %Y %H:%M')" /> to
                         <span tal:content="python:talk.enditem.strftime('%d. %b %Y %H:%M')" /></td>
                     <td><p tal:condition="talk/description" tal:content="talk/description" /></td>

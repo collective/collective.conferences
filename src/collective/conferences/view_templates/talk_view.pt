@@ -55,7 +55,7 @@
                             </li>
                         </tal:loop>
         </ul>
-        <h3 tal:condition="context/conferencetrack" i18n:translate="">Track:
+        <h3 tal:condition="context/conferencetrack"><span i18n:translate="">Track:</span>
         <tal:loop repeat="Track conferencetrack">
 
         <a tal:attributes="href python: Track.getURL()">
@@ -67,7 +67,7 @@
          <h3 tal:define=" room python: view.talkroom">Room:
          <span tal:content="room" /></h3>
          <span tal:condition="context/twclength">
-         <h4 i18n:translate="">Talk Length:
+         <h4><span i18n:translate="">Talk Length:</span>
 
          <tal:loop repeat="length context/twclength">
 

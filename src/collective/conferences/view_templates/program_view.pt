@@ -5,6 +5,16 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="collective.conferences">
+
+
+<head>
+    <metal:block fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++resource++collective.conferences/conference.css"
+            />
+    </metal:block>
+</head>
 <body>
 
 <metal:main fill-slot="main">
@@ -43,23 +53,24 @@
         <h2 i18n:translate="">Tracks</h2>
 
   
-<table class="plone-has-table" border="0" width="100%">
+<table class="conftable" border="0" width="100%">
         <thead>
-         <td><h4 i18n:translate="">Track</h4>
-         </td>
-         <td>
+        <tr>
+         <th><h4 i18n:translate="">Track</h4>
+         </th>
+         <th>
          <h4 i18n:translate="">Description</h4>
-         </td>
-         <td>
+         </th>
+         <th>
          <h4 i18n:translate="">Room</h4>
-         </td>
-         <td>
+         </th>
+         <th>
          <h4 i18n:translate="">From</h4>
-         </td>
-         <td>
+         </th>
+         <th>
          <h4 i18n:translate="">To</h4>
-         </td>
-         
+         </th>
+         </tr>
          </thead>
         
          <tbody tal:repeat="item container/values">

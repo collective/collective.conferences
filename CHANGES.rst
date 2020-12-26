@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.10 (unreleased)
+0.11 (unreleased)
+-----------------
+
+- Nothing changed yet.
+
+
+0.10 (2020-12-26)
 -----------------
 
 - Add functions to the program module for searching and displaying tracks,

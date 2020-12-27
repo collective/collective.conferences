@@ -65,8 +65,12 @@
          </tal:loop>
           </h3>
          </span>
-         <h3 tal:define=" room python: view.workshoproom">Room:
-         <span tal:content="room" /></h3>
+         <h3 tal:define=" room python: view.workshoproom;
+                          roomurl python: view.workshoproomurl">Room:
+         <a tal:attributes="href roomurl">
+         <span tal:content="room" />
+         </a>
+         </h3>
 
          <span tal:condition="context/twclength">
          <h4><span i18n:translate="">Workshop Length:</span>

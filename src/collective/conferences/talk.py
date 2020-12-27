@@ -454,7 +454,6 @@ class TalkView(BrowserView):
             catalog = api.portal.get_tool('portal_catalog')
             return catalog.getIndexDataForUID(path).get('trackroom')[0]
 
-
     def talkroomurl(self):
         results = []
         for rel in self.context.conferencetrack:

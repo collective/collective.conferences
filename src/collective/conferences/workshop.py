@@ -459,7 +459,7 @@ class WorkshopView(BrowserView):
             obj = rel.to_object
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
-            path = (str(results).strip(' []><Container at'))
+            path = (str(results).strip(' []><Container at Item at '))
             catalog = api.portal.get_tool('portal_catalog')
             return catalog.getIndexDataForUID(path).get('trackroom')[0]
 
@@ -472,7 +472,7 @@ class WorkshopView(BrowserView):
             obj = rel.to_object
             if api.user.has_permission('View', obj=obj):
                 results.append(obj)
-            path = (str(results).strip(' []><Container at'))
+            path = (str(results).strip(' []><Container at Item at '))
             catalog = api.portal.get_tool('portal_catalog')
             tracktitle = catalog.getIndexDataForUID(path).get('trackroom')[0]
             room = api.content.find(portal_type='collective.conferences.room', Title=tracktitle)

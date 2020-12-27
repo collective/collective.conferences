@@ -64,8 +64,13 @@
 
          </tal:loop>
          </h3>
-         <h3 tal:define=" room python: view.talkroom">Room:
-         <span tal:content="room" /></h3>
+         <h3 tal:define=" room python: view.talkroom;
+                          roomurl python: view.talkroomurl">Room:
+         <a tal:attributes="href roomurl">
+         <span tal:content="room" />
+         </a>
+
+         </h3>
          <span tal:condition="context/twclength">
          <h4><span i18n:translate="">Talk Length:</span>
 

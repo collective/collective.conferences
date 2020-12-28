@@ -195,6 +195,34 @@ class ICollectiveconferenceControlPanel(Interface):
         required=True,
     )
 
+    model.fieldset('voting',
+                   label=_(safe_unicode('Voting on Proposals')),
+                   fields=['enabletalksvoting',
+                           'enablewrorkshopvoting',
+                           'enabletrainingvoting'],
+                   )
+
+    enabletalksvoting = schema.Choice(
+        title=_(safe_unicode('Enable Voting on Talk Proposals?')),
+        description=_(safe_unicode('Should the voting on talk proposals be enabled?')),
+        vocabulary=yesnochoice,
+        required=True,
+    )
+
+    enablewrorkshopvoting = schema.Choice(
+        title=_(safe_unicode('Enable Voting on Workshop Proposals?')),
+        description=_(safe_unicode('Should the voting on workshop proposals be enabled?')),
+        vocabulary=yesnochoice,
+        required=True,
+    )
+
+    enabletrainingvoting = schema.Choice(
+        title=_(safe_unicode('Enable Voting on Training Proposals?')),
+        description=_(safe_unicode('Should the voting on training proposals be enabled?')),
+        vocabulary=yesnochoice,
+        required=True,
+    )
+
 
 class CollectiveconferenceControlPanelForm(RegistryEditForm):
     schema = ICollectiveconferenceControlPanel

@@ -24,15 +24,19 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="presenter view/talkPresenters;
-                    conferencetrack view/conferenceTrack">
+                    conferencetrack view/conferenceTrack;
+                    wf_tool here/portal_workflow;
+                    review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
-        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="">
+        <div class="discreet" tal:condition="python: view.canRequestReview and not review_state == 'published' ">
+         <span i18n:translate="">
             Please submit this for review.
+            </span>
         </div>
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />

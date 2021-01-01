@@ -33,7 +33,7 @@
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
-        <div class="discreet" tal:condition="python: view.canRequestReview and not review_state == 'published' ">
+        <div class="discreet" tal:condition="python: view.canRequestReview and review_state == 'private' ">
          <span i18n:translate="">
             Please submit this for review.
             </span>

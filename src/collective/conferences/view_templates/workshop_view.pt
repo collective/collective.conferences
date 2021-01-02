@@ -23,16 +23,21 @@
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
         tal:define="workshopleader view/workshopLeaders;
-                    conferencetrack view/conferenceTrack">
+                    conferencetrack view/conferenceTrack;
+                    wf_tool here/portal_workflow;
+                    review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
         <span tal:replace="structure context/@@authenticator/authenticator"/>
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
-        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="">
+        <div class="discreet" tal:condition="python: view.canRequestReview and review_state == 'private' ">
+            <span i18n:translate="">
             Please submit this for review.
+            </span>
         </div>
+
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
@@ -65,8 +70,12 @@
          </tal:loop>
           </h3>
          </span>
-         <h3 tal:define=" room python: view.workshoproom">Room:
-         <span tal:content="room" /></h3>
+         <h3 tal:define=" room python: view.workshoproom;
+                          roomurl python: view.workshoproomurl">Room:
+         <a tal:attributes="href roomurl">
+         <span tal:content="room" />
+         </a>
+         </h3>
 
          <span tal:condition="context/twclength">
          <h4><span i18n:translate="">Workshop Length:</span>

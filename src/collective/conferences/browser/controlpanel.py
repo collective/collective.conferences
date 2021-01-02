@@ -15,9 +15,9 @@ class ICollectiveconferenceControlPanel(Interface):
         title=_(safe_unicode('Length Of Conference Breaks')),
         description=_(safe_unicode('Fill in the time slots for conference breaks in minutes. Use a new line for every '
                                    "value / break length. Write only the numbers without the addition 'minutes'.")),
-        default=(15,
-                 20,
-                 30),
+        default=('15',
+                 '20',
+                 '30'),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -26,9 +26,9 @@ class ICollectiveconferenceControlPanel(Interface):
         title=_(safe_unicode('Length Of Talks')),
         description=_(safe_unicode('Fill in the time slots for conference talks in minutes. Use a new line for every '
                                    "value / talk length. Write only the numbers without the addition 'minutes'.")),
-        default=(30,
-                 45,
-                 60),
+        default=('30',
+                 '45',
+                 '60'),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -38,9 +38,9 @@ class ICollectiveconferenceControlPanel(Interface):
         description=_(
             safe_unicode('Fill in the time slots for workshops at the conference in minutes. Use a new line for every '
                          "value / workshop length. Write only the numbers without the addition 'minutes'.")),
-        default=(60,
-                 120,
-                 180),
+        default=('60',
+                 '120',
+                 '180'),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -50,9 +50,9 @@ class ICollectiveconferenceControlPanel(Interface):
         description=_(
             safe_unicode('Fill in the time slots for trainings at the conference in minutes. Use a new line for every '
                          "value / training length. Write only the numbers without the addition 'minutes'.")),
-        default=(60,
-                 120,
-                 180),
+        default=('60',
+                 '120',
+                 '180'),
         value_type=schema.TextLine(),
         required=True,
     )
@@ -192,6 +192,34 @@ class ICollectiveconferenceControlPanel(Interface):
         default=('Bank one',
                  'Bank two'),
         value_type=schema.TextLine(),
+        required=True,
+    )
+
+    model.fieldset('voting',
+                   label=_(safe_unicode('Voting on Proposals')),
+                   fields=['enabletalksvoting',
+                           'enablewrorkshopvoting',
+                           'enabletrainingvoting'],
+                   )
+
+    enabletalksvoting = schema.Choice(
+        title=_(safe_unicode('Enable Voting on Talk Proposals?')),
+        description=_(safe_unicode('Should the voting on talk proposals be enabled?')),
+        vocabulary=yesnochoice,
+        required=True,
+    )
+
+    enablewrorkshopvoting = schema.Choice(
+        title=_(safe_unicode('Enable Voting on Workshop Proposals?')),
+        description=_(safe_unicode('Should the voting on workshop proposals be enabled?')),
+        vocabulary=yesnochoice,
+        required=True,
+    )
+
+    enabletrainingvoting = schema.Choice(
+        title=_(safe_unicode('Enable Voting on Training Proposals?')),
+        description=_(safe_unicode('Should the voting on training proposals be enabled?')),
+        vocabulary=yesnochoice,
         required=True,
     )
 

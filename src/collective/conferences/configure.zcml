@@ -13,6 +13,7 @@
     <!-- Include configuration for dependencies listed in setup.py -->
     <includeDependencies package="." />
     <include package=".browser" />
+    <include package=".behavior" />
     <include file="permissions.zcml" />
     <include file="upgrades.zcml" />
     

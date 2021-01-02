@@ -24,7 +24,9 @@
     <tal:main-macro metal:define-macro="main"
         tal:define="traininginstructor view/trainingInstructors;
                     trainingroom view/trainingRoom;
-                    trainingaudience view/trainingAudience;">
+                    trainingaudience view/trainingAudience;
+                    wf_tool here/portal_workflow;
+                    review_state python:wf_tool.getInfoFor( here, 'review_state', '');">
 
         <span tal:replace="structure context/@@authenticator/authenticator" />
 
@@ -32,8 +34,10 @@
 
         <h1 class="documentFirstHeading" tal:content="context/title" />
 
-        <div class="discreet" tal:condition="view/canRequestReview" i18n:translate="">
+        <div class="discreet" tal:condition="python: view.canRequestReview and review_state == 'private' ">
+         <span i18n:translate="">
             Please submit this for review.
+            </span>
         </div>
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
